@@ -1,0 +1,16 @@
+# Kujo Skills Index
+
+| Skill | Use when | Activation | Primary sources |
+|---|---|---|---|
+| `kujo-core-language` | Writing, editing, or explaining Kujo source. | General `.kujo` coding, syntax, imports, control flow, mutability, truthiness, runtime gotchas. | `README.md`, `docs/LANGUAGE_SPEC.md`, `examples/README_examples.md`, `tests/docs_examples.rs` |
+| `kujo-tool-building` | Building practical Kujo CLI tools and local automation. | `args()`, `--` separator, JSON policy tools, pass/fail gates, script output helpers. | `docs/FIRST_TOOL_COOKBOOK.md`, `docs/STANDARD_LIBRARY_REFERENCE.md`, `examples/06-agent-tool.kujo`, `showcases/README.md` |
+| `kujo-security-hardening` | Reviewing or writing Kujo with host effects or untrusted input. | Capability flags, filesystem/process/network/db/archive/static server risks, safe command patterns. | `docs/NATIVE_API_SECURITY_POSTURE.md`, `tests/native_api_security_boundaries.rs`, `tests/runtime_security.rs`, `src/interpreter/capabilities.rs` |
+| `kujo-enterprise-automation` | Designing CI/operator workflows with Kujo. | Deterministic output, JSON contracts, audit logs, release gates, policy files, external isolation guidance. | `README.md`, `docs/CLI_MACHINE_READABLE_CONTRACTS.md`, `docs/RELEASE_PROCESS.md`, `showcases/README.md` |
+| `kujo-cli-contracts` | Changing CLI behavior, JSON output, diagnostics, or LSP helper outputs. | stdout/stderr policy, exit codes, stable JSON shape, contract tests, breaking-change review. | `docs/CLI_MACHINE_READABLE_CONTRACTS.md`, `tests/cli_contracts.rs`, `tests/cli_json_contracts.rs`, `src/main.rs` |
+| `kujo-standard-library` | Using or reviewing native builtins. | Arity, return values, capability gates, JSON conversion, file/process/network/db/crypto APIs. | `docs/STANDARD_LIBRARY.md`, `docs/STANDARD_LIBRARY_REFERENCE.md`, `tests/stdlib_reference_contract.rs`, `src/interpreter/mod.rs` |
+| `kujo-testing-release-gates` | Testing Kujo scripts or implementation changes. | `cargo test`, docs/example smoke tests, parity/security tests, release gate scripts. | `README.md`, `ROADMAP.md`, `docs/RELEASE_PROCESS.md`, `tests/docs_examples.rs`, `scripts/release_gate.sh` |
+| `kujo-runtime-parity` | Diagnosing VM/interpreter differences or runtime-mode decisions. | VM-first behavior, `--interpreter`, `kujo test --runtime dual|vm`, parity matrix updates. | `docs/VM_INTERPRETER_PARITY_MATRIX.md`, `docs/VM_INTERPRETER_MIGRATION_PLAYBOOK.md`, `tests/vm_interpreter_parity_surfaces.rs` |
+| `kujo-language-implementation` | Changing the Rust implementation. | Lexer/parser/compiler/VM/interpreter/module/native changes, diagnostics, unsafe boundaries, docs/tests sync. | `docs/ARCHITECTURE.md`, `ROADMAP.md`, `src/`, `docs/NATIVE_API_SECURITY_POSTURE.md` |
+| `kujo-docgen-agent-readable` | Maintaining DocGen and agent-readable docs. | `kujo docgen`, generated docs, public-only gates, AI task output, docs/tests/implementation sync. | `docs/DOCGEN.md`, `docs/CLI_MACHINE_READABLE_CONTRACTS.md`, `tests/docgen_universal.rs`, `src/docgen/` |
+| `kujo-maintainer-review` | Reviewing Kujo changes like a strict maintainer. | PR/code review for correctness, contracts, security, parity, missing tests/docs, readiness risk. | `ROADMAP.md`, `docs/LANGUAGE_SPEC.md`, `docs/NATIVE_API_SECURITY_POSTURE.md`, `docs/CLI_MACHINE_READABLE_CONTRACTS.md` |
+

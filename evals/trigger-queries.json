@@ -1,0 +1,245 @@
+{
+  "kujo-core-language": {
+    "should_trigger": [
+      "write a kujo script with functions arrays and a dictionary",
+      "how do let mut const and := work in Kujo",
+      "fix this .kujo import that uses from src.util import value",
+      "why is has_key not acting like a boolean in my kujo if",
+      "show me idiomatic kujo for a loop and match statement",
+      "what is truthy and falsey in Kujo",
+      "my Kujo dictionary missing key crashes, what should I use",
+      "convert this old kujo example to current syntax"
+    ],
+    "should_not_trigger": [
+      "write a Python script with dictionaries",
+      "explain JavaScript truthiness",
+      "review my Rust unsafe block",
+      "make a generic CLI tool in Bash",
+      "what is the latest Rust version",
+      "generate a logo for a language",
+      "summarize this PDF",
+      "debug my React component"
+    ]
+  },
+  "kujo-tool-building": {
+    "should_trigger": [
+      "build me a kujo script that reads a json policy and exits nonzero if it fails",
+      "make a Kujo repo scanner that outputs a machine readable report",
+      "how do I pass --help to my kujo script instead of the kujo CLI",
+      "write a quality gate in kujo using args()",
+      "create a small kujo tool with deterministic pass fail output",
+      "my kujo CLI script should validate a config file and return exit 1 on policy failure",
+      "make a kujo automation script that prints JSON for CI",
+      "kujo script arg parsing pls, I keep colliding with flags"
+    ],
+    "should_not_trigger": [
+      "change the Rust parser internals",
+      "audit native API shell permissions",
+      "make docgen JSON shape stable",
+      "why is the interpreter different from VM",
+      "install Kujo from source",
+      "write a one-off JavaScript CLI",
+      "review this PR like a maintainer",
+      "generate a PowerPoint deck"
+    ]
+  },
+  "kujo-security-hardening": {
+    "should_trigger": [
+      "review this kujo tool before I run it on untrusted files",
+      "can I run this kujo script safely in CI with network access",
+      "what --allow flags do I need for read_file and http_get",
+      "is execute safe if the command includes user input",
+      "harden a Kujo script that unzips archives",
+      "does Kujo sandbox untrusted code",
+      "how should html_response escape user content",
+      "run kujo with least privilege for db and fs read"
+    ],
+    "should_not_trigger": [
+      "write a pure arithmetic Kujo function",
+      "format a markdown table",
+      "explain Rust ownership",
+      "make CLI JSON easier to parse",
+      "add a parser test for match syntax",
+      "why does VM differ from interpreter",
+      "create an image",
+      "summarize the changelog"
+    ]
+  },
+  "kujo-enterprise-automation": {
+    "should_trigger": [
+      "design an enterprise-safe Kujo automation workflow",
+      "write a kujo script that scans a repo and outputs a machine readable report",
+      "how should we run Kujo policy checks in CI",
+      "make a capability-minimal Kujo workflow with audit logs",
+      "can Kujo be used for operational quality gates",
+      "build a deterministic Kujo report for compliance",
+      "what external sandboxing should wrap untrusted Kujo jobs",
+      "create a policy-file workflow with stable JSON output"
+    ],
+    "should_not_trigger": [
+      "what is Kujo truthiness",
+      "add a VM opcode",
+      "generate doc comments with docgen",
+      "review this as maintainer",
+      "write a Bash cron job",
+      "make a React dashboard",
+      "explain Homebrew install",
+      "debug a tree-sitter query"
+    ]
+  },
+  "kujo-cli-contracts": {
+    "should_trigger": [
+      "make the cli json output easier for agents to parse",
+      "change kujo run --json-runtime-diagnostics output",
+      "what exit code should a parser failure return",
+      "preserve stdout stderr behavior for --json",
+      "add a field to kujo docgen --json",
+      "update lsp-rename --json failure payload",
+      "is changing this CLI JSON field breaking",
+      "fix cli_json_contracts after output drift"
+    ],
+    "should_not_trigger": [
+      "write a Kujo array example",
+      "run an untrusted network script safely",
+      "add a new crypto builtin",
+      "why are VM and interpreter different",
+      "create a release tag",
+      "explain CSS grid",
+      "generate docs for a Python project using Sphinx",
+      "review a security policy unrelated to Kujo"
+    ]
+  },
+  "kujo-standard-library": {
+    "should_trigger": [
+      "what does parse_json return on bad input in Kujo",
+      "which --allow flag gates http_get",
+      "add a new native filesystem helper",
+      "does push mutate the array or return a new one",
+      "how do execute_status and spawn_process return results",
+      "what arity does sha256_file have",
+      "review the standard library capability docs",
+      "use db_connect and db_query in a Kujo script"
+    ],
+    "should_not_trigger": [
+      "change CLI stdout stderr rules",
+      "write release notes",
+      "fix a React hook",
+      "debug VM bytecode dispatch only",
+      "make a logo",
+      "explain Python json.loads",
+      "run cargo fmt",
+      "summarize a spreadsheet"
+    ]
+  },
+  "kujo-testing-release-gates": {
+    "should_trigger": [
+      "what tests should I run after changing Kujo runtime behavior",
+      "run the release gate for Kujo",
+      "which tests cover examples in docs",
+      "before finishing broad cleanup what validation commands matter",
+      "should I update snapshots for this Kujo fixture failure",
+      "test CLI JSON contract changes",
+      "what is the v1 release readiness gate",
+      "run cargo test and kujo dual runtime tests"
+    ],
+    "should_not_trigger": [
+      "write a simple Kujo hello world",
+      "harden execute against shell injection",
+      "add a new builtin arity row",
+      "design a website",
+      "make docgen emit AI tasks",
+      "why is has_key returning 1",
+      "install a plugin",
+      "explain SQL joins"
+    ]
+  },
+  "kujo-runtime-parity": {
+    "should_trigger": [
+      "why is vm and interpreter giving different results",
+      "add parity tests for this new match behavior",
+      "should this use kujo test --runtime dual or vm",
+      "stop docs from recommending --interpreter by default",
+      "debug a runtime path divergence in Kujo",
+      "update the VM interpreter parity matrix",
+      "is interpreter fallback appropriate here",
+      "VM passes but interpreter fails for closures"
+    ],
+    "should_not_trigger": [
+      "what --allow flag gates network",
+      "make JSON output stable",
+      "write a CI policy report",
+      "create a new image",
+      "explain Go interfaces",
+      "install Rust",
+      "review docs typos only",
+      "parse a CSV in Python"
+    ]
+  },
+  "kujo-language-implementation": {
+    "should_trigger": [
+      "add a new native filesystem helper",
+      "fix parser diagnostics for malformed imports",
+      "change VM bytecode handling for dictionary indexing",
+      "update lexer limits for string literals",
+      "modify the module loader path security",
+      "centralize CLI output rendering in Rust",
+      "move JIT unsafe function pointer invocation",
+      "contribute to Kujo compiler semantics without breaking runtime"
+    ],
+    "should_not_trigger": [
+      "write a small Kujo user script",
+      "run this tool with --untrusted",
+      "make a policy JSON output",
+      "review as strict maintainer",
+      "create a spreadsheet",
+      "explain TypeScript decorators",
+      "use kujo docgen from CLI",
+      "draft publication notes"
+    ]
+  },
+  "kujo-docgen-agent-readable": {
+    "should_trigger": [
+      "make kujo docgen output more agent readable",
+      "add a field to docgen --json summary",
+      "fix docgen gaps JSON for AI tasks",
+      "how does kujo docgen scan without executing code",
+      "update public-only documentation gates",
+      "keep README and generated docs aligned",
+      "docgen should validate external links safely",
+      "emit ai tasks from kujo docgen"
+    ],
+    "should_not_trigger": [
+      "write a Kujo for loop",
+      "run untrusted shell commands",
+      "debug VM interpreter parity",
+      "add a database builtin",
+      "review a PR generally",
+      "make a slide deck",
+      "explain cargo install",
+      "fix a React routing bug"
+    ]
+  },
+  "kujo-maintainer-review": {
+    "should_trigger": [
+      "review this change like a strict kujo maintainer",
+      "give me a Kujo maintainer review for this PR",
+      "is this patch safe to ship in Kujo",
+      "review for CLI contract and runtime parity risks",
+      "find missing tests and docs in this Kujo change",
+      "blocker review: native API security boundary change",
+      "strict review of this VM implementation diff",
+      "does this release-readiness update overclaim"
+    ],
+    "should_not_trigger": [
+      "write new Kujo code from scratch",
+      "explain how args() works",
+      "run release gate commands only",
+      "create a JSON policy tool",
+      "make docgen output",
+      "generate an image",
+      "summarize standard library functions",
+      "debug a CSS layout"
+    ]
+  }
+}
+
