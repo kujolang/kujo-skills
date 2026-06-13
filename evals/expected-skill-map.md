@@ -14,6 +14,7 @@ Use this map to sanity-check trigger routing.
 | Muzzle quiet workflows, `.muzzle/workflows/`, manifests, logs/reports, loop mode | `kujo-muzzle-workflows`, optionally `kujo-tool-building` or `kujo-enterprise-automation` |
 | Dispatch workflow orchestration, `dispatch.kujo`, run state, traces, reports, approval gates, policy profiles | `kujo-dispatch-workflows`, optionally `kujo-tool-building` or `kujo-enterprise-automation` |
 | Kujo RAG Starter Kit ingest/query/API, local RAG indexes, namespaces, parser/chunking/embedding/retrieval changes, release-eval gates | `kujo-rag-workflows`, optionally `kujo-core-language`, `kujo-tool-building`, `kujo-security-hardening`, or `kujo-enterprise-automation` |
+| MCP servers, `mcp make`, generated `.mcp/`, manifests, tool/resource registries, endpoint/security tests | `kujo-mcp-workflows`, optionally `kujo-tool-building`, `kujo-security-hardening`, or `kujo-enterprise-automation` |
 | Casefile evidence bundles, `.casefile/`, `capture`, handoff, redaction, cleanup | `kujo-casefile-workflows`, optionally `kujo-tool-building` or `kujo-cli-contracts` |
 | VM/interpreter drift, `--interpreter`, `--runtime dual`, parity matrix | `kujo-runtime-parity` |
 | Rust implementation changes in parser/compiler/VM/interpreter/native APIs | `kujo-language-implementation` |

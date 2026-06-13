@@ -197,6 +197,28 @@
       "make docgen output more agent readable"
     ]
   },
+  "kujo-mcp-workflows": {
+    "should_trigger": [
+      "generate a repo-specific MCP server with mcp make",
+      "run kujo run mcp.kujo --interpreter make ./repo --validate",
+      "review generated .mcp artifacts and mcp.manifest.json safety tiers",
+      "fix the MCP tool registry schema for tools/list",
+      "add a resource to src/resources/registry.kujo",
+      "harden mcp-server.json auth host and rate limit settings",
+      "debug /mcp/v1/tools/call validation errors",
+      "run endpoint and security regression tests for the Kujo MCP server"
+    ],
+    "should_not_trigger": [
+      "write a generic Kujo for loop",
+      "create a Howl social card",
+      "run Muzzle quiet workflows",
+      "change VM bytecode dispatch",
+      "generate docgen AI task output",
+      "make a PowerPoint deck",
+      "explain JavaScript MCP SDK usage only",
+      "review a PR with no MCP server changes"
+    ]
+  },
   "kujo-runtime-parity": {
     "should_trigger": [
       "why is vm and interpreter giving different results",
