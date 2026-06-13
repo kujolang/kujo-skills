@@ -131,3 +131,147 @@ Expected:
 - Run `spec validate` before export.
 - Use `spec export-agent-context` for the coding-agent handoff.
 - Mention `SPEC_SAFE_WRITE` or template-source policy only when CI, regulated, or output-path constraints are relevant.
+
+## Case 12: Casefile Failure Handoff
+
+Prompt: "Capture this failing command with Casefile and give the next agent a handoff."
+
+Expected:
+
+- Trigger `kujo-casefile-workflows`.
+- Use `kujo run --interpreter casefile.kujo -- capture --name <name> -- <argv...>`.
+- Prefer argv after `--` over `--command` for complex commands.
+- Review `case.md`, `case.json`, `combined.log`, `reproduction.md`, and `handoff.md`.
+- Preserve redaction-by-default and avoid sharing plaintext artifacts until sensitivity is checked.
+
+## Case 13: Concord Drift Scan
+
+Prompt: "Run Concord on this repo and turn any artifact drift into prioritized tasks."
+
+Expected:
+
+- Trigger `kujo-concord-workflows`.
+- Run `concord scan` before editing docs/specs/evals/manifests.
+- Use `--format json` or `tasks` when structured follow-up is needed.
+- Treat findings as drift leads for human review, not proof.
+- State command, exit code, highest severity, category, and likely source/target artifact.
+
+## Case 14: Dispatch Workflow Run
+
+Prompt: "Run a Dispatch demo workflow, inspect the artifacts, and explain whether the approval/policy behavior looks healthy."
+
+Expected:
+
+- Trigger `kujo-dispatch-workflows`.
+- Run from the Dispatch repo root with `kujo run --interpreter dispatch.kujo`.
+- Prefer offline fixture mode and a `tests/tmp/<purpose>` output root for local validation.
+- Inspect `state.json`, `trace.json` or `trace.md`, and `report.json` or `report.md` when present.
+- Check approval gate status, policy-denied events, mutation audit records, and artifact contract metadata.
+
+## Case 15: Fence Boundary Check
+
+Prompt: "Set up Fence for this repo and explain the current architecture-boundary violations."
+
+Expected:
+
+- Trigger `kujo-fence-workflows`.
+- Run or recommend `init`, then `validate`, then `check`.
+- Use `graph` or `explain <path>` to understand zone direction and surprising classifications.
+- Do not weaken `fence.toml` just to hide violations.
+- Report exit code, violation threshold, report path, and next fixes.
+
+## Case 16: Howl Showcase Render
+
+Prompt: "Create a Howl card for this Kujo example, validate the manifest, and render the gallery."
+
+Expected:
+
+- Trigger `kujo-howl-workflows`.
+- Use or create `howl.json` plus a real referenced example file.
+- Run `howl validate` before `howl render`.
+- Render deterministic Markdown, HTML, SVG, and `index.html` artifacts.
+- Avoid invented claims, network calls, posting, or scheduler behavior.
+
+## Case 17: Lens Browser QA
+
+Prompt: "Run Lens against my localhost app and summarize the Agent Repair Brief."
+
+Expected:
+
+- Trigger `kujo-lens-workflows`.
+- Ensure the app server is already running.
+- Start with `lens check <local-url> --json`.
+- Inspect `lens-report.md`, `lens-report.json`, screenshots, console, network, and DOM evidence.
+- Branch on Lens exit codes and report findings with evidence paths.
+
+## Case 18: MCP Server Scaffold
+
+Prompt: "Generate a repo-specific MCP server with mcp make and review the safety surface."
+
+Expected:
+
+- Trigger `kujo-mcp-workflows`.
+- Use `kujo run mcp.kujo --interpreter make <repo-path>`.
+- Prefer `--dry-run`, `--no-ai`, or `--validate` when appropriate.
+- Review `artifacts/safety-review.md`, `mcp.manifest.json`, and `repo-profile.json`.
+- Keep generated capabilities least-privilege and do not expose arbitrary shell input.
+
+## Case 19: PatchBrief Handoff
+
+Prompt: "Run PatchBrief on this change and give me a handoff note plus suggested tests."
+
+Expected:
+
+- Trigger `kujo-patchbrief-workflows`.
+- Use the Kujo `--` separator before PatchBrief arguments.
+- Run or recommend `summarize`, `suggest-tests`, and `handoff`.
+- Prefer JSON with `--pretty` only when a downstream tool or agent should parse it.
+- Treat PatchBrief risks and test suggestions as heuristic and verify them against the actual diff.
+
+## Case 20: Kujo RAG Local Corpus
+
+Prompt: "Use Kujo RAG to index this docs folder, answer a question with citations, and tell me what tests matter if retrieval looks wrong."
+
+Expected:
+
+- Trigger `kujo-rag-workflows`.
+- Run from the RAG repo root with `kujo run main.kujo --interpreter ingest --path <path> --recursive true`.
+- Query with `kujo run main.kujo --interpreter query --question <question>` and inspect citation paths/line ranges.
+- Preserve offline defaults unless the user explicitly asks for AI embeddings or remote vector backends.
+- For retrieval problems, inspect retrieval/chunking/embedding modules and focused tests before wrapper suites.
+
+## Case 21: Scent Context Pack
+
+Prompt: "Use Scent to package this repo's current auth changes for a downstream Codex review."
+
+Expected:
+
+- Trigger `kujo-scent-workflows`.
+- Run from inside the target repository.
+- Start with `scent pack --dry-run --json`.
+- Use a specific `--task`, changed-file focus flags, and task-relevant `--include` paths.
+- Review `redactions.json` and keep generated pack output out of version control.
+
+## Case 22: Scout Context Pack
+
+Prompt: "Run Scout on this repo and summarize the generated agent context pack."
+
+Expected:
+
+- Trigger `kujo-scout-workflows`.
+- Run `kujo run scout.kujo -- <target>` from the Scout repo or use the stable Scout entrypoint.
+- Start from `scan_manifest.json` to locate generated artifacts.
+- Summarize target, output directory, profile, code file count, route/dependency/security counts, and key follow-ups.
+- Avoid claiming Scout is a security guarantee.
+
+## Case 23: ShipCheck Release Gate
+
+Prompt: "Run ShipCheck on this repo, review blockers, and tell me whether the release gate passes."
+
+Expected:
+
+- Trigger `kujo-shipcheck-workflows`.
+- Run `scan` first for release-readiness findings.
+- Run `gate` as the pass/fail enforcement step.
+- Distinguish error-level blockers from warnings.
+- State command, target directory, exit code, highest severity, and gate result.
