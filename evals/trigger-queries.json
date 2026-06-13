@@ -175,6 +175,28 @@
       "parse a CSV in Python"
     ]
   },
+  "kujo-runledger-workflows": {
+    "should_trigger": [
+      "record this Codex run in RunLedger before we start",
+      "compare Claude Codex and DeepSeek attempts with runledger report",
+      "what runledger commands should I use to capture token usage and cost",
+      "finish this runledger receipt as partial with a verdict",
+      "show me the .runledger JSON for this agent build attempt",
+      "update RunLedger CLI behavior without breaking exit codes",
+      "generate a RunLedger markdown report for this task",
+      "add a followup note to a runledger run id"
+    ],
+    "should_not_trigger": [
+      "write a generic Kujo CLI tool from scratch",
+      "set up Muzzle workflows for noisy logs",
+      "debug VM interpreter parity",
+      "explain Kujo dictionary truthiness",
+      "run cargo test for the main Kujo repo",
+      "create a browser dashboard",
+      "review native API security boundaries",
+      "make a spreadsheet from cost data"
+    ]
+  },
   "kujo-language-implementation": {
     "should_trigger": [
       "add a new native filesystem helper",
@@ -242,4 +264,3 @@
     ]
   }
 }
-

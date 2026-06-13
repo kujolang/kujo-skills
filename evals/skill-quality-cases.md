@@ -79,3 +79,16 @@ Expected:
 - Add manifests with summaries, runner/script fields, argument docs, and honest safety flags.
 - Prefer `muzzle run <workflow> --json` for agent-readable status.
 - Keep `.muzzle/logs/` and `.muzzle/reports/` out of version control.
+
+## Case 8: RunLedger Receipt Capture
+
+Prompt: "Track this same build prompt across Codex, Claude, and DeepSeek with RunLedger and make a report."
+
+Expected:
+
+- Trigger `kujo-runledger-workflows`.
+- Start one run per provider/model with the same `--task` and prompt file.
+- Record usage/cost only when supplied; do not invent provider pricing.
+- Finish each run with a terminal status and human verdict.
+- Use `compare --task` and `report --task --output RUNLEDGER_REPORT.md`.
+- Treat `.runledger/` and generated reports as local/generated unless explicitly requested.
