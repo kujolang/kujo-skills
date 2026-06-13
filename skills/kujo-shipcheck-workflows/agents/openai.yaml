@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo ShipCheck Workflows"
+  short_description: "Gate releases with ShipCheck scans"
+  default_prompt: "Use $kujo-shipcheck-workflows to scan this repo, review release-readiness findings, and run the release gate."
