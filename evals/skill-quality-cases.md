@@ -79,3 +79,16 @@ Expected:
 - Add manifests with summaries, runner/script fields, argument docs, and honest safety flags.
 - Prefer `muzzle run <workflow> --json` for agent-readable status.
 - Keep `.muzzle/logs/` and `.muzzle/reports/` out of version control.
+
+## Case 12: Casefile Failure Handoff
+
+Prompt: "Capture this failing command with Casefile and give the next agent a handoff."
+
+Expected:
+
+- Trigger `kujo-casefile-workflows`.
+- Use `kujo run --interpreter casefile.kujo -- capture --name <name> -- <argv...>`.
+- Prefer argv after `--` over `--command` for complex commands.
+- Review `case.md`, `case.json`, `combined.log`, `reproduction.md`, and `handoff.md`.
+- Preserve redaction-by-default and avoid sharing plaintext artifacts until sensitivity is checked.
+- For Casefile code changes, keep `FLAGS.md`, `README.md`, `HOWTO.md`, and contract tests aligned.

@@ -153,6 +153,28 @@
       "explain SQL joins"
     ]
   },
+  "kujo-casefile-workflows": {
+    "should_trigger": [
+      "capture this failing test with Casefile and show me the handoff",
+      "use casefile.kujo to package a local failure into .casefile evidence",
+      "how do I run casefile capture --from-log for a CI log",
+      "review the latest Casefile case.json and combined.log",
+      "initialize casefile.toml and validate the output path safety",
+      "clean old .casefile bundles but dry-run it first",
+      "fix Casefile redaction-by-default behavior",
+      "update FLAGS.md and tests after changing a Casefile CLI flag"
+    ],
+    "should_not_trigger": [
+      "write a generic Kujo JSON policy checker",
+      "run Muzzle quiet workflows",
+      "render a Howl showcase card",
+      "debug VM interpreter parity",
+      "review a Rust parser patch",
+      "create a spreadsheet",
+      "explain JavaScript test failures",
+      "make docgen output more agent readable"
+    ]
+  },
   "kujo-runtime-parity": {
     "should_trigger": [
       "why is vm and interpreter giving different results",
