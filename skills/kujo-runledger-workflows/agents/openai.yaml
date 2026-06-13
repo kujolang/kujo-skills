@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo RunLedger Workflows"
+  short_description: "Record and compare AI-agent build receipts"
+  default_prompt: "Use $kujo-runledger-workflows to record and compare AI-agent build runs with RunLedger."
