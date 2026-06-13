@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Casefile Workflows"
+  short_description: "Capture local failure evidence with Casefile"
+  default_prompt: "Use $kujo-casefile-workflows to capture and hand off a local failure case for this repo."
