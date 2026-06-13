@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Lens Workflows"
+  short_description: "Deterministic browser QA for agents"
+  default_prompt: "Use $kujo-lens-workflows to verify my local web app and interpret the Lens report."
