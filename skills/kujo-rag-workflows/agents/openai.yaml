@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo RAG Workflows"
+  short_description: "Build and operate local Kujo RAG pipelines"
+  default_prompt: "Use $kujo-rag-workflows to ingest local docs, query them with citations, and validate the RAG workflow."
