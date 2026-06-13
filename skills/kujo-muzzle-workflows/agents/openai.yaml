@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Muzzle Workflows"
+  short_description: "Run quiet local workflows with Muzzle"
+  default_prompt: "Use $kujo-muzzle-workflows to set up quiet build and test workflows for this repo."
