@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo MCP Workflows"
+  short_description: "Build and maintain Kujo MCP servers"
+  default_prompt: "Use $kujo-mcp-workflows to generate and validate a repo-specific MCP server."
