@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Howl Workflows"
+  short_description: "Render Kujo examples into showcase artifacts"
+  default_prompt: "Use $kujo-howl-workflows to validate and render showcase cards for this Kujo repo."
