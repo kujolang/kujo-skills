@@ -80,6 +80,19 @@ Expected:
 - Prefer `muzzle run <workflow> --json` for agent-readable status.
 - Keep `.muzzle/logs/` and `.muzzle/reports/` out of version control.
 
+## Case 8: Kujo RAG Local Corpus
+
+Prompt: "Use Kujo RAG to index this docs folder, answer a question with citations, and tell me what tests matter if retrieval looks wrong."
+
+Expected:
+
+- Trigger `kujo-rag-workflows`.
+- Run from the RAG repo root with `kujo run main.kujo --interpreter ingest --path <path> --recursive true`.
+- Query with `kujo run main.kujo --interpreter query --question <question>` and inspect citation paths/line ranges.
+- Preserve offline defaults unless the user explicitly asks for AI embeddings or remote vector backends.
+- Use namespaces when isolating tenants/projects.
+- For retrieval problems, inspect `src/retrieval.kujo`, `src/rag_engine.kujo`, `src/chunking.kujo`, and focused tests before the wrapper suite.
+
 ## Case 12: Casefile Failure Handoff
 
 Prompt: "Capture this failing command with Casefile and give the next agent a handoff."

@@ -153,6 +153,28 @@
       "explain SQL joins"
     ]
   },
+  "kujo-rag-workflows": {
+    "should_trigger": [
+      "use Kujo RAG to ingest this docs folder and answer with citations",
+      "run kujo run main.kujo --interpreter ingest then query the local index",
+      "start the Kujo RAG API server and smoke test /health /ingest /query",
+      "add a parser extension to the RAG starter kit and update registry tests",
+      "debug weak retrieval ranking in src/retrieval.kujo",
+      "run the RAG release evaluation gate before shipping retrieval changes",
+      "configure namespace isolation for a Kujo RAG tenant",
+      "regenerate the Kujo RAG OpenAPI SDK after API contract changes"
+    ],
+    "should_not_trigger": [
+      "write a generic Kujo JSON policy checker",
+      "run Scout and summarize llms.txt",
+      "create a Scent context pack",
+      "debug VM interpreter parity in the Kujo compiler",
+      "review a Rust native API change",
+      "make docgen output AI tasks",
+      "render a Howl showcase card",
+      "run Lens browser screenshots"
+    ]
+  },
   "kujo-casefile-workflows": {
     "should_trigger": [
       "capture this failing test with Casefile and show me the handoff",
