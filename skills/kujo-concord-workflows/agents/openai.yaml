@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Concord Workflows"
+  short_description: "Find artifact drift with Concord"
+  default_prompt: "Use $kujo-concord-workflows to scan this repo for CLI, docs, spec, eval, manifest, example, and version drift."
