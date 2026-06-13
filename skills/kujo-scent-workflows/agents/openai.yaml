@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Scent Workflows"
+  short_description: "Package task context with Scent."
+  default_prompt: "Use $kujo-scent-workflows to create a reviewable context pack for this repository task."
