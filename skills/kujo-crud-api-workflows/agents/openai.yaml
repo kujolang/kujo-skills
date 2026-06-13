@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo CRUD API Workflows"
+  short_description: "Maintain the CRUD API showcase app"
+  default_prompt: "Use $kujo-crud-api-workflows to run, test, or extend the CRUD API showcase."

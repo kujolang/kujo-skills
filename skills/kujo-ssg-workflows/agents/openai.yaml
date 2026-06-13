@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo SSG Workflows"
+  short_description: "Build and validate static sites with Kujo"
+  default_prompt: "Use $kujo-ssg-workflows to build, validate, or maintain the Kujo SSG showcase."

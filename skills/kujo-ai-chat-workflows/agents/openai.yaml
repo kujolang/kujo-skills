@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo AI Chat Workflows"
+  short_description: "Maintain the local multi-provider chat app"
+  default_prompt: "Use $kujo-ai-chat-workflows to run, test, or change the AI Chat local app."

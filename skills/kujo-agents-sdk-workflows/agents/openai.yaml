@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agents SDK Workflows"
+  short_description: "Work with Kujo Agents SDK examples and tests"
+  default_prompt: "Use $kujo-agents-sdk-workflows to update Agents SDK workflow primitives, examples, or offline fixture tests."
