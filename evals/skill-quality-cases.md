@@ -92,3 +92,42 @@ Expected:
 - Finish each run with a terminal status and human verdict.
 - Use `compare --task` and `report --task --output RUNLEDGER_REPORT.md`.
 - Treat `.runledger/` and generated reports as local/generated unless explicitly requested.
+
+## Case 9: Eval Release Gate
+
+Prompt: "Create a Kujo Eval release gate for this CLI and make sure CI can publish machine-readable artifacts."
+
+Expected:
+
+- Trigger `kujo-eval-workflows`.
+- Use VM-first `kujo run main.kujo run <suite> --json`.
+- Prefer canonical examples before tests or historical checklists.
+- Include command/path/env policy fields for CI or release stages.
+- Mention `summary.json`, `cli-summary.json`, and `artifact-manifest.json`.
+- Validate with `lint`, a focused suite run, and manifest verification when checksums are enabled.
+
+## Case 10: PackWrite Agent Pack
+
+Prompt: "Use PackWrite to turn this repo's MEGA_PROMPT.md into a validated agent pack and give me the implementation and review prompts."
+
+Expected:
+
+- Trigger `kujo-packwrite-workflows`.
+- Run or recommend `packwrite doctor` and `packwrite config` before model generation.
+- Prefer `packwrite init MEGA_PROMPT.md --dry-run` before writing `agent/`.
+- Generate with explicit provider/model or resolved config, then run `packwrite validate`.
+- Use `packwrite prompt deepseek` and `packwrite prompt codex-review` for handoff.
+- Keep API keys in environment variables only and avoid overwriting an existing pack unless explicitly requested.
+
+## Case 11: Spec Agent Contract
+
+Prompt: "Create a `.spec.yml` for this feature, validate it, and export agent context for implementation."
+
+Expected:
+
+- Trigger `kujo-spec-workflows`.
+- Prefer YAML in a project `specs/` directory.
+- Include at least `name`, `goal`, and concrete acceptance criteria.
+- Run `spec validate` before export.
+- Use `spec export-agent-context` for the coding-agent handoff.
+- Mention `SPEC_SAFE_WRITE` or template-source policy only when CI, regulated, or output-path constraints are relevant.

@@ -197,6 +197,94 @@
       "make a spreadsheet from cost data"
     ]
   },
+  "kujo-changebucket-workflows": {
+    "should_trigger": [
+      "run changebucket to measure this agent change footprint",
+      "enforce a ChangeBucket budget with max files and churn",
+      "generate a CHANGE_BUCKET markdown report for this repo",
+      "what does changebucket --json output look like",
+      "did this PR touch dependency manifests lockfiles or generated files",
+      "compare my branch against main with changebucket --base main --head HEAD",
+      "update ChangeBucket CLI behavior without breaking exit codes",
+      "explain the ChangeBucket risk level for this worktree"
+    ],
+    "should_not_trigger": [
+      "record this agent run in RunLedger",
+      "summarize what the diff means semantically",
+      "set up Muzzle workflows for noisy logs",
+      "write a generic Kujo CLI tool from scratch",
+      "debug VM interpreter parity",
+      "review native API security boundaries",
+      "make a spreadsheet from cost data",
+      "generate a browser dashboard"
+    ]
+  },
+  "kujo-eval-workflows": {
+    "should_trigger": [
+      "run this eval.json suite and inspect the generated artifacts",
+      "create a Kujo Eval release gate for this CLI output",
+      "why did kujo run main.kujo run fail this snapshot check",
+      "add a new Eval check type without breaking schema docs",
+      "generate an Eval HTML report and verify artifact-manifest checksums",
+      "use policy-explain to debug my Eval strict-ci policy",
+      "compare two Eval last_run.json files for regressions",
+      "update Eval command inventory after changing report flags"
+    ],
+    "should_not_trigger": [
+      "record model token usage and cost for this attempt",
+      "set up Muzzle quiet workflows for noisy test logs",
+      "write a generic Kujo policy scanner from scratch",
+      "debug VM interpreter parity in the core runtime",
+      "review native API capability boundaries",
+      "make kujo docgen output more agent readable",
+      "create a PowerPoint release status deck",
+      "explain JavaScript snapshot testing"
+    ]
+  },
+  "kujo-spec-workflows": {
+    "should_trigger": [
+      "create a .spec.yml contract for this feature before implementation",
+      "validate all Spec files in this repo with spec ci --format json",
+      "export this spec as agent context for a coding agent",
+      "generate an eval suite from spec eval_requirements",
+      "update the Spec schema without breaking export envelope metadata",
+      "why is spec init --from template loading a home template in CI",
+      "render the dark-mode.spec.yml to markdown",
+      "add tests for SPEC_SAFE_WRITE path restrictions in the Spec CLI"
+    ],
+    "should_not_trigger": [
+      "run this eval.json suite and inspect snapshots",
+      "record this agent attempt in RunLedger",
+      "set up Muzzle quiet workflow logs",
+      "debug VM interpreter parity in Kujo",
+      "write a generic Kujo policy scanner",
+      "make kujo docgen output public docs JSON",
+      "review native API security boundaries",
+      "create a browser dashboard"
+    ]
+  },
+  "kujo-packwrite-workflows": {
+    "should_trigger": [
+      "generate an agent pack from MEGA_PROMPT.md with PackWrite",
+      "run packwrite doctor before spending a model call",
+      "validate the generated agent/ pack and print the codex review prompt",
+      "configure packwrite.toml for deepseek-v4-pro with a custom output dir",
+      "use PACKWRITE_FAKE_RESPONSE_FILE to test packwrite init offline",
+      "why did PackWrite reject this model JSON manifest path",
+      "update PackWrite CLI behavior without breaking prompt output",
+      "compare two PackWrite outputs by generating separate agent directories"
+    ],
+    "should_not_trigger": [
+      "record token usage and cost for this attempt in RunLedger",
+      "set up Muzzle quiet workflow logs",
+      "measure this PR footprint with ChangeBucket",
+      "create a .spec.yml task contract",
+      "run this eval.json snapshot suite",
+      "debug VM interpreter parity in Kujo",
+      "make kujo docgen output public docs JSON",
+      "create a browser dashboard"
+    ]
+  },
   "kujo-language-implementation": {
     "should_trigger": [
       "add a new native filesystem helper",
