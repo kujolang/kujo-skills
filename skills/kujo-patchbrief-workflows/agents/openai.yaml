@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo PatchBrief Workflows"
+  short_description: "Structured briefs from local git diffs"
+  default_prompt: "Use $kujo-patchbrief-workflows to summarize my current git diff and suggest validation steps."
