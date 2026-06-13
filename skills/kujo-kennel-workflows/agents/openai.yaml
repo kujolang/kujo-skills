@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Kennel Workflows"
+  short_description: "Maintain Kujo package/dependency workflows"
+  default_prompt: "Use $kujo-kennel-workflows to inspect or maintain Kennel package, dependency, and hosted registry workflows."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo ChangeBucket Workflows"
+  short_description: "Measure git change footprint and budgets"
+  default_prompt: "Use $kujo-changebucket-workflows to measure change size, categories, and footprint budgets."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Spec Workflows"
+  short_description: "Create and validate task specs"
+  default_prompt: "Use $kujo-spec-workflows to create, validate, render, or export Kujo Spec task contracts."
