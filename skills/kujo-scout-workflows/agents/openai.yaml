@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Scout Workflows"
+  short_description: "Scan repos and maintain Scout outputs"
+  default_prompt: "Use $kujo-scout-workflows to scan this repository and summarize the generated context pack."
