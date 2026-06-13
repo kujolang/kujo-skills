@@ -11,8 +11,8 @@ Use this map to sanity-check trigger routing.
 | CLI JSON output, exit codes, stdout/stderr, diagnostics, LSP helper payloads | `kujo-cli-contracts` |
 | Builtin function usage, arity, capability gates, JSON/file/process/network/db/crypto APIs | `kujo-standard-library` |
 | Test selection, release gates, docs/example smoke tests | `kujo-testing-release-gates` |
+| Muzzle quiet workflows, `.muzzle/workflows/`, manifests, logs/reports, loop mode | `kujo-muzzle-workflows`, optionally `kujo-tool-building` or `kujo-enterprise-automation` |
 | VM/interpreter drift, `--interpreter`, `--runtime dual`, parity matrix | `kujo-runtime-parity` |
 | Rust implementation changes in parser/compiler/VM/interpreter/native APIs | `kujo-language-implementation` |
 | `kujo docgen`, docs JSON, agent-readable docs, AI task output | `kujo-docgen-agent-readable` |
 | Strict maintainer review | `kujo-maintainer-review` |
-

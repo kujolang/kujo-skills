@@ -67,3 +67,15 @@ Expected:
 - Use the required review format.
 - Lead with risks and required fixes.
 
+## Case 7: Muzzle Workflow Setup
+
+Prompt: "Set up Muzzle so agents can run this repo's build and tests without dumping huge logs into context."
+
+Expected:
+
+- Trigger `kujo-muzzle-workflows`.
+- Use `muzzle init` if `.muzzle/` is missing.
+- Create scripts under `.muzzle/workflows/`.
+- Add manifests with summaries, runner/script fields, argument docs, and honest safety flags.
+- Prefer `muzzle run <workflow> --json` for agent-readable status.
+- Keep `.muzzle/logs/` and `.muzzle/reports/` out of version control.
