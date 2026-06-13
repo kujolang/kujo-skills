@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Dispatch Workflows"
+  short_description: "Orchestrate reliable AI workflows"
+  default_prompt: "Use $kujo-dispatch-workflows to run and inspect a Dispatch workflow with traceable artifacts."
