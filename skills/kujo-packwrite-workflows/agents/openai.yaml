@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo PackWrite Workflows"
+  short_description: "Compile prompts into validated agent packs"
+  default_prompt: "Use $kujo-packwrite-workflows to generate and validate an agent execution pack from this repo's mega prompt."
