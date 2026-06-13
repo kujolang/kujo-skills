@@ -241,6 +241,28 @@
       "draft publication notes"
     ]
   },
+  "kujo-dispatch-workflows": {
+    "should_trigger": [
+      "run a Dispatch demo workflow and inspect the trace artifacts",
+      "use dispatch.kujo templates --json to see available workflow templates",
+      "resume a paused Dispatch run after the approval gate",
+      "fix Dispatch runs --json diagnostics output without breaking contracts",
+      "add a new Dispatch workflow template and update the tests",
+      "debug Dispatch policy profile precedence for allow-tools and deny-tools",
+      "export a Dispatch run bundle with signing and import it into another output root",
+      "review Dispatch doctor --write and cleanup --apply strict mutation behavior"
+    ],
+    "should_not_trigger": [
+      "run Muzzle quiet workflows for this repo",
+      "create a Howl showcase card",
+      "write a generic Kujo loop example",
+      "change Rust parser internals",
+      "make kujo docgen output more agent readable",
+      "scan browser visual regressions with Lens",
+      "capture a Casefile evidence bundle",
+      "build a spreadsheet report"
+    ]
+  },
   "kujo-docgen-agent-readable": {
     "should_trigger": [
       "make kujo docgen output more agent readable",

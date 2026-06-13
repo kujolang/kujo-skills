@@ -80,6 +80,19 @@ Expected:
 - Prefer `muzzle run <workflow> --json` for agent-readable status.
 - Keep `.muzzle/logs/` and `.muzzle/reports/` out of version control.
 
+## Case 13: Dispatch Workflow Run
+
+Prompt: "Run a Dispatch demo workflow, inspect the artifacts, and explain whether the approval/policy behavior looks healthy."
+
+Expected:
+
+- Trigger `kujo-dispatch-workflows`.
+- Run from the Dispatch repo root with `kujo run --interpreter dispatch.kujo`.
+- Prefer offline fixture mode and a `tests/tmp/<purpose>` output root for local validation.
+- Inspect `state.json`, `trace.json` or `trace.md`, and `report.json` or `report.md` when present.
+- Check approval gate status, policy-denied events, mutation audit records, and artifact contract metadata.
+- For Dispatch source changes, keep README examples, CLI JSON contracts, and `tests/dispatch_tests.kujo` aligned.
+
 ## Case 8: Kujo RAG Local Corpus
 
 Prompt: "Use Kujo RAG to index this docs folder, answer a question with citations, and tell me what tests matter if retrieval looks wrong."
