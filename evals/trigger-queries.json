@@ -518,5 +518,117 @@
       "summarize standard library functions",
       "debug a CSS layout"
     ]
+  },
+  "kujo-agents-sdk-workflows": {
+    "should_trigger": [
+      "update Agents SDK approval tool execution contracts",
+      "run examples_smoke_runner for agents-sdk offline fixtures",
+      "fix agent handoff tracing tests",
+      "maintain artifact store contract tests"
+    ],
+    "should_not_trigger": [
+      "run Dispatch workflow templates",
+      "configure AI Chat provider profiles",
+      "scan browser visual regressions with Lens",
+      "write generic Kujo syntax examples"
+    ]
+  },
+  "kujo-ai-chat-workflows": {
+    "should_trigger": [
+      "start AI Chat locally and run smoke tests",
+      "fix SSE thinking events in ai-chat",
+      "update bridge_chat.kujo provider fixture behavior",
+      "backup and vacuum the AI Chat SQLite database"
+    ],
+    "should_not_trigger": [
+      "maintain AI SDK provider retries only",
+      "run Watchdog proxy dashboard",
+      "create a static site with SSG",
+      "write a Spec task contract"
+    ]
+  },
+  "kujo-ai-sdk-workflows": {
+    "should_trigger": [
+      "fix AI SDK streaming callback contract",
+      "run ai-sdk security redaction tests",
+      "update provider presets and fixture mode",
+      "run live provider smoke with skip handling"
+    ],
+    "should_not_trigger": [
+      "open the AI Chat web UI",
+      "record an agent run with RunLedger",
+      "measure diff footprint with ChangeBucket",
+      "scan architecture boundaries with Fence"
+    ]
+  },
+  "kujo-cms-workflows": {
+    "should_trigger": [
+      "start the Kujo CMS backend runtime",
+      "run cms_contract_tests.kujo",
+      "process CMS webhook outbox jobs",
+      "extend CMS content model routes"
+    ],
+    "should_not_trigger": [
+      "run CRUD API smoke tests",
+      "build SSG output",
+      "configure AI Chat panes",
+      "generate a PackWrite agent pack"
+    ]
+  },
+  "kujo-crud-api-workflows": {
+    "should_trigger": [
+      "run CRUD API smoke tests",
+      "start main.kujo and verify health endpoint",
+      "build the CRUD API frontend playground",
+      "update item and project API handlers"
+    ],
+    "should_not_trigger": [
+      "extend CMS tenant workspaces",
+      "run AI Chat SSE smoke",
+      "build SSG pages",
+      "record agent costs in RunLedger"
+    ]
+  },
+  "kujo-kennel-workflows": {
+    "should_trigger": [
+      "validate Kennel package lockfile behavior",
+      "add a local package dependency with kennel",
+      "review Kennel trust policy enforcement",
+      "run Kennel release verification scripts"
+    ],
+    "should_not_trigger": [
+      "scan security findings with Scout",
+      "create a Spec contract",
+      "run AI SDK live smoke",
+      "capture Casefile evidence"
+    ]
+  },
+  "kujo-ssg-workflows": {
+    "should_trigger": [
+      "build the Kujo SSG starter site",
+      "validate generated SSG output",
+      "update templates and content in ssg",
+      "run SSG release gate"
+    ],
+    "should_not_trigger": [
+      "run CMS webhooks",
+      "test CRUD API frontend",
+      "open AI Chat local app",
+      "scan route security with Scout"
+    ]
+  },
+  "kujo-watchdog-workflows": {
+    "should_trigger": [
+      "start Watchdog dashboard server",
+      "verify Watchdog proxy config endpoint",
+      "debug Watchdog telemetry redaction",
+      "integrate AI Chat with Watchdog proxy"
+    ],
+    "should_not_trigger": [
+      "run AI SDK provider contract tests",
+      "open CRUD API playground",
+      "create Eval suite reports",
+      "generate SSG feeds"
+    ]
   }
 }

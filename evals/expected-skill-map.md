@@ -29,6 +29,14 @@ Use this map to sanity-check trigger routing.
 | ChangeBucket code-change footprint, blast-radius/risk reports, file-category counts, budget checks | `kujo-changebucket-workflows`, optionally `kujo-tool-building` or `kujo-cli-contracts` |
 | Spec task contracts, `.spec.yml`, validation, export-agent-context, export-eval, schema/policy and CI changes | `kujo-spec-workflows`, optionally `kujo-eval-workflows`, `kujo-cli-contracts`, or `kujo-enterprise-automation` |
 | PackWrite agent execution packs, `MEGA_PROMPT.md`, `packwrite.toml`, provider setup, prompt handoff, offline fake-response tests | `kujo-packwrite-workflows`, optionally `kujo-tool-building` or `kujo-cli-contracts` |
+| Agents SDK runners, tools, approvals, handoffs, tracing, artifact/session/memory/retrieval contracts | `kujo-agents-sdk-workflows`, optionally `kujo-ai-sdk-workflows` or `kujo-tool-building` |
+| AI Chat provider profiles, SSE streaming, SQLite chat state, smoke tests, bridge chat behavior | `kujo-ai-chat-workflows`, optionally `kujo-ai-sdk-workflows` or `kujo-watchdog-workflows` |
+| AI SDK provider contracts, fixture mode, streaming, retries, redaction, live smoke, release gates | `kujo-ai-sdk-workflows`, optionally `kujo-security-hardening` or `kujo-enterprise-automation` |
+| CMS content models, delivery routes, auth boundaries, webhooks, jobs, release gates | `kujo-cms-workflows`, optionally `kujo-security-hardening` or `kujo-enterprise-automation` |
+| CRUD API showcase, item/project APIs, Next.js playground, smoke tests, DR/performance drills | `kujo-crud-api-workflows`, optionally `kujo-security-hardening` or `kujo-lens-workflows` |
+| Kennel package/dependency manifests, lockfiles, static indexes, trust/source policy | `kujo-kennel-workflows`, optionally `kujo-security-hardening` or `kujo-enterprise-automation` |
+| SSG static site build, templates/content, generated output, feeds/sitemap/llms, release gates | `kujo-ssg-workflows`, optionally `kujo-lens-workflows` or `kujo-shipcheck-workflows` |
+| Watchdog AI telemetry, OpenAI-compatible proxy, request traces, auth/redaction/rate limits | `kujo-watchdog-workflows`, optionally `kujo-ai-chat-workflows` or `kujo-ai-sdk-workflows` |
 | VM/interpreter drift, `--interpreter`, `--runtime dual`, parity matrix | `kujo-runtime-parity` |
 | Rust implementation changes in parser/compiler/VM/interpreter/native APIs | `kujo-language-implementation` |
 | `kujo docgen`, docs JSON, agent-readable docs, AI task output | `kujo-docgen-agent-readable` |

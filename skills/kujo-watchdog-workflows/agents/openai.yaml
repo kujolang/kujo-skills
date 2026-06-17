@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Watchdog Workflows"
+  short_description: "Inspect local AI telemetry and proxy traces"
+  default_prompt: "Use $kujo-watchdog-workflows to run, test, or maintain Watchdog telemetry and proxy workflows."

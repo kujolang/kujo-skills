@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo AI SDK Workflows"
+  short_description: "Maintain Kujo provider SDK primitives"
+  default_prompt: "Use $kujo-ai-sdk-workflows to update AI SDK provider contracts, fixtures, or examples."

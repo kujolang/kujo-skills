@@ -275,3 +275,75 @@ Expected:
 - Run `gate` as the pass/fail enforcement step.
 - Distinguish error-level blockers from warnings.
 - State command, target directory, exit code, highest severity, and gate result.
+
+## Case 24: kujo-agents-sdk-workflows
+
+Prompt: "Update an Agents SDK runner contract and run the offline example smoke path."
+
+Expected:
+- Trigger `kujo-agents-sdk-workflows`.
+- Use `examples/examples_smoke_runner.kujo` and targeted contract tests.
+- Preserve deterministic offline/no-network behavior.
+
+## Case 25: kujo-ai-chat-workflows
+
+Prompt: "Start AI Chat locally, run smoke tests, and review the SSE endpoint behavior."
+
+Expected:
+- Trigger `kujo-ai-chat-workflows`.
+- Set explicit local env vars and avoid real secrets.
+- Use `npm run smoke` against the running app.
+
+## Case 26: kujo-ai-sdk-workflows
+
+Prompt: "Fix AI SDK provider fixture mode and run contract plus redaction tests."
+
+Expected:
+- Trigger `kujo-ai-sdk-workflows`.
+- Default to fixture mode without provider keys.
+- Run SDK contract and security redaction suites.
+
+## Case 27: kujo-cms-workflows
+
+Prompt: "Run the CMS contract suite after adding a content model route."
+
+Expected:
+- Trigger `kujo-cms-workflows`.
+- Use `backend/runtime/main.kujo` as the runtime entrypoint.
+- Run contract tests and focused smoke/release checks.
+
+## Case 28: kujo-crud-api-workflows
+
+Prompt: "Change the CRUD API item handler and validate backend plus frontend quality gates."
+
+Expected:
+- Trigger `kujo-crud-api-workflows`.
+- Run API smoke/regression checks and frontend lint/build when touched.
+- Keep CRUD API distinct from CMS.
+
+## Case 29: kujo-kennel-workflows
+
+Prompt: "Validate Kennel trust policy and local dependency install behavior."
+
+Expected:
+- Trigger `kujo-kennel-workflows`.
+- Inspect manifests, lockfiles, trust/source policy, and resolver code.
+- Run Kennel verification scripts or targeted contract tests.
+
+## Case 30: kujo-ssg-workflows
+
+Prompt: "Build the SSG starter site and validate generated output before release."
+
+Expected:
+- Trigger `kujo-ssg-workflows`.
+- Run `kujo run ./build.kujo -- ...` and generated-output validation.
+- Do not hand-edit `output/`.
+
+## Case 31: kujo-watchdog-workflows
+
+Prompt: "Start Watchdog and verify proxy config plus telemetry redaction behavior."
+
+Expected:
+- Trigger `kujo-watchdog-workflows`.
+- Use loopback-local dashboard/proxy checks.
+- Avoid logging or committing real API keys, tokens, or telemetry DBs.

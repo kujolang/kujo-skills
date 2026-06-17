@@ -1,6 +1,6 @@
 ---
 name: kujo-language-implementation
-description: Use this skill when contributing to Kujo's Rust implementation: lexer, parser, AST, diagnostics, compiler, VM, interpreter, module loader, native functions, CLI, LSP, DocGen, JIT, or runtime security boundaries.
+description: "Use this skill when contributing to Kujo's Rust implementation: lexer, parser, AST, diagnostics, compiler, VM, interpreter, module loader, native functions, CLI, LSP, DocGen, JIT, or runtime security boundaries."
 ---
 
 # Kujo Language Implementation
@@ -42,4 +42,3 @@ Start by locating the subsystem owner; keep changes narrow and semantics-preserv
 
 - Status: repo-backed: `docs/ARCHITECTURE.md`, `ROADMAP.md`, `CONTRIBUTING.md`, `docs/NATIVE_API_SECURITY_POSTURE.md`.
 - Status: repo-backed: `src/`, `tests/vm_interpreter_parity_surfaces.rs`, `scripts/check_jit_safety_contracts.sh`.
-

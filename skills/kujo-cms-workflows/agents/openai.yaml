@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo CMS Workflows"
+  short_description: "Maintain the server-first CMS showcase"
+  default_prompt: "Use $kujo-cms-workflows to run, test, or extend the Kujo CMS showcase."
