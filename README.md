@@ -1,8 +1,8 @@
 # Kujo Agent Skills
 
-This package contains Agent Skills for working on and with the Kujo programming language.
+This package contains Agent Skills for working on and with the Kujo programming language and adjacent Kujo tools.
 
-The skills are extracted from the Kujo repository rather than generic agent advice. They encode Kujo-specific defaults for writing `.kujo` programs, building CLI tools, preserving VM-first runtime behavior, respecting native capability boundaries, maintaining machine-readable CLI contracts, and contributing safely to the Rust implementation.
+The skills are extracted from Kujo repositories rather than generic agent advice. They encode Kujo-specific defaults for writing `.kujo` programs, building CLI tools, preserving VM-first runtime behavior, respecting native capability boundaries, maintaining machine-readable CLI contracts, recording tool workflows, and contributing safely to the Rust implementation.
 
 ## Contents
 
@@ -23,4 +23,3 @@ Copy the desired folders from `skills/` into an Agent Skills-compatible location
 - The interpreter is an explicit fallback/debug path, not the default for ordinary scripts.
 - Kujo is not a sandbox. Use `--untrusted` and least-privilege `--allow-*` flags for untrusted scripts, plus external isolation for high-risk environments.
 - The repository has conflicting release-readiness wording in places. The skills follow the explicit pre-1.0 readiness boundary in `README.md`, `docs/LANGUAGE_SPEC.md`, `ROADMAP.md`, `docs/V1_SCOPE.md`, and `docs/PRE_V1_MASTER_UNFINISHED_CHECKLIST.md`.
-

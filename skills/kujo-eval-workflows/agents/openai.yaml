@@ -1,4 +1,4 @@
 interface:
   display_name: "Kujo Eval Workflows"
-  short_description: "Run and maintain deterministic Eval suites"
-  default_prompt: "Use $kujo-eval-workflows to create, run, compare, or maintain Eval suites and reports."
+  short_description: "Run and maintain Kujo Eval suites"
+  default_prompt: "Use $kujo-eval-workflows to run a deterministic Eval suite and inspect its artifacts."

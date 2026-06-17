@@ -1,4 +1,4 @@
 interface:
   display_name: "Kujo Scout Workflows"
-  short_description: "Generate agent-readable codebase maps"
-  default_prompt: "Use $kujo-scout-workflows to scan repositories, emit context packs, or maintain Scout outputs."
+  short_description: "Scan repos and maintain Scout outputs"
+  default_prompt: "Use $kujo-scout-workflows to scan this repository and summarize the generated context pack."

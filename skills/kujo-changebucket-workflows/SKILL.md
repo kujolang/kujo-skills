@@ -1,68 +1,111 @@
 ---
 name: kujo-changebucket-workflows
-description: "Use this skill when measuring, reviewing, enforcing, or maintaining ChangeBucket git change footprint reports: `changebucket`, `analyze`, `--base`, `--range`, `--repo`, `--json`, `--markdown`, `--budget`, file categories, risk levels, churn metrics, footprint budgets, read-only diff inspection, or `changebucket` source/test changes."
+description: "Use this skill when measuring or enforcing code-change footprint with ChangeBucket: `changebucket`, `changebucket check`, `--json`, `--markdown`, `--output`, `--base`, `--head`, `--repo`, budget flags, risk/blast-radius reports, file-category counts, generated markdown reports, or ChangeBucket CLI/tests/source changes."
 ---
 
 # Kujo ChangeBucket Workflows
 
-Use ChangeBucket to measure change size, file categories, churn, and budget risk. It is read-only and reports footprint, not semantic correctness.
+Use ChangeBucket to measure the size, shape, and blast-radius footprint of a git change. It reports counts and categories; it does not review correctness, summarize semantics, or record agent runs.
 
-## Quick Start
+Canonical local source is usually `/Users/robertdevore/2026/Kujolang/kujo-repos/changebucket`. Do not confuse ChangeBucket with RunLedger or PatchBrief: RunLedger records agent-run receipts, PatchBrief explains what changed, and ChangeBucket measures footprint only.
 
-Default to the local repo unless the user points to another checkout:
+## Agent Workflow
 
-```bash
-CHANGEBUCKET_REPO="${CHANGEBUCKET_REPO:-/Users/robertdevore/2026/Kujolang/kujo-repos/changebucket}"
-cd "${CHANGEBUCKET_REPO}"
-KUJO=/path/to/kujo/target/release/kujo ./bin/changebucket --help
-./bin/changebucket analyze
-./bin/changebucket analyze --json
-./bin/changebucket analyze --markdown --output changebucket-report.md
-```
-
-## Workflow Notes
-
-- ChangeBucket reads git state only; it should not mutate the target repository.
-- Use JSON output for downstream tools and Markdown for human handoff reports.
-- Budget failures are policy signals; explain which budget was exceeded.
-
-When reporting results, state the command, target path, exit code, important artifact paths, and whether the result is advisory, blocking, or a generated output that still needs review.
-
-## Kujo ChangeBucket Workflows Repo Work
-
-When modifying this repository, read in this order:
-
-1. `README.md`
-2. `AGENTS.md`
-3. `changebucket.kujo`
-4. `src/cli.kujo`
-5. `src/analyze.kujo`
-6. `src/classify.kujo`
-7. `src/budget.kujo`
-8. `src/render.kujo`
-9. `tests/changebucket_test.kujo`
-
-Preserve documented command names, output contracts, and fixture behavior unless the user explicitly asks to change them.
-
-Run validation after source, docs, contract, or example changes:
+1. Verify the launcher and Kujo runtime:
 
 ```bash
-KUJO=/path/to/kujo/target/release/kujo ./bin/changebucket --help
-KUJO=/path/to/kujo/target/release/kujo ./bin/changebucket analyze --json
-kujo run tests/changebucket_test.kujo
+changebucket --help
+changebucket version
 ```
 
-## Search And Safety
+If the wrapper is not on `PATH`, run it from the repo with `KUJO=/path/to/kujo ./bin/changebucket ...`, or use `kujo run /path/to/changebucket/changebucket.kujo -- <args>`. Keep the `--` separator when invoking through `kujo run`.
 
-- Keep the tool read-only; do not add operations that modify target repos.
-- Distinguish counts/categories from correctness judgments.
-- Preserve exit code behavior for budget enforcement and usage errors.
+2. Measure the current worktree by default:
 
-Use `rg` for broad searches and exclude generated, dependency, cache, and output directories unless the task explicitly targets them.
+```bash
+changebucket
+changebucket --json
+changebucket --markdown
+changebucket --output CHANGE_BUCKET.md
+```
 
-## Sources Consulted
+Default worktree mode compares against `HEAD` and includes untracked, non-ignored files. Use `--base main` to compare the worktree against another ref.
 
-- Status: repo-backed: `README.md`.
-- Status: repo-backed: `AGENTS.md`.
-- Status: repo-backed: `changebucket.kujo`.
-- Status: repo-backed: `tests/changebucket_test.kujo`.
+3. Use range mode for committed refs:
+
+```bash
+changebucket --base main --head HEAD
+changebucket --repo /path/to/repo --base origin/main --head feature-branch
+```
+
+Providing `--head` switches to `base..head` mode and ignores the working tree and untracked files.
+
+4. Enforce a budget with `check`:
+
+```bash
+changebucket check --max-files 20 --max-churn 800
+changebucket check --max-files 20 --max-churn 800 \
+  --no-deletes --no-dependency-changes --no-lockfile-changes
+```
+
+Budget flags on the default command are informational and still exit `0`. Put `check` before budget flags when the budget should fail the process.
+
+## Output Contracts
+
+- `changebucket [options]` prints a text, JSON, or markdown footprint report and exits `0` on successful analysis.
+- `changebucket check [budget options]` exits `1` when the budget is exceeded.
+- `--json` prints exactly one JSON object to stdout.
+- `--output <file>` writes a markdown report and prints `Wrote report to <file>`.
+- Non-git targets print `error: not a git repository: <path>` and exit `1`.
+- Unknown commands exit `2`.
+
+The JSON model is the internal contract between analysis and rendering: `{base, head, generated_at, summary, categories, budget, files}`. `categories` always includes `source`, `tests`, `docs`, `config`, `dependency_manifests`, `lockfiles`, `generated`, `ci`, `scripts`, and `other`, even when some arrays are empty.
+
+## Interpreting Results
+
+- Risk level is a blast-radius heuristic, not a quality score.
+- `high`: more than 20 files, churn over 1000, any deletes, or generated files touched.
+- `low`: at most 5 files, churn at most 200, no deletes, and no dependency, lockfile, CI, or generated changes.
+- `medium`: everything else.
+- A file can appear in multiple category lists, so category counts can overlap; `files_changed` is the unique file count.
+- Single-line replacements count as both an addition and a deletion in git numstat.
+
+Use ChangeBucket after agent edits when the user asks how large a change was, whether the edit stayed within an expected scope, whether dependencies/lockfiles/config/generated/CI files changed, or whether a PR needs a simple footprint gate.
+
+## Maintaining ChangeBucket
+
+Read in this order for repo work:
+
+- `README.md`: user behavior, categories, risk, JSON shape.
+- `AGENTS.md`: maintainer orientation and current status.
+- `src/analyze.kujo`: model construction and risk heuristic.
+- `src/diffsrc.kujo`: read-only git layer.
+- `src/classify.kujo`: file-category rules.
+- `src/cli.kujo`: parsing, dispatch, exit codes.
+- `src/render.kujo`: text and markdown output contracts.
+- `tests/changebucket_test.kujo`: behavior contracts.
+
+Preserve exact CLI/report output unless intentionally updating integration expectations. Treat `examples/CHANGE_BUCKET.example.md` as generated output documentation; update it only when the markdown report contract changes.
+
+Broad searches should exclude generated output unless the task targets report samples:
+
+```bash
+rg -n "pattern" -g '!examples/CHANGE_BUCKET.example.md'
+```
+
+Validate changes with:
+
+```bash
+for f in changebucket.kujo src/*.kujo tests/*.kujo; do $KUJO check "$f"; done
+./tests/run.sh
+$KUJO run changebucket.kujo -- --help
+```
+
+The test suite is filesystem-isolated, creates throwaway git repos under `$TMPDIR`, and needs no network or credentials.
+
+## Safety Boundaries
+
+- ChangeBucket itself is read-only over git: `git diff`, `git ls-files`, and `git rev-parse`.
+- Never stage, commit, reset, checkout, clean, stash, or apply patches as part of measuring a footprint.
+- Generated markdown reports are local artifacts unless the user explicitly wants them committed.
+- Resist adding configurable category plugins or diff-file parsing unless real usage demands it; those are known future ideas, not current contracts.

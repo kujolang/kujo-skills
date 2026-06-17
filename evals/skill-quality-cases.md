@@ -80,57 +80,57 @@ Expected:
 - Prefer `muzzle run <workflow> --json` for agent-readable status.
 - Keep `.muzzle/logs/` and `.muzzle/reports/` out of version control.
 
-## Case 8: Kujo RAG Local Corpus
+## Case 8: RunLedger Receipt Capture
 
-Prompt: "Use Kujo RAG to index this docs folder, answer a question with citations, and tell me what tests matter if retrieval looks wrong."
-
-Expected:
-
-- Trigger `kujo-rag-workflows`.
-- Run from the RAG repo root with `kujo run main.kujo --interpreter ingest --path <path> --recursive true`.
-- Query with `kujo run main.kujo --interpreter query --question <question>` and inspect citation paths/line ranges.
-- Preserve offline defaults unless the user explicitly asks for AI embeddings or remote vector backends.
-- Use namespaces when isolating tenants/projects.
-- For retrieval problems, inspect `src/retrieval.kujo`, `src/rag_engine.kujo`, `src/chunking.kujo`, and focused tests before the wrapper suite.
-
-## Case 8: Scent Context Pack
-
-Prompt: "Use Scent to package this repo's current auth changes for a downstream Codex review."
+Prompt: "Track this same build prompt across Codex, Claude, and DeepSeek with RunLedger and make a report."
 
 Expected:
 
-- Trigger `kujo-scent-workflows`.
-- Run from inside the target repository.
-- Start with `scent pack --dry-run --json`.
-- Use a specific `--task`, changed-file focus flags, and task-relevant `--include` paths.
-- Write pack artifacts only after reviewing estimated tokens and warnings.
-- Review `redactions.json` and keep generated pack output out of version control.
+- Trigger `kujo-runledger-workflows`.
+- Start one run per provider/model with the same `--task` and prompt file.
+- Record usage/cost only when supplied; do not invent provider pricing.
+- Finish each run with a terminal status and human verdict.
+- Use `compare --task` and `report --task --output RUNLEDGER_REPORT.md`.
+- Treat `.runledger/` and generated reports as local/generated unless explicitly requested.
 
-## Case 9: Howl Showcase Render
+## Case 9: Eval Release Gate
 
-Prompt: "Create a Howl card for this Kujo example, validate the manifest, and render the gallery."
-
-Expected:
-
-- Trigger `kujo-howl-workflows`.
-- Use or create `howl.json` plus a real referenced example file.
-- Run `howl validate` before `howl render`.
-- Render deterministic Markdown, HTML, SVG, and `index.html` artifacts.
-- Avoid invented claims, network calls, posting, or scheduler behavior.
-- Inspect generated artifacts or diffs when layout, escaping, or committed output changes.
-
-## Case 11: ShipCheck Release Gate
-
-Prompt: "Run ShipCheck on this repo, review blockers, and tell me whether the release gate passes."
+Prompt: "Create a Kujo Eval release gate for this CLI and make sure CI can publish machine-readable artifacts."
 
 Expected:
 
-- Trigger `kujo-shipcheck-workflows`.
-- Run `scan` first for release-readiness findings.
-- Run `gate` as the pass/fail enforcement step.
-- Distinguish error-level blockers from warnings.
-- State the command, target directory, exit code, highest severity, and gate result.
-- For ShipCheck source changes, keep `docs/check-catalog.md`, README examples, and `tests/cli-output-contract.sh` aligned.
+- Trigger `kujo-eval-workflows`.
+- Use VM-first `kujo run main.kujo run <suite> --json`.
+- Prefer canonical examples before tests or historical checklists.
+- Include command/path/env policy fields for CI or release stages.
+- Mention `summary.json`, `cli-summary.json`, and `artifact-manifest.json`.
+- Validate with `lint`, a focused suite run, and manifest verification when checksums are enabled.
+
+## Case 10: PackWrite Agent Pack
+
+Prompt: "Use PackWrite to turn this repo's MEGA_PROMPT.md into a validated agent pack and give me the implementation and review prompts."
+
+Expected:
+
+- Trigger `kujo-packwrite-workflows`.
+- Run or recommend `packwrite doctor` and `packwrite config` before model generation.
+- Prefer `packwrite init MEGA_PROMPT.md --dry-run` before writing `agent/`.
+- Generate with explicit provider/model or resolved config, then run `packwrite validate`.
+- Use `packwrite prompt deepseek` and `packwrite prompt codex-review` for handoff.
+- Keep API keys in environment variables only and avoid overwriting an existing pack unless explicitly requested.
+
+## Case 11: Spec Agent Contract
+
+Prompt: "Create a `.spec.yml` for this feature, validate it, and export agent context for implementation."
+
+Expected:
+
+- Trigger `kujo-spec-workflows`.
+- Prefer YAML in a project `specs/` directory.
+- Include at least `name`, `goal`, and concrete acceptance criteria.
+- Run `spec validate` before export.
+- Use `spec export-agent-context` for the coding-agent handoff.
+- Mention `SPEC_SAFE_WRITE` or template-source policy only when CI, regulated, or output-path constraints are relevant.
 
 ## Case 12: Casefile Failure Handoff
 
@@ -143,19 +143,18 @@ Expected:
 - Prefer argv after `--` over `--command` for complex commands.
 - Review `case.md`, `case.json`, `combined.log`, `reproduction.md`, and `handoff.md`.
 - Preserve redaction-by-default and avoid sharing plaintext artifacts until sensitivity is checked.
-- For Casefile code changes, keep `FLAGS.md`, `README.md`, `HOWTO.md`, and contract tests aligned.
 
-## Case 13: PatchBrief Handoff
+## Case 13: Concord Drift Scan
 
-Prompt: "Run PatchBrief on this change and give me a handoff note plus suggested tests."
+Prompt: "Run Concord on this repo and turn any artifact drift into prioritized tasks."
 
 Expected:
 
-- Trigger `kujo-patchbrief-workflows`.
-- Use the Kujo `--` separator before PatchBrief arguments.
-- Run or recommend `summarize`, `suggest-tests`, and `handoff`.
-- Prefer JSON with `--pretty` only when a downstream tool or agent should parse it.
-- Treat PatchBrief risks and test suggestions as heuristic and verify them against the actual diff.
+- Trigger `kujo-concord-workflows`.
+- Run `concord scan` before editing docs/specs/evals/manifests.
+- Use `--format json` or `tasks` when structured follow-up is needed.
+- Treat findings as drift leads for human review, not proof.
+- State command, exit code, highest severity, category, and likely source/target artifact.
 
 ## Case 14: Dispatch Workflow Run
 
@@ -168,9 +167,116 @@ Expected:
 - Prefer offline fixture mode and a `tests/tmp/<purpose>` output root for local validation.
 - Inspect `state.json`, `trace.json` or `trace.md`, and `report.json` or `report.md` when present.
 - Check approval gate status, policy-denied events, mutation audit records, and artifact contract metadata.
-- For Dispatch source changes, keep README examples, CLI JSON contracts, and `tests/dispatch_tests.kujo` aligned.
 
-## Case 15: kujo-agents-sdk-workflows
+## Case 15: Fence Boundary Check
+
+Prompt: "Set up Fence for this repo and explain the current architecture-boundary violations."
+
+Expected:
+
+- Trigger `kujo-fence-workflows`.
+- Run or recommend `init`, then `validate`, then `check`.
+- Use `graph` or `explain <path>` to understand zone direction and surprising classifications.
+- Do not weaken `fence.toml` just to hide violations.
+- Report exit code, violation threshold, report path, and next fixes.
+
+## Case 16: Howl Showcase Render
+
+Prompt: "Create a Howl card for this Kujo example, validate the manifest, and render the gallery."
+
+Expected:
+
+- Trigger `kujo-howl-workflows`.
+- Use or create `howl.json` plus a real referenced example file.
+- Run `howl validate` before `howl render`.
+- Render deterministic Markdown, HTML, SVG, and `index.html` artifacts.
+- Avoid invented claims, network calls, posting, or scheduler behavior.
+
+## Case 17: Lens Browser QA
+
+Prompt: "Run Lens against my localhost app and summarize the Agent Repair Brief."
+
+Expected:
+
+- Trigger `kujo-lens-workflows`.
+- Ensure the app server is already running.
+- Start with `lens check <local-url> --json`.
+- Inspect `lens-report.md`, `lens-report.json`, screenshots, console, network, and DOM evidence.
+- Branch on Lens exit codes and report findings with evidence paths.
+
+## Case 18: MCP Server Scaffold
+
+Prompt: "Generate a repo-specific MCP server with mcp make and review the safety surface."
+
+Expected:
+
+- Trigger `kujo-mcp-workflows`.
+- Use `kujo run mcp.kujo --interpreter make <repo-path>`.
+- Prefer `--dry-run`, `--no-ai`, or `--validate` when appropriate.
+- Review `artifacts/safety-review.md`, `mcp.manifest.json`, and `repo-profile.json`.
+- Keep generated capabilities least-privilege and do not expose arbitrary shell input.
+
+## Case 19: PatchBrief Handoff
+
+Prompt: "Run PatchBrief on this change and give me a handoff note plus suggested tests."
+
+Expected:
+
+- Trigger `kujo-patchbrief-workflows`.
+- Use the Kujo `--` separator before PatchBrief arguments.
+- Run or recommend `summarize`, `suggest-tests`, and `handoff`.
+- Prefer JSON with `--pretty` only when a downstream tool or agent should parse it.
+- Treat PatchBrief risks and test suggestions as heuristic and verify them against the actual diff.
+
+## Case 20: Kujo RAG Local Corpus
+
+Prompt: "Use Kujo RAG to index this docs folder, answer a question with citations, and tell me what tests matter if retrieval looks wrong."
+
+Expected:
+
+- Trigger `kujo-rag-workflows`.
+- Run from the RAG repo root with `kujo run main.kujo --interpreter ingest --path <path> --recursive true`.
+- Query with `kujo run main.kujo --interpreter query --question <question>` and inspect citation paths/line ranges.
+- Preserve offline defaults unless the user explicitly asks for AI embeddings or remote vector backends.
+- For retrieval problems, inspect retrieval/chunking/embedding modules and focused tests before wrapper suites.
+
+## Case 21: Scent Context Pack
+
+Prompt: "Use Scent to package this repo's current auth changes for a downstream Codex review."
+
+Expected:
+
+- Trigger `kujo-scent-workflows`.
+- Run from inside the target repository.
+- Start with `scent pack --dry-run --json`.
+- Use a specific `--task`, changed-file focus flags, and task-relevant `--include` paths.
+- Review `redactions.json` and keep generated pack output out of version control.
+
+## Case 22: Scout Context Pack
+
+Prompt: "Run Scout on this repo and summarize the generated agent context pack."
+
+Expected:
+
+- Trigger `kujo-scout-workflows`.
+- Run `kujo run scout.kujo -- <target>` from the Scout repo or use the stable Scout entrypoint.
+- Start from `scan_manifest.json` to locate generated artifacts.
+- Summarize target, output directory, profile, code file count, route/dependency/security counts, and key follow-ups.
+- Avoid claiming Scout is a security guarantee.
+
+## Case 23: ShipCheck Release Gate
+
+Prompt: "Run ShipCheck on this repo, review blockers, and tell me whether the release gate passes."
+
+Expected:
+
+- Trigger `kujo-shipcheck-workflows`.
+- Run `scan` first for release-readiness findings.
+- Run `gate` as the pass/fail enforcement step.
+- Distinguish error-level blockers from warnings.
+- State command, target directory, exit code, highest severity, and gate result.
+
+## Case 24: kujo-agents-sdk-workflows
 
 Prompt: "Update an Agents SDK runner contract and run the offline example smoke path."
 
@@ -179,7 +285,7 @@ Expected:
 - Use `examples/examples_smoke_runner.kujo` and targeted contract tests.
 - Preserve deterministic offline/no-network behavior.
 
-## Case 16: kujo-ai-chat-workflows
+## Case 25: kujo-ai-chat-workflows
 
 Prompt: "Start AI Chat locally, run smoke tests, and review the SSE endpoint behavior."
 
@@ -188,7 +294,7 @@ Expected:
 - Set explicit local env vars and avoid real secrets.
 - Use `npm run smoke` against the running app.
 
-## Case 17: kujo-ai-sdk-workflows
+## Case 26: kujo-ai-sdk-workflows
 
 Prompt: "Fix AI SDK provider fixture mode and run contract plus redaction tests."
 
@@ -197,16 +303,7 @@ Expected:
 - Default to fixture mode without provider keys.
 - Run SDK contract and security redaction suites.
 
-## Case 18: kujo-changebucket-workflows
-
-Prompt: "Measure the current git diff with ChangeBucket and enforce a footprint budget."
-
-Expected:
-- Trigger `kujo-changebucket-workflows`.
-- Treat the tool as read-only git inspection.
-- Report footprint, categories, budget result, and exit code.
-
-## Case 19: kujo-cms-workflows
+## Case 27: kujo-cms-workflows
 
 Prompt: "Run the CMS contract suite after adding a content model route."
 
@@ -215,7 +312,7 @@ Expected:
 - Use `backend/runtime/main.kujo` as the runtime entrypoint.
 - Run contract tests and focused smoke/release checks.
 
-## Case 20: kujo-crud-api-workflows
+## Case 28: kujo-crud-api-workflows
 
 Prompt: "Change the CRUD API item handler and validate backend plus frontend quality gates."
 
@@ -224,25 +321,7 @@ Expected:
 - Run API smoke/regression checks and frontend lint/build when touched.
 - Keep CRUD API distinct from CMS.
 
-## Case 21: kujo-eval-workflows
-
-Prompt: "Create an Eval suite with snapshot checks and produce a JSON report."
-
-Expected:
-- Trigger `kujo-eval-workflows`.
-- Use machine-readable report formats when downstream tools consume output.
-- Update snapshots only when behavior intentionally changed.
-
-## Case 22: kujo-fence-workflows
-
-Prompt: "Initialize Fence in a repo, run check, and explain any boundary violation."
-
-Expected:
-- Trigger `kujo-fence-workflows`.
-- Use `fence.toml`, `check`, and `explain` workflows.
-- Treat exit 1 as found violations, not a crash.
-
-## Case 23: kujo-kennel-workflows
+## Case 29: kujo-kennel-workflows
 
 Prompt: "Validate Kennel trust policy and local dependency install behavior."
 
@@ -251,43 +330,7 @@ Expected:
 - Inspect manifests, lockfiles, trust/source policy, and resolver code.
 - Run Kennel verification scripts or targeted contract tests.
 
-## Case 24: kujo-packwrite-workflows
-
-Prompt: "Generate a PackWrite agent pack from MEGA_PROMPT.md in dry-run mode."
-
-Expected:
-- Trigger `kujo-packwrite-workflows`.
-- Use `packwrite init --dry-run` before writing `/agent` artifacts.
-- Validate generated packs and avoid overwriting user packs casually.
-
-## Case 25: kujo-runledger-workflows
-
-Prompt: "Record a Codex run receipt, finish it, and generate a report."
-
-Expected:
-- Trigger `kujo-runledger-workflows`.
-- Use `start`, `usage`/`cost` as needed, `finish`, then `report`.
-- Keep `.runledger/` local unless explicitly requested.
-
-## Case 26: kujo-scout-workflows
-
-Prompt: "Run Scout quick scan and export security findings for CI review."
-
-Expected:
-- Trigger `kujo-scout-workflows`.
-- Use `--quick` or focused include/exclude flags for large repos.
-- Review generated results, SARIF/JSONL, and baselines before committing.
-
-## Case 27: kujo-spec-workflows
-
-Prompt: "Validate, render, and export agent context from a `.spec.yml` task contract."
-
-Expected:
-- Trigger `kujo-spec-workflows`.
-- Run `spec validate`, `render`, and `export-agent-context`.
-- Keep schema, examples, command inventory, and completions aligned.
-
-## Case 28: kujo-ssg-workflows
+## Case 30: kujo-ssg-workflows
 
 Prompt: "Build the SSG starter site and validate generated output before release."
 
@@ -296,7 +339,7 @@ Expected:
 - Run `kujo run ./build.kujo -- ...` and generated-output validation.
 - Do not hand-edit `output/`.
 
-## Case 29: kujo-watchdog-workflows
+## Case 31: kujo-watchdog-workflows
 
 Prompt: "Start Watchdog and verify proxy config plus telemetry redaction behavior."
 
@@ -304,4 +347,3 @@ Expected:
 - Trigger `kujo-watchdog-workflows`.
 - Use loopback-local dashboard/proxy checks.
 - Avoid logging or committing real API keys, tokens, or telemetry DBs.
-

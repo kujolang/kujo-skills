@@ -153,138 +153,6 @@
       "explain SQL joins"
     ]
   },
-  "kujo-rag-workflows": {
-    "should_trigger": [
-      "use Kujo RAG to ingest this docs folder and answer with citations",
-      "run kujo run main.kujo --interpreter ingest then query the local index",
-      "start the Kujo RAG API server and smoke test /health /ingest /query",
-      "add a parser extension to the RAG starter kit and update registry tests",
-      "debug weak retrieval ranking in src/retrieval.kujo",
-      "run the RAG release evaluation gate before shipping retrieval changes",
-      "configure namespace isolation for a Kujo RAG tenant",
-      "regenerate the Kujo RAG OpenAPI SDK after API contract changes"
-    ],
-    "should_not_trigger": [
-      "write a generic Kujo JSON policy checker",
-      "run Scout and summarize llms.txt",
-      "create a Scent context pack",
-      "debug VM interpreter parity in the Kujo compiler",
-      "review a Rust native API change",
-      "make docgen output AI tasks",
-      "render a Howl showcase card",
-      "run Lens browser screenshots"
-    ]
-  },
-  "kujo-howl-workflows": {
-    "should_trigger": [
-      "create a Howl showcase card for this Kujo example",
-      "validate howl.json and render the SVG markdown html gallery",
-      "update examples and captions for howl render output",
-      "how do I use howl caption --platform x for this card",
-      "fix howl validate errors for referenced example files",
-      "regenerate dist/howl and check whether committed cards drifted",
-      "modify Howl's render_svg layout without breaking artifact contracts",
-      "review a howl.json manifest for truthful deterministic showcase claims"
-    ],
-    "should_not_trigger": [
-      "generate a random social media image",
-      "post this update to X.com",
-      "write a generic Markdown README section",
-      "build a React gallery with remote fonts",
-      "run Muzzle workflows for tests",
-      "explain basic Kujo truthiness",
-      "make docgen output more agent readable",
-      "summarize a PowerPoint deck"
-    ]
-  },
-  "kujo-casefile-workflows": {
-    "should_trigger": [
-      "capture this failing test with Casefile and show me the handoff",
-      "use casefile.kujo to package a local failure into .casefile evidence",
-      "how do I run casefile capture --from-log for a CI log",
-      "review the latest Casefile case.json and combined.log",
-      "initialize casefile.toml and validate the output path safety",
-      "clean old .casefile bundles but dry-run it first",
-      "fix Casefile redaction-by-default behavior",
-      "update FLAGS.md and tests after changing a Casefile CLI flag"
-    ],
-    "should_not_trigger": [
-      "write a generic Kujo JSON policy checker",
-      "run Muzzle quiet workflows",
-      "render a Howl showcase card",
-      "debug VM interpreter parity",
-      "review a Rust parser patch",
-      "create a spreadsheet",
-      "explain JavaScript test failures",
-      "make docgen output more agent readable"
-    ]
-  },
-  "kujo-shipcheck-workflows": {
-    "should_trigger": [
-      "run ShipCheck on this repo and tell me whether the release gate passes",
-      "use shipcheck.kujo scan --format json for this local checkout",
-      "generate a ShipCheck checklist before tagging this Kujo release",
-      "wire ShipCheck gate into CI and explain its exit code behavior",
-      "review ShipCheck warnings versus error-level release blockers",
-      "update docs/check-catalog.md after adding a ShipCheck check",
-      "fix ShipCheck gate semantics without breaking json report fields",
-      "draft release notes with shipcheck release-note"
-    ],
-    "should_not_trigger": [
-      "run the generic Kujo release gate for the compiler",
-      "create a Muzzle quiet workflow",
-      "capture a failing test with Casefile",
-      "render a Howl showcase card",
-      "build a new Kujo repo scanner from scratch",
-      "debug VM interpreter parity",
-      "make docgen output more agent readable",
-      "review a Rust parser patch"
-    ]
-  },
-  "kujo-lens-workflows": {
-    "should_trigger": [
-      "run Lens against my localhost app and read the agent repair brief",
-      "use lens check http://localhost:3000 with screenshots and json output",
-      "create a .lens.toml with accessibility and link checks enabled",
-      "write and validate a lens flow for the account modal",
-      "use lens inspect output to choose selectors for a browser flow",
-      "compare Lens visual baselines after this frontend change",
-      "wire Lens into GitHub Actions and upload the report artifact",
-      "fix Lens redaction coverage after adding a new report artifact"
-    ],
-    "should_not_trigger": [
-      "write a generic Playwright test suite",
-      "run Lighthouse performance audits only",
-      "debug VM interpreter parity",
-      "capture a failing CLI log with Casefile",
-      "render a Howl showcase card",
-      "run Muzzle quiet workflows",
-      "make docgen output AI tasks",
-      "review a Rust parser patch"
-    ]
-  },
-  "kujo-mcp-workflows": {
-    "should_trigger": [
-      "generate a repo-specific MCP server with mcp make",
-      "run kujo run mcp.kujo --interpreter make ./repo --validate",
-      "review generated .mcp artifacts and mcp.manifest.json safety tiers",
-      "fix the MCP tool registry schema for tools/list",
-      "add a resource to src/resources/registry.kujo",
-      "harden mcp-server.json auth host and rate limit settings",
-      "debug /mcp/v1/tools/call validation errors",
-      "run endpoint and security regression tests for the Kujo MCP server"
-    ],
-    "should_not_trigger": [
-      "write a generic Kujo for loop",
-      "create a Howl social card",
-      "run Muzzle quiet workflows",
-      "change VM bytecode dispatch",
-      "generate docgen AI task output",
-      "make a PowerPoint deck",
-      "explain JavaScript MCP SDK usage only",
-      "review a PR with no MCP server changes"
-    ]
-  },
   "kujo-runtime-parity": {
     "should_trigger": [
       "why is vm and interpreter giving different results",
@@ -305,6 +173,116 @@
       "install Rust",
       "review docs typos only",
       "parse a CSV in Python"
+    ]
+  },
+  "kujo-runledger-workflows": {
+    "should_trigger": [
+      "record this Codex run in RunLedger before we start",
+      "compare Claude Codex and DeepSeek attempts with runledger report",
+      "what runledger commands should I use to capture token usage and cost",
+      "finish this runledger receipt as partial with a verdict",
+      "show me the .runledger JSON for this agent build attempt",
+      "update RunLedger CLI behavior without breaking exit codes",
+      "generate a RunLedger markdown report for this task",
+      "add a followup note to a runledger run id"
+    ],
+    "should_not_trigger": [
+      "write a generic Kujo CLI tool from scratch",
+      "set up Muzzle workflows for noisy logs",
+      "debug VM interpreter parity",
+      "explain Kujo dictionary truthiness",
+      "run cargo test for the main Kujo repo",
+      "create a browser dashboard",
+      "review native API security boundaries",
+      "make a spreadsheet from cost data"
+    ]
+  },
+  "kujo-changebucket-workflows": {
+    "should_trigger": [
+      "run changebucket to measure this agent change footprint",
+      "enforce a ChangeBucket budget with max files and churn",
+      "generate a CHANGE_BUCKET markdown report for this repo",
+      "what does changebucket --json output look like",
+      "did this PR touch dependency manifests lockfiles or generated files",
+      "compare my branch against main with changebucket --base main --head HEAD",
+      "update ChangeBucket CLI behavior without breaking exit codes",
+      "explain the ChangeBucket risk level for this worktree"
+    ],
+    "should_not_trigger": [
+      "record this agent run in RunLedger",
+      "summarize what the diff means semantically",
+      "set up Muzzle workflows for noisy logs",
+      "write a generic Kujo CLI tool from scratch",
+      "debug VM interpreter parity",
+      "review native API security boundaries",
+      "make a spreadsheet from cost data",
+      "generate a browser dashboard"
+    ]
+  },
+  "kujo-eval-workflows": {
+    "should_trigger": [
+      "run this eval.json suite and inspect the generated artifacts",
+      "create a Kujo Eval release gate for this CLI output",
+      "why did kujo run main.kujo run fail this snapshot check",
+      "add a new Eval check type without breaking schema docs",
+      "generate an Eval HTML report and verify artifact-manifest checksums",
+      "use policy-explain to debug my Eval strict-ci policy",
+      "compare two Eval last_run.json files for regressions",
+      "update Eval command inventory after changing report flags"
+    ],
+    "should_not_trigger": [
+      "record model token usage and cost for this attempt",
+      "set up Muzzle quiet workflows for noisy test logs",
+      "write a generic Kujo policy scanner from scratch",
+      "debug VM interpreter parity in the core runtime",
+      "review native API capability boundaries",
+      "make kujo docgen output more agent readable",
+      "create a PowerPoint release status deck",
+      "explain JavaScript snapshot testing"
+    ]
+  },
+  "kujo-spec-workflows": {
+    "should_trigger": [
+      "create a .spec.yml contract for this feature before implementation",
+      "validate all Spec files in this repo with spec ci --format json",
+      "export this spec as agent context for a coding agent",
+      "generate an eval suite from spec eval_requirements",
+      "update the Spec schema without breaking export envelope metadata",
+      "why is spec init --from template loading a home template in CI",
+      "render the dark-mode.spec.yml to markdown",
+      "add tests for SPEC_SAFE_WRITE path restrictions in the Spec CLI"
+    ],
+    "should_not_trigger": [
+      "run this eval.json suite and inspect snapshots",
+      "record this agent attempt in RunLedger",
+      "set up Muzzle quiet workflow logs",
+      "debug VM interpreter parity in Kujo",
+      "write a generic Kujo policy scanner",
+      "make kujo docgen output public docs JSON",
+      "review native API security boundaries",
+      "create a browser dashboard"
+    ]
+  },
+  "kujo-packwrite-workflows": {
+    "should_trigger": [
+      "generate an agent pack from MEGA_PROMPT.md with PackWrite",
+      "run packwrite doctor before spending a model call",
+      "validate the generated agent/ pack and print the codex review prompt",
+      "configure packwrite.toml for deepseek-v4-pro with a custom output dir",
+      "use PACKWRITE_FAKE_RESPONSE_FILE to test packwrite init offline",
+      "why did PackWrite reject this model JSON manifest path",
+      "update PackWrite CLI behavior without breaking prompt output",
+      "compare two PackWrite outputs by generating separate agent directories"
+    ],
+    "should_not_trigger": [
+      "record token usage and cost for this attempt in RunLedger",
+      "set up Muzzle quiet workflow logs",
+      "measure this PR footprint with ChangeBucket",
+      "create a .spec.yml task contract",
+      "run this eval.json snapshot suite",
+      "debug VM interpreter parity in Kujo",
+      "make kujo docgen output public docs JSON",
+      "create a browser dashboard"
     ]
   },
   "kujo-language-implementation": {
@@ -351,26 +329,102 @@
       "fix a React routing bug"
     ]
   },
-  "kujo-scent-workflows": {
+  "kujo-casefile-workflows": {
     "should_trigger": [
-      "use scent to package this repo for a downstream codex review",
-      "run scent pack dry-run json before handing this task off",
-      "create a context.md and context.json pack for current auth changes",
-      "review redactions.json from a generated scent pack",
-      "tune scent --budget and --max-files for this repository",
-      "focus a Scent pack on staged and unstaged changes",
-      "maintain scent.kujo without breaking pack artifacts",
-      "update docs for a scent pack cli flag change"
+      "capture this failing test with Casefile and show me the handoff",
+      "use casefile.kujo to package a local failure into .casefile evidence",
+      "how do I run casefile capture --from-log for a CI log",
+      "clean old .casefile bundles but dry-run it first"
     ],
     "should_not_trigger": [
-      "set up muzzle workflows for quiet build logs",
-      "write a generic Kujo for loop",
+      "run Muzzle quiet workflows",
+      "render a Howl showcase card",
       "debug VM interpreter parity",
-      "review a PR like a strict maintainer",
-      "make kujo docgen output more readable",
-      "create a PowerPoint deck",
-      "explain Rust cargo features",
-      "fix a React routing bug"
+      "make docgen output more agent readable"
+    ]
+  },
+  "kujo-concord-workflows": {
+    "should_trigger": [
+      "run Concord scan and report artifact drift in this repo",
+      "check cli-docs drift with concord check cli-docs",
+      "turn Concord findings into task cards",
+      "fix Concord examples drift after changing CLI help"
+    ],
+    "should_not_trigger": [
+      "capture a failing command with Casefile",
+      "run ShipCheck release gate",
+      "write a generic Kujo JSON policy checker",
+      "debug browser screenshots with Lens"
+    ]
+  },
+  "kujo-dispatch-workflows": {
+    "should_trigger": [
+      "run a Dispatch demo workflow and inspect the trace artifacts",
+      "use dispatch.kujo templates --json to see workflow templates",
+      "resume a paused Dispatch run after the approval gate",
+      "debug Dispatch policy profile precedence for allow-tools and deny-tools"
+    ],
+    "should_not_trigger": [
+      "run Muzzle quiet workflows for this repo",
+      "create a Howl showcase card",
+      "write a generic Kujo loop example",
+      "scan browser visual regressions with Lens"
+    ]
+  },
+  "kujo-fence-workflows": {
+    "should_trigger": [
+      "set up Fence in this repo with a starter fence.toml",
+      "run fence check and explain architecture-boundary violations",
+      "use fence.kujo graph --format mermaid",
+      "create a fence baseline for this legacy repo"
+    ],
+    "should_not_trigger": [
+      "run Lens against localhost",
+      "capture a failing CLI command with Casefile",
+      "run ShipCheck release gate",
+      "debug VM interpreter parity"
+    ]
+  },
+  "kujo-howl-workflows": {
+    "should_trigger": [
+      "create a Howl showcase card for this Kujo example",
+      "validate howl.json and render the SVG markdown html gallery",
+      "use howl caption --platform x for this card",
+      "fix howl validate errors for referenced example files"
+    ],
+    "should_not_trigger": [
+      "generate a random social media image",
+      "run Muzzle workflows for tests",
+      "make docgen output more agent readable",
+      "summarize a PowerPoint deck"
+    ]
+  },
+  "kujo-lens-workflows": {
+    "should_trigger": [
+      "run Lens against my localhost app and read the agent repair brief",
+      "use lens check http://localhost:3000 with screenshots and json output",
+      "create a .lens.toml with accessibility and link checks enabled",
+      "write and validate a lens flow for the account modal"
+    ],
+    "should_not_trigger": [
+      "write a generic Playwright test suite",
+      "run Lighthouse performance audits only",
+      "capture a failing CLI log with Casefile",
+      "render a Howl showcase card"
+    ]
+  },
+  "kujo-mcp-workflows": {
+    "should_trigger": [
+      "generate a repo-specific MCP server with mcp make",
+      "run kujo run mcp.kujo --interpreter make ./repo --validate",
+      "review generated .mcp artifacts and mcp.manifest.json safety tiers",
+      "harden mcp-server.json auth host and rate limit settings"
+    ],
+    "should_not_trigger": [
+      "write a generic Kujo for loop",
+      "run Muzzle quiet workflows",
+      "change VM bytecode dispatch",
+      "make a PowerPoint deck"
     ]
   },
   "kujo-patchbrief-workflows": {
@@ -378,43 +432,69 @@
       "run PatchBrief summarize on my current git diff",
       "generate a PatchBrief handoff note for the next agent",
       "use patchbrief.kujo suggest-tests before I open this PR",
-      "make PatchBrief emit pretty JSON for this change summary",
-      "fix PatchBrief command ordering when flags appear before summarize",
-      "update PatchBrief JSON handoff fields and tests",
-      "preserve PatchBrief help output while refactoring report emitters",
-      "why does patchbrief say no uncommitted changes detected"
+      "update PatchBrief JSON handoff fields and tests"
     ],
     "should_not_trigger": [
       "build a generic git diff summarizer from scratch",
       "run Muzzle quiet workflows for build logs",
       "capture a failing command with Casefile",
-      "create a Scent context pack",
-      "review Kujo VM interpreter parity",
-      "write a basic Kujo args() example",
-      "make docgen output more agent readable",
-      "generate a visual QA report with Lens"
+      "create a Scent context pack"
     ]
   },
-  "kujo-dispatch-workflows": {
+  "kujo-rag-workflows": {
     "should_trigger": [
-      "run a Dispatch demo workflow and inspect the trace artifacts",
-      "use dispatch.kujo templates --json to see available workflow templates",
-      "resume a paused Dispatch run after the approval gate",
-      "fix Dispatch runs --json diagnostics output without breaking contracts",
-      "add a new Dispatch workflow template and update the tests",
-      "debug Dispatch policy profile precedence for allow-tools and deny-tools",
-      "export a Dispatch run bundle with signing and import it into another output root",
-      "review Dispatch doctor --write and cleanup --apply strict mutation behavior"
+      "use Kujo RAG to ingest this docs folder and answer with citations",
+      "run kujo run main.kujo --interpreter ingest then query the local index",
+      "start the Kujo RAG API server and smoke test health query",
+      "debug weak retrieval ranking in src/retrieval.kujo"
     ],
     "should_not_trigger": [
-      "run Muzzle quiet workflows for this repo",
-      "create a Howl showcase card",
-      "write a generic Kujo loop example",
-      "change Rust parser internals",
-      "make kujo docgen output more agent readable",
-      "scan browser visual regressions with Lens",
-      "capture a Casefile evidence bundle",
-      "build a spreadsheet report"
+      "write a generic Kujo JSON policy checker",
+      "run Scout and summarize llms.txt",
+      "create a Scent context pack",
+      "render a Howl showcase card"
+    ]
+  },
+  "kujo-scent-workflows": {
+    "should_trigger": [
+      "use scent to package this repo for a downstream codex review",
+      "run scent pack dry-run json before handing this task off",
+      "review redactions.json from a generated scent pack",
+      "focus a Scent pack on staged and unstaged changes"
+    ],
+    "should_not_trigger": [
+      "set up muzzle workflows for quiet build logs",
+      "write a generic Kujo for loop",
+      "debug VM interpreter parity",
+      "create a PowerPoint deck"
+    ]
+  },
+  "kujo-scout-workflows": {
+    "should_trigger": [
+      "run Scout on this repo and summarize the generated context pack",
+      "use kujo run scout.kujo to create llms.txt and AGENTS.md",
+      "fix scout security export sarif schema validation",
+      "refresh Scout golden snapshots after output changes"
+    ],
+    "should_not_trigger": [
+      "build a generic repo scanner from scratch in Kujo",
+      "run Muzzle workflow logs",
+      "create a Casefile evidence bundle",
+      "debug VM interpreter parity"
+    ]
+  },
+  "kujo-shipcheck-workflows": {
+    "should_trigger": [
+      "run ShipCheck on this repo and tell me whether the release gate passes",
+      "use shipcheck.kujo scan --format json for this local checkout",
+      "generate a ShipCheck checklist before tagging this Kujo release",
+      "wire ShipCheck gate into CI and explain its exit code behavior"
+    ],
+    "should_not_trigger": [
+      "run the generic Kujo release gate for the compiler",
+      "create a Muzzle quiet workflow",
+      "capture a failing test with Casefile",
+      "render a Howl showcase card"
     ]
   },
   "kujo-maintainer-review": {
@@ -481,20 +561,6 @@
       "scan architecture boundaries with Fence"
     ]
   },
-  "kujo-changebucket-workflows": {
-    "should_trigger": [
-      "measure this git diff footprint with ChangeBucket",
-      "enforce a ChangeBucket budget on current changes",
-      "emit ChangeBucket markdown and json reports",
-      "fix changebucket file category classification"
-    ],
-    "should_not_trigger": [
-      "summarize semantic diff risks with PatchBrief",
-      "record a run receipt with RunLedger",
-      "validate a Spec file",
-      "scan routes with Scout"
-    ]
-  },
   "kujo-cms-workflows": {
     "should_trigger": [
       "start the Kujo CMS backend runtime",
@@ -523,34 +589,6 @@
       "record agent costs in RunLedger"
     ]
   },
-  "kujo-eval-workflows": {
-    "should_trigger": [
-      "create an Eval suite for this CLI",
-      "run eval report as JUnit and HTML",
-      "update Eval snapshots intentionally",
-      "verify Eval artifact manifest checksums"
-    ],
-    "should_not_trigger": [
-      "define requirements in Spec",
-      "measure change footprint",
-      "run ShipCheck release gate",
-      "capture failing logs with Casefile"
-    ]
-  },
-  "kujo-fence-workflows": {
-    "should_trigger": [
-      "initialize fence.toml and run check",
-      "explain a Fence violation for this file",
-      "generate Fence architecture graph mermaid",
-      "create a Fence baseline for legacy violations"
-    ],
-    "should_not_trigger": [
-      "run Eval snapshot tests",
-      "scan codebase context with Scout",
-      "generate an agent pack",
-      "build a static site"
-    ]
-  },
   "kujo-kennel-workflows": {
     "should_trigger": [
       "validate Kennel package lockfile behavior",
@@ -563,62 +601,6 @@
       "create a Spec contract",
       "run AI SDK live smoke",
       "capture Casefile evidence"
-    ]
-  },
-  "kujo-packwrite-workflows": {
-    "should_trigger": [
-      "generate a PackWrite agent pack from MEGA_PROMPT.md",
-      "run packwrite init dry-run",
-      "validate an existing PackWrite agent pack",
-      "fix PackWrite fake AI response tests"
-    ],
-    "should_not_trigger": [
-      "record run usage in RunLedger",
-      "summarize git diff with PatchBrief",
-      "run Dispatch approval gate",
-      "scan route discovery with Scout"
-    ]
-  },
-  "kujo-runledger-workflows": {
-    "should_trigger": [
-      "start a RunLedger receipt for this Codex run",
-      "finish a RunLedger run with verdict",
-      "compare agent attempts with RunLedger",
-      "generate RUNLEDGER_REPORT.md"
-    ],
-    "should_not_trigger": [
-      "create an agent execution pack",
-      "measure diff file categories",
-      "run ShipCheck gate",
-      "validate a .spec.yml file"
-    ]
-  },
-  "kujo-scout-workflows": {
-    "should_trigger": [
-      "run Scout quick scan on this repository",
-      "export Scout security findings as sarif and jsonl",
-      "write a Scout baseline for accepted findings",
-      "emit Scout Kennel index metadata"
-    ],
-    "should_not_trigger": [
-      "enforce Fence architecture zones",
-      "measure git churn with ChangeBucket",
-      "run Lens browser flow",
-      "record agent cost data"
-    ]
-  },
-  "kujo-spec-workflows": {
-    "should_trigger": [
-      "validate this .spec.yml file",
-      "render Spec acceptance criteria",
-      "export Spec agent context envelope",
-      "regenerate Spec command inventory"
-    ],
-    "should_not_trigger": [
-      "run Eval checks from a manifest",
-      "generate PackWrite implementation prompts",
-      "run Dispatch workflow resume",
-      "scan release readiness"
     ]
   },
   "kujo-ssg-workflows": {

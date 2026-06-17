@@ -1,4 +1,4 @@
 interface:
   display_name: "Kujo Fence Workflows"
   short_description: "Enforce architecture boundaries with Fence"
-  default_prompt: "Use $kujo-fence-workflows to initialize, check, explain, or maintain Fence architecture boundaries."
+  default_prompt: "Use $kujo-fence-workflows to set up and run Fence architecture boundary checks."
