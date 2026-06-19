@@ -38,6 +38,13 @@ Use this map to sanity-check trigger routing.
 | SSG static site build, templates/content, generated output, feeds/sitemap/llms, release gates | `kujo-ssg-workflows`, optionally `kujo-lens-workflows` or `kujo-shipcheck-workflows` |
 | Watchdog AI telemetry, OpenAI-compatible proxy, request traces, auth/redaction/rate limits | `kujo-watchdog-workflows`, optionally `kujo-ai-chat-workflows` or `kujo-ai-sdk-workflows` |
 | Weekly Kujo skill maintenance, stale SKILL.md drift, skill/index trigger refresh | `kujo-skill-auditor` |
+| Recurring Kujo readiness posture, release preparedness, evidence gaps | `kujo-readiness-auditor`, optionally `kujo-shipcheck-workflows`, `kujo-fence-workflows`, or `kujo-eval-workflows` |
+| Kujo docs drift, generated-doc staleness, README/reference mismatch | `kujo-docs-drift-auditor`, optionally `kujo-concord-workflows`, `kujo-scout-workflows`, or `kujo-docgen-agent-readable` |
+| Kujo release gates, pre-tag checks, release blocker triage | `kujo-release-gate-runner`, optionally `kujo-shipcheck-workflows`, `kujo-eval-workflows`, or `kujo-docgen-agent-readable` |
+| Cross-repo Kujo dogfood, recurring ecosystem checks, multi-repo evidence collection | `kujo-cross-repo-dogfood-runner`, optionally `kujo-concord-workflows`, `kujo-scent-workflows`, or `kujo-runledger-workflows` |
+| Normalize Kujo audit findings, drift, release blockers, DocGen gaps, security triage into tasks | `kujo-backlog-normalizer`, optionally `kujo-spec-workflows` or `kujo-shipcheck-workflows` |
+| Refresh Kujo DocGen public docs, generated docs, gap outputs, coverage gates | `kujo-docgen-public-docs-refresh`, optionally `kujo-docgen-agent-readable` |
+| Dependabot or GitHub security alert triage across Kujo repos | `kujo-dependabot-alert-triage`, optionally `kujo-backlog-normalizer`, `kujo-patchbrief-workflows`, or `kujo-changebucket-workflows` |
 | VM/interpreter drift, `--interpreter`, `--runtime dual`, parity matrix | `kujo-runtime-parity` |
 | Rust implementation changes in parser/compiler/VM/interpreter/native APIs | `kujo-language-implementation` |
 | `kujo docgen`, docs JSON, agent-readable docs, AI task output | `kujo-docgen-agent-readable` |

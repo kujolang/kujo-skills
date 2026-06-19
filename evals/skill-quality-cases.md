@@ -358,3 +358,77 @@ Expected:
 - Compare each audited skill against repo-backed docs, entrypoints, tests, safety boundaries, commands, flags, and artifacts.
 - Update stale `SKILL.md` files plus `SKILLS_INDEX.md` and eval routing fixtures when behavior or activation changes.
 - Report updated skills, confirmed-current skills, validation commands, and next watchlist.
+
+## Case 33: kujo-readiness-auditor
+
+Prompt: "Run the monthly Kujo readiness audit across the tool repos and tell me what evidence is stale."
+
+Expected:
+- Trigger `kujo-readiness-auditor`.
+- Use repo-backed evidence from README, AGENTS, docs, tests, scripts, CI, manifests, and recent commits.
+- Include ShipCheck, Fence, Eval, Concord, ChangeBucket, RunLedger, and Casefile evidence where available.
+- Prefer Muzzle JSON workflows for noisy scans and gates.
+- Avoid overclaiming enterprise readiness without live evidence.
+
+## Case 34: kujo-docs-drift-auditor
+
+Prompt: "Audit docs drift after the latest CLI changes and turn mismatches into precise fixes."
+
+Expected:
+- Trigger `kujo-docs-drift-auditor`.
+- Compare docs against current code, CLI help, tests, examples, generated docs, and contracts.
+- Use Concord, Scout, PatchBrief, DocGen, and Lens only where relevant.
+- Report source-of-truth artifact, stale doc, severity, evidence, and minimal fix.
+
+## Case 35: kujo-release-gate-runner
+
+Prompt: "Run the Kujo release gates before tagging and summarize blockers without publishing."
+
+Expected:
+- Trigger `kujo-release-gate-runner`.
+- Confirm publishing/tagging authorization before any release mutation.
+- Use Muzzle JSON workflows for ShipCheck, Eval, Fence, ChangeBucket, DocGen gates, and release checks.
+- Capture failures with Casefile when logs or reproduction evidence matter.
+- Report gate verdicts, artifacts, blockers, warnings, and next action.
+
+## Case 36: kujo-cross-repo-dogfood-runner
+
+Prompt: "Run the weekly cross-repo Kujo dogfood pass and create a compact evidence report."
+
+Expected:
+- Trigger `kujo-cross-repo-dogfood-runner`.
+- Bound the repo list, mode, time window, and selected checks.
+- Use Concord, Fence, Scout, ChangeBucket, PatchBrief, Scent, RunLedger, Casefile, and DocGen as scoped evidence tools.
+- Keep generated logs/reports/state/caches out of commits unless source-owned.
+
+## Case 37: kujo-backlog-normalizer
+
+Prompt: "Normalize these readiness, DocGen, and security findings into fix-ready Kujo backlog tasks."
+
+Expected:
+- Trigger `kujo-backlog-normalizer`.
+- Deduplicate by repo, root cause, affected artifact, and acceptance evidence.
+- Use Scout, PatchBrief, ChangeBucket, Spec, ShipCheck, DocGen gap output, security triage, and RunLedger context where relevant.
+- Emit tasks with severity, owner role, evidence, acceptance evidence, validation, and dependencies.
+
+## Case 38: kujo-docgen-public-docs-refresh
+
+Prompt: "Refresh the Kujo public docs with docgen after the docs drift audit, but do not deploy anything."
+
+Expected:
+- Trigger `kujo-docgen-public-docs-refresh` and `kujo-docgen-agent-readable`.
+- Verify drift evidence before writing generated docs.
+- Use `kujo docgen` only with repo-supported flags and validation.
+- Validate README/reference alignment, public-only coverage, gap outputs, examples, and contract tests as applicable.
+- Explicitly skip publish/deploy without authorization.
+
+## Case 39: kujo-dependabot-alert-triage
+
+Prompt: "Do the weekly Dependabot alert triage for all Kujo repos and create fix-ready tasks."
+
+Expected:
+- Trigger `kujo-dependabot-alert-triage`.
+- Use supported GitHub Dependabot/security alert surfaces and fall back honestly if unavailable.
+- Summarize repo, package, ecosystem, manifest/lockfile, severity, status, patched version, PR state, and next action.
+- Use PatchBrief, ChangeBucket, Casefile, RunLedger, Spec/backlog output, and Strata as appropriate.
+- Do not dismiss alerts or mutate GitHub security state without explicit authorization.

@@ -644,5 +644,103 @@
       "debug VM interpreter parity",
       "create a Spec task contract"
     ]
+  },
+  "kujo-readiness-auditor": {
+    "should_trigger": [
+      "run the monthly Kujo readiness audit",
+      "audit readiness posture across the Kujo tool repos",
+      "summarize stale release evidence and production gaps",
+      "check ShipCheck Fence Eval Concord evidence for readiness"
+    ],
+    "should_not_trigger": [
+      "refresh generated public docs only",
+      "triage Dependabot alerts",
+      "write a new Kujo parser feature",
+      "start Watchdog dashboard"
+    ]
+  },
+  "kujo-docs-drift-auditor": {
+    "should_trigger": [
+      "audit Kujo docs drift after CLI changes",
+      "find README and reference mismatches against source",
+      "check generated docs and DocGen gaps for staleness",
+      "turn Concord docs drift into precise fixes"
+    ],
+    "should_not_trigger": [
+      "run the release gate before tagging",
+      "triage security dependency alerts",
+      "write a generic Kujo script",
+      "record model token usage"
+    ]
+  },
+  "kujo-release-gate-runner": {
+    "should_trigger": [
+      "run Kujo release gates before tagging",
+      "collect pre-release blocker evidence without publishing",
+      "run ShipCheck Eval Fence ChangeBucket and DocGen gates",
+      "summarize release gate blockers and artifacts"
+    ],
+    "should_not_trigger": [
+      "audit docs drift only",
+      "normalize backlog tasks from existing findings",
+      "run weekly cross-repo dogfood",
+      "build SSG output"
+    ]
+  },
+  "kujo-cross-repo-dogfood-runner": {
+    "should_trigger": [
+      "run the weekly cross-repo Kujo dogfood pass",
+      "collect multi-repo dogfood evidence across Kujo tools",
+      "run recurring ecosystem checks with Concord Fence Scout",
+      "summarize cross-repo dogfood failures and handoffs"
+    ],
+    "should_not_trigger": [
+      "audit one repo's docs drift only",
+      "triage Dependabot alerts only",
+      "create a local AI Chat provider profile",
+      "debug VM interpreter parity"
+    ]
+  },
+  "kujo-backlog-normalizer": {
+    "should_trigger": [
+      "normalize these Kujo audit findings into fix-ready tasks",
+      "turn DocGen gaps and release blockers into backlog items",
+      "deduplicate security triage findings into tasks",
+      "create owner-ready backlog from readiness evidence"
+    ],
+    "should_not_trigger": [
+      "run the initial release gate",
+      "refresh generated docs",
+      "run Fence architecture check",
+      "write a new standard library builtin"
+    ]
+  },
+  "kujo-docgen-public-docs-refresh": {
+    "should_trigger": [
+      "refresh Kujo public docs with docgen",
+      "regenerate DocGen public docs and gap outputs",
+      "update agent-readable DocGen JSON after docs drift",
+      "validate README reference alignment after kujo docgen"
+    ],
+    "should_not_trigger": [
+      "audit readiness across all repos",
+      "triage Dependabot security alerts",
+      "run cross-repo dogfood only",
+      "create a PowerPoint deck"
+    ]
+  },
+  "kujo-dependabot-alert-triage": {
+    "should_trigger": [
+      "do the weekly Dependabot alert triage for Kujo repos",
+      "summarize GitHub security alerts and patched versions",
+      "turn dependency vulnerability alerts into fix-ready tasks",
+      "review Dependabot PR state across in-scope Kujo repos"
+    ],
+    "should_not_trigger": [
+      "refresh DocGen public docs",
+      "run release gates before tagging",
+      "audit skill trigger routing",
+      "build CRUD API frontend"
+    ]
   }
 }
