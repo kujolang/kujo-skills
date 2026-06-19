@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Dependabot Alert Triage"
+  short_description: "Triage Kujo Dependabot alerts safely"
+  default_prompt: "Use $kujo-dependabot-alert-triage to triage Kujo Dependabot alerts and create fix-ready tasks without mutating alert state."
