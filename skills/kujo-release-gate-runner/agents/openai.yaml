@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Release Gate Runner"
+  short_description: "Run Kujo release gates with evidence"
+  default_prompt: "Use $kujo-release-gate-runner to run Kujo release gates and summarize blockers with evidence."
