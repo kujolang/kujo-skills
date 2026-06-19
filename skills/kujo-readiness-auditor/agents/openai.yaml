@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Readiness Auditor"
+  short_description: "Audit Kujo readiness evidence and gaps"
+  default_prompt: "Use $kujo-readiness-auditor to audit Kujo repository readiness evidence and produce an automation report."
