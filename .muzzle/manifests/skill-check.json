@@ -1,0 +1,20 @@
+{
+  "name": "skill-check",
+  "summary": "Validate Kujo skill frontmatter and trigger query JSON.",
+  "runner": "bash",
+  "script": "workflows/skill-check.sh",
+  "args": [
+    {
+      "name": "skill-path",
+      "required": false,
+      "description": "Optional skill folder path. Repeat to validate a subset."
+    }
+  ],
+  "quiet_by_default": true,
+  "safety": {
+    "require_git_repo": true,
+    "allow_dirty_tree": true,
+    "requires_network": false,
+    "human_approval_recommended": false
+  }
+}

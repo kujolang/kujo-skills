@@ -1,0 +1,4 @@
+.muzzle/logs/
+.muzzle/reports/
+.muzzle/state/
+.kujo_cache/
