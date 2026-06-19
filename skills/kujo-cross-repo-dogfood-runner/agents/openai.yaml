@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Cross-Repo Dogfood Runner"
+  short_description: "Run recurring cross-repo Kujo dogfood checks"
+  default_prompt: "Use $kujo-cross-repo-dogfood-runner to run recurring Kujo cross-repo dogfood checks and report evidence."
