@@ -37,6 +37,7 @@ Use this map to sanity-check trigger routing.
 | Kennel package/dependency manifests, lockfiles, static indexes, trust/source policy | `kujo-kennel-workflows`, optionally `kujo-security-hardening` or `kujo-enterprise-automation` |
 | SSG static site build, templates/content, generated output, feeds/sitemap/llms, release gates | `kujo-ssg-workflows`, optionally `kujo-lens-workflows` or `kujo-shipcheck-workflows` |
 | Watchdog AI telemetry, OpenAI-compatible proxy, request traces, auth/redaction/rate limits | `kujo-watchdog-workflows`, optionally `kujo-ai-chat-workflows` or `kujo-ai-sdk-workflows` |
+| Weekly Kujo skill maintenance, stale SKILL.md drift, skill/index trigger refresh | `kujo-skill-auditor` |
 | VM/interpreter drift, `--interpreter`, `--runtime dual`, parity matrix | `kujo-runtime-parity` |
 | Rust implementation changes in parser/compiler/VM/interpreter/native APIs | `kujo-language-implementation` |
 | `kujo docgen`, docs JSON, agent-readable docs, AI task output | `kujo-docgen-agent-readable` |

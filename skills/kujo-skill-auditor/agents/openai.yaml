@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Skill Auditor"
+  short_description: "Audit Kujo skills against real tool behavior"
+  default_prompt: "Use $kujo-skill-auditor to audit the Kujo tool skills against the current repositories and update stale SKILL.md files."

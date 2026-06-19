@@ -630,5 +630,19 @@
       "create Eval suite reports",
       "generate SSG feeds"
     ]
+  },
+  "kujo-skill-auditor": {
+    "should_trigger": [
+      "do my weekly Kujo skills audit",
+      "update stale SKILL.md files for the Kujo tools",
+      "review the Kujo skills pack against current tool repo behavior",
+      "refresh SKILLS_INDEX and trigger fixtures after tool changes"
+    ],
+    "should_not_trigger": [
+      "write a new Kujo CLI tool",
+      "run Watchdog dashboard server",
+      "debug VM interpreter parity",
+      "create a Spec task contract"
+    ]
   }
 }

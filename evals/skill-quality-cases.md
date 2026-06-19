@@ -347,3 +347,14 @@ Expected:
 - Trigger `kujo-watchdog-workflows`.
 - Use loopback-local dashboard/proxy checks.
 - Avoid logging or committing real API keys, tokens, or telemetry DBs.
+
+## Case 32: kujo-skill-auditor
+
+Prompt: "Do my weekly Kujo skills audit and update any stale SKILL.md files based on what changed in the tool repos."
+
+Expected:
+- Trigger `kujo-skill-auditor`.
+- Prioritize tool repos changed in the last 7-10 days unless a narrower scope is provided.
+- Compare each audited skill against repo-backed docs, entrypoints, tests, safety boundaries, commands, flags, and artifacts.
+- Update stale `SKILL.md` files plus `SKILLS_INDEX.md` and eval routing fixtures when behavior or activation changes.
+- Report updated skills, confirmed-current skills, validation commands, and next watchlist.
