@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo DocGen Public Docs Refresh"
+  short_description: "Refresh Kujo DocGen public docs safely"
+  default_prompt: "Use $kujo-docgen-public-docs-refresh to refresh Kujo DocGen public docs and validate generated outputs."
