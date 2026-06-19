@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Docs Drift Auditor"
+  short_description: "Find Kujo docs and artifact drift"
+  default_prompt: "Use $kujo-docs-drift-auditor to audit Kujo docs drift against repository evidence."
