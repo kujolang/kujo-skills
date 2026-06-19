@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Backlog Normalizer"
+  short_description: "Normalize Kujo backlog evidence into tasks"
+  default_prompt: "Use $kujo-backlog-normalizer to normalize Kujo findings into fix-ready backlog tasks."
