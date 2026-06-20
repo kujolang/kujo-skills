@@ -1,6 +1,6 @@
 ---
 name: kujo-standard-library
-description: Use this skill when using, adding, or reviewing Kujo native standard library functions, including arity, return types, capability gates, JSON conversion, filesystem, process, network, database, crypto, strings, arrays, dictionaries, and collection helper behavior.
+description: Use this skill when using, adding, or reviewing Kujo native standard library functions, including arity, return types, capability gates, JSON conversion, filesystem, process, network, database, crypto, strings, arrays, dictionaries, rendering helpers, and collection helper behavior.
 ---
 
 # Kujo Standard Library
@@ -21,6 +21,7 @@ Consult the repo docs before assuming a builtin exists.
 - Dictionary-like JSON serialization uses deterministic key ordering.
 - Predicate helpers such as `contains`, `starts_with`, `ends_with`, and `has_key` return `1`/`0`.
 - Collection helpers such as `push`, `insert`, `remove_at`, `concat`, `map`, and `filter` return updated values; reassign them.
+- Rendering helpers are native builtins too: `escape_xml` is stable; `render_markdown`, `render_listing_card`, and `render_layout_native` are preview surfaces used by the SSG hot path.
 - Dictionary access uses brackets; runtime structs such as `ProcessResult` use dot fields.
 - `write_file(path, content)` errors if the path exists unless overwrite options are provided.
 
@@ -56,4 +57,3 @@ cargo test --test native_api_security_boundaries
 
 - Status: repo-backed: `docs/STANDARD_LIBRARY.md`, `docs/STANDARD_LIBRARY_REFERENCE.md`.
 - Status: repo-backed: `tests/stdlib_reference_contract.rs`, `tests/stdlib_reference_policy_contract.rs`, `src/interpreter/mod.rs`, `src/interpreter/capabilities.rs`.
-

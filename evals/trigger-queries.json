@@ -118,7 +118,7 @@
       "how do execute_status and spawn_process return results",
       "what arity does sha256_file have",
       "review the standard library capability docs",
-      "use db_connect and db_query in a Kujo script"
+      "use render_layout_native and render_listing_card in a Kujo script"
     ],
     "should_not_trigger": [
       "change CLI stdout stderr rules",
@@ -327,6 +327,20 @@
       "make a slide deck",
       "explain cargo install",
       "fix a React routing bug"
+    ]
+  },
+  "kujo-muzzle-workflows": {
+    "should_trigger": [
+      "set up Muzzle quiet workflows for noisy test logs",
+      "run muzzle run project-verify --json",
+      "preview a dangerous workflow with muzzle --dry-run",
+      "inspect Muzzle logs and reports after a failed workflow"
+    ],
+    "should_not_trigger": [
+      "capture a failing command with Casefile",
+      "record agent costs in RunLedger",
+      "scan architecture boundaries with Fence",
+      "build SSG pages"
     ]
   },
   "kujo-casefile-workflows": {
@@ -608,7 +622,7 @@
       "build the Kujo SSG starter site",
       "validate generated SSG output",
       "update templates and content in ssg",
-      "run SSG release gate"
+      "preserve the SSG native render fast path"
     ],
     "should_not_trigger": [
       "run CMS webhooks",

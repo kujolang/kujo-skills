@@ -25,6 +25,8 @@ bash scripts/validate-generated-output.sh output
 - Generated site output goes under `output/`; do not hand-edit it.
 - `build.kujo`, `kujo-ssg.yml`, `templates/`, and `content/` are canonical implementation/example surfaces.
 - Validation checks generated routes, feeds, metadata, and release contract behavior.
+- The current render hot path delegates to native Kujo builtins: `escape_xml`, `render_markdown`, `render_layout_native`, and `render_listing_card`. Keep byte-identical behavior against the interpreted helpers when touching these paths.
+- Remaining performance work is in-repo SSG work, especially frontmatter parsing and listing finalization, unless runtime evidence shows a Kujo VM regression.
 
 When reporting results, state the command, target path, exit code, important artifact paths, and whether the result is advisory, blocking, or a generated output that still needs review.
 
@@ -58,6 +60,7 @@ bash scripts/run_release_gate.sh
 - Exclude `output/`, vendor assets, fonts, images, static bulk, and `tmp/` unless targeted.
 - Preserve CLI output spacing and wording unless changing contracts intentionally.
 - Use the VM path `kujo run ./build.kujo -- ...` for validated execution.
+- Do not replace the native render fast path with slower interpreted string assembly unless the change is explicitly scoped and benchmarked.
 
 Use `rg` for broad searches and exclude generated, dependency, cache, and output directories unless the task explicitly targets them.
 
@@ -66,4 +69,4 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and output
 - Status: repo-backed: `README.md`.
 - Status: repo-backed: `AGENTS.md`.
 - Status: repo-backed: `build.kujo`.
-- Status: repo-backed: `scripts/run_ci_checks.sh`.
+- Status: repo-backed: `docs/performance-findings.md`, `scripts/run_ci_checks.sh`.
