@@ -52,6 +52,17 @@ Release gates:
 bash scripts/release_gate.sh --minimal
 bash scripts/release_gate.sh --full
 bash scripts/release_candidate_gate.sh --full
+bash scripts/enterprise_verify.sh --minimal
+bash scripts/enterprise_verify.sh --full
+```
+
+AI-native enterprise evidence:
+
+```bash
+cargo test --test enterprise_verify_contract
+cargo test --test ai_replay_hermeticity_contract
+cargo test --test docs_policy_consistency_contract
+KUJO_AI_REPLAY=tests/fixtures/ai_cassettes KUJO_AI_REPLAY_MODE=strict cargo run -- run examples/ai_enterprise_replay_showcase.kujo
 ```
 
 ## Rules
@@ -60,11 +71,11 @@ bash scripts/release_candidate_gate.sh --full
 - Do not blindly update snapshots. Inspect expected vs actual output first.
 - For CLI JSON output changes, update contract docs, tests, and changelog.
 - For native API capability changes, update standard library docs and security posture.
+- For AI helper or AI egress changes, update `docs/AI_RUNTIME.md`, `docs/SECURE_AI_SCRIPTING.md`, security posture docs, replay fixtures, and enterprise evidence docs together.
 - For runtime behavior changes, add parity coverage or document intentional divergence.
 - For release readiness, follow `ROADMAP.md` and `docs/PRE_V1_MASTER_UNFINISHED_CHECKLIST.md`, not crate version alone.
 
 ## Sources Consulted
 
 - Status: repo-backed: `README.md`, `ROADMAP.md`, `docs/RELEASE_PROCESS.md`, `docs/PRE_V1_MASTER_UNFINISHED_CHECKLIST.md`.
-- Status: repo-backed: `tests/docs_examples.rs`, `tests/cli_contracts.rs`, `tests/cli_json_contracts.rs`, `scripts/release_gate.sh`, `scripts/release_candidate_gate.sh`.
-
+- Status: repo-backed: `tests/docs_examples.rs`, `tests/cli_contracts.rs`, `tests/cli_json_contracts.rs`, `tests/enterprise_verify_contract.rs`, `tests/ai_replay_hermeticity_contract.rs`, `scripts/release_gate.sh`, `scripts/release_candidate_gate.sh`, `scripts/enterprise_verify.sh`.

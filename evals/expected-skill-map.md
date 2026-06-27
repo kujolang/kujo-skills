@@ -6,15 +6,15 @@ Use this map to sanity-check trigger routing.
 |---|---|
 | General `.kujo` syntax, functions, loops, imports, truthiness | `kujo-core-language` |
 | Building a JSON policy checker or repo scanner in Kujo | `kujo-tool-building`, optionally `kujo-enterprise-automation` |
-| Running untrusted Kujo, shell/network/files/db/archive/HTML risks | `kujo-security-hardening` |
-| CI/operator automation with auditability and capability minimization | `kujo-enterprise-automation`, optionally `kujo-cli-contracts` |
+| Running untrusted Kujo, shell/network/files/db/archive/HTML/AI egress risks | `kujo-security-hardening` |
+| CI/operator automation with auditability, capability minimization, and strict AI replay evidence | `kujo-enterprise-automation`, optionally `kujo-cli-contracts` or `kujo-testing-release-gates` |
 | CLI JSON output, exit codes, stdout/stderr, diagnostics, LSP helper payloads | `kujo-cli-contracts` |
-| Builtin function usage, arity, capability gates, JSON/file/process/network/db/crypto/rendering APIs | `kujo-standard-library` |
-| Test selection, release gates, docs/example smoke tests | `kujo-testing-release-gates` |
+| Builtin function usage, arity, capability gates, JSON/file/process/network/db/crypto/rendering/AI APIs | `kujo-standard-library` |
+| Test selection, release gates, enterprise verify, docs/example smoke tests, strict AI replay checks | `kujo-testing-release-gates` |
 | Muzzle quiet workflows, `.muzzle/workflows/`, manifests, logs/reports, loop mode | `kujo-muzzle-workflows`, optionally `kujo-tool-building` or `kujo-enterprise-automation` |
 | Casefile evidence bundles, `.casefile/`, `capture`, handoff, redaction, cleanup | `kujo-casefile-workflows`, optionally `kujo-tool-building` or `kujo-cli-contracts` |
 | Concord artifact drift, CLI/docs drift, Spec/Eval alignment, examples, source-of-truth findings | `kujo-concord-workflows`, optionally `kujo-cli-contracts`, `kujo-eval-workflows`, or `kujo-spec-workflows` |
-| Dispatch workflow orchestration, `dispatch.kujo`, run state, traces, reports, approval gates, policy profiles | `kujo-dispatch-workflows`, optionally `kujo-tool-building` or `kujo-enterprise-automation` |
+| Dispatch workflow orchestration, `dispatch.kujo`, run state, traces, reports, workflow files, plugins, event sinks, approval gates, policy profiles | `kujo-dispatch-workflows`, optionally `kujo-tool-building` or `kujo-enterprise-automation` |
 | Fence architecture boundaries, `fence.toml`, import violations, zone rules, baselines, SARIF/Markdown reports | `kujo-fence-workflows`, optionally `kujo-tool-building`, `kujo-cli-contracts`, or `kujo-enterprise-automation` |
 | Howl showcase artifacts, `howl.json`, rendered cards/galleries/captions | `kujo-howl-workflows`, optionally `kujo-tool-building` or `kujo-core-language` |
 | Lens browser QA, `.lens.toml`, reports, screenshots, flows, visual/accessibility checks | `kujo-lens-workflows`, optionally `kujo-tool-building` or `kujo-enterprise-automation` |

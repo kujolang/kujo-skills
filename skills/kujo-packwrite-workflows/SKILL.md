@@ -47,6 +47,7 @@ formal schema.
 
 ```bash
 packwrite doctor
+packwrite doctor --strict
 packwrite config
 ```
 
@@ -76,6 +77,10 @@ packwrite prompt codex-review
 `prompt deepseek` prints the implementation-agent prompt. `prompt codex-review`
 prints the independent reviewer prompt. These commands print verbatim prompt text
 so they can be piped or pasted cleanly.
+
+Use `packwrite doctor --strict` in CI or release gates. Plain `doctor` is informational
+and exits `0`; strict mode exits non-zero when a blocker would stop `init`, such as a
+missing prompt, missing API key, or unresolved endpoint.
 
 ## Generated Pack Shape
 
@@ -153,6 +158,12 @@ gateway.
   paths such as `.env*`, keys, PEM files, and names containing `secret` or `token`.
 - Writes are sandboxed to the output directory; absolute, `..`, and escaping paths
   in model manifests are rejected.
+- Configured output directories must be non-empty relative project paths; manifest
+  paths with backslash separators, home expansion, ambiguous segments, output-dir
+  escapes, duplicate paths, or secret-looking names are rejected before dry-runs or
+  writes report success.
+- `--overwrite` performs a staged clean replace, validates before promotion, prunes
+  stale files, and rolls back on failed promotion.
 - Model output must parse to JSON with a non-empty `files` array of `{path, content}`
   string pairs. Surrounding prose and fenced code blocks may be stripped, but there
   is no Markdown fallback parser.

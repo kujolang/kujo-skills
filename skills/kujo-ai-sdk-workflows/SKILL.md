@@ -22,8 +22,9 @@ export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
 ## Workflow Notes
 
 - Fixture mode must remain deterministic and safe without provider secrets.
-- Live provider smoke is opt-in and may skip when no provider key is configured.
+- Live provider smoke may skip during ordinary local runs when no provider key is configured, but release/prerelease validation requires at least one configured provider secret unless a manual workflow explicitly allows the skip.
 - Response contracts, API contract policy, and tests must move together.
+- Keep endpoint allowlists, protected-header policy, structured-output schema validation, response-size limits, fallback providers, benchmark thresholds, and provider capability metadata aligned with README and tests.
 
 When reporting results, state the command, target path, exit code, important artifact paths, and whether the result is advisory, blocking, or a generated output that still needs review.
 
@@ -46,8 +47,12 @@ Run validation after source, docs, contract, or example changes:
 ```bash
 export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
 "$KUJO_BIN" test-run tests/sdk_contract_tests.kujo
+"$KUJO_BIN" test-run tests/sdk_contract_resilience_tests.kujo
 "$KUJO_BIN" test-run tests/security_redaction_tests.kujo
+"$KUJO_BIN" test-run tests/reliability_failure_modes_tests.kujo
+"$KUJO_BIN" test-run tests/feature_smoke_tests.kujo
 ./kujo run examples/telemetry_bridge.kujo --interpreter
+"$KUJO_BIN" run scripts/benchmark_quality_gate.kujo
 bash scripts/release_quality_gates.sh
 bash scripts/supply_chain_policy_check.sh
 ```
@@ -56,6 +61,8 @@ bash scripts/supply_chain_policy_check.sh
 
 - Do not require network or secrets for default local validation.
 - Redact provider keys and sensitive headers in examples, logs, and generated artifacts.
+- Do not let custom request headers override protected `Authorization` or `Content-Type` unless `allow_unsafe_header_override` is explicitly set; CR/LF-bearing custom headers are dropped.
+- Keep structured-output requests provider-capability aware: fail fast with `unsupported_feature` when JSON mode is requested against a provider that does not advertise support.
 - Document breaking response-contract changes and update contract tests.
 
 Use `rg` for broad searches and exclude generated, dependency, cache, and output directories unless the task explicitly targets them.

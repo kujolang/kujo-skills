@@ -17,6 +17,7 @@ cd "${SSG_REPO}"
 kujo run ./build.kujo -- --site-url https://example.com
 kujo serve output --port 8080
 kujo run ./build.kujo -- --init yml
+kujo run ./build.kujo -- --site-url https://example.com --drafts --no-aliases
 bash scripts/validate-generated-output.sh output
 ```
 
@@ -25,6 +26,9 @@ bash scripts/validate-generated-output.sh output
 - Generated site output goes under `output/`; do not hand-edit it.
 - `build.kujo`, `kujo-ssg.yml`, `templates/`, and `content/` are canonical implementation/example surfaces.
 - Validation checks generated routes, feeds, metadata, and release contract behavior.
+- Config discovery prefers `kujo-ssg.yml`, then `kujo-ssg.yaml`, then `kujo-ssg.json`; CLI flags override config values.
+- Draft content is excluded by default. Use `--drafts` only for preview/staging builds, and `--no-aliases` to skip flat `.html` redirect aliases for lower large-site write I/O.
+- Absolute `--output` paths are supported by the current CLI contract; verify generated output paths deliberately before deleting or publishing.
 - The current render hot path delegates to native Kujo builtins: `escape_xml`, `render_markdown`, `render_layout_native`, and `render_listing_card`. Keep byte-identical behavior against the interpreted helpers when touching these paths.
 - Remaining performance work is in-repo SSG work, especially frontmatter parsing and listing finalization, unless runtime evidence shows a Kujo VM regression.
 
@@ -51,6 +55,7 @@ Run validation after source, docs, contract, or example changes:
 ```bash
 kujo run ./build.kujo -- --site-url https://example.com
 bash scripts/validate-generated-output.sh output
+bash scripts/test-cli-contract.sh
 bash scripts/run_ci_checks.sh
 bash scripts/run_release_gate.sh
 ```
@@ -69,4 +74,4 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and output
 - Status: repo-backed: `README.md`.
 - Status: repo-backed: `AGENTS.md`.
 - Status: repo-backed: `build.kujo`.
-- Status: repo-backed: `docs/performance-findings.md`, `scripts/run_ci_checks.sh`.
+- Status: repo-backed: `docs/performance-findings.md`, `scripts/test-cli-contract.sh`, `scripts/run_ci_checks.sh`.

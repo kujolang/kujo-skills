@@ -52,7 +52,9 @@
       "harden a Kujo script that unzips archives",
       "does Kujo sandbox untrusted code",
       "how should html_response escape user content",
-      "run kujo with least privilege for db and fs read"
+      "run kujo with least privilege for db and fs read",
+      "should this untrusted AI script use --allow-ai or --allow-net-client",
+      "lock Kujo AI helpers to approved provider endpoints with KUJO_AI_ALLOWED_ENDPOINTS"
     ],
     "should_not_trigger": [
       "write a pure arithmetic Kujo function",
@@ -74,7 +76,9 @@
       "can Kujo be used for operational quality gates",
       "build a deterministic Kujo report for compliance",
       "what external sandboxing should wrap untrusted Kujo jobs",
-      "create a policy-file workflow with stable JSON output"
+      "create a policy-file workflow with stable JSON output",
+      "set up strict AI replay evidence for an enterprise Kujo automation lane",
+      "run enterprise_verify full for AI-native release evidence"
     ],
     "should_not_trigger": [
       "what is Kujo truthiness",
@@ -118,7 +122,9 @@
       "how do execute_status and spawn_process return results",
       "what arity does sha256_file have",
       "review the standard library capability docs",
-      "use render_layout_native and render_listing_card in a Kujo script"
+      "use render_layout_native and render_listing_card in a Kujo script",
+      "how do ai_text ai_image_url and ai_message build multimodal messages",
+      "what does ai_stream_chat callback cancellation return"
     ],
     "should_not_trigger": [
       "change CLI stdout stderr rules",
@@ -140,7 +146,9 @@
       "should I update snapshots for this Kujo fixture failure",
       "test CLI JSON contract changes",
       "what is the v1 release readiness gate",
-      "run cargo test and kujo dual runtime tests"
+      "run cargo test and kujo dual runtime tests",
+      "what should I run after changing Kujo AI replay behavior",
+      "run scripts/enterprise_verify.sh --full before AI-native release"
     ],
     "should_not_trigger": [
       "write a simple Kujo hello world",
@@ -376,7 +384,9 @@
       "run a Dispatch demo workflow and inspect the trace artifacts",
       "use dispatch.kujo templates --json to see workflow templates",
       "resume a paused Dispatch run after the approval gate",
-      "debug Dispatch policy profile precedence for allow-tools and deny-tools"
+      "debug Dispatch policy profile precedence for allow-tools and deny-tools",
+      "run a Dispatch workflow-file with input-json and the sample plugin",
+      "test Dispatch webhook sink events and throughput benchmark"
     ],
     "should_not_trigger": [
       "run Muzzle quiet workflows for this repo",

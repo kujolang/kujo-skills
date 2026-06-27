@@ -14,6 +14,7 @@ Design Kujo automation as deterministic, auditable, and capability-minimal.
 - Treat non-zero exit codes as authoritative failure signals.
 - Keep policy inputs explicit and validated at startup.
 - Prefer `kujo package-install --frozen` to verify manifests/lockfiles without rewriting them.
+- For AI-native automation, prefer deterministic replay cassettes and strict replay over live-provider CI paths.
 
 ## Execution Policy
 
@@ -21,9 +22,11 @@ For untrusted or shared environments:
 
 ```bash
 kujo run --untrusted --allow-fs-read --allow-net-client workflow.kujo -- policy.json
+kujo run --untrusted --allow-ai workflow.kujo -- prompt.json
 ```
 
 Add only capabilities the workflow requires. Recommend external controls for real enterprise isolation: containers, service accounts, read-only filesystems, narrow writable mounts, network ACLs, firewall egress policy, and secrets managers.
+For AI provider calls, set `KUJO_AI_ALLOWED_ENDPOINTS` and treat `--allow-ai` as separate from general network-client access.
 
 ## JSON And Diagnostics
 
@@ -37,6 +40,7 @@ Add only capabilities the workflow requires. Recommend external controls for rea
 - For repo changes, run targeted tests first and release gates when scope is broad.
 - For CLI JSON or diagnostics changes, update docs, contract tests, and changelog notes.
 - Record command outcomes for release readiness or operational sign-off.
+- Use `bash scripts/enterprise_verify.sh --minimal|--full` for the current AI-native enterprise evidence path; full mode includes the wider release matrix plus strict AI replay checks.
 
 ## Safe Failure Behavior
 
@@ -49,5 +53,5 @@ Add only capabilities the workflow requires. Recommend external controls for rea
 
 - Status: repo-backed: `README.md`, `docs/FIRST_TOOL_COOKBOOK.md`, `docs/CLI_MACHINE_READABLE_CONTRACTS.md`, `docs/RELEASE_PROCESS.md`.
 - Status: repo-backed: `docs/NATIVE_API_SECURITY_POSTURE.md`, `showcases/README.md`, `docs/INSTALL_MATRIX.md`.
+- Status: repo-backed: `docs/AI_NATIVE_ENTERPRISE_RELEASE_EVIDENCE.md`, `docs/SECURE_AI_SCRIPTING.md`, `scripts/enterprise_verify.sh`, `tests/enterprise_verify_contract.rs`.
 - Status: inferred; needs maintainer confirmation: suggested custom JSON field names for user-authored enterprise tools are conventions derived from repo output style, not a formal Kujo script schema.
-

@@ -1,6 +1,6 @@
 ---
 name: kujo-dispatch-workflows
-description: "Use this skill when running, inspecting, extending, or maintaining Dispatch reliable AI workflow orchestration: `dispatch.kujo`, `kujo run --interpreter dispatch.kujo`, `demo`, `resume`, `templates`, `runs`, `show`, `inspect`, `doctor`, `cleanup`, `export-run`, `import-run`, workflow templates, approval gates, trace/report/state artifacts, tool policy profiles, bundle signing, offline fixture runs, SDK bridge integration, or Dispatch CLI/tests/source changes."
+description: "Use this skill when running, inspecting, extending, or maintaining Dispatch reliable AI workflow orchestration: `dispatch.kujo`, `kujo run dispatch.kujo`, `demo`, `resume`, `templates`, `runs`, `show`, `inspect`, `doctor`, `cleanup`, `export-run`, `import-run`, workflow templates, declarative workflow files, plugins, approval gates, trace/report/state artifacts, tool policy profiles, bundle signing, offline fixture runs, SDK bridge integration, or Dispatch CLI/tests/source changes."
 ---
 
 # Kujo Dispatch Workflows
@@ -12,7 +12,7 @@ Use Dispatch as a control-layer workflow engine for repeatable AI orchestration:
 - Read `README.md` first, then `AGENTS.md`. For release, deployment, extension, or backlog work, read the specific doc named in the request.
 - Prefer safe local fixture runs first. Dispatch defaults to `DISPATCH_OFFLINE_FIXTURE=true`, so normal demo/test paths do not need provider credentials.
 - Run commands from the Dispatch repo root so relative paths, output roots, fixtures, and bridge scripts resolve consistently.
-- Use `kujo run --interpreter dispatch.kujo ...` for Dispatch CLI commands unless a task explicitly targets another runtime path.
+- Use the VM path `kujo run dispatch.kujo ...` for Dispatch CLI commands unless a task explicitly targets interpreter fallback or parity.
 - Treat `outputs/`, `tests/tmp/`, `target/`, and `.ci/` as generated or bulk output unless the task explicitly targets them.
 - Preserve CLI text, exit behavior, JSON envelope keys, artifact paths, and exact output contracts unless the request intentionally changes them.
 
@@ -21,18 +21,20 @@ Use Dispatch as a control-layer workflow engine for repeatable AI orchestration:
 ```bash
 cd /path/to/dispatch
 
-kujo run --interpreter dispatch.kujo demo "How do AI workflows improve reliability?" --yes --non-interactive
-kujo run --interpreter dispatch.kujo templates --json
-kujo run --interpreter dispatch.kujo runs --json --diagnostics
-kujo run --interpreter dispatch.kujo inspect <run-id> --json
-kujo run --interpreter dispatch.kujo resume <run-id> --yes --non-interactive
+kujo run dispatch.kujo demo "How do AI workflows improve reliability?" --yes --non-interactive
+kujo run dispatch.kujo demo "Repo review" --workflow-file examples/workflows/custom-review.json --input-json '{"repo":"kujo"}' --plugin sample --yes --non-interactive
+kujo run dispatch.kujo templates --json
+kujo run dispatch.kujo runs --json --diagnostics
+kujo run dispatch.kujo inspect <run-id> --json
+kujo run dispatch.kujo resume <run-id> --yes --non-interactive
 ```
 
 Use `--output-root tests/tmp/<purpose>` for local validation that should not pollute normal `outputs/`.
 
 ## Command Surface
 
-- `demo "topic"` starts a template-backed workflow. Use `--workflow research-report` or `--workflow crud-reliability` to select the template.
+- `demo "topic"` starts a template-backed workflow. Use `--workflow research-report` or `--workflow crud-reliability` to select a built-in template, or `--workflow-file <json>` plus `--input-json '{...}'` for a declarative workflow spec and structured run input.
+- `--plugin sample` exercises the built-in plugin injection path; use `src/core/plugins.kujo` and `src/plugins/builtin_plugins.kujo` for extension work.
 - `resume <run-id>` continues a persisted run, commonly after an approval pause.
 - `templates [--json]` lists available workflow templates and summary metadata.
 - `runs [--json] [--diagnostics]` lists and filters the run catalog by status, workflow, topic, tags, issues, limit, and offset.
@@ -40,6 +42,7 @@ Use `--output-root tests/tmp/<purpose>` for local validation that should not pol
 - `doctor [--json]` diagnoses run state/catalog health; `doctor --write` persists repairs.
 - `cleanup` defaults to dry-run. Add `--apply` only when deletion is requested and the scope is clear.
 - `export-run` and `import-run` move run bundles. Use `--sign-bundle`/`--verify-bundle-signature` with `DISPATCH_BUNDLE_SIGNING_KEY` or `--signing-key`.
+- `--webhook-sink <path.jsonl>` writes lifecycle events to a guarded local JSONL sink, `--webhook-url <https-url>` best-effort posts events, and `--cancel-after-step <step-id>` requests cooperative cancellation.
 
 When strict mutation mode is enabled, `doctor --write`, `cleanup --apply`, and `import-run` require `--confirm-mutation` or `DISPATCH_MUTATION_CONFIRM=true`.
 
@@ -86,6 +89,7 @@ rg "pattern" -g '!target/**' -g '!outputs/**' -g '!tests/tmp/**' -g '!**/.git/**
 ## Extension Patterns
 
 - Add workflow templates in `src/workflows/workflow.kujo`; update `create_workflow_templates`, template ordering, `templates` output expectations, README examples, and tests.
+- Add declarative workflow loading behavior in `src/workflows/loader.kujo` and keep `demo --workflow-file` examples and tests aligned.
 - Add tools through `src/tools/tool.kujo` with payload adapters instead of runner-specific branching; place domain handlers in `tools/*.kujo` when they are reusable.
 - Register external tool/agent injection through `src/core/plugins.kujo` rather than editing core orchestration for project-specific behavior.
 - Keep approval, retry, cancellation, timeout, handoff, report, and trace changes covered by focused tests and artifact contract checks.
@@ -97,8 +101,9 @@ For a basic local fixture smoke:
 
 ```bash
 export DISPATCH_OFFLINE_FIXTURE=true
-kujo run --interpreter dispatch.kujo demo "Dispatch smoke" --yes --non-interactive --output-root tests/tmp/dispatch-smoke
-kujo run --interpreter dispatch.kujo runs --output-root tests/tmp/dispatch-smoke --json --diagnostics
+kujo run dispatch.kujo demo "Dispatch smoke" --yes --non-interactive --output-root tests/tmp/dispatch-smoke
+kujo run dispatch.kujo runs --output-root tests/tmp/dispatch-smoke --json --diagnostics
+kujo run tests/benchmarks/run_throughput.kujo 10
 ```
 
 For repo test coverage:
@@ -128,4 +133,4 @@ $KUJO_BIN test-run tests/dispatch_tests.kujo -v
 ## Sources Consulted
 
 - Status: repo-backed: `README.md`, `AGENTS.md`.
-- Status: repo-backed: `dispatch.kujo`, `src/cli/cli_args.kujo`, `src/workflows/workflow.kujo`, `tests/dispatch_tests.kujo`.
+- Status: repo-backed: `dispatch.kujo`, `src/cli/cli_args.kujo`, `src/workflows/workflow.kujo`, `src/workflows/loader.kujo`, `src/plugins/builtin_plugins.kujo`, `tests/dispatch_tests.kujo`, `docs/benchmarks.md`.
