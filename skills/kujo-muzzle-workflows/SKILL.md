@@ -120,7 +120,7 @@ Only one loop is active per project; loop state persists under `.muzzle/state/lo
 - Use `rg` with exclusions for broad searches: `-g '!/.dogfood/**' -g '!/.muzzle/**' -g '!/.kujo_cache/**'`.
 - Treat `.dogfood/` as historical unless the task explicitly targets it.
 - Preserve agent-friendly examples and exact-output checks.
-- For CLI behavior changes, run `tests/muzzle_wrapper_regression.sh` and add/update focused contract checks.
+- For CLI behavior changes, run `bash tests/muzzle_wrapper_regression.sh` and add/update focused contract checks. The regression script is intentionally invoked through `bash`; it is not executable in the repository checkout.
 
 ## Sources Consulted
 

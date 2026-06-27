@@ -50,7 +50,17 @@ Run validation after source, docs, contract, or example changes:
 export KUJO_BIN="${KUJO_BIN:-kujo}"
 "$KUJO_BIN" run --interpreter dashboard_server.kujo
 # in another shell, run endpoint smoke checks from README or scripts when available
-bash scripts/benchmark.sh
+node tests/benchmark_script_schema_check.js
+node scripts/benchmark_profiles.js --fixture --profiles=quick,soak --json-out=tmp/benchmark-fixture.json
+```
+
+For the full JavaScript regression suite, export `KUJO_BIN` to the Kujo language
+runtime first; the tests intentionally fail fast when they would otherwise pick
+up no runtime or an unrelated `kujo` executable:
+
+```bash
+export KUJO_BIN=/path/to/kujo/target/release/kujo
+for f in tests/*.js; do node "$f" || exit 1; done
 ```
 
 ## Search And Safety

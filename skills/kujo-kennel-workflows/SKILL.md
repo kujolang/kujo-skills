@@ -55,6 +55,11 @@ bash scripts/verify-security-regression-suite.sh
 kujo run tests/kennel_contract_tests.kujo
 ```
 
+`scripts/verify-all.sh` is the broad release gate and includes source-matrix
+coverage that may resolve a GitHub fixture. Use it when network access is
+acceptable; use the narrower profile, security, or contract commands for
+offline-focused local validation.
+
 ## Search And Safety
 
 - Preserve CLI output byte-for-byte unless changing user-facing wording intentionally.
