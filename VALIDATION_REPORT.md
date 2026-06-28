@@ -27,7 +27,7 @@ Descriptions are specific and include both domain and activation cues. They avoi
 Expected overlap exists by design:
 
 - `kujo-security-hardening` and `kujo-enterprise-automation` both cover capability-minimal execution. The security skill is for code/security review; the enterprise skill is for CI/operator workflow design.
-- `kujo-cli-contracts` and `kujo-docgen-agent-readable` both mention DocGen JSON. The CLI skill owns payload/exit compatibility; the DocGen skill owns documentation pipeline and agent-readable artifacts.
+- `kujo-cli-contracts` and `kujo-docgen-agent-readable` both mention DocGen JSON. The CLI skill owns payload/exit compatibility; the DocGen/DocsGen skill owns documentation pipeline, adapter extraction, link validation, public-only gates, and agent-readable artifacts.
 - `kujo-runtime-parity` and `kujo-language-implementation` both mention parity tests. The parity skill is for runtime behavior diagnosis; the implementation skill is for Rust subsystem changes.
 
 No skill is redundant enough to merge without losing trigger precision.
@@ -76,4 +76,3 @@ Known risk areas:
 4. Refresh standard-library skill after any builtin/capability/tier changes.
 5. Refresh runtime-parity skill after any `kujo test` default or VM/interpreter parity matrix change.
 6. Decide whether to add future LSP/editor, package workflow, and performance skills.
-

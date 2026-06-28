@@ -44,7 +44,7 @@ Two requested files, `DOGFOOD_NOTES.md` and `BUG_HUNT_REPORT.md`, were not prese
 | `docs/FIRST_TOOL_COOKBOOK.md` | `args()`, `--` separator, JSON policy tool, output helpers, deterministic exits | tool-building, enterprise-automation | Strong |
 | `docs/VM_INTERPRETER_PARITY_MATRIX.md` | supported/divergent surfaces, runtime command matrix, VM-first recommendations, parity gate | runtime-parity, core-language, testing-release-gates | Strong |
 | `docs/VM_INTERPRETER_MIGRATION_PLAYBOOK.md` | migration commands, decision table, dual/vm/interpreter use | runtime-parity, core-language | Strong |
-| `docs/DOCGEN.md` | DocGen architecture, scan-only security model, JSON fields, strict gates, AI tasks | docgen-agent-readable, cli-contracts | Strong |
+| `docs/DOCGEN.md` | DocGen/DocsGen architecture, supported languages, scan-only security model, discovery/cache limits, link validation, JSON fields, strict gates, AI tasks | docgen-agent-readable, cli-contracts | Strong |
 | `docs/ARCHITECTURE.md` | subsystem map, execution pipeline, runtime path model, pre-1.0 posture | language-implementation, runtime-parity | Medium; version wording conflicts with other docs |
 | `ROADMAP.md` | release rules, agent execution contract, test requirements, repo map, readiness blockers | testing-release-gates, language-implementation, maintainer-review | Strong |
 | `docs/V1_SCOPE.md` | in-scope/out-of-scope v1 surfaces, deferred runtime backlog, pre-1.0 boundary | testing-release-gates, maintainer-review, publication-notes | Strong |
@@ -118,4 +118,3 @@ Two requested files, `DOGFOOD_NOTES.md` and `BUG_HUNT_REPORT.md`, were not prese
 - If builtin tiers or capabilities change, `kujo-standard-library` and `kujo-security-hardening` must be refreshed.
 - If `kujo test` runtime defaults change, `kujo-runtime-parity` must be updated.
 - If public package names, repository URLs, or install artifacts change, `publication-notes.md` and enterprise/install guidance must be updated.
-

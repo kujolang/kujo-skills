@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo DocGen Agent Docs"
+  short_description: "Maintain Kujo DocGen agent-readable docs"
+  default_prompt: "Use $kujo-docgen-agent-readable to work on Kujo DocGen outputs, gaps, contracts, or generated docs."

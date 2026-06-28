@@ -37,7 +37,7 @@ Expected:
 
 ## Case 4: CLI JSON Change
 
-Prompt: "Make `kujo docgen --json` easier for agents to parse."
+Prompt: "Make `kujo docgen --json` / DocsGen output easier for agents to parse."
 
 Expected:
 
@@ -45,6 +45,7 @@ Expected:
 - Preserve existing fields and add optional fields.
 - Update contract docs/tests/changelog.
 - Use typed builder in DocGen core.
+- Keep `summary.schema_version` and machine-readable gap/link/discovery counters stable unless intentionally versioned.
 
 ## Case 5: Native Builtin Addition
 

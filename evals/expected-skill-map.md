@@ -47,5 +47,5 @@ Use this map to sanity-check trigger routing.
 | Dependabot or GitHub security alert triage across Kujo repos | `kujo-dependabot-alert-triage`, optionally `kujo-backlog-normalizer`, `kujo-patchbrief-workflows`, or `kujo-changebucket-workflows` |
 | VM/interpreter drift, `--interpreter`, `--runtime dual`, parity matrix | `kujo-runtime-parity` |
 | Rust implementation changes in parser/compiler/VM/interpreter/native APIs | `kujo-language-implementation` |
-| `kujo docgen`, docs JSON, agent-readable docs, AI task output | `kujo-docgen-agent-readable` |
+| `kujo docgen`/DocsGen, docs JSON, adapter extraction, link validation, agent-readable docs, AI task output | `kujo-docgen-agent-readable` |
 | Strict maintainer review | `kujo-maintainer-review` |

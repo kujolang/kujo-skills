@@ -318,13 +318,15 @@
   "kujo-docgen-agent-readable": {
     "should_trigger": [
       "make kujo docgen output more agent readable",
+      "work with DocsGen in the Kujo programming language",
       "add a field to docgen --json summary",
       "fix docgen gaps JSON for AI tasks",
       "how does kujo docgen scan without executing code",
       "update public-only documentation gates",
       "keep README and generated docs aligned",
       "docgen should validate external links safely",
-      "emit ai tasks from kujo docgen"
+      "emit ai tasks from kujo docgen",
+      "update Kujo DocsGen adapter extraction rules"
     ],
     "should_not_trigger": [
       "write a Kujo for loop",
