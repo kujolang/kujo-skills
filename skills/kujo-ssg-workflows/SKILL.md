@@ -1,6 +1,6 @@
 ---
 name: kujo-ssg-workflows
-description: "Use this skill when building, validating, configuring, testing, or maintaining the Kujo SSG static-site showcase: `build.kujo`, starter content, templates, assets, `kujo-ssg.yml`, feeds, sitemap, robots, `llms.txt`, generated `output/`, CLI flags, validation scripts, release gates, or `ssg` source/docs changes."
+description: "Use this skill when building, validating, configuring, testing, or maintaining the Kujo SSG static-site showcase: `build.kujo`, starter content, templates, assets, `kujo-ssg.yml`, feeds, sitemap, robots, `llms.txt`, generated `output/`, CLI flags, parallel shard builds, validation scripts, release gates, or `ssg` source/docs changes."
 ---
 
 # Kujo SSG Workflows
@@ -18,6 +18,7 @@ kujo run ./build.kujo -- --site-url https://example.com
 kujo serve output --port 8080
 kujo run ./build.kujo -- --init yml
 kujo run ./build.kujo -- --site-url https://example.com --drafts --no-aliases
+KUJO_BIN=/path/to/kujo bash scripts/build-parallel.sh auto auto --content content --output output --site-url https://example.com --posts-per-page 25
 bash scripts/validate-generated-output.sh output
 ```
 
@@ -30,6 +31,7 @@ bash scripts/validate-generated-output.sh output
 - Draft content is excluded by default. Use `--drafts` only for preview/staging builds, and `--no-aliases` to skip flat `.html` redirect aliases for lower large-site write I/O.
 - Absolute `--output` paths are supported by the current CLI contract; verify generated output paths deliberately before deleting or publishing.
 - The current render hot path delegates to native Kujo builtins: `escape_xml`, `render_markdown`, `render_layout_native`, and `render_listing_card`. Keep byte-identical behavior against the interpreted helpers when touching these paths.
+- Large sites can use `scripts/build-parallel.sh <shards|auto> <concurrency|auto> [build args...]`; it drives `build.kujo --phase setup|posts|finalize` and `--shard i --shards N`, with byte-identical output except sitemap URL order.
 - Remaining performance work is in-repo SSG work, especially frontmatter parsing and listing finalization, unless runtime evidence shows a Kujo VM regression.
 
 When reporting results, state the command, target path, exit code, important artifact paths, and whether the result is advisory, blocking, or a generated output that still needs review.
@@ -74,4 +76,4 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and output
 - Status: repo-backed: `README.md`.
 - Status: repo-backed: `AGENTS.md`.
 - Status: repo-backed: `build.kujo`.
-- Status: repo-backed: `docs/performance-findings.md`, `scripts/test-cli-contract.sh`, `scripts/run_ci_checks.sh`.
+- Status: repo-backed: `docs/performance-findings.md`, `scripts/build-parallel.sh`, `scripts/test-cli-contract.sh`, `scripts/run_ci_checks.sh`.

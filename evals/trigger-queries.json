@@ -620,6 +620,7 @@
       "validate Kennel package lockfile behavior",
       "add a local package dependency with kennel",
       "review Kennel trust policy enforcement",
+      "configure Kennel static index mirrors and local hosted registry",
       "run Kennel release verification scripts"
     ],
     "should_not_trigger": [
@@ -634,6 +635,7 @@
       "build the Kujo SSG starter site",
       "validate generated SSG output",
       "update templates and content in ssg",
+      "run the SSG parallel shard build for a large site",
       "preserve the SSG native render fast path"
     ],
     "should_not_trigger": [

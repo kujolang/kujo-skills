@@ -324,20 +324,20 @@ Expected:
 
 ## Case 29: kujo-kennel-workflows
 
-Prompt: "Validate Kennel trust policy and local dependency install behavior."
+Prompt: "Validate Kennel trust policy, static index mirrors, and local hosted-registry behavior."
 
 Expected:
 - Trigger `kujo-kennel-workflows`.
-- Inspect manifests, lockfiles, trust/source policy, and resolver code.
+- Inspect manifests, lockfiles, trust/source policy, resolver code, static index routing, and local hosted-registry artifacts.
 - Run Kennel verification scripts or targeted contract tests.
 
 ## Case 30: kujo-ssg-workflows
 
-Prompt: "Build the SSG starter site and validate generated output before release."
+Prompt: "Build the SSG starter site, use the parallel shard path for a large corpus, and validate generated output before release."
 
 Expected:
 - Trigger `kujo-ssg-workflows`.
-- Run `kujo run ./build.kujo -- ...` and generated-output validation.
+- Run `kujo run ./build.kujo -- ...`, use `scripts/build-parallel.sh` for large-site shard builds when relevant, and run generated-output validation.
 - Do not hand-edit `output/`.
 
 ## Case 31: kujo-watchdog-workflows

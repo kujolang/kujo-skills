@@ -34,8 +34,8 @@ Use this map to sanity-check trigger routing.
 | AI SDK provider contracts, fixture mode, streaming, retries, redaction, live smoke, release gates | `kujo-ai-sdk-workflows`, optionally `kujo-security-hardening` or `kujo-enterprise-automation` |
 | CMS content models, delivery routes, auth boundaries, webhooks, jobs, release gates | `kujo-cms-workflows`, optionally `kujo-security-hardening` or `kujo-enterprise-automation` |
 | CRUD API showcase, item/project APIs, Next.js playground, smoke tests, DR/performance drills | `kujo-crud-api-workflows`, optionally `kujo-security-hardening` or `kujo-lens-workflows` |
-| Kennel package/dependency manifests, lockfiles, static indexes, trust/source policy | `kujo-kennel-workflows`, optionally `kujo-security-hardening` or `kujo-enterprise-automation` |
-| SSG static site build, templates/content, generated output, feeds/sitemap/llms, native render fast paths, release gates | `kujo-ssg-workflows`, optionally `kujo-lens-workflows` or `kujo-shipcheck-workflows` |
+| Kennel package/dependency manifests, lockfiles, static indexes/mirrors, local hosted registry, trust/source policy | `kujo-kennel-workflows`, optionally `kujo-security-hardening` or `kujo-enterprise-automation` |
+| SSG static site build, templates/content, generated output, feeds/sitemap/llms, native render fast paths, parallel shard builds, release gates | `kujo-ssg-workflows`, optionally `kujo-lens-workflows` or `kujo-shipcheck-workflows` |
 | Watchdog AI telemetry, OpenAI-compatible proxy, request traces, auth/redaction/rate limits | `kujo-watchdog-workflows`, optionally `kujo-ai-chat-workflows` or `kujo-ai-sdk-workflows` |
 | Weekly Kujo skill maintenance, stale SKILL.md drift, skill/index trigger refresh | `kujo-skill-auditor` |
 | Recurring Kujo readiness posture, release preparedness, evidence gaps | `kujo-readiness-auditor`, optionally `kujo-shipcheck-workflows`, `kujo-fence-workflows`, or `kujo-eval-workflows` |
