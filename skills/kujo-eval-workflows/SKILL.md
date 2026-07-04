@@ -206,7 +206,7 @@ capture is noisy or slow, especially `KUJO_EVAL_GATE_TIMEOUT_SECONDS`,
 - Compare `path_exists()` with `true`/`false`, not `1`/`0`.
 - `contains()` and `has_key()` may behave int-like; follow existing local
   comparisons when changing nearby code.
-- Interpreter-mode RUFRUN001 warnings can be benign; rely on exit code and
+- Interpreter-mode KUJORUN001 warnings can be benign; rely on exit code and
   generated artifacts for pass/fail decisions.
 
 ## Search Hygiene
