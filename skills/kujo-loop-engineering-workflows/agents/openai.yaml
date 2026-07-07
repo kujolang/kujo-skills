@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Loop Engineering"
+  short_description: "Run bounded agent loops in arbitrary repos"
+  default_prompt: "Use $kujo-loop-engineering-workflows to run this task with repo-local evidence, gates, blockers, and a clean summary."
