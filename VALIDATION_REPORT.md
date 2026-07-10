@@ -1,78 +1,47 @@
 # Kujo Skills Validation Report
 
-## Skill format validation
+**Validation date:** 2026-07-10
 
-All 11 required skill folders exist under `skills/`, and each folder name matches the `name` field in its `SKILL.md` frontmatter:
+## Scope
 
-- `kujo-core-language`
-- `kujo-tool-building`
-- `kujo-security-hardening`
-- `kujo-enterprise-automation`
-- `kujo-cli-contracts`
-- `kujo-standard-library`
-- `kujo-testing-release-gates`
-- `kujo-runtime-parity`
-- `kujo-language-implementation`
-- `kujo-docgen-agent-readable`
-- `kujo-maintainer-review`
+- Skill folders discovered: 46
+- Frontmatter/folder-name agreement: 46/46
+- Trigger-query map coverage: 46/46
+- Expected-skill-map coverage: 46/46
+- Machine-specific path scan in `SKILL.md` files: no matches
 
-Each `SKILL.md` includes valid Agent Skills-style frontmatter with `name` and `description`.
+## Validation evidence
 
-## Trigger description review
+Every folder under `skills/` contains one `SKILL.md` whose frontmatter `name`
+matches its folder name. `evals/trigger-queries.json` supplies trigger and
+non-trigger examples for every current skill; the expected-map catalog now also
+covers every skill, including `kujo-loop-engineering-workflows`.
 
-Descriptions are specific and include both domain and activation cues. They avoid generic "best practices" phrasing and mention Kujo-specific surfaces such as `.kujo`, VM/interpreter, native capability flags, CLI JSON contracts, DocGen, LSP helper JSON, and release gates.
+The validation uses the Agent Skills structural validator for each skill,
+Python JSON parsing for the trigger map, and a cross-file name-set comparison.
+It proves collection structure and routing coverage; it does not prove that a
+particular external tool, provider, browser, or credentialed integration is
+available on every host.
 
-## Skill overlap review
+## Trigger and safety review
 
-Expected overlap exists by design:
+- Trigger/non-trigger examples are present for all 46 skills.
+- The existing skill contracts retain their explicit safety boundaries for
+  filesystem, process, network, provider, release, and publication work.
+- Collection-wide adversarial routing remains a follow-up: add runnable
+  evaluator assertions that verify a router rejects unsafe or out-of-scope
+  activations rather than treating descriptive examples as execution proof.
 
-- `kujo-security-hardening` and `kujo-enterprise-automation` both cover capability-minimal execution. The security skill is for code/security review; the enterprise skill is for CI/operator workflow design.
-- `kujo-cli-contracts` and `kujo-docgen-agent-readable` both mention DocGen JSON. The CLI skill owns payload/exit compatibility; the DocGen/DocsGen skill owns documentation pipeline, adapter extraction, link validation, public-only gates, and agent-readable artifacts.
-- `kujo-runtime-parity` and `kujo-language-implementation` both mention parity tests. The parity skill is for runtime behavior diagnosis; the implementation skill is for Rust subsystem changes.
+## Remaining release blockers
 
-No skill is redundant enough to merge without losing trigger precision.
+- The checkout is on `weekly-kujo-skills-audit-2026-07-04`, not `main`.
+- No collection-level CI/release/version/license/changelog policy was confirmed
+  in this pass.
+- Kujo v1 wording must be reconciled after the core release state changes.
 
-## Missing coverage
+## Re-run commands
 
-Intentional omissions from the required catalog:
-
-- Detailed LSP/editor setup.
-- Package workflow authoring beyond package-install/package-lock verification.
-- Tree-sitter maintenance.
-- Performance benchmarking and criterion workflows.
-- Static server implementation details.
-
-These are suggested as future skills in `EXTRACTION_REPORT.md`.
-
-## Over-broad skills
-
-- `kujo-language-implementation` is necessarily broad because it covers Rust contribution boundaries. It stays usable by providing a subsystem map and validation by change type.
-- `kujo-enterprise-automation` could become broad if expanded; current content is limited to deterministic CLI behavior, JSON, capability-minimal execution, CI, and external isolation.
-
-## Over-specific skills
-
-- None of the skills encode one-off roadmap items as primary workflow steps. Specific commands are validation gates rather than narrow task assumptions.
-
-## Hallucination risk review
-
-Risk controls applied:
-
-- Every skill includes a "Sources consulted" section.
-- Claims about sandboxing, release readiness, VM defaults, CLI contracts, and capabilities were taken from repo docs/tests/implementation.
-- Inferred conventions are explicitly marked in the extraction report or skill source notes.
-- The package avoids claiming missing source files were reviewed.
-
-Known risk areas:
-
-- Release status is contradictory across docs.
-- Some examples use older style forms; idiomatic style guidance should be maintainer-reviewed.
-- Custom enterprise JSON report field names are inferred conventions, not formal language contracts.
-
-## Recommended maintainer review checklist
-
-1. Reconcile release readiness wording across `README.md`, `docs/RELEASE_PROCESS.md`, `docs/ARCHITECTURE.md`, `docs/V1_SCOPE.md`, and `docs/PRE_V1_MASTER_UNFINISHED_CHECKLIST.md`.
-2. Confirm whether new idiomatic Kujo examples should prefer `let`/`mut`/`const` with `:=` exclusively.
-3. Confirm whether custom enterprise tool JSON field naming should be documented as a formal convention.
-4. Refresh standard-library skill after any builtin/capability/tier changes.
-5. Refresh runtime-parity skill after any `kujo test` default or VM/interpreter parity matrix change.
-6. Decide whether to add future LSP/editor, package workflow, and performance skills.
+```bash
+find skills -mindepth 2 -maxdepth 2 -name SKILL.md -print
+python3 -m json.tool evals/trigger-queries.json >/dev/null
+```

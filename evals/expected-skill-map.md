@@ -12,6 +12,7 @@ Use this map to sanity-check trigger routing.
 | Builtin function usage, arity, capability gates, JSON/file/process/network/db/crypto/rendering/AI APIs | `kujo-standard-library` |
 | Test selection, release gates, enterprise verify, docs/example smoke tests, strict AI replay checks | `kujo-testing-release-gates` |
 | Muzzle quiet workflows, `.muzzle/workflows/`, manifests, logs/reports, loop mode | `kujo-muzzle-workflows`, optionally `kujo-tool-building` or `kujo-enterprise-automation` |
+| Bounded engineering loops, `.loop-engineering/`, checklist classification, structured blockers, evidence, opt-in commits | `kujo-loop-engineering-workflows` |
 | Casefile evidence bundles, `.casefile/`, `capture`, handoff, redaction, cleanup | `kujo-casefile-workflows`, optionally `kujo-tool-building` or `kujo-cli-contracts` |
 | Concord artifact drift, CLI/docs drift, Spec/Eval alignment, examples, source-of-truth findings | `kujo-concord-workflows`, optionally `kujo-cli-contracts`, `kujo-eval-workflows`, or `kujo-spec-workflows` |
 | Dispatch workflow orchestration, `dispatch.kujo`, run state, traces, reports, workflow files, plugins, event sinks, approval gates, policy profiles | `kujo-dispatch-workflows`, optionally `kujo-tool-building` or `kujo-enterprise-automation` |

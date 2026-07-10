@@ -757,6 +757,20 @@
       "create a PowerPoint deck"
     ]
   },
+  "kujo-loop-engineering-workflows": {
+    "should_trigger": [
+      "initialize a bounded loop-engineering task in this repository",
+      "run a loop-engineering checklist and capture structured blockers",
+      "use run-workflow.sh --config for this local engineering task",
+      "classify this markdown checklist into local and external work"
+    ],
+    "should_not_trigger": [
+      "write a simple one-file Kujo script",
+      "run a release gate before tagging",
+      "create a visual-regression baseline",
+      "summarize a Git diff without executing a workflow"
+    ]
+  },
   "kujo-dependabot-alert-triage": {
     "should_trigger": [
       "do the weekly Dependabot alert triage for Kujo repos",
