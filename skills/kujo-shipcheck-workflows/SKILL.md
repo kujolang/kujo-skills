@@ -34,6 +34,7 @@ If scanning ShipCheck itself from inside the ShipCheck repo, omit `--dir`.
 
 - Run `scan` first to surface repository health, code quality, documentation, and release metadata findings.
 - Use `--format json` when a CI step, policy script, or follow-up analysis needs stable fields.
+- `scan --format json` and `gate --format json` conform to `schemas/shipcheck-report.schema.json` for the current `0.1.x` line; consumers should rely on exit status plus `summary.gate_passed` and ignore unknown future fields.
 - Run `checklist` when the user wants actionable release tasks in human-readable form.
 - Run `gate` as the enforcement step after fixes. Do not use `scan` as a blocking gate.
 - Run `release-note` only as a draft generator from recent git commits; final release notes still need human editing.
@@ -81,6 +82,7 @@ Preserve these contracts unless the user explicitly asks to change them:
 - Help/version usage: standalone `--help` and `--version` aliases are not implemented in this wrapper.
 - Gate behavior: error-level failures return `1`; warning-only results return `0`.
 - JSON report identity: `tool` is `shipcheck`, `version` is current release, and `summary.total_checks` matches the check catalog.
+- JSON schema compatibility is public contract surface; breaking field changes require a documented compatibility update.
 - Public docs: keep `README.md`, `docs/operations.md`, and `docs/check-catalog.md` aligned with source behavior.
 
 Use `rg` for broad searches and exclude generated or historical bulk paths unless the task targets them:
@@ -119,3 +121,4 @@ For source changes that add, remove, rename, or re-severity checks, update `src/
 
 - Status: repo-backed: `README.md`, `AGENTS.md`, `shipcheck.spec.yml`, `tests/cli-output-contract.sh`.
 - Status: repo-backed: `docs/operations.md`, `docs/check-catalog.md`, `shipcheck.kujo`, `src/checks.kujo`, `src/scan.kujo`, `src/report.kujo`.
+- Status: repo-backed: `schemas/shipcheck-report.schema.json`, `docs/compatibility.md`, `docs/security.md`.

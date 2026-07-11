@@ -5,7 +5,7 @@ description: "Use this skill when scanning, reporting, triaging, or maintaining 
 
 # Kujo Concord Workflows
 
-Use Concord to detect whether a repository's code, CLI help, docs, examples, Spec files, Eval checks, manifests, package metadata, versions, and release artifacts still describe the same product. Treat findings as drift leads for human review, not proof of correctness.
+Use Concord to detect whether a repository's code, CLI help, docs, examples, Spec files, Eval checks, manifests, package metadata, versions, and release artifacts still describe the same product. Treat findings as drift leads for human review, not proof of correctness. Current manifest/version checks include Kujo manifests and JavaScript `package.json` metadata, including scoped package names parsed from JSON.
 
 ## Quick Start
 
@@ -63,6 +63,7 @@ Do not collapse these into pass/fail without context. In final responses, state 
 
 - Prefer updating the artifact that is least authoritative. If unsure, use `source-of-truth` findings and repository conventions to decide.
 - Preserve copyable command examples. Concord is intended to help agents keep examples aligned with real commands.
+- When Node or npm commands appear in fenced examples, preserve them as first-class examples; Concord recognizes shell, Kujo, Cargo, Git, Node, npm, npx, and standalone Tribunal commands.
 - After edits, rerun the narrow `check <category>` first, then run full `scan` if the change touched multiple artifact families.
 - Avoid treating Concord as a formatter or auto-fixer. It surfaces mismatches and task cards; the agent still chooses and applies the appropriate edit.
 

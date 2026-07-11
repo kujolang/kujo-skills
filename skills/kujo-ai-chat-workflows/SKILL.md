@@ -22,7 +22,7 @@ ENCRYPTION_SECRET=replace_with_strong_secret API_AUTH_TOKEN=replace_with_strong_
 ## Workflow Notes
 
 - Runtime database and backup outputs live under configured data paths; do not commit runtime data.
-- `/api/chat/stream` emits SSE `token`, `thinking`, `done`, and `error` events.
+- `/api/chat/stream` emits SSE `token`, `thinking`, `done`, and `error` events. Preserve complete upstream text/thinking streams plus final metadata and usage detail payloads when changing bridge or route plumbing.
 - Offline fixture smoke is the safest provider-free validation path.
 
 When reporting results, state the command, target path, exit code, important artifact paths, and whether the result is advisory, blocking, or a generated output that still needs review.

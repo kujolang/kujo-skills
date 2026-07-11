@@ -372,7 +372,8 @@
       "run Concord scan and report artifact drift in this repo",
       "check cli-docs drift with concord check cli-docs",
       "turn Concord findings into task cards",
-      "fix Concord examples drift after changing CLI help"
+      "fix Concord examples drift after changing CLI help",
+      "verify Concord detects package.json manifest drift for a Node repo"
     ],
     "should_not_trigger": [
       "capture a failing command with Casefile",
@@ -458,7 +459,8 @@
       "run PatchBrief summarize on my current git diff",
       "generate a PatchBrief handoff note for the next agent",
       "use patchbrief.kujo suggest-tests before I open this PR",
-      "update PatchBrief JSON handoff fields and tests"
+      "update PatchBrief JSON handoff fields and tests",
+      "validate the patchbrief summary JSON schema contract"
     ],
     "should_not_trigger": [
       "build a generic git diff summarizer from scratch",
@@ -514,7 +516,8 @@
       "run ShipCheck on this repo and tell me whether the release gate passes",
       "use shipcheck.kujo scan --format json for this local checkout",
       "generate a ShipCheck checklist before tagging this Kujo release",
-      "wire ShipCheck gate into CI and explain its exit code behavior"
+      "wire ShipCheck gate into CI and explain its exit code behavior",
+      "check whether shipcheck-report.schema.json matches gate --format json"
     ],
     "should_not_trigger": [
       "run the generic Kujo release gate for the compiler",
@@ -564,7 +567,8 @@
       "start AI Chat locally and run smoke tests",
       "fix SSE thinking events in ai-chat",
       "update bridge_chat.kujo provider fixture behavior",
-      "backup and vacuum the AI Chat SQLite database"
+      "backup and vacuum the AI Chat SQLite database",
+      "preserve AI Chat streaming usage detail payloads"
     ],
     "should_not_trigger": [
       "maintain AI SDK provider retries only",
@@ -578,7 +582,8 @@
       "fix AI SDK streaming callback contract",
       "run ai-sdk security redaction tests",
       "update provider presets and fixture mode",
-      "run live provider smoke with skip handling"
+      "run live provider smoke with skip handling",
+      "use resolve_model_preference for provider-neutral model routing"
     ],
     "should_not_trigger": [
       "open the AI Chat web UI",
@@ -592,7 +597,8 @@
       "start the Kujo CMS backend runtime",
       "run cms_contract_tests.kujo",
       "process CMS webhook outbox jobs",
-      "extend CMS content model routes"
+      "extend CMS content model routes",
+      "review CMS release gate evidence and branch protection gap"
     ],
     "should_not_trigger": [
       "run CRUD API smoke tests",
@@ -636,7 +642,8 @@
       "validate generated SSG output",
       "update templates and content in ssg",
       "run the SSG parallel shard build for a large site",
-      "preserve the SSG native render fast path"
+      "preserve the SSG native render fast path",
+      "build SSG custom collections with posts-at-root and llms output"
     ],
     "should_not_trigger": [
       "run CMS webhooks",

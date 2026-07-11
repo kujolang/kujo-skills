@@ -17,7 +17,8 @@ cd "${SSG_REPO}"
 kujo run ./build.kujo -- --site-url https://example.com
 kujo serve output --port 8080
 kujo run ./build.kujo -- --init yml
-kujo run ./build.kujo -- --site-url https://example.com --drafts --no-aliases
+kujo run ./build.kujo -- --site-url https://example.com --drafts --no-aliases --posts-at-root
+kujo run ./build.kujo -- --site-url https://example.com --download-remote-images
 KUJO_BIN=/path/to/kujo bash scripts/build-parallel.sh auto auto --content content --output output --site-url https://example.com --posts-per-page 25
 bash scripts/validate-generated-output.sh output
 ```
@@ -26,9 +27,13 @@ bash scripts/validate-generated-output.sh output
 
 - Generated site output goes under `output/`; do not hand-edit it.
 - `build.kujo`, `kujo-ssg.yml`, `templates/`, and `content/` are canonical implementation/example surfaces.
-- Validation checks generated routes, feeds, metadata, and release contract behavior.
+- Validation checks generated routes, feeds, metadata, docs contracts, and release contract behavior.
 - Config discovery prefers `kujo-ssg.yml`, then `kujo-ssg.yaml`, then `kujo-ssg.json`; CLI flags override config values.
 - Draft content is excluded by default. Use `--drafts` only for preview/staging builds, and `--no-aliases` to skip flat `.html` redirect aliases for lower large-site write I/O.
+- Use `--posts-at-root` when post permalinks must remain at `/<slug>/` while the blog listing stays under `/<blog_slug>/`.
+- Use `--download-remote-images` only when remote `featured_image` mirroring is required and network capability is deliberately enabled; local featured-image paths are checked against approved content/assets roots.
+- Custom collections under `content/<type>/*.md` generate `/<type>/<slug>/` routes, per-type listing pages, taxonomy sections, and public `llms.txt` collection entries.
+- Use `--no-aux` when the build only needs page/item routes and should skip feed, sitemap, robots, and `llms.txt`.
 - Absolute `--output` paths are supported by the current CLI contract; verify generated output paths deliberately before deleting or publishing.
 - The current render hot path delegates to native Kujo builtins: `escape_xml`, `render_markdown`, `render_layout_native`, and `render_listing_card`. Keep byte-identical behavior against the interpreted helpers when touching these paths.
 - Large sites can use `scripts/build-parallel.sh <shards|auto> <concurrency|auto> [build args...]`; it drives `build.kujo --phase setup|posts|finalize` and `--shard i --shards N`, with byte-identical output except sitemap URL order.
@@ -58,6 +63,7 @@ Run validation after source, docs, contract, or example changes:
 kujo run ./build.kujo -- --site-url https://example.com
 bash scripts/validate-generated-output.sh output
 bash scripts/test-cli-contract.sh
+bash scripts/test-docs-contract.sh
 bash scripts/run_ci_checks.sh
 bash scripts/run_release_gate.sh
 ```
@@ -76,4 +82,4 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and output
 - Status: repo-backed: `README.md`.
 - Status: repo-backed: `AGENTS.md`.
 - Status: repo-backed: `build.kujo`.
-- Status: repo-backed: `docs/performance-findings.md`, `scripts/build-parallel.sh`, `scripts/test-cli-contract.sh`, `scripts/run_ci_checks.sh`.
+- Status: repo-backed: `docs/current-capability-matrix.md`, `docs/performance-findings.md`, `scripts/build-parallel.sh`, `scripts/test-cli-contract.sh`, `scripts/test-docs-contract.sh`, `scripts/run_ci_checks.sh`.
