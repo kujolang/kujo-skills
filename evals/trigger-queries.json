@@ -666,6 +666,90 @@
       "generate SSG feeds"
     ]
   },
+  "kujo-redact-workflows": {
+    "should_trigger": [
+      "sanitize this markdown with Redact and verify leakage",
+      "run redact.kujo pack with the external-safe policy",
+      "review .redact/runs audit artifacts without storing originals",
+      "update Redact policy YAML handling and tests"
+    ],
+    "should_not_trigger": [
+      "review Scent redactions.json from a context pack",
+      "debug Watchdog telemetry redaction",
+      "scan browser secrets with Lens",
+      "write a generic regex sanitizer in Python"
+    ]
+  },
+  "kujo-tribunal-workflows": {
+    "should_trigger": [
+      "run a Tribunal review with the fast-two-model panel",
+      "verify a signed Tribunal run with a trust policy",
+      "export a Tribunal decision bundle for handoff",
+      "update Tribunal schemas and release gates"
+    ],
+    "should_not_trigger": [
+      "run Dispatch workflow templates",
+      "record a RunLedger receipt only",
+      "create a Spec task contract",
+      "summarize a normal chat transcript"
+    ]
+  },
+  "kujo-workcell-workflows": {
+    "should_trigger": [
+      "initialize and validate a Workcell workcell.json",
+      "run Workcell in Docker and inspect receipt.json",
+      "verify a .workcell run manifest after tampering",
+      "harden Workcell output path containment tests"
+    ],
+    "should_not_trigger": [
+      "run a generic Docker container manually",
+      "execute Relay bounded missions",
+      "capture a failed command with Casefile",
+      "scan architecture boundaries with Fence"
+    ]
+  },
+  "kujo-relay-workflows": {
+    "should_trigger": [
+      "run Relay doctor and agents validate in fixture mode",
+      "execute a Relay mission with PackWrite RunLedger ChangeBucket Eval evidence",
+      "inspect Relay runs events with cursor metadata",
+      "repair a failed Relay mission within bounded attempts"
+    ],
+    "should_not_trigger": [
+      "run Dispatch approval workflow files",
+      "start Watchdog dashboard only",
+      "build an Agents SDK example directly",
+      "make a Scent context pack"
+    ]
+  },
+  "kujo-sitekit-workflows": {
+    "should_trigger": [
+      "build SiteKit dist and run component validation",
+      "add a SiteKit component schema template and CSS",
+      "update SiteKit tokens without raw hex colors",
+      "smoke test SiteKit consumer dashboard behavior"
+    ],
+    "should_not_trigger": [
+      "build an SSG content site",
+      "run Lens visual QA only",
+      "create a random landing page design",
+      "debug CMS content routes"
+    ]
+  },
+  "kujo-benchmarks-capsule-workflows": {
+    "should_trigger": [
+      "make a stable Capsule for this fixture project",
+      "validate capsule.json and inspect capsule.md",
+      "compare Capsule benchmark evidence after a model run",
+      "fix benchmarks-capsule stable output determinism"
+    ],
+    "should_not_trigger": [
+      "create a Scent context pack",
+      "run Scout repo intelligence",
+      "record a RunLedger receipt",
+      "benchmark Kujo runtime performance generally"
+    ]
+  },
   "kujo-skill-auditor": {
     "should_trigger": [
       "do my weekly Kujo skills audit",
