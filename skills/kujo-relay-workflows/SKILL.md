@@ -18,6 +18,7 @@ export KUJO_BIN="${KUJO_BIN:-/Users/robertdevore/2026/Kujolang/kujo-repos/kujo/t
 ./bin/relay doctor --json
 ./bin/relay agents validate --json
 ./bin/relay chat "Summarize the mission boundary" --fixture --json
+./bin/relay chat "Stream a short answer" --fixture --stream
 ./bin/relay models probe fixture-model --fixture --json
 ./bin/relay runs list --json
 ./bin/relay runs rebuild --json
@@ -31,12 +32,14 @@ bash tests/relay_acceptance.sh
 
 ## Workflow Notes
 
-- Fixture mode is default for safe local operation. Live calls require configured Watchdog/AI SDK posture and must not silently bypass Watchdog.
-- `missions run` writes PackWrite packets, AgentEvent-compatible JSONL, sealed RelayReceipt index, RunLedger receipt, ChangeBucket result, Eval result, resumable state, and Markdown/JSON reports under `.relay/runs/<run-id>/`.
+- Fixture mode is default for safe local operation and records `direct_ai_sdk` as the deterministic no-network route. Live calls require configured Watchdog/AI SDK posture and must not silently bypass Watchdog.
+- `missions run` writes PackWrite packets and manifest, AgentEvent-compatible JSONL, sealed RelayReceipt index, RunLedger receipt, ChangeBucket result, Eval result, optional provider tool-result bundle, resumable state, and Markdown/JSON reports under `.relay/runs/<run-id>/`.
+- Provider-generated tool planning is opt-in with `agent_tool_mode: "provider"` plus `agent_tool_allowlist`; Relay still executes normalized `relay.write_file` and `relay.run_command` calls through the same Agents SDK policy worker and persists typed tool results.
+- Mission budgets include step, repair, token, output, write, tool-call, and tool-turn ceilings. Aggregate mission tokens cap at 65,536 and individual provider requests cap at 16,384.
 - Write-enabled missions require `allow_writes: true` and `approval.approved: true`; paths must stay inside the real workspace and cannot traverse `.git`, `.env`, or symlinked parents.
-- Commands execute as direct argv from explicit allowlists; shell syntax, destructive Git operations, credential paths, force-push, and traversal patterns are denied.
+- Commands execute as direct argv from explicit allowlists; `bash`/`sh` repository actions additionally require exact `allowed_script_hashes`. Shell syntax, destructive Git operations, credential paths, force-push, and traversal patterns are denied.
 - Evidence reads fail closed for unsafe paths, oversized artifacts, report identity drift, event-chain tampering, and missing required receipts/state.
-- Relay is hardened local alpha, not enterprise-production-ready. External live-provider proof, authenticated multi-tenant operation, durable concurrent storage, and full Workcell isolation/recovery remain open.
+- Relay is hardened local alpha, not enterprise-production-ready. External live-provider proof, authenticated multi-tenant operation, durable concurrent storage, full Workcell isolation/recovery, and release gates remain open.
 
 When reporting results, state the command, fixture/live mode, run ID, evidence paths, verification status, exit code, and whether any enterprise-readiness claim is out of scope.
 
