@@ -6,10 +6,10 @@ Use this map to sanity-check trigger routing.
 |---|---|
 | General `.kujo` syntax, functions, loops, imports, truthiness | `kujo-core-language` |
 | Building a JSON policy checker or repo scanner in Kujo | `kujo-tool-building`, optionally `kujo-enterprise-automation` |
-| Running untrusted Kujo, shell/network/files/db/archive/HTML/AI egress risks | `kujo-security-hardening` |
+| Running untrusted Kujo, shell/network/files/db/archive/HTML/AI egress risks, `--deny-private-net`, atomic/private writes | `kujo-security-hardening` |
 | CI/operator automation with auditability, capability minimization, and strict AI replay evidence | `kujo-enterprise-automation`, optionally `kujo-cli-contracts` or `kujo-testing-release-gates` |
 | CLI JSON output, exit codes, stdout/stderr, diagnostics, LSP helper payloads | `kujo-cli-contracts` |
-| Builtin function usage, arity, capability gates, JSON/file/process/network/db/crypto/rendering/AI APIs | `kujo-standard-library` |
+| Builtin function usage, arity, capability gates, JSON/file/process/env/network/db/crypto/image/rendering/AI APIs | `kujo-standard-library` |
 | Test selection, release gates, enterprise verify, docs/example smoke tests, strict AI replay checks | `kujo-testing-release-gates` |
 | Muzzle quiet workflows, `.muzzle/workflows/`, manifests, logs/reports, loop mode | `kujo-muzzle-workflows`, optionally `kujo-tool-building` or `kujo-enterprise-automation` |
 | Bounded engineering loops, `.loop-engineering/`, checklist classification, structured blockers, evidence, opt-in commits | `kujo-loop-engineering-workflows` |
@@ -31,17 +31,17 @@ Use this map to sanity-check trigger routing.
 | Spec task contracts, `.spec.yml`, validation, export-agent-context, export-eval, schema/policy and CI changes | `kujo-spec-workflows`, optionally `kujo-eval-workflows`, `kujo-cli-contracts`, or `kujo-enterprise-automation` |
 | PackWrite agent execution packs, `MEGA_PROMPT.md`, `packwrite.toml`, provider setup, prompt handoff, offline fake-response tests | `kujo-packwrite-workflows`, optionally `kujo-tool-building` or `kujo-cli-contracts` |
 | Agents SDK runners, tools, approvals, handoffs, tracing, artifact/session/memory/retrieval contracts | `kujo-agents-sdk-workflows`, optionally `kujo-ai-sdk-workflows` or `kujo-tool-building` |
-| AI Chat provider profiles, SSE streaming, usage details, SQLite chat state, smoke tests, bridge chat behavior | `kujo-ai-chat-workflows`, optionally `kujo-ai-sdk-workflows` or `kujo-watchdog-workflows` |
+| AI Chat provider profiles, pane profiles, benchmark runs, browser/web-search tools, SSE streaming, usage details, SQLite chat state, smoke tests, bridge chat behavior | `kujo-ai-chat-workflows`, optionally `kujo-ai-sdk-workflows` or `kujo-watchdog-workflows` |
 | AI SDK provider contracts, model preference resolution, fixture mode, streaming, retries, redaction, live smoke, release gates | `kujo-ai-sdk-workflows`, optionally `kujo-security-hardening` or `kujo-enterprise-automation` |
-| CMS content models, delivery routes, auth boundaries, webhooks, jobs, release-gate evidence | `kujo-cms-workflows`, optionally `kujo-security-hardening` or `kujo-enterprise-automation` |
+| CMS content models, published-only delivery reads, auth boundaries, entry locks/revisions, webhooks, jobs, release-gate evidence | `kujo-cms-workflows`, optionally `kujo-security-hardening` or `kujo-enterprise-automation` |
 | CRUD API showcase, item/project APIs, Next.js playground, smoke tests, DR/performance drills | `kujo-crud-api-workflows`, optionally `kujo-security-hardening` or `kujo-lens-workflows` |
 | Kennel package/dependency manifests, lockfiles, static indexes/mirrors, local hosted registry, trust/source policy | `kujo-kennel-workflows`, optionally `kujo-security-hardening` or `kujo-enterprise-automation` |
 | SSG static site build, templates/content, custom collections, root post permalinks, featured images, generated output, feeds/sitemap/llms, native render fast paths, parallel shard builds, release gates | `kujo-ssg-workflows`, optionally `kujo-lens-workflows` or `kujo-shipcheck-workflows` |
-| Watchdog AI telemetry, OpenAI-compatible proxy, request traces, auth/redaction/rate limits | `kujo-watchdog-workflows`, optionally `kujo-ai-chat-workflows` or `kujo-ai-sdk-workflows` |
+| Watchdog AI telemetry, OpenAI-compatible proxy, named upstream profiles, request traces, production auth/redaction/rate limits | `kujo-watchdog-workflows`, optionally `kujo-ai-chat-workflows` or `kujo-ai-sdk-workflows` |
 | Redact deterministic anonymization, sanitize/verify/pack, policy YAML, audit artifacts, leakage checks | `kujo-redact-workflows`, optionally `kujo-security-hardening` or `kujo-scent-workflows` |
 | Tribunal decision hearings, signed evidence, trust policies, audit/verify, bundles/stores/provenance | `kujo-tribunal-workflows`, optionally `kujo-ai-sdk-workflows`, `kujo-runledger-workflows`, or `kujo-casefile-workflows` |
 | Workcell local container sandboxes, disposable Git worktrees, receipts/manifests, Docker/Podman boundaries | `kujo-workcell-workflows`, optionally `kujo-security-hardening`, `kujo-casefile-workflows`, or `kujo-runledger-workflows` |
-| Relay bounded agent missions, PackWrite/RunLedger/ChangeBucket/Eval evidence, run indexes, Watchdog route posture | `kujo-relay-workflows`, optionally `kujo-ai-sdk-workflows`, `kujo-agents-sdk-workflows`, or `kujo-watchdog-workflows` |
+| Relay bounded agent missions, provider-generated tools, PackWrite/RunLedger/ChangeBucket/Eval evidence, run indexes, Watchdog route posture | `kujo-relay-workflows`, optionally `kujo-ai-sdk-workflows`, `kujo-agents-sdk-workflows`, or `kujo-watchdog-workflows` |
 | SiteKit design-system tokens, component schemas/templates/CSS, generated dist bundle, accessibility standards, examples | `kujo-sitekit-workflows`, optionally `kujo-lens-workflows` or `kujo-ssg-workflows` |
 | Capsule benchmark handoff capsules, stable capsule.json/capsule.md/manifest output, fixture projects, benchmark evidence | `kujo-benchmarks-capsule-workflows`, optionally `kujo-scent-workflows`, `kujo-scout-workflows`, or `kujo-runledger-workflows` |
 | Weekly Kujo skill maintenance, stale SKILL.md drift, skill/index trigger refresh | `kujo-skill-auditor` |

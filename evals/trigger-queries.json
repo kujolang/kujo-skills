@@ -54,7 +54,9 @@
       "how should html_response escape user content",
       "run kujo with least privilege for db and fs read",
       "should this untrusted AI script use --allow-ai or --allow-net-client",
-      "lock Kujo AI helpers to approved provider endpoints with KUJO_AI_ALLOWED_ENDPOINTS"
+      "lock Kujo AI helpers to approved provider endpoints with KUJO_AI_ALLOWED_ENDPOINTS",
+      "force trusted Kujo network calls to deny private destinations with --deny-private-net",
+      "write a private key with restrictive permissions using io_write_private_file"
     ],
     "should_not_trigger": [
       "write a pure arithmetic Kujo function",
@@ -124,7 +126,10 @@
       "review the standard library capability docs",
       "use render_layout_native and render_listing_card in a Kujo script",
       "how do ai_text ai_image_url and ai_message build multimodal messages",
-      "what does ai_stream_chat callback cancellation return"
+      "what does ai_stream_chat callback cancellation return",
+      "use write_file_atomic instead of a pure Kujo temp file wrapper",
+      "read and set a single pixel on a Kujo image value",
+      "what does hmac_sha256 return for string payloads"
     ],
     "should_not_trigger": [
       "change CLI stdout stderr rules",
@@ -568,7 +573,9 @@
       "fix SSE thinking events in ai-chat",
       "update bridge_chat.kujo provider fixture behavior",
       "backup and vacuum the AI Chat SQLite database",
-      "preserve AI Chat streaming usage detail payloads"
+      "preserve AI Chat streaming usage detail payloads",
+      "run the AI Chat benchmark runner for a saved pane profile",
+      "enable AI Chat browser_open and browser_snapshot tools with Playwright"
     ],
     "should_not_trigger": [
       "maintain AI SDK provider retries only",
@@ -583,7 +590,9 @@
       "run ai-sdk security redaction tests",
       "update provider presets and fixture mode",
       "run live provider smoke with skip handling",
-      "use resolve_model_preference for provider-neutral model routing"
+      "use resolve_model_preference for provider-neutral model routing",
+      "preserve streaming usage telemetry in AI SDK include_usage responses",
+      "run AI SDK embeddings contract tests"
     ],
     "should_not_trigger": [
       "open the AI Chat web UI",
@@ -598,7 +607,9 @@
       "run cms_contract_tests.kujo",
       "process CMS webhook outbox jobs",
       "extend CMS content model routes",
-      "review CMS release gate evidence and branch protection gap"
+      "review CMS release gate evidence and branch protection gap",
+      "verify anonymous CMS reads only expose published entries",
+      "test CMS entry lock ownership and release behavior"
     ],
     "should_not_trigger": [
       "run CRUD API smoke tests",
@@ -657,7 +668,9 @@
       "start Watchdog dashboard server",
       "verify Watchdog proxy config endpoint",
       "debug Watchdog telemetry redaction",
-      "integrate AI Chat with Watchdog proxy"
+      "integrate AI Chat with Watchdog proxy",
+      "configure Watchdog named upstream profiles for OpenRouter",
+      "test Watchdog SQLite-backed rate limits and production token auth"
     ],
     "should_not_trigger": [
       "run AI SDK provider contract tests",
@@ -713,7 +726,9 @@
       "run Relay doctor and agents validate in fixture mode",
       "execute a Relay mission with PackWrite RunLedger ChangeBucket Eval evidence",
       "inspect Relay runs events with cursor metadata",
-      "repair a failed Relay mission within bounded attempts"
+      "repair a failed Relay mission within bounded attempts",
+      "run a Relay mission with provider-generated tool planning",
+      "verify Relay tool-result bundles and mission token budgets"
     ],
     "should_not_trigger": [
       "run Dispatch approval workflow files",

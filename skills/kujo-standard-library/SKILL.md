@@ -18,11 +18,16 @@ Consult the repo docs before assuming a builtin exists.
 ## Important Contracts
 
 - `parse_json` accepts strings up to `1,048,576` bytes and nesting depth `64`; invalid JSON returns a `Value::Error`.
-- `to_json` and `to_json_pretty` reject non-finite floats.
+- `to_json` and `to_json_pretty` reject non-finite floats and preserve deterministic key ordering.
 - Dictionary-like JSON serialization uses deterministic key ordering.
 - Predicate helpers such as `contains`, `starts_with`, `ends_with`, and `has_key` return `1`/`0`.
 - Collection helpers such as `push`, `insert`, `remove_at`, `concat`, `map`, and `filter` return updated values; reassign them.
+- Filesystem helpers now include `write_file_atomic(path, content_or_bytes, overwrite?)`, `io_set_permissions`, and `io_write_private_file`; use them for durable writes and restrictive private files instead of pure-Kujo temp-file wrappers.
+- Process helpers return `ProcessResult` structs with `success`, `timed_out`, `cancelled`, and truncation fields; `spawn_process` supports timeout, output limits, env allow/deny, stream sinks, redaction, and cancellation.
+- Environment helpers include typed defaults: `env_int(name, default?)` and `env_bool(name, default?)`; restricted runs require `env-read`.
+- Crypto helpers include `hmac_sha256(secret, message)` plus preview streaming AES file encryption/decryption helpers.
 - Rendering helpers are native builtins too: `escape_xml` is stable; `render_markdown`, `render_listing_card`, and `render_layout_native` are preview surfaces used by the SSG hot path.
+- Image values expose `get_pixel` and `set_pixel` methods for bounded single-pixel access; image load/save still requires filesystem capability.
 - AI helpers are native builtins too. `ai_request_hash`, `ai_text`, `ai_image_url`, `ai_message`, `ai_count_tokens`, `ai_fit_context`, and `json_schema_validate` are pure/capability-free; `ai_chat`, `ai_stream_chat`, `ai_embedding`, and `ai_tool_loop` use the `network-ai` capability.
 - `ai_stream_chat(prompt_or_messages, options, on_chunk?)` can call a chunk callback; returning `false` cancels later chunks while the aggregate return shape stays stable.
 - AI replay uses `KUJO_AI_RECORD`, `KUJO_AI_REPLAY`, and `KUJO_AI_REPLAY_MODE=strict|fallthrough`; strict replay misses fail deterministically without network I/O.
@@ -57,6 +62,7 @@ cargo test --test stdlib_reference_contract
 cargo test --test stdlib_reference_policy_contract
 cargo test --test native_api_security_boundaries
 cargo test --test docs_policy_consistency_contract
+cargo test --test language_spec_contracts
 ```
 
 ## Sources Consulted
