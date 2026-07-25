@@ -5,7 +5,7 @@ description: "Use this skill when initializing, validating, inspecting, running,
 
 # Kujo Workcell Workflows
 
-Use Workcell as a Kujo-native, local Docker-backed execution sandbox for AI agents and workflows. It creates disposable Git worktrees, runs declared commands in bounded containers, exports declared artifacts, records receipts, and cleans up. Treat Docker/Podman as the physical boundary and Kujo as the policy/evidence boundary.
+Use Workcell as a Kujo-native local OCI execution sandbox for AI agents and workflows. It creates disposable Git worktrees, runs declared commands in bounded Docker or Podman containers, exports declared artifacts, records receipts, and cleans up. Treat Docker/Podman as the physical boundary and Kujo as the policy/evidence boundary.
 
 ## Quick Start
 
@@ -30,9 +30,11 @@ docker build --tag kujolang/workcell-base:local docker/
 
 - Workcell rejects dirty source repos by default so user changes are not silently omitted from disposable worktrees.
 - `workcell validate --schema` emits the definition contract; `workcell help --json` emits the CLI/exit-code contract.
-- `workcell run` writes `.workcell/runs/<run-id>/` with `receipt.json`, logs, integrations, patch/change records, integrity manifest, and artifacts.
+- `workcell run` writes `.workcell/runs/<run-id>/` with `receipt.json`, logs, integrations, patch/change records including untracked files, integrity manifest, and artifacts.
 - `workcell verify --run <run-directory> --json` verifies immutable evidence hashes without exposing secret values.
 - The default `contained-standard` profile uses no network, non-root host-mapped UID/GID, read-only root, bounded CPU/memory/PIDs/time/output, no new privileges, dropped capabilities, no devices, no host namespaces, no Docker socket, explicit env, and one disposable workspace mount.
+- Podman is supported through the same OCI policy boundary. Rootless engine posture, runtime class selection, egress declarations, load evidence, and ecosystem integrations are explicit validation surfaces rather than implicit safety guarantees.
+- Artifact policy rejects malformed definitions and unsafe paths before runtime execution; secret redaction and binary-artifact inspection failures must remain fail-closed.
 - Workcell is a release-gated local Docker MVP. It is not a hardened microVM, hosted service, or universally isolated enterprise sandbox.
 
 When reporting results, state the command, backend, run directory, exit code, receipt/manifest paths, cleanup outcome, and any host-boundary assumptions.
@@ -59,8 +61,13 @@ Run validation after source, docs, definition, runtime, or contract changes:
 ```bash
 ./tests/run.sh
 ./tests/run.sh --check-only
+./tests/quality.sh
 KUJO="$KUJO" ./tests/docker_integration.sh
 REQUIRE_BACKEND=true KUJO="$KUJO" ./tests/egress_integration.sh
+KUJO="$KUJO" ./tests/load_integration.sh docker
+NETWORK_MODE=custom NETWORK_NAME=<deployment-network> \
+  ALLOWED_URL=https://allowed.example.test DENIED_URL=https://denied.example.test \
+  KUJO="$KUJO" ./tests/egress_deployment_contract.sh docker
 ./tests/release_report.sh
 git diff --check
 ```

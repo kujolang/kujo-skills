@@ -575,7 +575,9 @@
       "backup and vacuum the AI Chat SQLite database",
       "preserve AI Chat streaming usage detail payloads",
       "run the AI Chat benchmark runner for a saved pane profile",
-      "enable AI Chat browser_open and browser_snapshot tools with Playwright"
+      "enable AI Chat browser_open and browser_snapshot tools with Playwright",
+      "configure AI Chat scheduled automations and local Codex profile",
+      "debug AI Chat context compaction for long conversations"
     ],
     "should_not_trigger": [
       "maintain AI SDK provider retries only",
@@ -670,7 +672,9 @@
       "debug Watchdog telemetry redaction",
       "integrate AI Chat with Watchdog proxy",
       "configure Watchdog named upstream profiles for OpenRouter",
-      "test Watchdog SQLite-backed rate limits and production token auth"
+      "test Watchdog SQLite-backed rate limits and production token auth",
+      "inspect Watchdog backup archive history and active backup files",
+      "refresh Watchdog pricing catalog provenance for direct API estimates"
     ],
     "should_not_trigger": [
       "run AI SDK provider contract tests",
@@ -712,7 +716,9 @@
       "initialize and validate a Workcell workcell.json",
       "run Workcell in Docker and inspect receipt.json",
       "verify a .workcell run manifest after tampering",
-      "harden Workcell output path containment tests"
+      "harden Workcell output path containment tests",
+      "run Workcell Podman load evidence and egress deployment contracts",
+      "verify Workcell untracked file patch generation"
     ],
     "should_not_trigger": [
       "run a generic Docker container manually",

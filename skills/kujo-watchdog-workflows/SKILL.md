@@ -5,7 +5,7 @@ description: "Use this skill when running, configuring, testing, integrating, or
 
 # Kujo Watchdog Workflows
 
-Use Watchdog as the local observability layer and OpenAI-compatible proxy for Kujo AI apps, capturing model/tool telemetry, proxy lifecycle traces, token/cost estimates, named upstream usage, and rate-limit/auth audit events into SQLite while exposing dashboard/API views.
+Use Watchdog as the local observability layer and OpenAI-compatible proxy for Kujo AI apps, capturing model/tool telemetry, proxy lifecycle traces, session-scoped agent steps, token/cost estimates, named upstream usage, backup status, and rate-limit/auth audit events into SQLite while exposing dashboard/API views.
 
 ## Quick Start
 
@@ -27,7 +27,10 @@ curl -s http://localhost:7700/api/proxy-config
 - Named upstream profiles live in `watchdog_proxy_config.json` and are selected with `X-Watchdog-Upstream-Profile`; unknown profile names fail before upstream egress.
 - Keep `WDG_API_AUTH_TOKEN`, `WDG_PROXY_AUTHZ_TOKEN`, and upstream provider keys as separate credentials. Production profile startup requires token-protected API and proxy posture.
 - `WDG_RATE_LIMIT_MODE=basic` uses SQLite-backed buckets for both `/api/*` and `/proxy/*`; redaction defaults to basic before persistence/export.
-- Telemetry DBs, benchmark outputs, and dashboard runtime data are local artifacts.
+- Cost fields are estimated direct-provider equivalents, not invoices. Pricing provenance comes from the checked-in provider and OpenRouter catalogs; refresh and bounded repricing are script-driven.
+- Backups are dashboard-visible runtime state. Active backup files and archived history are intentionally separate views; deleting a backup removes the file while preserving the historical record.
+- Dashboard ranges, trace/session drilldowns, and copied detail blocks are UI contracts covered by frontend/API regression tests.
+- Telemetry DBs, backup folders, benchmark outputs, and dashboard runtime data are local artifacts.
 
 When reporting results, state the command, target path, exit code, important artifact paths, and whether the result is advisory, blocking, or a generated output that still needs review.
 
@@ -57,6 +60,10 @@ node tests/benchmark_script_schema_check.js
 node scripts/benchmark_profiles.js --fixture --profiles=quick,soak --json-out=tmp/benchmark-fixture.json
 node tests/proxy_integration_stub_suite.js
 node tests/rate_limit_controls_check.js
+node tests/backup_api_check.js
+node tests/frontend_contract_suite.js
+node tests/watchdog_api_route_suite.js
+node scripts/refresh_openrouter_pricing_catalog.js
 ```
 
 For the full JavaScript regression suite, export `KUJO_BIN` to the Kujo language
