@@ -23,3 +23,13 @@ Copy the desired folders from `skills/` into an Agent Skills-compatible location
 - The interpreter is an explicit fallback/debug path, not the default for ordinary scripts.
 - Kujo is not a sandbox. Use `--untrusted` and least-privilege `--allow-*` flags for untrusted scripts, plus external isolation for high-risk environments.
 - The repository has conflicting release-readiness wording in places. The skills follow the explicit pre-1.0 readiness boundary in `README.md`, `docs/LANGUAGE_SPEC.md`, `ROADMAP.md`, `docs/V1_SCOPE.md`, and `docs/PRE_V1_MASTER_UNFINISHED_CHECKLIST.md`.
+
+## Launch readiness
+
+Current launch scope: locally verified support/distribution technical preview.
+The 2026-07-28 next batch proof validates the skill inventory and required
+Workcell, SiteKit, Tribunal, Relay, and Redact workflow skill paths. The
+hyphenated `kujo-site-kit-workflows` skill is now present; the older
+`kujo-sitekit-workflows` name remains a compatibility alias. Marketplace
+distribution and third-party agent behavior are not claimed. See
+[`docs/launch-checklist.md`](docs/launch-checklist.md).
