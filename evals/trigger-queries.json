@@ -558,7 +558,8 @@
       "update Agents SDK approval tool execution contracts",
       "run examples_smoke_runner for agents-sdk offline fixtures",
       "fix agent handoff tracing tests",
-      "maintain artifact store contract tests"
+      "maintain artifact store contract tests",
+      "add MCP 2026 request helpers to Agents SDK integration adapters"
     ],
     "should_not_trigger": [
       "run Dispatch workflow templates",
@@ -577,7 +578,8 @@
       "run the AI Chat benchmark runner for a saved pane profile",
       "enable AI Chat browser_open and browser_snapshot tools with Playwright",
       "configure AI Chat scheduled automations and local Codex profile",
-      "debug AI Chat context compaction for long conversations"
+      "debug AI Chat context compaction for long conversations",
+      "verify AI Chat tool activity SSE events and weekly tool audit output"
     ],
     "should_not_trigger": [
       "maintain AI SDK provider retries only",
@@ -656,7 +658,8 @@
       "update templates and content in ssg",
       "run the SSG parallel shard build for a large site",
       "preserve the SSG native render fast path",
-      "build SSG custom collections with posts-at-root and llms output"
+      "build SSG custom collections with posts-at-root and llms output",
+      "run the SSG DocGen bridge and package the reusable docs starter"
     ],
     "should_not_trigger": [
       "run CMS webhooks",
@@ -743,12 +746,28 @@
       "make a Scent context pack"
     ]
   },
+  "kujo-site-kit-workflows": {
+    "should_trigger": [
+      "run canonical SiteKit launch proof with Workcell no-pull",
+      "build SiteKit dist and run component validation",
+      "add a SiteKit component schema template and CSS",
+      "update SiteKit tokens without raw hex colors",
+      "smoke test SiteKit consumer dashboard behavior"
+    ],
+    "should_not_trigger": [
+      "build an SSG content site",
+      "run Lens visual QA only",
+      "create a random landing page design",
+      "debug CMS content routes"
+    ]
+  },
   "kujo-sitekit-workflows": {
     "should_trigger": [
       "build SiteKit dist and run component validation",
       "add a SiteKit component schema template and CSS",
       "update SiteKit tokens without raw hex colors",
-      "smoke test SiteKit consumer dashboard behavior"
+      "smoke test SiteKit consumer dashboard behavior",
+      "use the older SiteKit skill alias for compatibility"
     ],
     "should_not_trigger": [
       "build an SSG content site",
