@@ -26,7 +26,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Dispatch workflows, resume/inspect/cleanup, plugins, event sinks | `kujo-dispatch-workflows` |
 | Eval suites, snapshots, reports, artifact manifests, policy gates | `kujo-eval-workflows` |
 | Fence architecture boundary checks | `kujo-fence-workflows` |
-| Howl showcase cards and galleries | `kujo-howl-workflows` |
+| Howl showcase cards, branded social cards, and galleries | `kujo-howl-workflows` |
 | Kennel package manager, lockfiles, hosted registry, trust/source policy | `kujo-kennel-workflows` |
 | Lens browser QA, flows, screenshots, visual/accessibility checks | `kujo-lens-workflows` |
 | Loop engineering harness | `kujo-loop-engineering-workflows` |

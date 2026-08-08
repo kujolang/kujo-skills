@@ -421,6 +421,7 @@
     "should_trigger": [
       "create a Howl showcase card for this Kujo example",
       "validate howl.json and render the SVG markdown html gallery",
+      "add a branded Howl social card with a local background image",
       "use howl caption --platform x for this card",
       "fix howl validate errors for referenced example files"
     ],

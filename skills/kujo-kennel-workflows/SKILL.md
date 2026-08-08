@@ -24,6 +24,7 @@ kujo run kennel.kujo --interpreter -- validate
 ## Workflow Notes
 
 - Package manifests, lockfiles, static indexes/mirrors, trust policy, source policy, and local hosted-registry artifacts are contract surfaces.
+- Root-level module files such as `commands_shared.kujo`, `installer.kujo`, `lockfile.kujo`, and `utils.kujo` are compatibility shims that re-export `src/` implementations; keep them aligned until downstream root-module imports are retired.
 - Local hosted-registry lifecycle, auth, publish/access/visibility/search/metadata APIs, and hosted install against local artifacts are in the launch-safe scope. Operated public registry service, public discovery, hosted moderation, malware scanning, and public trust scoring remain deferred.
 - Generated package directories and `.kennel_tmp/` are bulk/runtime surfaces.
 

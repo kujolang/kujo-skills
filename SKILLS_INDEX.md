@@ -27,7 +27,7 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-dispatch-workflows` | Dispatch workflow orchestration, resume/inspect/cleanup, plugins, event sinks, policy profiles. | `../dispatch` README/src/tests/docs |
 | `kujo-eval-workflows` | Eval suites, snapshots, reports, policy-explain, artifact manifests, and CI gates. | `../eval` README/docs/main/tests |
 | `kujo-fence-workflows` | Fence architecture boundaries, baselines, graph/explain, Markdown/JSON/SARIF reports. | `../fence` README/docs/src/tests |
-| `kujo-howl-workflows` | Howl showcase manifests, validation, SVG/Markdown/HTML cards, galleries, captions. | `../howl` README/src/tests |
+| `kujo-howl-workflows` | Howl showcase manifests, validation, SVG/Markdown/HTML cards, branded social cards, galleries, captions. | `../howl` README/src/tests |
 | `kujo-kennel-workflows` | Kennel package/project manager, lockfiles, static indexes, local hosted registry, trust/source policy. | `../kennel` README/src/tests/scripts |
 | `kujo-lens-workflows` | Lens deterministic browser QA, flows, screenshots, accessibility/link/visual checks, repair briefs. | `../lens` README/docs/src/tests |
 | `kujo-loop-engineering-workflows` | Bounded engineering harness workflows, checklists, blockers, evidence logs, opt-in commits. | `../kujo-workflows/loop-engineering` docs/scripts |
