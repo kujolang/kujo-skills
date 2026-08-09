@@ -12,14 +12,8 @@ This repository distributes Kujo-focused Codex/agent skills. Treat it as a suppo
 ## Validation
 
 ```bash
-find skills -maxdepth 2 -name SKILL.md | sort
-test -f skills/kujo-workcell-workflows/SKILL.md
-test -f skills/kujo-site-kit-workflows/SKILL.md
-test -f skills/kujo-tribunal-workflows/SKILL.md
-test -f skills/kujo-relay-workflows/SKILL.md
-test -f skills/kujo-redact-workflows/SKILL.md
-rg -n "Ruff|ruff" README.md guide skills
-git diff --check
+bash tests/release-readiness.sh
+bash tests/clean-checkout.sh
 ```
 
 ## Evidence Rules

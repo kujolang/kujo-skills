@@ -1,6 +1,6 @@
 # Launch Checklist
 
-Current launch scope: `locally verified support/distribution technical preview`. The skill inventory and Workcell proof validate locally, including current Workcell, SiteKit, Tribunal, Relay, and Redact workflow skills. Distribution marketplace actions remain outside the completed local evidence.
+Current launch scope: MIT-licensed `0.1.0` support/distribution technical preview. The portable repository gate and Workcell proof cover the full skill inventory and the required Workcell, SiteKit, Tribunal, Relay, and Redact workflow skills. Marketplace actions remain outside the completed evidence.
 
 ## Local Gates
 
@@ -8,12 +8,14 @@ Current launch scope: `locally verified support/distribution technical preview`.
 - [x] Required next-batch workflow skills checked by exact path.
 - [x] Stale Ruff wording sweep checked with `rg -n "Ruff|ruff" README.md guide skills`.
 - [x] Formatting checked with `git diff --check`.
+- [x] All skills, routing fixtures, metadata, and local Markdown links checked with `python3 scripts/validate_skills.py`.
+- [x] Portable CI gate added through `tests/release-readiness.sh` and `.github/workflows/validate.yml`.
 - [x] Workcell proof checked with `workcell run --file docs/workcell-launch-gate.json --repo . --no-pull`.
 - [ ] Clean-checkout install/use validation on a separate machine.
 
 ## Workcell Proof Notes
 
-Workcell proof passed after building `kujolang/workcell-base:local` with `DOCKER_BUILDKIT=0`, using the Colima Workcell Docker host, and setting `TMPDIR` to a path under `/Users/robertdevore/2026/Kujolang/kujo-repos/.workcell-host-tmp` so the disposable worktree mount was visible inside the Colima VM.
+Workcell proof uses the no-network `contained-standard` profile and asserts the `0.1.0` metadata, 53-skill inventory, public policy files, and all five required launch-batch skills. The local Colima host requires `TMPDIR` under `/Users/robertdevore/2026/Kujolang/kujo-repos/.workcell-host-tmp` so the disposable worktree mount is visible inside the VM.
 
 Resume command:
 
@@ -27,4 +29,4 @@ workcell verify --run .workcell/runs/<run-id> --json
 
 ## Forbidden Launch Actions
 
-Marketplace distribution, live profile installation, public releases, final release tags, live credentials, branch-protection changes, force-pushes, and claims of runtime enforcement remain out of scope.
+Marketplace distribution, live profile installation, release tags, live credentials, branch-protection changes, force-pushes, and claims of runtime enforcement remain out of scope for this local proof.

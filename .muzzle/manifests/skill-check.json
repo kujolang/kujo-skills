@@ -1,6 +1,6 @@
 {
   "name": "skill-check",
-  "summary": "Validate Kujo skill frontmatter and trigger query JSON.",
+  "summary": "Validate Kujo skills, routing fixtures, metadata, and local documentation links.",
   "runner": "bash",
   "script": "workflows/skill-check.sh",
   "args": [
