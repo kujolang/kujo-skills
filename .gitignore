@@ -2,6 +2,8 @@
 .muzzle/reports/
 .muzzle/state/
 .kujo_cache/
+__pycache__/
+*.pyc
 .loop-engineering/
 # Kujo ecosystem local artifact ignore block.
 # Keep this block repo-local by default. Promote intentionally reviewed examples
