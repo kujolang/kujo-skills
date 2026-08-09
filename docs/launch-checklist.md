@@ -11,11 +11,14 @@ Current launch scope: MIT-licensed `0.1.0` support/distribution technical previe
 - [x] All skills, routing fixtures, metadata, and local Markdown links checked with `python3 scripts/validate_skills.py`.
 - [x] Portable CI gate added through `tests/release-readiness.sh` and `.github/workflows/validate.yml`.
 - [x] Workcell proof checked with `workcell run --file docs/workcell-launch-gate.json --repo . --no-pull`.
-- [ ] Clean-checkout install/use validation on a separate machine.
+- [x] Clean-checkout validation passed in a fresh clone; isolated skill installation also passed in the Workcell container.
+- [ ] GitHub Actions validation passes on the publication pull request.
 
 ## Workcell Proof Notes
 
-Workcell proof uses the no-network `contained-standard` profile and asserts the `0.1.0` metadata, 53-skill inventory, public policy files, and all five required launch-batch skills. The local Colima host requires `TMPDIR` under `/Users/robertdevore/2026/Kujolang/kujo-repos/.workcell-host-tmp` so the disposable worktree mount is visible inside the VM.
+Workcell run `wc-6c5ec39e21e44606ac9fe6698e4a115d` passed against commit `20c5b36` with verified manifest integrity and complete cleanup. The no-network `contained-standard` profile asserted the `0.1.0` metadata, 53-skill inventory, public policy files, all five required launch-batch skills, and a temporary-profile installation of `kujo-core-language`.
+
+See [`launch-evidence-0.1.0.md`](launch-evidence-0.1.0.md) for the compact command and result record.
 
 Resume command:
 
