@@ -5,7 +5,7 @@ description: "Use this skill when creating, validating, rendering, reviewing, or
 
 # Kujo Howl Workflows
 
-Use Howl to turn real Kujo examples plus manifest metadata into deterministic, reviewable showcase artifacts: SVG cards, Markdown snippets, standalone HTML pages, and a static gallery.
+Use Howl to turn real Kujo examples plus manifest metadata into deterministic, reviewable showcase artifacts: SVG cards, branded 1200x630 social cards, Markdown snippets, standalone HTML pages, and a static gallery.
 
 ## Agent Workflow
 
@@ -39,7 +39,7 @@ The launcher preserves the caller's working directory, so manifests and output p
 
 ## Manifest Pattern
 
-Use `howl.json` as the source of truth. Required card fields are `id`, `title`, and `file`; optional fields include `tagline`, `language`, `concepts`, `expected_output`, `caption`, `cta`, `notes`, `url`, and `variant`.
+Use `howl.json` as the source of truth. Required card fields are `id`, `title`, and `file`; optional fields include `tagline`, `language`, `concepts`, `expected_output`, `caption`, `cta`, `notes`, `url`, `variant`, `label`, `background_image`, and `font_file`.
 
 ```json
 {
@@ -67,13 +67,15 @@ Use `howl.json` as the source of truth. Required card fields are `id`, `title`, 
 
 Keep `file` paths relative to the manifest directory. Howl rejects paths that escape that tree. Keep examples small, copyable, and truthful; Howl renders text and does not run or type-check the referenced examples.
 
+Set `variant` to `social` for the branded 1200x630 SVG layout used for link-preview images. `background_image` and `font_file` must be local files under the manifest directory tree and are embedded into the SVG; Howl still emits SVG only, so raster PNG/JPEG conversion remains an external step when a social platform requires it.
+
 ## Artifact Contracts
 
 `howl render` writes:
 
 - `<id>.md`: portable Markdown for READMEs, blogs, GitHub discussions, and release notes.
 - `<id>.html`: standalone HTML with embedded CSS and no remote assets.
-- `<id>.svg`: 1600x900 social card using system fonts and escaped card content.
+- `<id>.svg`: 1600x900 showcase card, or 1200x630 when `variant` is `social`, using escaped card content and optional embedded local image/font assets.
 - `index.html`: static gallery linking each card's artifacts.
 
 Preserve these contracts unless the user explicitly asks for a breaking change. If output layout or escaping changes, inspect generated `.html` and `.svg` artifacts, not just tests.
@@ -135,4 +137,4 @@ For committed generated artifacts, regenerate and run `git diff --exit-code dist
 ## Sources Consulted
 
 - Status: repo-backed: Howl `README.md`, `AGENTS.md`, `src/cli.kujo`.
-- Status: repo-backed: `src/manifest.kujo`, `src/render_svg.kujo`, `tests/howl_test.kujo`.
+- Status: repo-backed: `src/manifest.kujo`, `src/render_svg.kujo`, `src/render_html.kujo`, `tests/howl_test.kujo`.

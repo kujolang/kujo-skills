@@ -22,7 +22,8 @@ cp .env.example .env
 ## Workflow Notes
 
 - The canonical runtime entrypoint is `backend/runtime/main.kujo`; there is no standalone CLI wrapper.
-- Public discovery routes, auth-gated write routes, and operational scripts are part of the showcase surface.
+- Public discovery routes, published-only anonymous reads, auth-gated write routes, entry locks, revisions/rollback, webhook/background-job scripts, and operational scripts are part of the showcase surface.
+- The documented release gate covers contract, smoke, startup compatibility, integration, security, and optional performance checks; default branch protection remains the known governance item before claiming enterprise-complete posture.
 - Webhook/background-job scripts may mutate local queues; inspect env and paths first.
 
 When reporting results, state the command, target path, exit code, important artifact paths, and whether the result is advisory, blocking, or a generated output that still needs review.
@@ -41,13 +42,14 @@ When modifying this repository, read in this order:
 
 Preserve documented command names, output contracts, and fixture behavior unless the user explicitly asks to change them.
 
-Run validation after source, docs, contract, or example changes:
+Run validation after source, docs, contract, auth, route, or example changes:
 
 ```bash
 /path/to/kujo/target/debug/kujo test-run tests/cms_contract_tests.kujo
 CMS_GATE_RUN_PERF=false KUJO_BIN=/path/to/kujo/target/debug/kujo bash scripts/run-release-gate.sh
 KUJO_BIN=/path/to/kujo/target/debug/kujo bash scripts/smoke-api.sh
 KUJO_BIN=/path/to/kujo/target/debug/kujo bash scripts/verify-compat-startup.sh
+KUJO_BIN=/path/to/kujo/target/debug/kujo bash scripts/integration-enterprise-security.sh
 ```
 
 ## Search And Safety
@@ -63,3 +65,4 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and output
 - Status: repo-backed: `README.md`.
 - Status: repo-backed: `tests/cms_contract_tests.kujo`.
 - Status: repo-backed: `backend/runtime/main.kujo`.
+- Status: repo-backed: `docs/release-gate-evidence-2026-07-10.md`, `docs/enterprise-production-readiness-plan.md`.

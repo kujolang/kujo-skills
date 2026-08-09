@@ -1,0 +1,32 @@
+{
+  "name": "kujo-skills-release-readiness",
+  "description": "Deterministic checks for the Kujo skills technical preview.",
+  "version": "0.1.0",
+  "output_dir": "./eval_results/release-readiness",
+  "snapshot_dir": "./snapshots",
+  "stop_on_failure": false,
+  "tests": [
+    {
+      "name": "release readiness script passes",
+      "check": "command_succeeds",
+      "params": {
+        "command": "bash tests/release-readiness.sh"
+      }
+    },
+    {
+      "name": "MIT license exists",
+      "check": "file_exists",
+      "params": {
+        "path": "LICENSE"
+      }
+    },
+    {
+      "name": "version baseline is declared",
+      "check": "file_contains",
+      "params": {
+        "path": "VERSION",
+        "expected": "0.1.0"
+      }
+    }
+  ]
+}

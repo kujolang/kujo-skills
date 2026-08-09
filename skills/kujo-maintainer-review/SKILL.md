@@ -5,7 +5,7 @@ description: Use this skill when asked to review Kujo code, PRs, patches, exampl
 
 # Kujo Maintainer Review
 
-Review for correctness, deterministic behavior, runtime parity, security boundaries, unnecessary abstractions, brittle CLI contracts, missing tests, missing docs, unsafe host effects, pre-1.0 readiness risk, and agent-readability.
+Review for correctness, deterministic behavior, runtime parity, security boundaries, unnecessary abstractions, brittle CLI/LSP contracts, missing tests, missing docs, unsafe host effects, v1 compatibility risk, and agent-readability.
 
 Be direct. Do not flatter. Do not hand-wave.
 
@@ -56,10 +56,9 @@ Ship it / Needs changes / Blocked
 - If runtime semantics change, require spec/docs and VM/interpreter parity tests.
 - If examples/docs change, require docs example/readme contract tests.
 - If unsafe/JIT boundaries move, require safety-contract comments and JIT safety checks.
-- If release readiness is claimed, verify `ROADMAP.md` and pre-v1 checklist state.
+- If release readiness or compatibility is claimed, verify `docs/V1_SCOPE.md`, `docs/V1_0_OFFICIAL_RELEASE_CHECKLIST.md`, release artifact evidence, and `ROADMAP.md` instead of version strings alone.
 
 ## Sources Consulted
 
-- Status: repo-backed: `ROADMAP.md`, `docs/LANGUAGE_SPEC.md`, `docs/CLI_MACHINE_READABLE_CONTRACTS.md`, `docs/NATIVE_API_SECURITY_POSTURE.md`.
+- Status: repo-backed: `ROADMAP.md`, `docs/V1_SCOPE.md`, `docs/V1_0_OFFICIAL_RELEASE_CHECKLIST.md`, `docs/LANGUAGE_SPEC.md`, `docs/CLI_MACHINE_READABLE_CONTRACTS.md`, `docs/PROTOCOL_CONTRACTS.md`, `docs/NATIVE_API_SECURITY_POSTURE.md`.
 - Status: repo-backed: `docs/VM_INTERPRETER_PARITY_MATRIX.md`, `docs/RELEASE_PROCESS.md`, `tests/`, `scripts/`.
-

@@ -23,17 +23,17 @@ Repo-backed evidence:
 - Documentation generation and codebase analysis with bounded discovery.
 - CI-friendly checks where stdout/stderr and exit codes matter.
 
-## What Kujo Is Not Yet Claiming
+## What Kujo Does Not Claim
 
 - Do not claim Kujo is a sandbox.
 - Do not claim full process/container isolation.
-- Do not claim public 1.0 readiness unless the release gates are actually closed.
+- Do not infer that every preview or experimental API is stable because Kujo `v1.0.0` is released.
 - Do not treat experimental or preview native APIs as frozen.
 - Do not treat legacy/expected-fail examples as current syntax.
 
 Evidence:
 
-- `README.md`, `docs/LANGUAGE_SPEC.md`, `docs/V1_SCOPE.md`: canonical pre-1.0 boundary.
+- `README.md`, `docs/LANGUAGE_SPEC.md`, `docs/V1_SCOPE.md`, `docs/V1_0_OFFICIAL_RELEASE_CHECKLIST.md`: stable `v1.0.0` baseline and explicit deferrals.
 - `docs/NATIVE_API_SECURITY_POSTURE.md`: sandboxing and kernel-level isolation are non-goals.
 - `docs/STANDARD_LIBRARY_REFERENCE.md`: stable/preview/experimental tiers.
 - `examples/README_examples.md`, `tests/docs_examples.rs`: expected-fail examples are non-canonical.
@@ -84,7 +84,7 @@ Evidence:
 - Preserve compatibility for CLI/LSP JSON fields. Removing/renaming fields or changing types is breaking.
 - Gate package workflows with `kujo package-install --frozen`.
 - Record release evidence and command outcomes when release readiness is involved.
-- Prefer commit-pinned installs for production automation until release readiness is unambiguous.
+- Prefer versioned stable releases or reviewed commit pins for production automation.
 
 ## Testing And Release Posture
 
@@ -149,5 +149,4 @@ Ask:
 4. Are stdout, stderr, exit codes, and JSON payloads contract-safe?
 5. Are docs, tests, examples, and implementation synchronized?
 6. Is the change scoped to the subsystem that owns the behavior?
-7. Does it respect pre-1.0 readiness boundaries?
-
+7. Does it respect `v1.0.0` compatibility commitments and explicit preview boundaries?

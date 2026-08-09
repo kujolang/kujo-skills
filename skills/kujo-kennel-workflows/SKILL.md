@@ -1,6 +1,6 @@
 ---
 name: kujo-kennel-workflows
-description: "Use this skill when inspecting, using, validating, or maintaining Kennel package/dependency workflows: `kennel.kujo`, package manifests, lockfiles, file dependencies, static indexes, trust policy, source policy, semver range resolution, install/update/validate behavior, release gates, hosted registry scaffolding, or `kennel` source/test changes."
+description: "Use this skill when inspecting, using, validating, or maintaining Kennel package/dependency workflows: `kennel.kujo`, package manifests, lockfiles, file dependencies, static indexes and mirrors, trust policy, source policy, semver range resolution, local hosted-registry lifecycle, install/update/validate behavior, release gates, or `kennel` source/test changes."
 ---
 
 # Kujo Kennel Workflows
@@ -23,8 +23,9 @@ kujo run kennel.kujo --interpreter -- validate
 
 ## Workflow Notes
 
-- Package manifests, lockfiles, static indexes, trust policy, and source policy are contract surfaces.
-- Hosted registry and public package discovery areas may be deferred; do not assume they are complete.
+- Package manifests, lockfiles, static indexes/mirrors, trust policy, source policy, and local hosted-registry artifacts are contract surfaces.
+- Root-level module files such as `commands_shared.kujo`, `installer.kujo`, `lockfile.kujo`, and `utils.kujo` are compatibility shims that re-export `src/` implementations; keep them aligned until downstream root-module imports are retired.
+- Local hosted-registry lifecycle, auth, publish/access/visibility/search/metadata APIs, and hosted install against local artifacts are in the launch-safe scope. Operated public registry service, public discovery, hosted moderation, malware scanning, and public trust scoring remain deferred.
 - Generated package directories and `.kennel_tmp/` are bulk/runtime surfaces.
 
 When reporting results, state the command, target path, exit code, important artifact paths, and whether the result is advisory, blocking, or a generated output that still needs review.
@@ -50,15 +51,16 @@ Run validation after source, docs, contract, or example changes:
 
 ```bash
 bash scripts/verify-all.sh
-bash scripts/verify-profiles.sh stage
+bash scripts/verify-all.sh core
+bash scripts/verify-profiles.sh stage3
 bash scripts/verify-security-regression-suite.sh
 kujo run tests/kennel_contract_tests.kujo
 ```
 
-`scripts/verify-all.sh` is the broad release gate and includes source-matrix
-coverage that may resolve a GitHub fixture. Use it when network access is
-acceptable; use the narrower profile, security, or contract commands for
-offline-focused local validation.
+`scripts/verify-all.sh` is the broad release gate; pass `core` for a fast
+baseline when a full gate is unnecessary. Profile names are `core`, `stage2`,
+`stage3`, `security`, and `full`. Use the narrower profile, security, or
+contract commands for offline-focused local validation.
 
 ## Search And Safety
 
@@ -73,4 +75,4 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and output
 - Status: repo-backed: `README.md`.
 - Status: repo-backed: `AGENTS.md`.
 - Status: repo-backed: `kennel.kujo`.
-- Status: repo-backed: `tests/kennel_contract_tests.kujo`.
+- Status: repo-backed: `tests/kennel_contract_tests.kujo`, `scripts/verify-all.sh`, `scripts/verify-profiles.sh`.

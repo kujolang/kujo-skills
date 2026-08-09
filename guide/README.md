@@ -8,5 +8,4 @@ This directory contains the longer reference material used to distill the focuse
 - `security-and-enterprise.md`: capability policy and operational hardening.
 - `testing-and-release.md`: validation commands and release gates.
 - `implementation-contributor-guide.md`: Rust implementation map and contribution rules.
-- `publication-notes.md`: public packaging assumptions, unresolved doc conflicts, and pre-publish review notes.
-
+- `publication-notes.md`: public packaging assumptions, version baselines, and pre-publish review notes.

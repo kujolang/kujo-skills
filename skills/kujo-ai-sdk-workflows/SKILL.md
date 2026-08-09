@@ -23,8 +23,9 @@ export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
 
 - Fixture mode must remain deterministic and safe without provider secrets.
 - Live provider smoke may skip during ordinary local runs when no provider key is configured, but release/prerelease validation requires at least one configured provider secret unless a manual workflow explicitly allows the skip.
-- Response contracts, API contract policy, and tests must move together.
+- Response contracts, API contract policy, and tests must move together. Streaming requests set `stream_options.include_usage`, and normalized usage accepts both `prompt_tokens`/`completion_tokens` and `input_tokens`/`output_tokens`.
 - Keep endpoint allowlists, protected-header policy, structured-output schema validation, response-size limits, fallback providers, benchmark thresholds, and provider capability metadata aligned with README and tests.
+- Use SDK-owned `resolve_model_preference(provider, preference)` when callers need provider-neutral model intent. Provider presets own class-to-model mappings; downstream orchestration should persist the returned `provider`, `model`, `preference_class`, and `source` instead of duplicating routing tables.
 
 When reporting results, state the command, target path, exit code, important artifact paths, and whether the result is advisory, blocking, or a generated output that still needs review.
 
@@ -36,7 +37,7 @@ When modifying this repository, read in this order:
 2. `src/ai_sdk.kujo`
 3. `src/providers.kujo`
 4. `docs/API_CONTRACT_POLICY.md`
-5. `examples/`
+5. `examples/model_preferences.kujo` when model routing changes, then other `examples/`
 6. `scripts/`
 7. `tests/`
 
@@ -47,9 +48,12 @@ Run validation after source, docs, contract, or example changes:
 ```bash
 export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
 "$KUJO_BIN" test-run tests/sdk_contract_tests.kujo
+"$KUJO_BIN" run examples/model_preferences.kujo
 "$KUJO_BIN" test-run tests/sdk_contract_resilience_tests.kujo
+"$KUJO_BIN" test-run tests/sdk_contract_embeddings_tests.kujo
 "$KUJO_BIN" test-run tests/security_redaction_tests.kujo
 "$KUJO_BIN" test-run tests/reliability_failure_modes_tests.kujo
+"$KUJO_BIN" test-run tests/parser_fuzz_smoke_tests.kujo
 "$KUJO_BIN" test-run tests/feature_smoke_tests.kujo
 ./kujo run examples/telemetry_bridge.kujo --interpreter
 "$KUJO_BIN" run scripts/benchmark_quality_gate.kujo

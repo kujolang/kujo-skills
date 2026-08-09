@@ -49,6 +49,9 @@ cargo test --test serve_command_integration
 Release gates:
 
 ```bash
+bash scripts/generate_v1_code_todo_triage.sh
+bash scripts/generate_pre_v1_unresolved_inventory.sh
+bash scripts/generate_vm_runtime_mismatch_inventory.sh --strict
 bash scripts/release_gate.sh --minimal
 bash scripts/release_gate.sh --full
 bash scripts/release_candidate_gate.sh --full
@@ -73,9 +76,9 @@ KUJO_AI_REPLAY=tests/fixtures/ai_cassettes KUJO_AI_REPLAY_MODE=strict cargo run 
 - For native API capability changes, update standard library docs and security posture.
 - For AI helper or AI egress changes, update `docs/AI_RUNTIME.md`, `docs/SECURE_AI_SCRIPTING.md`, security posture docs, replay fixtures, and enterprise evidence docs together.
 - For runtime behavior changes, add parity coverage or document intentional divergence.
-- For release readiness, follow `ROADMAP.md` and `docs/PRE_V1_MASTER_UNFINISHED_CHECKLIST.md`, not crate version alone.
+- For release readiness after `v1.0.0`, follow `docs/V1_SCOPE.md`, `docs/V1_0_OFFICIAL_RELEASE_CHECKLIST.md`, release artifact evidence, and `ROADMAP.md` for historical/post-1.0 planning. Do not infer compatibility guarantees from crate version alone.
 
 ## Sources Consulted
 
-- Status: repo-backed: `README.md`, `ROADMAP.md`, `docs/RELEASE_PROCESS.md`, `docs/PRE_V1_MASTER_UNFINISHED_CHECKLIST.md`.
+- Status: repo-backed: `README.md`, `ROADMAP.md`, `docs/V1_SCOPE.md`, `docs/V1_0_OFFICIAL_RELEASE_CHECKLIST.md`, `docs/RELEASE_PROCESS.md`, `docs/PRE_V1_MASTER_UNFINISHED_CHECKLIST.md`.
 - Status: repo-backed: `tests/docs_examples.rs`, `tests/cli_contracts.rs`, `tests/cli_json_contracts.rs`, `tests/enterprise_verify_contract.rs`, `tests/ai_replay_hermeticity_contract.rs`, `scripts/release_gate.sh`, `scripts/release_candidate_gate.sh`, `scripts/enterprise_verify.sh`.

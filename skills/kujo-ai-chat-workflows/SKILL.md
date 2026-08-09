@@ -5,7 +5,7 @@ description: "Use this skill when running, configuring, testing, extending, or m
 
 # Kujo AI Chat Workflows
 
-Use AI Chat as the local showcase app for provider-gated chat workflows, durable SQLite state, multi-pane comparisons, SSE streaming, and offline fixture smoke paths.
+Use AI Chat as the local showcase app for provider-gated chat workflows, durable SQLite state, scheduled local automations, multi-pane comparisons, provider-neutral tool execution, Watchdog-routed providers, local Codex profile execution, benchmark panes, SSE streaming, context compaction, and offline fixture smoke paths.
 
 ## Quick Start
 
@@ -21,8 +21,14 @@ ENCRYPTION_SECRET=replace_with_strong_secret API_AUTH_TOKEN=replace_with_strong_
 
 ## Workflow Notes
 
-- Runtime database and backup outputs live under configured data paths; do not commit runtime data.
-- `/api/chat/stream` emits SSE `token`, `thinking`, `done`, and `error` events.
+- Runtime database, browser artifacts, benchmark runs, export outputs, and backup outputs live under configured data paths; do not commit runtime data.
+- `/api/chat/stream` emits SSE `token`, `thinking`, transient sanitized `tool`, terminal `done`, and terminal `error` events. Preserve complete upstream text/thinking streams plus final metadata, trace IDs, Watchdog trace references, tool artifact metadata, and usage detail payloads when changing bridge or route plumbing.
+- Provider profiles include managed Watchdog paths for OpenRouter and Ollama TUD, a managed local `Codex` profile seeded from the cached Codex model catalog when available, pane profiles for repeated comparisons, and a benchmark runner that creates one chat per test under `data/benchmark-runs/`. The bundled OpenRouter and Ollama Cloud model suggestions are the July 28, 2026 catalog snapshot.
+- Scheduled chat automations run daily, weekdays, or weekly in a selected local timezone; they persist durable chats per run and should not inherit runtime tools unless explicitly configured.
+- Long-chat handling keeps saved transcripts intact while compacting older turns only for provider requests that exceed the active `MAX_MESSAGES_PER_REQUEST` or character windows.
+- Provider-neutral tools include executable Web Search, Skill, Local, Action Adapter, and Playwright-backed Browser presets. Local read, write, shell, and action adapters each require explicit environment opt-ins and scoped roots or manifests. Tool runtime defaults are intentionally high for long research runs but remain bounded by round, call, per-round, and context limits.
+- Browser tools are isolated per chat/pane scope, default read-only, reject private/local/cloud-metadata targets unless explicitly allowed for local testing, and require `BROWSER_ENABLED=1` plus Playwright Chromium.
+- `/api/chats/:chatId/export` downloads Markdown, and `POST /api/chats/:chatId/export` writes into an explicitly configured local workspace only when local tools and local writes are opted in.
 - Offline fixture smoke is the safest provider-free validation path.
 
 When reporting results, state the command, target path, exit code, important artifact paths, and whether the result is advisory, blocking, or a generated output that still needs review.
@@ -38,8 +44,9 @@ When modifying this repository, read in this order:
 5. `bridge_chat.kujo`
 6. `docs/API_CONTRACT.md`
 7. `server.js`
-8. `tests/`
-9. `scripts/`
+8. `lib/tool-runtime.js` and browser runtime modules when tool execution changes
+9. `tests/`
+10. `scripts/`
 
 Preserve documented command names, output contracts, and fixture behavior unless the user explicitly asks to change them.
 
@@ -48,6 +55,10 @@ Run validation after source, docs, contract, or example changes:
 ```bash
 npm test
 API_AUTH_TOKEN=replace_with_strong_token PORT=4173 npm run smoke
+BROWSER_ENABLED=1 API_AUTH_TOKEN=replace_with_strong_token PORT=4173 npm run smoke:browser
+node --test tests/tool-activity-reliability.test.js
+node scripts/weekly-tool-audit.js
+API_AUTH_TOKEN=replace_with_strong_token npm run benchmark:run -- --tests /path/to/benchmark.md --pane-profile "OpenRouter (TUD)"
 npm run db:backup
 npm run db:vacuum
 ```
@@ -55,7 +66,7 @@ npm run db:vacuum
 ## Search And Safety
 
 - Exclude `node_modules/`, `data/`, and lockfile bulk from broad readability sweeps unless targeted.
-- Never print or commit real provider keys, encrypted secrets, session tokens, or SQLite runtime data.
+- Never print or commit real provider keys, Watchdog token files, encrypted secrets, session tokens, browser screenshots/artifacts, benchmark response dumps, or SQLite runtime data.
 - Keep API/SSE contract docs aligned with endpoint behavior.
 
 Use `rg` for broad searches and exclude generated, dependency, cache, and output directories unless the task explicitly targets them.
@@ -66,3 +77,4 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and output
 - Status: repo-backed: `AGENTS.md`.
 - Status: repo-backed: `package.json`.
 - Status: repo-backed: `bridge_chat.kujo`.
+- Status: repo-backed: `docs/API_CONTRACT.md`, `docs/LOCAL_AGENT_CAPABILITIES.md`, `tests/tool-activity-reliability.test.js`, `scripts/weekly-tool-audit.js`.

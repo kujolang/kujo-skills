@@ -1,0 +1,22 @@
+# Changelog
+
+All notable changes to the Kujo Agent Skills pack are documented here.
+
+The format follows Keep a Changelog and Semantic Versioning.
+
+## Unreleased
+
+## 0.1.0 - 2026-08-08
+
+### Added
+
+- Initial MIT-licensed technical-preview baseline.
+- Catalog of 53 repository-backed Kujo skills with trigger-routing fixtures.
+- Portable skill, documentation-link, metadata, and clean-install validation.
+- Workcell evidence for the required Workcell, SiteKit, Tribunal, Relay, and Redact workflow skills.
+- Public contribution, support, security, and conduct guidance.
+
+### Changed
+
+- Aligned public documentation with the stable Kujo `v1.0.0` baseline.
+- Reworked the README around installation, discovery, verification, and evidence boundaries.

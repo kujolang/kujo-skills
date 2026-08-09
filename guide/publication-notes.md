@@ -7,9 +7,14 @@
 - Use `Kujo` for the language name and `kujo` for the CLI command.
 - Use `.kujo` for source files.
 
-## Command Assumptions
+## Version Baselines
 
-Repo-backed current commands include:
+- Kujo `v1.0.0` is the stable language/runtime source baseline.
+- The skills distribution is versioned independently; its current technical-preview version is `0.1.0`.
+- `VERSION` and `package.json` are the machine-readable skills-pack version sources.
+- `CHANGELOG.md` records public skills-pack changes.
+
+Current Kujo commands referenced by the pack include:
 
 - `kujo run <file>`
 - `kujo run --interpreter <file>`
@@ -22,28 +27,19 @@ Repo-backed current commands include:
 - `kujo serve [dir]`
 - `kujo lsp`
 
-## Release Readiness Assumptions
+Release and compatibility claims should follow `docs/V1_SCOPE.md`, `docs/V1_0_OFFICIAL_RELEASE_CHECKLIST.md`, `docs/RELEASE_PROCESS.md`, and current release evidence in the Kujo repository. Historical pre-1.0 checklists are evidence records, not current release authority.
 
-The repo has conflicting wording:
+## Distribution Boundary
 
-- `README.md`, `docs/LANGUAGE_SPEC.md`, `docs/V1_SCOPE.md`, and `docs/PRE_V1_MASTER_UNFINISHED_CHECKLIST.md` state Kujo remains pre-1.0 until roadmap/checklist gates are closed.
-- `docs/RELEASE_PROCESS.md` says "Kujo is now at `1.0.0`."
-- `docs/ARCHITECTURE.md` says current crate version is `0.14.0`, while the repo reports current crate version elsewhere as `1.0.0`.
+The repository may be cloned or copied under the MIT License. Marketplace publication, automatic installation into live profiles, and claims of third-party runtime enforcement require separate evidence and authorization.
 
-Publication recommendation: before public release of these skills, maintainers should reconcile release-status wording and decide whether skills should say "pre-1.0" or "1.0 released but still with post-release caveats." This extraction follows the conservative pre-1.0 boundary.
+## Editor and LSP Notes
 
-## Missing Requested Source Material
+The skills mention LSP JSON helper surfaces and `kujo lsp`, but do not attempt to document every editor integration. Consult `docs/INSTALLATION_LSP_EDITORS.md`, `docs/EDITOR_ADAPTER_BASELINES.md`, and `docs/PROTOCOL_CONTRACTS.md` in the Kujo repository before publishing editor-specific guidance.
 
-The requested root files `DOGFOOD_NOTES.md` and `BUG_HUNT_REPORT.md` were not present in this checkout.
+## Maintenance Watchlist
 
-## Editor/LSP Notes
-
-The skills mention LSP JSON helper surfaces and `kujo lsp`, but do not attempt to document every editor integration. Consult `docs/INSTALLATION_LSP_EDITORS.md`, `docs/EDITOR_ADAPTER_BASELINES.md`, and `docs/PROTOCOL_CONTRACTS.md` before publishing editor-specific skills.
-
-## Skills To Revisit Before Public Release
-
-- `kujo-testing-release-gates`: update once release state is reconciled.
-- `kujo-runtime-parity`: update if `kujo test` default changes from `dual`.
-- `kujo-standard-library`: refresh after builtin tier/capability promotions.
-- `kujo-security-hardening`: refresh after any native capability or outbound policy change.
-
+- `kujo-runtime-parity`: revisit if the default `kujo test` runtime changes.
+- `kujo-standard-library`: refresh after builtin tier or capability promotions.
+- `kujo-security-hardening`: refresh after native capability or outbound-policy changes.
+- Workflow skills: refresh command, schema, exit-code, and artifact claims when their source repositories release changes.

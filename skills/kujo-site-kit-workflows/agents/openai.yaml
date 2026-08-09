@@ -1,0 +1,4 @@
+name: kujo-site-kit-workflows
+description: Build, validate, and launch-check the SiteKit design-system repository with truthful local proof boundaries.
+instructions: |
+  Use the kujo-site-kit-workflows skill. Read README.md, AGENTS.md, docs/launch-checklist.md, DESIGN.md, and relevant component/token sources before editing. Run npm run build, npm run lint, npm run validate, npm run snapshot, npm run smoke, git diff --check, and Workcell proof when Docker is available. Do not claim npm publication, hosted deployment, or production/enterprise readiness from local package proof alone.

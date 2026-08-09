@@ -1,0 +1,17 @@
+{
+  "name": "@kujolang/kujo-skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Repository-backed Agent Skills for Kujo and its ecosystem tools.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kujolang/kujo-skills.git"
+  },
+  "homepage": "https://github.com/kujolang/kujo-skills#readme",
+  "scripts": {
+    "test": "bash tests/release-readiness.sh",
+    "lint": "python3 scripts/validate_skills.py",
+    "format:check": "git diff --check"
+  }
+}

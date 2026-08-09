@@ -54,7 +54,9 @@
       "how should html_response escape user content",
       "run kujo with least privilege for db and fs read",
       "should this untrusted AI script use --allow-ai or --allow-net-client",
-      "lock Kujo AI helpers to approved provider endpoints with KUJO_AI_ALLOWED_ENDPOINTS"
+      "lock Kujo AI helpers to approved provider endpoints with KUJO_AI_ALLOWED_ENDPOINTS",
+      "force trusted Kujo network calls to deny private destinations with --deny-private-net",
+      "write a private key with restrictive permissions using io_write_private_file"
     ],
     "should_not_trigger": [
       "write a pure arithmetic Kujo function",
@@ -124,7 +126,10 @@
       "review the standard library capability docs",
       "use render_layout_native and render_listing_card in a Kujo script",
       "how do ai_text ai_image_url and ai_message build multimodal messages",
-      "what does ai_stream_chat callback cancellation return"
+      "what does ai_stream_chat callback cancellation return",
+      "use write_file_atomic instead of a pure Kujo temp file wrapper",
+      "read and set a single pixel on a Kujo image value",
+      "what does hmac_sha256 return for string payloads"
     ],
     "should_not_trigger": [
       "change CLI stdout stderr rules",
@@ -372,7 +377,8 @@
       "run Concord scan and report artifact drift in this repo",
       "check cli-docs drift with concord check cli-docs",
       "turn Concord findings into task cards",
-      "fix Concord examples drift after changing CLI help"
+      "fix Concord examples drift after changing CLI help",
+      "verify Concord detects package.json manifest drift for a Node repo"
     ],
     "should_not_trigger": [
       "capture a failing command with Casefile",
@@ -415,6 +421,7 @@
     "should_trigger": [
       "create a Howl showcase card for this Kujo example",
       "validate howl.json and render the SVG markdown html gallery",
+      "add a branded Howl social card with a local background image",
       "use howl caption --platform x for this card",
       "fix howl validate errors for referenced example files"
     ],
@@ -458,7 +465,8 @@
       "run PatchBrief summarize on my current git diff",
       "generate a PatchBrief handoff note for the next agent",
       "use patchbrief.kujo suggest-tests before I open this PR",
-      "update PatchBrief JSON handoff fields and tests"
+      "update PatchBrief JSON handoff fields and tests",
+      "validate the patchbrief summary JSON schema contract"
     ],
     "should_not_trigger": [
       "build a generic git diff summarizer from scratch",
@@ -514,7 +522,8 @@
       "run ShipCheck on this repo and tell me whether the release gate passes",
       "use shipcheck.kujo scan --format json for this local checkout",
       "generate a ShipCheck checklist before tagging this Kujo release",
-      "wire ShipCheck gate into CI and explain its exit code behavior"
+      "wire ShipCheck gate into CI and explain its exit code behavior",
+      "check whether shipcheck-report.schema.json matches gate --format json"
     ],
     "should_not_trigger": [
       "run the generic Kujo release gate for the compiler",
@@ -550,7 +559,8 @@
       "update Agents SDK approval tool execution contracts",
       "run examples_smoke_runner for agents-sdk offline fixtures",
       "fix agent handoff tracing tests",
-      "maintain artifact store contract tests"
+      "maintain artifact store contract tests",
+      "add MCP 2026 request helpers to Agents SDK integration adapters"
     ],
     "should_not_trigger": [
       "run Dispatch workflow templates",
@@ -564,7 +574,13 @@
       "start AI Chat locally and run smoke tests",
       "fix SSE thinking events in ai-chat",
       "update bridge_chat.kujo provider fixture behavior",
-      "backup and vacuum the AI Chat SQLite database"
+      "backup and vacuum the AI Chat SQLite database",
+      "preserve AI Chat streaming usage detail payloads",
+      "run the AI Chat benchmark runner for a saved pane profile",
+      "enable AI Chat browser_open and browser_snapshot tools with Playwright",
+      "configure AI Chat scheduled automations and local Codex profile",
+      "debug AI Chat context compaction for long conversations",
+      "verify AI Chat tool activity SSE events and weekly tool audit output"
     ],
     "should_not_trigger": [
       "maintain AI SDK provider retries only",
@@ -578,7 +594,10 @@
       "fix AI SDK streaming callback contract",
       "run ai-sdk security redaction tests",
       "update provider presets and fixture mode",
-      "run live provider smoke with skip handling"
+      "run live provider smoke with skip handling",
+      "use resolve_model_preference for provider-neutral model routing",
+      "preserve streaming usage telemetry in AI SDK include_usage responses",
+      "run AI SDK embeddings contract tests"
     ],
     "should_not_trigger": [
       "open the AI Chat web UI",
@@ -592,7 +611,10 @@
       "start the Kujo CMS backend runtime",
       "run cms_contract_tests.kujo",
       "process CMS webhook outbox jobs",
-      "extend CMS content model routes"
+      "extend CMS content model routes",
+      "review CMS release gate evidence and branch protection gap",
+      "verify anonymous CMS reads only expose published entries",
+      "test CMS entry lock ownership and release behavior"
     ],
     "should_not_trigger": [
       "run CRUD API smoke tests",
@@ -620,6 +642,7 @@
       "validate Kennel package lockfile behavior",
       "add a local package dependency with kennel",
       "review Kennel trust policy enforcement",
+      "configure Kennel static index mirrors and local hosted registry",
       "run Kennel release verification scripts"
     ],
     "should_not_trigger": [
@@ -634,7 +657,10 @@
       "build the Kujo SSG starter site",
       "validate generated SSG output",
       "update templates and content in ssg",
-      "preserve the SSG native render fast path"
+      "run the SSG parallel shard build for a large site",
+      "preserve the SSG native render fast path",
+      "build SSG custom collections with posts-at-root and llms output",
+      "run the SSG DocGen bridge and package the reusable docs starter"
     ],
     "should_not_trigger": [
       "run CMS webhooks",
@@ -648,13 +674,121 @@
       "start Watchdog dashboard server",
       "verify Watchdog proxy config endpoint",
       "debug Watchdog telemetry redaction",
-      "integrate AI Chat with Watchdog proxy"
+      "integrate AI Chat with Watchdog proxy",
+      "configure Watchdog named upstream profiles for OpenRouter",
+      "test Watchdog SQLite-backed rate limits and production token auth",
+      "inspect Watchdog backup archive history and active backup files",
+      "refresh Watchdog pricing catalog provenance for direct API estimates"
     ],
     "should_not_trigger": [
       "run AI SDK provider contract tests",
       "open CRUD API playground",
       "create Eval suite reports",
       "generate SSG feeds"
+    ]
+  },
+  "kujo-redact-workflows": {
+    "should_trigger": [
+      "sanitize this markdown with Redact and verify leakage",
+      "run redact.kujo pack with the external-safe policy",
+      "review .redact/runs audit artifacts without storing originals",
+      "update Redact policy YAML handling and tests"
+    ],
+    "should_not_trigger": [
+      "review Scent redactions.json from a context pack",
+      "debug Watchdog telemetry redaction",
+      "scan browser secrets with Lens",
+      "write a generic regex sanitizer in Python"
+    ]
+  },
+  "kujo-tribunal-workflows": {
+    "should_trigger": [
+      "run a Tribunal review with the fast-two-model panel",
+      "verify a signed Tribunal run with a trust policy",
+      "export a Tribunal decision bundle for handoff",
+      "update Tribunal schemas and release gates"
+    ],
+    "should_not_trigger": [
+      "run Dispatch workflow templates",
+      "record a RunLedger receipt only",
+      "create a Spec task contract",
+      "summarize a normal chat transcript"
+    ]
+  },
+  "kujo-workcell-workflows": {
+    "should_trigger": [
+      "initialize and validate a Workcell workcell.json",
+      "run Workcell in Docker and inspect receipt.json",
+      "verify a .workcell run manifest after tampering",
+      "harden Workcell output path containment tests",
+      "run Workcell Podman load evidence and egress deployment contracts",
+      "verify Workcell untracked file patch generation"
+    ],
+    "should_not_trigger": [
+      "run a generic Docker container manually",
+      "execute Relay bounded missions",
+      "capture a failed command with Casefile",
+      "scan architecture boundaries with Fence"
+    ]
+  },
+  "kujo-relay-workflows": {
+    "should_trigger": [
+      "run Relay doctor and agents validate in fixture mode",
+      "execute a Relay mission with PackWrite RunLedger ChangeBucket Eval evidence",
+      "inspect Relay runs events with cursor metadata",
+      "repair a failed Relay mission within bounded attempts",
+      "run a Relay mission with provider-generated tool planning",
+      "verify Relay tool-result bundles and mission token budgets"
+    ],
+    "should_not_trigger": [
+      "run Dispatch approval workflow files",
+      "start Watchdog dashboard only",
+      "build an Agents SDK example directly",
+      "make a Scent context pack"
+    ]
+  },
+  "kujo-site-kit-workflows": {
+    "should_trigger": [
+      "run canonical SiteKit launch proof with Workcell no-pull",
+      "build SiteKit dist and run component validation",
+      "add a SiteKit component schema template and CSS",
+      "update SiteKit tokens without raw hex colors",
+      "smoke test SiteKit consumer dashboard behavior"
+    ],
+    "should_not_trigger": [
+      "build an SSG content site",
+      "run Lens visual QA only",
+      "create a random landing page design",
+      "debug CMS content routes"
+    ]
+  },
+  "kujo-sitekit-workflows": {
+    "should_trigger": [
+      "build SiteKit dist and run component validation",
+      "add a SiteKit component schema template and CSS",
+      "update SiteKit tokens without raw hex colors",
+      "smoke test SiteKit consumer dashboard behavior",
+      "use the older SiteKit skill alias for compatibility"
+    ],
+    "should_not_trigger": [
+      "build an SSG content site",
+      "run Lens visual QA only",
+      "create a random landing page design",
+      "debug CMS content routes"
+    ]
+  },
+  "kujo-benchmarks-capsule-workflows": {
+    "should_trigger": [
+      "make a stable Capsule for this fixture project",
+      "validate capsule.json and inspect capsule.md",
+      "compare Capsule benchmark evidence after a model run",
+      "fix benchmarks-capsule stable output determinism"
+    ],
+    "should_not_trigger": [
+      "create a Scent context pack",
+      "run Scout repo intelligence",
+      "record a RunLedger receipt",
+      "benchmark Kujo runtime performance generally"
     ]
   },
   "kujo-skill-auditor": {
@@ -753,6 +887,20 @@
       "triage Dependabot security alerts",
       "run cross-repo dogfood only",
       "create a PowerPoint deck"
+    ]
+  },
+  "kujo-loop-engineering-workflows": {
+    "should_trigger": [
+      "initialize a bounded loop-engineering task in this repository",
+      "run a loop-engineering checklist and capture structured blockers",
+      "use run-workflow.sh --config for this local engineering task",
+      "classify this markdown checklist into local and external work"
+    ],
+    "should_not_trigger": [
+      "write a simple one-file Kujo script",
+      "run a release gate before tagging",
+      "create a visual-regression baseline",
+      "summarize a Git diff without executing a workflow"
     ]
   },
   "kujo-dependabot-alert-triage": {

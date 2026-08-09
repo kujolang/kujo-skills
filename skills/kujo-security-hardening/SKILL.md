@@ -14,6 +14,7 @@ Be direct and conservative: Kujo is not a sandbox.
 - For untrusted code, start with `--untrusted` and add only the required `--allow-*` flags.
 - `--allow-*` flags imply restricted baseline with only those capabilities enabled.
 - Treat `--allow-all` as trusted/full ambient-host execution.
+- Add `--deny-private-net` when trusted automation still must reject loopback, private, link-local, multicast, and unspecified outbound destinations.
 
 ## Capability Flags
 
@@ -32,17 +33,21 @@ Be direct and conservative: Kujo is not a sandbox.
 kujo run --untrusted --allow-fs-read ./script.kujo
 kujo run --untrusted --allow-net-client ./fetch.kujo
 kujo run --untrusted --allow-ai ./agent.kujo
+kujo run --deny-private-net --allow-ai ./agent.kujo
 ```
 
 - Prefer `spawn_process(["cmd", "arg"])` and `pipe_commands([...])` over shell strings.
 - Never interpolate untrusted input into `execute(...)` or `execute_status(...)`.
 - Keep `inherit_env` disabled unless required.
+- Prefer `env_allow`, `env_deny`, explicit `env`, and bounded output/cancellation options when spawning child processes.
+- Prefer `write_file_atomic` and `io_write_private_file` for security-sensitive filesystem writes; avoid publishing partial files or private material with broad modes.
 - Use timeouts and output limits for process/network flows.
 - Apply external isolation for high-risk runs: containers, low-privilege service accounts, read-only filesystems, network ACLs/firewalls, and secret management.
 
 ## High-Risk Surfaces
 
 - Outbound network can exfiltrate data or pivot internally. In untrusted network-client runs, understand `KUJO_NET_DESTINATION_POLICY=deny_private`.
+- `--deny-private-net` is CLI-level strict outbound policy and works independently of environment variables in trusted or untrusted runs.
 - AI helpers (`ai_chat`, `ai_stream_chat`, `ai_embedding`, `ai_tool_loop`) use a separate `--allow-ai` gate. Prefer it over broad network-client access when a script only needs provider calls.
 - Set `KUJO_AI_ALLOWED_ENDPOINTS` for shared automation; non-matching endpoints fail with deterministic `kind:"endpoint_denied"` errors. Deterministic AI test lanes should use strict replay cassettes, not live provider credentials.
 - `html_response(...)` does not sanitize attacker-controlled content; escape `&`, `<`, `>`, `"`, and `'` or prefer JSON responses.
