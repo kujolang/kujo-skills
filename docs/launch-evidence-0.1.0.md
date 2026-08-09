@@ -21,6 +21,10 @@ Sample skill-read evidence:
 
 A fresh local clone of commit `20c5b36` also passed both commands with a clean worktree.
 
+## GitHub Actions
+
+Publication pull request [#18](https://github.com/kujolang/kujo-skills/pull/18) ran the portable `skills-pack` job and the existing `tool-artifacts` guard for both push and pull-request events. All four jobs passed before merge preparation.
+
 ## Spec and Eval
 
 ```bash

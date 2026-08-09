@@ -12,7 +12,7 @@ Current launch scope: MIT-licensed `0.1.0` support/distribution technical previe
 - [x] Portable CI gate added through `tests/release-readiness.sh` and `.github/workflows/validate.yml`.
 - [x] Workcell proof checked with `workcell run --file docs/workcell-launch-gate.json --repo . --no-pull`.
 - [x] Clean-checkout validation passed in a fresh clone; isolated skill installation also passed in the Workcell container.
-- [ ] GitHub Actions validation passes on the publication pull request.
+- [x] GitHub Actions validation passed on publication pull request [#18](https://github.com/kujolang/kujo-skills/pull/18).
 
 ## Workcell Proof Notes
 
