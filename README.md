@@ -1,8 +1,8 @@
 # Kujo Agent Skills
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)](CHANGELOG.md)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Validate](https://github.com/kujolang/kujo-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/kujolang/kujo-skills/actions/workflows/validate.yml)
+[![Version](https://img.shields.io/badge/version-0.1.0-black)](https://github.com/kujolang/kujo-skills)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
+[![built with Kujo](https://img.shields.io/badge/built%20with-Kujo-white.svg)](https://github.com/kujolang/kujo)
 
 Repository-backed Agent Skills for the [Kujo programming language](https://kujolang.ai) and its ecosystem tools.
 
