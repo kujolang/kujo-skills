@@ -1,8 +1,8 @@
 # Kujo Skills 0.1.0 Launch Evidence
 
-Evidence date: 2026-08-08  
-Source branch: `weekly-kujo-skills-audit-2026-07-04`  
-Source commit: `20c5b36`
+- Evidence date: 2026-08-08
+- Source branch: `weekly-kujo-skills-audit-2026-07-04`
+- Source commit: `20c5b36`
 
 ## Portable repository gate
 
