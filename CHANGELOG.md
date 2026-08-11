@@ -5,6 +5,8 @@
 - Add SiteProbe, SearchBridge, and ContentGraph workflow skills.
 - Add reusable WebOps site profile, capability, longitudinal history, search, content, quality, intelligence, operations, and reporting methodologies.
 - Extend the complete routing fixture and skill index from 53 to 83 validated skills.
+- Pin WebOps tool schema/version/budget compatibility and require
+  `index.submission` capability plus explicit ACT confirmation for SearchBridge submissions.
 
 All notable changes to the Kujo Agent Skills pack are documented here.
 

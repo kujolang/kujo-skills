@@ -12,7 +12,7 @@ Use this skill for running, validating, comparing, reporting, or integrating Sit
 ## Workflow
 
 1. Run `siteprobe doctor` and select a bounded same-origin target.
-2. Use `siteprobe crawl <url> --max-pages N --max-depth N --out <run>`; preserve robots compliance by default.
+2. Use `siteprobe crawl <url> --max-pages N --max-depth N --max-output-bytes N --max-report-tokens N --out <run>`; preserve robots compliance by default.
 3. Run `siteprobe validate <run>` before consuming artifacts.
 4. Use `compare`, `report`, `links`, or `sitemap` for the narrow downstream need.
 

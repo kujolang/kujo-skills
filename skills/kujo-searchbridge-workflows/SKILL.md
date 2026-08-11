@@ -14,7 +14,7 @@ Use this skill for running SearchBridge doctor, capability preflight, fixture pr
 1. Run `searchbridge doctor`, `capabilities`, and `providers` without credentials.
 2. Use `--fixture` for deterministic GSC, GA4, PageSpeed, CrUX, Bing, Ahrefs, and IndexNow coverage.
 3. For live reads, supply short-lived environment credentials and bounded dimensions/rows.
-4. For submission require the operator's ACT authority plus `submit --act --yes`; retain the receipt.
+4. For submission require the operator's `index.submission` capability and ACT authority plus `submit --capability index.submission --act --yes`; retain the receipt.
 
 ## Required Output
 

@@ -12,7 +12,7 @@ Use this skill for building, inspecting, comparing, exporting, or consuming dete
 ## Workflow
 
 1. Select validated SiteProbe, local source, and optional SearchBridge inputs.
-2. Run `contentgraph build` with explicit output and reviewed thresholds.
+2. Run `contentgraph build` with explicit node/output/report budgets and reviewed thresholds.
 3. Inspect clusters, orphans, overlaps, related pages, and link opportunities as candidates.
 4. Use `compare` for longitudinal graph changes and `export` for downstream systems.
 
