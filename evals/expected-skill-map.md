@@ -55,3 +55,38 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Normalize audit findings into tasks | `kujo-backlog-normalizer` |
 | Public DocGen docs refresh | `kujo-docgen-public-docs-refresh` |
 | Dependabot/security alert triage | `kujo-dependabot-alert-triage` |
+
+## WebOps routing
+
+| Query theme | Expected skill(s) |
+|---|---|
+| Configuring or validating a portable WebOps site profile, repository binding, integration references, permission default, or site identity | `webops-site-profile` |
+| Checking which WebOps website, repository, browser, search, analytics, performance, backlink, keyword, publishing, distribution, or submission capabilities are available | `webops-capability-preflight` |
+| Creating, comparing, or updating stable WebOps findings, recommendations, actions, outcomes, and recurring-run history | `webops-longitudinal-findings` |
+| Running, validating, comparing, reporting, or integrating SiteProbe website-intelligence crawls and `.siteprobe` artifacts | `kujo-siteprobe-workflows` |
+| Running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, or explicit ACT submission | `kujo-searchbridge-workflows` |
+| Building, inspecting, comparing, exporting, or consuming deterministic ContentGraph artifacts | `kujo-contentgraph-workflows` |
+| Performing a deterministic technical SEO audit from crawl evidence | `webops-technical-seo` |
+| Analyzing longitudinal measured search performance | `webops-search-performance` |
+| Auditing crawlability, local indexability, and confirmed provider index state | `webops-indexation` |
+| Finding query opportunities while separating measurement, estimates, and public research | `webops-keyword-opportunity` |
+| Running repeatable AI/search visibility benchmark suites | `webops-ai-search-visibility` |
+| Classifying site coverage against audience/search needs | `webops-content-gap` |
+| Identifying content deterioration or staleness without conflating age and decline | `webops-content-decay` |
+| Analyzing, proposing, or explicitly applying contextual internal links | `webops-internal-linking` |
+| Reviewing website claims for outdated or invalid guidance | `webops-content-accuracy` |
+| Identifying likely intent competition while separating normal overlap | `webops-cannibalization` |
+| Assigning longitudinal content portfolio states | `webops-content-portfolio` |
+| Reviewing obsolete or redundant content for keep, refresh, merge, redirect, or retire proposals | `webops-content-pruning` |
+| Auditing site navigation, hierarchy, taxonomy, URLs, depth, clusters, and discoverability | `webops-information-architecture` |
+| Auditing structured data and page/social metadata | `webops-schema-and-metadata` |
+| Analyzing lab and field website performance as distinct evidence classes | `webops-web-performance` |
+| Running repeatable automated accessibility review with explicit manual gaps | `webops-accessibility-review` |
+| Auditing broken, redirected, malformed, or unexpected links | `webops-link-health` |
+| Monitoring selected public competitors or peers for meaningful change | `webops-competitor-intelligence` |
+| Analyzing new/lost backlinks, linked and unlinked mentions, and evidence-backed link concerns | `webops-backlink-and-mention-analysis` |
+| Monitoring authoritative search, indexing, structured-data, analytics, browser, AI-search, and web-standard changes | `webops-search-standards-watch` |
+| Preflighting or performing explicit ACT search submission through supported providers | `webops-search-submission` |
+| Analyzing real website behavior from normalized analytics evidence | `webops-analytics-analysis` |
+| Creating source-grounded distribution assets and optionally publishing with ACT authority | `webops-distribution` |
+| Synthesizing validated specialist evidence into quiet WebOps reports | `webops-reporting` |

@@ -1,6 +1,6 @@
 # Kujo Agent Skills
 
-[![Version](https://img.shields.io/badge/version-0.1.0-black)](https://github.com/kujolang/kujo-skills)
+[![Version](https://img.shields.io/badge/version-0.2.0-black)](https://github.com/kujolang/kujo-skills)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 [![built with Kujo](https://img.shields.io/badge/built%20with-Kujo-white.svg)](https://github.com/kujolang/kujo)
 
@@ -10,7 +10,7 @@ The catalog gives coding agents exact Kujo commands, safety boundaries, validati
 
 ## Why use this pack?
 
-- Route work to 53 focused skills instead of one broad prompt.
+- Route work to 83 focused skills instead of one broad prompt, including 30 WebOps tool and methodology skills.
 - Keep VM-first execution, capability boundaries, and CLI contracts explicit.
 - Ground recommendations in Kujo repositories, tests, and operational docs.
 - Validate the complete catalog offline with one command.
@@ -54,6 +54,10 @@ Start with the [skill catalog](SKILLS_INDEX.md). Common entry points include:
 | Detect documentation or artifact drift | `kujo-concord-workflows` |
 | Run isolated local workflow proof | `kujo-workcell-workflows` |
 | Audit or refresh this skills pack | `kujo-skill-auditor` |
+| Crawl and compare a website | `kujo-siteprobe-workflows` |
+| Normalize search/analytics/provider evidence | `kujo-searchbridge-workflows` |
+| Build deterministic content relationships | `kujo-contentgraph-workflows` |
+| Run a WebOps methodology | the narrowest `webops-*` skill |
 
 See [examples](examples/README.md) for installation bundles and routing prompts.
 
@@ -69,7 +73,7 @@ See [examples](examples/README.md) for installation bundles and routing prompts.
 
 ## Release and support status
 
-This repository is the MIT-licensed `0.1.0` technical preview of the Kujo skills pack. Kujo `v1.0.0` is the current stable language/runtime baseline; individual skills preserve explicit preview or experimental boundaries for narrower APIs.
+This repository is the MIT-licensed `0.2.0` technical preview of the Kujo skills pack. Kujo `v1.0.0` is the current stable language/runtime baseline; individual skills preserve explicit preview or experimental boundaries for narrower APIs.
 
 The pack provides guidance, not runtime enforcement. An agent or host must load a skill and enforce its own permissions. Kujo itself is not a sandbox: use `--untrusted`, least-privilege `--allow-*` flags, and external isolation for high-risk scripts.
 

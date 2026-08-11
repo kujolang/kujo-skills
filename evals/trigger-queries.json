@@ -916,5 +916,305 @@
       "audit skill trigger routing",
       "build CRUD API frontend"
     ]
+  },
+  "webops-site-profile": {
+    "should_trigger": [
+      "Use webops-site-profile for configuring or validating a portable WebOps site profile, repository binding, integration references, permission default, or site identity",
+      "I need help configuring or validating a portable WebOps site profile, repository binding, integration references, permission default, or site identity"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-capability-preflight": {
+    "should_trigger": [
+      "Use webops-capability-preflight for checking which WebOps website, repository, browser, search, analytics, performance, backlink, keyword, publishing, distribution, or submission capabilities are available",
+      "I need help checking which WebOps website, repository, browser, search, analytics, performance, backlink, keyword, publishing, distribution, or submission capabilities are available"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-longitudinal-findings": {
+    "should_trigger": [
+      "Use webops-longitudinal-findings for creating, comparing, or updating stable WebOps findings, recommendations, actions, outcomes, and recurring-run history",
+      "I need help creating, comparing, or updating stable WebOps findings, recommendations, actions, outcomes, and recurring-run history"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "kujo-siteprobe-workflows": {
+    "should_trigger": [
+      "Use kujo-siteprobe-workflows for running, validating, comparing, reporting, or integrating SiteProbe website-intelligence crawls and `.siteprobe` artifacts",
+      "I need help running, validating, comparing, reporting, or integrating SiteProbe website-intelligence crawls and `.siteprobe` artifacts"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "kujo-searchbridge-workflows": {
+    "should_trigger": [
+      "Use kujo-searchbridge-workflows for running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, or explicit ACT submission",
+      "I need help running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, or explicit ACT submission"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "kujo-contentgraph-workflows": {
+    "should_trigger": [
+      "Use kujo-contentgraph-workflows for building, inspecting, comparing, exporting, or consuming deterministic ContentGraph artifacts",
+      "I need help building, inspecting, comparing, exporting, or consuming deterministic ContentGraph artifacts"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-technical-seo": {
+    "should_trigger": [
+      "Use webops-technical-seo for performing a deterministic technical SEO audit from crawl evidence",
+      "I need help performing a deterministic technical SEO audit from crawl evidence"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-search-performance": {
+    "should_trigger": [
+      "Use webops-search-performance for analyzing longitudinal measured search performance",
+      "I need help analyzing longitudinal measured search performance"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-indexation": {
+    "should_trigger": [
+      "Use webops-indexation for auditing crawlability, local indexability, and confirmed provider index state",
+      "I need help auditing crawlability, local indexability, and confirmed provider index state"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-keyword-opportunity": {
+    "should_trigger": [
+      "Use webops-keyword-opportunity for finding query opportunities while separating measurement, estimates, and public research",
+      "I need help finding query opportunities while separating measurement, estimates, and public research"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-ai-search-visibility": {
+    "should_trigger": [
+      "Use webops-ai-search-visibility for running repeatable AI/search visibility benchmark suites",
+      "I need help running repeatable AI/search visibility benchmark suites"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-content-gap": {
+    "should_trigger": [
+      "Use webops-content-gap for classifying site coverage against audience/search needs",
+      "I need help classifying site coverage against audience/search needs"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-content-decay": {
+    "should_trigger": [
+      "Use webops-content-decay for identifying content deterioration or staleness without conflating age and decline",
+      "I need help identifying content deterioration or staleness without conflating age and decline"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-internal-linking": {
+    "should_trigger": [
+      "Use webops-internal-linking for analyzing, proposing, or explicitly applying contextual internal links",
+      "I need help analyzing, proposing, or explicitly applying contextual internal links"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-content-accuracy": {
+    "should_trigger": [
+      "Use webops-content-accuracy for reviewing website claims for outdated or invalid guidance",
+      "I need help reviewing website claims for outdated or invalid guidance"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-cannibalization": {
+    "should_trigger": [
+      "Use webops-cannibalization for identifying likely intent competition while separating normal overlap",
+      "I need help identifying likely intent competition while separating normal overlap"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-content-portfolio": {
+    "should_trigger": [
+      "Use webops-content-portfolio for assigning longitudinal content portfolio states",
+      "I need help assigning longitudinal content portfolio states"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-content-pruning": {
+    "should_trigger": [
+      "Use webops-content-pruning for reviewing obsolete or redundant content for keep, refresh, merge, redirect, or retire proposals",
+      "I need help reviewing obsolete or redundant content for keep, refresh, merge, redirect, or retire proposals"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-information-architecture": {
+    "should_trigger": [
+      "Use webops-information-architecture for auditing site navigation, hierarchy, taxonomy, URLs, depth, clusters, and discoverability",
+      "I need help auditing site navigation, hierarchy, taxonomy, URLs, depth, clusters, and discoverability"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-schema-and-metadata": {
+    "should_trigger": [
+      "Use webops-schema-and-metadata for auditing structured data and page/social metadata",
+      "I need help auditing structured data and page/social metadata"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-web-performance": {
+    "should_trigger": [
+      "Use webops-web-performance for analyzing lab and field website performance as distinct evidence classes",
+      "I need help analyzing lab and field website performance as distinct evidence classes"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-accessibility-review": {
+    "should_trigger": [
+      "Use webops-accessibility-review for running repeatable automated accessibility review with explicit manual gaps",
+      "I need help running repeatable automated accessibility review with explicit manual gaps"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-link-health": {
+    "should_trigger": [
+      "Use webops-link-health for auditing broken, redirected, malformed, or unexpected links",
+      "I need help auditing broken, redirected, malformed, or unexpected links"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-competitor-intelligence": {
+    "should_trigger": [
+      "Use webops-competitor-intelligence for monitoring selected public competitors or peers for meaningful change",
+      "I need help monitoring selected public competitors or peers for meaningful change"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-backlink-and-mention-analysis": {
+    "should_trigger": [
+      "Use webops-backlink-and-mention-analysis for analyzing new/lost backlinks, linked and unlinked mentions, and evidence-backed link concerns",
+      "I need help analyzing new/lost backlinks, linked and unlinked mentions, and evidence-backed link concerns"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-search-standards-watch": {
+    "should_trigger": [
+      "Use webops-search-standards-watch for monitoring authoritative search, indexing, structured-data, analytics, browser, AI-search, and web-standard changes",
+      "I need help monitoring authoritative search, indexing, structured-data, analytics, browser, AI-search, and web-standard changes"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-search-submission": {
+    "should_trigger": [
+      "Use webops-search-submission for preflighting or performing explicit ACT search submission through supported providers",
+      "I need help preflighting or performing explicit ACT search submission through supported providers"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-analytics-analysis": {
+    "should_trigger": [
+      "Use webops-analytics-analysis for analyzing real website behavior from normalized analytics evidence",
+      "I need help analyzing real website behavior from normalized analytics evidence"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-distribution": {
+    "should_trigger": [
+      "Use webops-distribution for creating source-grounded distribution assets and optionally publishing with ACT authority",
+      "I need help creating source-grounded distribution assets and optionally publishing with ACT authority"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "webops-reporting": {
+    "should_trigger": [
+      "Use webops-reporting for synthesizing validated specialist evidence into quiet WebOps reports",
+      "I need help synthesizing validated specialist evidence into quiet WebOps reports"
+    ],
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ]
   }
 }

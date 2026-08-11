@@ -1,6 +1,6 @@
 {
   "name": "@kujolang/kujo-skills",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Repository-backed Agent Skills for Kujo and its ecosystem tools.",
   "license": "MIT",

@@ -57,3 +57,38 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-backlog-normalizer` | Convert audit/drift/security/readiness findings into fix-ready tasks. | Tool reports, issues/backlogs, manifests |
 | `kujo-docgen-public-docs-refresh` | Refresh public DocGen docs, generated docs, gap outputs, and coverage gates. | Kujo DocGen docs and generated docs |
 | `kujo-dependabot-alert-triage` | Dependabot/security alert triage across Kujo repos. | GitHub alerts, manifests, lockfiles, audit output |
+
+## WebOps skills
+
+| Skill | Use when | Primary sources |
+|---|---|---|
+| `webops-site-profile` | Configuring or validating a portable WebOps site profile, repository binding, integration references, permission default, or site identity. | WebOps profile schema and Agency Runner site profiles |
+| `webops-capability-preflight` | Checking which WebOps website, repository, browser, search, analytics, performance, backlink, keyword, publishing, distribution, or submission capabilities are available. | WebOps capability schema plus tool doctor/capabilities outputs |
+| `webops-longitudinal-findings` | Creating, comparing, or updating stable WebOps findings, recommendations, actions, outcomes, and recurring-run history. | WebOps finding/history schemas and prior run artifacts |
+| `kujo-siteprobe-workflows` | Running, validating, comparing, reporting, or integrating SiteProbe website-intelligence crawls and `.siteprobe` artifacts. | `../siteprobe` README, CLI, schemas, tests, and security contract |
+| `kujo-searchbridge-workflows` | Running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, or explicit ACT submission. | `../searchbridge` README, provider research, schemas, tests, and security contract |
+| `kujo-contentgraph-workflows` | Building, inspecting, comparing, exporting, or consuming deterministic ContentGraph artifacts. | `../contentgraph` README, methodology, schemas, tests, and security contract |
+| `webops-technical-seo` | Performing a deterministic technical SEO audit from crawl evidence. | SiteProbe artifacts, WebOps history, and optional Lens/inspection evidence |
+| `webops-search-performance` | Analyzing longitudinal measured search performance. | SearchBridge search.performance result/v1 and prior comparable windows |
+| `webops-indexation` | Auditing crawlability, local indexability, and confirmed provider index state. | SiteProbe robots/sitemap/page artifacts and optional SearchBridge URL inspection |
+| `webops-keyword-opportunity` | Finding query opportunities while separating measurement, estimates, and public research. | SearchBridge search/keyword results, public research, and ContentGraph coverage |
+| `webops-ai-search-visibility` | Running repeatable AI/search visibility benchmark suites. | Fixed query suite, configured surfaces, dated response evidence, and prior benchmark |
+| `webops-content-gap` | Classifying site coverage against audience/search needs. | ContentGraph corpus, research, optional query data, and current site profile |
+| `webops-content-decay` | Identifying content deterioration or staleness without conflating age and decline. | SearchBridge longitudinal results, ContentGraph, factual sources, analytics, and history |
+| `webops-internal-linking` | Analyzing, proposing, or explicitly applying contextual internal links. | ContentGraph opportunities, page context, SiteProbe links, optional repository |
+| `webops-content-accuracy` | Reviewing website claims for outdated or invalid guidance. | Current authoritative primary sources, content corpus, and retrieval provenance |
+| `webops-cannibalization` | Identifying likely intent competition while separating normal overlap. | ContentGraph overlaps plus SearchBridge query/page evidence |
+| `webops-content-portfolio` | Assigning longitudinal content portfolio states. | ContentGraph, search, analytics, backlink, freshness, and business-purpose evidence |
+| `webops-content-pruning` | Reviewing obsolete or redundant content for keep, refresh, merge, redirect, or retire proposals. | ContentGraph, accuracy review, measured providers, backlinks, and business context |
+| `webops-information-architecture` | Auditing site navigation, hierarchy, taxonomy, URLs, depth, clusters, and discoverability. | ContentGraph, SiteProbe graph/depth, Lens navigation evidence, and source structure |
+| `webops-schema-and-metadata` | Auditing structured data and page/social metadata. | SiteProbe metadata/structured-data artifacts, visible content, and current authoritative guidance |
+| `webops-web-performance` | Analyzing lab and field website performance as distinct evidence classes. | SearchBridge PageSpeed/CrUX, Lens environment-relative metrics, and prior runs |
+| `webops-accessibility-review` | Running repeatable automated accessibility review with explicit manual gaps. | Lens accessibility artifacts, rendered routes, and applicable manual review |
+| `webops-link-health` | Auditing broken, redirected, malformed, or unexpected links. | SiteProbe link/status/redirect evidence and optional Lens interactions |
+| `webops-competitor-intelligence` | Monitoring selected public competitors or peers for meaningful change. | Public web evidence, bounded SiteProbe runs, optional SearchBridge estimates, and prior baseline |
+| `webops-backlink-and-mention-analysis` | Analyzing new/lost backlinks, linked and unlinked mentions, and evidence-backed link concerns. | SearchBridge backlink data, public web research, and prior run |
+| `webops-search-standards-watch` | Monitoring authoritative search, indexing, structured-data, analytics, browser, AI-search, and web-standard changes. | Official search-engine, analytics, browser, standards-body, and provider documentation |
+| `webops-search-submission` | Preflighting or performing explicit ACT search submission through supported providers. | SearchBridge providers/capabilities, site ownership, approved URL list, and receipt schema |
+| `webops-analytics-analysis` | Analyzing real website behavior from normalized analytics evidence. | SearchBridge analytics result/v1, property identity settings, dimensions, metrics, and prior window |
+| `webops-distribution` | Creating source-grounded distribution assets and optionally publishing with ACT authority. | Approved published content, Howl, distribution integration, permission receipt, and brand constraints |
+| `webops-reporting` | Synthesizing validated specialist evidence into quiet WebOps reports. | Validated current/prior WebOps artifacts, finding history, actions, outcomes, and availability receipts |

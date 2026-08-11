@@ -1,6 +1,6 @@
 # Launch Checklist
 
-Current launch scope: MIT-licensed `0.1.0` support/distribution technical preview. The portable repository gate and Workcell proof cover the full skill inventory and the required Workcell, SiteKit, Tribunal, Relay, and Redact workflow skills. Marketplace actions remain outside the completed evidence.
+Current source scope: MIT-licensed `0.2.0` support/distribution technical preview. The portable repository gate covers the 83-skill inventory including WebOps; the historical 0.1.0 Workcell proof remains evidence for its original 53-skill baseline. Marketplace actions remain outside the completed evidence.
 
 ## Local Gates
 
@@ -16,7 +16,7 @@ Current launch scope: MIT-licensed `0.1.0` support/distribution technical previe
 
 ## Workcell Proof Notes
 
-Workcell run `wc-6c5ec39e21e44606ac9fe6698e4a115d` passed against commit `20c5b36` with verified manifest integrity and complete cleanup. The no-network `contained-standard` profile asserted the `0.1.0` metadata, 53-skill inventory, public policy files, all five required launch-batch skills, and a temporary-profile installation of `kujo-core-language`.
+Historical Workcell run `wc-6c5ec39e21e44606ac9fe6698e4a115d` passed against commit `20c5b36` with verified manifest integrity and complete cleanup. It asserted the original `0.1.0` 53-skill baseline; current 0.2.0 WebOps coverage is owned by the portable release and clean-checkout gates.
 
 See [`launch-evidence-0.1.0.md`](launch-evidence-0.1.0.md) for the compact command and result record.
 
