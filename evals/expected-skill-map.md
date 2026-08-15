@@ -8,7 +8,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Building Kujo JSON policy checkers, repo scanners, deterministic CLI tools | `kujo-tool-building`, optionally `kujo-enterprise-automation` |
 | Untrusted Kujo scripts, capability flags, shell/network/files/db/archive/HTML/AI egress risk | `kujo-security-hardening` |
 | CLI JSON, exit codes, stdout/stderr, diagnostics, LSP helper payloads | `kujo-cli-contracts` |
-| Builtin arity, return values, capability gates, JSON/file/process/network/db/crypto/rendering/AI APIs | `kujo-standard-library` |
+| Builtin arity, return values, capability gates, JSON/JSONL/file/process/network/db/crypto/rendering/AI APIs | `kujo-standard-library` |
 | Test selection, release gates, enterprise verify, docs/example smoke tests | `kujo-testing-release-gates` |
 | VM/interpreter drift, `--interpreter`, dual runtime checks | `kujo-runtime-parity` |
 | Rust implementation changes | `kujo-language-implementation` |
@@ -28,7 +28,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Fence architecture boundary checks | `kujo-fence-workflows` |
 | Howl showcase cards, branded social cards, and galleries | `kujo-howl-workflows` |
 | Kennel package manager, lockfiles, hosted registry, trust/source policy | `kujo-kennel-workflows` |
-| Lens browser QA, flows, screenshots, visual/accessibility checks | `kujo-lens-workflows` |
+| Lens browser QA, quick checks, flows, screenshots, visual/accessibility checks | `kujo-lens-workflows` |
 | Loop engineering harness | `kujo-loop-engineering-workflows` |
 | Kujo MCP server generation and registries | `kujo-mcp-workflows` |
 | Muzzle quiet workflows | `kujo-muzzle-workflows` |
@@ -79,9 +79,9 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Configuring or validating a portable WebOps site profile, repository binding, integration references, permission default, or site identity | `webops-site-profile` |
 | Checking which WebOps website, repository, browser, search, analytics, performance, backlink, keyword, publishing, distribution, or submission capabilities are available | `webops-capability-preflight` |
 | Creating, comparing, or updating stable WebOps findings, recommendations, actions, outcomes, and recurring-run history | `webops-longitudinal-findings` |
-| Running, validating, comparing, reporting, or integrating SiteProbe website-intelligence crawls and `.siteprobe` artifacts | `kujo-siteprobe-workflows` |
-| Running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, or explicit ACT submission | `kujo-searchbridge-workflows` |
-| Building, inspecting, comparing, exporting, or consuming deterministic ContentGraph artifacts | `kujo-contentgraph-workflows` |
+| Running, validating, verifying, comparing, reporting, or integrating SiteProbe website-intelligence crawls and signed `.siteprobe` artifacts | `kujo-siteprobe-workflows` |
+| Running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, batch reads, evidence-query, signed adapters, replay/cache, telemetry, or explicit ACT submission | `kujo-searchbridge-workflows` |
+| Building, inspecting, comparing, explaining, analyzing, exporting, or consuming deterministic ContentGraph artifacts | `kujo-contentgraph-workflows` |
 | Performing a deterministic technical SEO audit from crawl evidence | `webops-technical-seo` |
 | Analyzing longitudinal measured search performance | `webops-search-performance` |
 | Auditing crawlability, local indexability, and confirmed provider index state | `webops-indexation` |

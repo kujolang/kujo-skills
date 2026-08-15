@@ -129,7 +129,9 @@
       "what does ai_stream_chat callback cancellation return",
       "use write_file_atomic instead of a pure Kujo temp file wrapper",
       "read and set a single pixel on a Kujo image value",
-      "what does hmac_sha256 return for string payloads"
+      "what does hmac_sha256 return for string payloads",
+      "use jsonl_query to filter a large Kujo evidence JSONL file",
+      "encode a URL query component with encode_uri_component"
     ],
     "should_not_trigger": [
       "change CLI stdout stderr rules",
@@ -436,6 +438,7 @@
     "should_trigger": [
       "run Lens against my localhost app and read the agent repair brief",
       "use lens check http://localhost:3000 with screenshots and json output",
+      "run lens check --quick for a fast agent repair profile",
       "create a .lens.toml with accessibility and link checks enabled",
       "write and validate a lens flow for the account modal"
     ],
@@ -949,8 +952,8 @@
   },
   "kujo-siteprobe-workflows": {
     "should_trigger": [
-      "Use kujo-siteprobe-workflows for running, validating, comparing, reporting, or integrating SiteProbe website-intelligence crawls and `.siteprobe` artifacts",
-      "I need help running, validating, comparing, reporting, or integrating SiteProbe website-intelligence crawls and `.siteprobe` artifacts"
+      "Use kujo-siteprobe-workflows for running, validating, verifying, comparing, reporting, or integrating SiteProbe website-intelligence crawls and signed `.siteprobe` artifacts",
+      "I need help running a deterministic SiteProbe crawl with verify validate compare and fail-on warning"
     ],
     "should_not_trigger": [
       "write a generic Python hello world",
@@ -959,8 +962,8 @@
   },
   "kujo-searchbridge-workflows": {
     "should_trigger": [
-      "Use kujo-searchbridge-workflows for running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, or explicit ACT submission",
-      "I need help running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, or explicit ACT submission"
+      "Use kujo-searchbridge-workflows for running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, batch reads, evidence-query, signed adapters, replay/cache, telemetry, or explicit ACT submission",
+      "I need help running SearchBridge evidence-query over JSONL and batch fixture provider reads"
     ],
     "should_not_trigger": [
       "write a generic Python hello world",
@@ -969,8 +972,8 @@
   },
   "kujo-contentgraph-workflows": {
     "should_trigger": [
-      "Use kujo-contentgraph-workflows for building, inspecting, comparing, exporting, or consuming deterministic ContentGraph artifacts",
-      "I need help building, inspecting, comparing, exporting, or consuming deterministic ContentGraph artifacts"
+      "Use kujo-contentgraph-workflows for building, inspecting, comparing, explaining, analyzing, exporting, or consuming deterministic ContentGraph artifacts",
+      "I need help building an incremental ContentGraph run and exporting GraphML or SARIF"
     ],
     "should_not_trigger": [
       "write a generic Python hello world",

@@ -1,6 +1,6 @@
 ---
 name: kujo-standard-library
-description: Use this skill when using, adding, or reviewing Kujo native standard library functions, including arity, return types, capability gates, JSON conversion, filesystem, process, network, database, crypto, strings, arrays, dictionaries, rendering helpers, AI helpers, and collection helper behavior.
+description: Use this skill when using, adding, or reviewing Kujo native standard library functions, including arity, return types, capability gates, JSON/JSONL conversion, filesystem, process, network, database, crypto, strings, URI encoding, arrays, dictionaries, rendering helpers, AI helpers, and collection helper behavior.
 ---
 
 # Kujo Standard Library
@@ -19,6 +19,9 @@ Consult the repo docs before assuming a builtin exists.
 
 - `parse_json` accepts strings up to `1,048,576` bytes and nesting depth `64`; invalid JSON returns a `Value::Error`.
 - `to_json` and `to_json_pretty` reject non-finite floats and preserve deterministic key ordering.
+- `jsonl_query(path, options)` provides bounded streaming JSONL filtering and constant-memory joins; validate `max_rows`, complete join options, and line-size behavior before adopting it for evidence workflows.
+- `json_schema_validate` accepts supported Draft 2020-12 identification and annotation keywords while rejecting unsupported keywords, malformed schemas, and `$ref` cycles.
+- `encode_uri_component(text)` provides stable RFC 3986 UTF-8 percent encoding for provider and web integrations.
 - Dictionary-like JSON serialization uses deterministic key ordering.
 - Predicate helpers such as `contains`, `starts_with`, `ends_with`, and `has_key` return `1`/`0`.
 - Collection helpers such as `push`, `insert`, `remove_at`, `concat`, `map`, and `filter` return updated values; reassign them.
@@ -68,4 +71,4 @@ cargo test --test language_spec_contracts
 ## Sources Consulted
 
 - Status: repo-backed: `docs/STANDARD_LIBRARY.md`, `docs/STANDARD_LIBRARY_REFERENCE.md`, `docs/AI_RUNTIME.md`.
-- Status: repo-backed: `tests/stdlib_reference_contract.rs`, `tests/stdlib_reference_policy_contract.rs`, `src/interpreter/mod.rs`, `src/interpreter/capabilities.rs`.
+- Status: repo-backed: `CHANGELOG.md`, `tests/stdlib_reference_contract.rs`, `tests/stdlib_reference_policy_contract.rs`, `src/interpreter/mod.rs`, `src/interpreter/capabilities.rs`, `src/interpreter/native_functions/filesystem.rs`, `src/interpreter/native_functions/schema.rs`, `src/interpreter/native_functions/json.rs`.

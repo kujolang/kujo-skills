@@ -34,7 +34,7 @@ If scanning ShipCheck itself from inside the ShipCheck repo, omit `--dir`.
 
 - Run `scan` first to surface repository health, code quality, documentation, and release metadata findings.
 - Use `--format json` when a CI step, policy script, or follow-up analysis needs stable fields.
-- `scan --format json` and `gate --format json` conform to `schemas/shipcheck-report.schema.json` for the current `0.1.x` line; consumers should rely on exit status plus `summary.gate_passed` and ignore unknown future fields.
+- `scan --format json` and `gate --format json` conform to `schemas/shipcheck-report.schema.json` for the current `1.x` line; consumers should rely on exit status plus `summary.gate_passed` and ignore unknown future fields.
 - Run `checklist` when the user wants actionable release tasks in human-readable form.
 - Run `gate` as the enforcement step after fixes. Do not use `scan` as a blocking gate.
 - Run `release-note` only as a draft generator from recent git commits; final release notes still need human editing.
@@ -61,6 +61,7 @@ ShipCheck currently runs 16 checks across 4 categories:
 - Release metadata: `version-metadata`, `changelog`, `kennel-manifest`, `entry-point`.
 
 Error-level failures block `gate`: `git-repo`, `readme`, `tests-exist`, `version-metadata`, and `changelog`. Other failing checks are warnings unless ShipCheck source changes update the catalog.
+ShipCheck 1.0 reports its own self-scan as 16/16 passing with zero warnings; preserve that expectation when changing ShipCheck itself unless the check catalog intentionally changes.
 
 ## ShipCheck Repo Work
 

@@ -40,7 +40,7 @@ Truthy: all other values, including `"false"`.
 - Predicate helpers such as `has_key`, `contains`, `starts_with`, and `ends_with` return `1`/`0`; compare explicitly.
 - Collection helpers such as `push`, `insert`, `remove_at`, `concat`, `map`, and `filter` return new values; reassign the result.
 - Imported functions must be exported from the source module.
-- Kujo `v1.0.0` is the current stable release baseline; use `docs/V1_SCOPE.md` and the official release checklist for compatibility boundaries and explicit deferrals instead of relying on version strings alone.
+- Kujo `v1.0.1` is the current published stable release; the source tree may be preparing a later Cargo version without a published tag. Use `docs/V1_SCOPE.md`, `docs/RELEASE_PROCESS.md`, and the official release checklist for compatibility boundaries and explicit deferrals instead of relying on version strings alone.
 
 ## Validation
 
@@ -68,6 +68,6 @@ cargo run -- test --runtime dual
 
 ## Sources Consulted
 
-- Status: repo-backed: `README.md`, `docs/LANGUAGE_SPEC.md`, `docs/V1_SCOPE.md`, `docs/V1_0_OFFICIAL_RELEASE_CHECKLIST.md`, `docs/VM_INTERPRETER_PARITY_MATRIX.md`, `docs/VM_INTERPRETER_MIGRATION_PLAYBOOK.md`.
+- Status: repo-backed: `README.md`, `CHANGELOG.md`, `docs/LANGUAGE_SPEC.md`, `docs/V1_SCOPE.md`, `docs/RELEASE_PROCESS.md`, `docs/V1_0_OFFICIAL_RELEASE_CHECKLIST.md`, `docs/VM_INTERPRETER_PARITY_MATRIX.md`, `docs/VM_INTERPRETER_MIGRATION_PLAYBOOK.md`.
 - Status: repo-backed: `examples/README_examples.md`, `tests/docs_examples.rs`, `tests/vm_interpreter_parity_surfaces.rs`.
 - Status: inferred; needs maintainer confirmation: prefer `let`/`mut`/`const` plus `:=` for new idiomatic code even though some examples still use legacy `=` style.

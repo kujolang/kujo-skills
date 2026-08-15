@@ -9,7 +9,7 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-security-hardening` | Reviewing untrusted Kujo, host effects, capability flags, AI/network egress, shell/process/db/archive risk. | Kujo native API security, secure AI scripting, runtime security tests |
 | `kujo-enterprise-automation` | Enterprise-style Kujo automation, audit logs, strict AI replay, CI quality gates, external isolation. | Kujo enterprise/release docs and `scripts/enterprise_verify.sh` |
 | `kujo-cli-contracts` | CLI JSON, stdout/stderr, exit codes, diagnostics, and machine-readable output compatibility. | Kujo CLI contract docs and CLI JSON tests |
-| `kujo-standard-library` | Builtin arity, return values, capability gates, JSON/file/process/network/db/crypto/rendering/AI APIs. | Kujo standard library docs and stdlib contract tests |
+| `kujo-standard-library` | Builtin arity, return values, capability gates, JSON/JSONL/file/process/network/db/crypto/rendering/AI APIs. | Kujo standard library docs and stdlib contract tests |
 | `kujo-testing-release-gates` | Test selection, broad validation, release gates, enterprise verification, and docs/example smoke tests. | Kujo release docs, scripts, and test suites |
 | `kujo-runtime-parity` | VM/interpreter drift, `--interpreter`, `kujo test --runtime dual`, and parity matrix work. | Kujo parity docs and runtime path tests |
 | `kujo-language-implementation` | Rust implementation changes in lexer/parser/compiler/VM/interpreter/native APIs. | Kujo architecture docs, `src/`, tests |
@@ -29,7 +29,7 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-fence-workflows` | Fence architecture boundaries, baselines, graph/explain, Markdown/JSON/SARIF reports. | `../fence` README/docs/src/tests |
 | `kujo-howl-workflows` | Howl showcase manifests, validation, SVG/Markdown/HTML cards, branded social cards, galleries, captions. | `../howl` README/src/tests |
 | `kujo-kennel-workflows` | Kennel package/project manager, lockfiles, static indexes, local hosted registry, trust/source policy. | `../kennel` README/src/tests/scripts |
-| `kujo-lens-workflows` | Lens deterministic browser QA, flows, screenshots, accessibility/link/visual checks, repair briefs. | `../lens` README/docs/src/tests |
+| `kujo-lens-workflows` | Lens deterministic browser QA, quick checks, flows, screenshots, accessibility/link/visual checks, repair briefs. | `../lens` README/docs/src/tests |
 | `kujo-loop-engineering-workflows` | Bounded engineering harness workflows, checklists, blockers, evidence logs, opt-in commits. | `../kujo-workflows/loop-engineering` docs/scripts |
 | `kujo-mcp-workflows` | Kujo MCP server generation, manifests, tool/resource registries, endpoint/security tests. | `../mcp` README/docs/src/tests |
 | `kujo-muzzle-workflows` | Muzzle quiet workflows, manifests, logs/reports, loop mode, and redaction. | `../muzzle` README/docs/src/tests |
@@ -81,9 +81,9 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `webops-site-profile` | Configuring or validating a portable WebOps site profile, repository binding, integration references, permission default, or site identity. | WebOps profile schema and Agency Runner site profiles |
 | `webops-capability-preflight` | Checking which WebOps website, repository, browser, search, analytics, performance, backlink, keyword, publishing, distribution, or submission capabilities are available. | WebOps capability schema plus tool doctor/capabilities outputs |
 | `webops-longitudinal-findings` | Creating, comparing, or updating stable WebOps findings, recommendations, actions, outcomes, and recurring-run history. | WebOps finding/history schemas and prior run artifacts |
-| `kujo-siteprobe-workflows` | Running, validating, comparing, reporting, or integrating SiteProbe website-intelligence crawls and `.siteprobe` artifacts. | `../siteprobe` README, CLI, schemas, tests, and security contract |
-| `kujo-searchbridge-workflows` | Running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, or explicit ACT submission. | `../searchbridge` README, provider research, schemas, tests, and security contract |
-| `kujo-contentgraph-workflows` | Building, inspecting, comparing, exporting, or consuming deterministic ContentGraph artifacts. | `../contentgraph` README, methodology, schemas, tests, and security contract |
+| `kujo-siteprobe-workflows` | Running, validating, verifying, comparing, reporting, or integrating SiteProbe website-intelligence crawls and signed `.siteprobe` artifacts. | `../siteprobe` README, CLI, schemas, tests, and security contract |
+| `kujo-searchbridge-workflows` | Running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, batch reads, evidence-query, signed adapters, replay/cache, telemetry, or explicit ACT submission. | `../searchbridge` README, provider research, schemas, tests, and security contract |
+| `kujo-contentgraph-workflows` | Building, inspecting, comparing, explaining, analyzing, exporting, or consuming deterministic ContentGraph artifacts. | `../contentgraph` README, methodology, schemas, tests, and security contract |
 | `webops-technical-seo` | Performing a deterministic technical SEO audit from crawl evidence. | SiteProbe artifacts, WebOps history, and optional Lens/inspection evidence |
 | `webops-search-performance` | Analyzing longitudinal measured search performance. | SearchBridge search.performance result/v1 and prior comparable windows |
 | `webops-indexation` | Auditing crawlability, local indexability, and confirmed provider index state. | SiteProbe robots/sitemap/page artifacts and optional SearchBridge URL inspection |

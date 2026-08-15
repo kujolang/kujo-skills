@@ -1,6 +1,6 @@
 ---
 name: kujo-lens-workflows
-description: "Use this skill when setting up, running, interpreting, or maintaining Lens deterministic browser and visual QA workflows: `lens check`, `lens inspect`, `lens flow`, `.lens.toml`, `.lens/runs/`, `lens-report.json`, Agent Repair Briefs, screenshots, accessibility checks, link checks, visual baselines, CI action wiring, RunLedger/Howl output, or Lens source/test changes."
+description: "Use this skill when setting up, running, interpreting, or maintaining Lens deterministic browser and visual QA workflows: `lens check`, `lens check --quick`, `lens inspect`, `lens flow`, `.lens.toml`, `.lens/runs/`, `lens-report.json`, Agent Repair Briefs, screenshots, accessibility checks, link checks, visual baselines, CI action wiring, RunLedger/Howl output, or Lens source/test changes."
 ---
 
 # Kujo Lens Workflows
@@ -12,7 +12,7 @@ Use Lens as the evidence layer after building or changing a web UI: open the app
 - Prefer Lens after meaningful frontend changes when a local URL is available.
 - Start with `lens --help` and `lens --version` if the install is uncertain.
 - Ensure the app server is running before Lens; Lens verifies rendered behavior, not server startup.
-- Run a basic check first, then add optional depth only when the task calls for it.
+- Run `lens check <url> --quick` for fast inner-loop diagnosis, then a full default desktop+mobile check before handoff when UI evidence matters.
 - Branch on Lens exit codes: `0` pass, `1` findings at or above `--fail-on`, `2` invalid input, `3` browser/provider failure, `4` artifact-write failure.
 - Read `.lens/runs/<id>/lens-report.md` for humans and `lens-report.json` for automation. Use the Agent Repair Brief first when fixing failures.
 - Treat `.lens/runs/`, screenshots, videos, reports, and baselines as generated artifacts unless the project intentionally commits baselines.
@@ -20,8 +20,8 @@ Use Lens as the evidence layer after building or changing a web UI: open the app
 ## Setup
 
 ```bash
-cd /path/to/kujo && cargo build
-cd /path/to/lens/bridge && npm install && npx playwright install chromium
+kujo --version
+cd /path/to/lens/bridge && npm install && npm run install-browser
 cd /path/to/lens && chmod +x lens
 ```
 
@@ -36,6 +36,7 @@ export KUJO_BIN="/path/to/kujo/target/debug/kujo"
 Use `check` for the normal "did the page render and behave sanely?" loop.
 
 ```bash
+lens check http://localhost:3000 --quick --json
 lens check http://localhost:3000 --fail-on error --json
 lens check http://localhost:3000 --html --check-links --accessibility
 lens check http://localhost:5173 --viewport desktop --viewport mobile
@@ -44,6 +45,7 @@ lens check http://localhost:5173 --viewport desktop --viewport mobile
 Important flags:
 
 - `--check-links`: shallow same-origin link checks only.
+- `--quick`: compact one-viewport agent repair profile; use full checks for final evidence.
 - `--accessibility` or `--a11y`: axe-core automated accessibility checks.
 - `--spec <path>`: deterministic browser assertions from a JSON spec.
 - `--baseline`, `--compare-baseline`, `--update-baseline`: visual regression baseline workflow.
