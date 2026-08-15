@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo StoryDesk Workflows"
+  short_description: "Operate editorial queues and assignments"
+  default_prompt: "Use $kujo-storydesk-workflows to operate or maintain StoryDesk editorial records."

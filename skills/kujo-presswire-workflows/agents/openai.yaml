@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo PressWire Workflows"
+  short_description: "Publish approved artifacts with receipts"
+  default_prompt: "Use $kujo-presswire-workflows to preflight or perform an approval-gated publication action."

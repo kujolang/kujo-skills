@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo BluePencil Workflows"
+  short_description: "Run editorial review and calibration"
+  default_prompt: "Use $kujo-bluepencil-workflows to run a structured editorial review or calibration."

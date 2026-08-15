@@ -1,7 +1,7 @@
 {
   "name": "kujo-skills-release-readiness",
   "description": "Deterministic checks for the Kujo skills technical preview.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "output_dir": "./eval_results/release-readiness",
   "snapshot_dir": "./snapshots",
   "stop_on_failure": false,
@@ -25,7 +25,7 @@
       "check": "file_contains",
       "params": {
         "path": "VERSION",
-        "expected": "0.2.0"
+        "expected": "0.3.0"
       }
     }
   ]

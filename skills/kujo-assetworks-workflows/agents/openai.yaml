@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo AssetWorks Workflows"
+  short_description: "Plan and verify editorial media assets"
+  default_prompt: "Use $kujo-assetworks-workflows to plan, validate, or package media assets."

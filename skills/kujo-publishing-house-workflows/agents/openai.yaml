@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Publishing House Workflows"
+  short_description: "Run the complete Publishing House lifecycle"
+  default_prompt: "Use $kujo-publishing-house-workflows to install, run, inspect, or maintain the Publishing House workflow suite."

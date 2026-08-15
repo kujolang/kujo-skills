@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo GalleyPack Workflows"
+  short_description: "Package exact editorial artifact versions"
+  default_prompt: "Use $kujo-galleypack-workflows to package and verify exact editorial artifacts."

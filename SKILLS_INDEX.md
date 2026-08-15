@@ -58,6 +58,22 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-docgen-public-docs-refresh` | Refresh public DocGen docs, generated docs, gap outputs, and coverage gates. | Kujo DocGen docs and generated docs |
 | `kujo-dependabot-alert-triage` | Dependabot/security alert triage across Kujo repos. | GitHub alerts, manifests, lockfiles, audit output |
 
+## Publishing House skills
+
+| Skill | Use when | Primary sources |
+|---|---|---|
+| `kujo-publishing-house-workflows` | Installing, routing, running, recovering, or maintaining the complete Publishing House lifecycle. | `../kujo-workflows/docs/publishing-house/`, workflow kits, runtime, contracts, tests |
+| `publishing-house-profile-setup` | Creating or validating portable House, Brand, and Audience profiles. | `../kujo-agents/publishing-house/` constitution, shared contracts, permission model |
+| `publishing-house-quality-calibration` | Running or maintaining blind premium-quality calibration without automating editorial taste. | Publishing House quality standard/evals and BluePencil calibration contracts |
+| `kujo-storydesk-workflows` | Operating editorial ideas, commissions, assignments, queues, packets, handoffs, and review state. | `../storydesk` README, CLI, contracts, security, tests |
+| `kujo-dossier-workflows` | Recording and verifying claims, sources, evidence, conflicts, quotations, consent, rights, and freshness. | `../dossier` README, CLI, contracts, security, tests |
+| `kujo-galleypack-workflows` | Packaging exact artifact versions with lineage, evidence, reviews, checksums, and drift validation. | `../galleypack` README, CLI, contracts, security, tests |
+| `kujo-bluepencil-workflows` | Running structured editorial reviews, disagreements, focused checks, and blind calibration. | `../bluepencil` README, CLI, calibration corpus, contracts, tests |
+| `kujo-versionseal-workflows` | Requesting, recording, verifying, revoking, or expiring exact-version human approvals. | `../versionseal` README, CLI, policy/signature contracts, tests |
+| `kujo-presswire-workflows` | Preflighting and performing approval-gated publication, correction, or unpublish effects. | `../presswire` README, CLI, adapter contracts, security, tests |
+| `kujo-readersignal-workflows` | Capturing privacy-bounded measurements, feedback, comparisons, learning, and follow-up recommendations. | `../readersignal` README, CLI, privacy/retention contracts, tests |
+| `kujo-assetworks-workflows` | Planning and validating media transforms, accessibility artifacts, provenance, and manifests. | `../assetworks` README, CLI, adapter contracts, security, tests |
+
 ## WebOps skills
 
 | Skill | Use when | Primary sources |

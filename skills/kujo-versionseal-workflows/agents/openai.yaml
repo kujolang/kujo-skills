@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo VersionSeal Workflows"
+  short_description: "Bind human approval to exact versions"
+  default_prompt: "Use $kujo-versionseal-workflows to request, record, verify, or revoke an exact-version approval."

@@ -1207,6 +1207,116 @@
       "summarize an unrelated PDF"
     ]
   },
+  "kujo-publishing-house-workflows": {
+    "should_trigger": [
+      "Install and run the complete Publishing House workflow suite",
+      "Use kujo-publishing-house-workflows to resume an approval and publication run"
+    ],
+    "should_not_trigger": [
+      "review one paragraph for grammar",
+      "summarize an unrelated PDF"
+    ]
+  },
+  "publishing-house-profile-setup": {
+    "should_trigger": [
+      "Create portable House, Brand, and Audience profiles for Publishing House",
+      "Use publishing-house-profile-setup to validate our approval roles and permission defaults"
+    ],
+    "should_not_trigger": [
+      "publish this already approved article",
+      "run a generic Python formatter"
+    ]
+  },
+  "publishing-house-quality-calibration": {
+    "should_trigger": [
+      "Run the blind Publishing House premium quality calibration corpus",
+      "Use publishing-house-quality-calibration to review a new A/B fixture"
+    ],
+    "should_not_trigger": [
+      "approve this package for publication",
+      "calculate an arithmetic average"
+    ]
+  },
+  "kujo-storydesk-workflows": {
+    "should_trigger": [
+      "Use StoryDesk to create a commission and assignment handoff",
+      "Inspect the StoryDesk review queue and generate a resumable packet"
+    ],
+    "should_not_trigger": [
+      "verify factual claims in Dossier",
+      "publish an approved package"
+    ]
+  },
+  "kujo-dossier-workflows": {
+    "should_trigger": [
+      "Use Dossier to attach captured evidence and classify a material claim",
+      "Build an evidence packet with conflicts, consent, rights, and freshness"
+    ],
+    "should_not_trigger": [
+      "freeze an exact artifact package",
+      "write a generic press release"
+    ]
+  },
+  "kujo-galleypack-workflows": {
+    "should_trigger": [
+      "Use GalleyPack to build and freeze a checksum-bound editorial package",
+      "Compare two GalleyPack versions and detect artifact drift"
+    ],
+    "should_not_trigger": [
+      "grant human approval",
+      "measure post-publication audience response"
+    ]
+  },
+  "kujo-bluepencil-workflows": {
+    "should_trigger": [
+      "Run a BluePencil eight-dimension editorial review",
+      "Use BluePencil to preserve reviewer disagreement and calibration evidence"
+    ],
+    "should_not_trigger": [
+      "schedule a live publication",
+      "record a new editorial idea"
+    ]
+  },
+  "kujo-versionseal-workflows": {
+    "should_trigger": [
+      "Request and verify human approval for an exact package checksum",
+      "Use VersionSeal to revoke an expired publication approval"
+    ],
+    "should_not_trigger": [
+      "rewrite the approved article",
+      "publish without a human decision"
+    ]
+  },
+  "kujo-presswire-workflows": {
+    "should_trigger": [
+      "Preflight and publish an exact VersionSeal-approved package with PressWire",
+      "Use PressWire to record a bounded correction and publication receipt"
+    ],
+    "should_not_trigger": [
+      "approve this package on my behalf",
+      "infer audience impact from a provider response"
+    ]
+  },
+  "kujo-readersignal-workflows": {
+    "should_trigger": [
+      "Use ReaderSignal to compare privacy-bounded publication measurements",
+      "Create an evidence-linked learning and follow-up recommendation"
+    ],
+    "should_not_trigger": [
+      "claim the article caused revenue growth",
+      "schedule a newsletter send"
+    ]
+  },
+  "kujo-assetworks-workflows": {
+    "should_trigger": [
+      "Use AssetWorks to plan and validate a media asset with captions and provenance",
+      "Create a checksum-backed accessibility-aware AssetWorks manifest"
+    ],
+    "should_not_trigger": [
+      "grant image rights automatically",
+      "approve the final publication"
+    ]
+  },
   "webops-reporting": {
     "should_trigger": [
       "Use webops-reporting for synthesizing validated specialist evidence into quiet WebOps reports",

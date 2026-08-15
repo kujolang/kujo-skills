@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Dossier Workflows"
+  short_description: "Manage evidence-backed editorial claims"
+  default_prompt: "Use $kujo-dossier-workflows to create, verify, or maintain Dossier evidence records."

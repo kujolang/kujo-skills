@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.0 - 2026-08-14
+
+- Add a complete Publishing House lifecycle skill plus StoryDesk, Dossier,
+  GalleyPack, BluePencil, VersionSeal, PressWire, ReaderSignal, and AssetWorks
+  workflow skills.
+- Add portable Publishing House profile setup and premium-quality calibration
+  skills.
+- Extend the complete routing fixture and skill index from 83 to 94 validated
+  skills.
+
 ## 0.2.0 - 2026-08-11
 
 - Add SiteProbe, SearchBridge, and ContentGraph workflow skills.

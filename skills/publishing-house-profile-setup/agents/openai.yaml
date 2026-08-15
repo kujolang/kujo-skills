@@ -1,0 +1,4 @@
+interface:
+  display_name: "Publishing House Profile Setup"
+  short_description: "Configure portable house operating profiles"
+  default_prompt: "Use $publishing-house-profile-setup to create or validate House, Brand, and Audience profiles."

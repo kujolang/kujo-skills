@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo ReaderSignal Workflows"
+  short_description: "Measure response with privacy boundaries"
+  default_prompt: "Use $kujo-readersignal-workflows to capture and compare privacy-bounded audience signals."

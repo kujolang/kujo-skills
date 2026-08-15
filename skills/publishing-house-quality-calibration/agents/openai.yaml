@@ -1,0 +1,4 @@
+interface:
+  display_name: "Publishing House Quality Calibration"
+  short_description: "Calibrate premium editorial judgment"
+  default_prompt: "Use $publishing-house-quality-calibration to run or review Publishing House quality calibration."

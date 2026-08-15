@@ -56,6 +56,22 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Public DocGen docs refresh | `kujo-docgen-public-docs-refresh` |
 | Dependabot/security alert triage | `kujo-dependabot-alert-triage` |
 
+## Publishing House routing
+
+| Query theme | Expected skill(s) |
+|---|---|
+| Install, route, run, inspect, or recover the complete Publishing House lifecycle | `kujo-publishing-house-workflows` |
+| Create portable House, Brand, and Audience profiles | `publishing-house-profile-setup` |
+| Run blind premium-quality calibration | `publishing-house-quality-calibration`, optionally `kujo-bluepencil-workflows` |
+| Editorial ideas, commissions, assignments, packets, handoffs, and review queues | `kujo-storydesk-workflows` |
+| Claims, sources, captured evidence, conflicts, quotations, consent, rights, and freshness | `kujo-dossier-workflows` |
+| Exact editorial artifact packages, lineage, checksums, freezes, and drift | `kujo-galleypack-workflows` |
+| Editorial reviews, blockers, disagreements, and calibration records | `kujo-bluepencil-workflows` |
+| Exact-version human approval, rejection, revocation, expiry, and verification | `kujo-versionseal-workflows` |
+| Approval-gated scheduling, publication, correction, unpublish, and receipts | `kujo-presswire-workflows` |
+| Privacy-bounded audience measurement, feedback, learning, and follow-up | `kujo-readersignal-workflows` |
+| Media planning, transforms, accessibility artifacts, provenance, and manifests | `kujo-assetworks-workflows` |
+
 ## WebOps routing
 
 | Query theme | Expected skill(s) |
