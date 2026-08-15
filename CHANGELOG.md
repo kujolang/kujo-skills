@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.4.1 - 2026-08-15
+
+- Fix the Kujo tool-artifact guard so a one-commit or shallow release checkout
+  exits cleanly without attempting to resolve a missing parent commit.
+- Add a regression test for the single-commit checkout release-gate path.
+
 ## 0.4.0 - 2026-08-15
 
 - Add `kujo-ecosystem-launch`, a stage-gated coordinator for releasing Kujo

@@ -1,6 +1,6 @@
 # Kujo Agent Skills
 
-[![Version](https://img.shields.io/badge/version-0.4.0-black)](https://github.com/kujolang/kujo-skills)
+[![Version](https://img.shields.io/badge/version-0.4.1-black)](https://github.com/kujolang/kujo-skills)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 [![built with Kujo](https://img.shields.io/badge/built%20with-Kujo-white.svg)](https://github.com/kujolang/kujo)
 
@@ -76,7 +76,7 @@ See [examples](examples/README.md) for installation bundles and routing prompts.
 
 ## Release and support status
 
-This repository is the MIT-licensed `0.4.0` technical preview of the Kujo skills pack. Kujo `v1.0.1` is the current stable language/runtime baseline for the Publishing House toolchain; individual skills preserve explicit preview or experimental boundaries for narrower APIs.
+This repository is the MIT-licensed `0.4.1` technical preview of the Kujo skills pack. Kujo `v1.0.1` is the current stable language/runtime baseline for the Publishing House toolchain; individual skills preserve explicit preview or experimental boundaries for narrower APIs.
 
 The pack provides guidance, not runtime enforcement. An agent or host must load a skill and enforce its own permissions. Kujo itself is not a sandbox: use `--untrusted`, least-privilege `--allow-*` flags, and external isolation for high-risk scripts.
 

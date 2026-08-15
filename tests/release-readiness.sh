@@ -9,6 +9,7 @@ python3 -m json.tool package.json >/dev/null
 python3 -m json.tool evals/trigger-queries.json >/dev/null
 python3 -m json.tool tests/eval.json >/dev/null
 bash tests/launch-preflight.sh
+bash tests/tool-artifacts-guard.sh
 
 test -f skills/kujo-workcell-workflows/SKILL.md
 test -f skills/kujo-site-kit-workflows/SKILL.md
