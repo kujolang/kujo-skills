@@ -1,6 +1,6 @@
 name: "Kujo skills technical preview"
-goal: "Ship a portable, reviewable, and accurately documented 0.3.0 skills distribution with WebOps and Publishing House workflows."
-version: "0.3.0"
+goal: "Ship a portable, reviewable, and accurately documented 0.4.0 skills distribution with a stage-gated Kujo ecosystem launch coordinator."
+version: "0.4.0"
 status: "ready"
 priority: "high"
 scope: "Public README and support docs, skill routing fixtures, portable local and CI validation, and Workcell launch evidence."
@@ -9,8 +9,8 @@ non_goals:
   - "Automatic installation into live agent profiles"
   - "Runtime enforcement of skill instructions"
 acceptance_criteria:
-  - "All 94 skill folders pass portable frontmatter and routing validation"
-  - "README, VERSION, package metadata, changelog, and MIT license agree on the 0.3.0 baseline"
+  - "All 95 skill folders pass portable frontmatter and routing validation"
+  - "README, VERSION, package metadata, changelog, and MIT license agree on the 0.4.0 baseline"
   - "Local Markdown links and clean temporary-profile installation validate"
   - "ShipCheck has no error-level release blockers"
   - "Workcell verifies the five required launch-batch skills in a no-network container"
@@ -27,7 +27,7 @@ eval_requirements:
     check_type: "file_contains"
     params:
       path: "VERSION"
-      expected: "0.3.0"
+      expected: "0.4.0"
 risks:
   - risk: "Source tool behavior may drift after this skills-pack release"
     mitigation: "Run recurring Concord and skill audits against source repositories"

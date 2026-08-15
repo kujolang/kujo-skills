@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+## 0.4.0 - 2026-08-15
+
+- Add `kujo-ecosystem-launch`, a stage-gated coordinator for releasing Kujo
+  tools, workflows, skill packs, and agent teams and synchronizing their
+  verified public web presence.
+- Add tool, workflow, skill, agent-team, release-gate, and site-sync references
+  plus a read-only repository preflight receipt.
+- Extend the complete routing fixture and skill index from 94 to 95 validated
+  skills.
+
 ## 0.3.0 - 2026-08-14
 
 - Add a complete Publishing House lifecycle skill plus StoryDesk, Dossier,
@@ -21,8 +33,6 @@
 All notable changes to the Kujo Agent Skills pack are documented here.
 
 The format follows Keep a Changelog and Semantic Versioning.
-
-## Unreleased
 
 ## 0.1.0 - 2026-08-08
 

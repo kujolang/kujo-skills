@@ -51,6 +51,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Readiness posture/evidence audit | `kujo-readiness-auditor` |
 | Docs/generated-artifact drift | `kujo-docs-drift-auditor` |
 | Release gate and blocker triage | `kujo-release-gate-runner` |
+| Release a Kujo tool, workflow, skill pack, or agent team and synchronize its verified website pages, visuals, social cards, discovery surfaces, deployment, and live checks | `kujo-ecosystem-launch` |
 | Cross-repo dogfood evidence | `kujo-cross-repo-dogfood-runner` |
 | Normalize audit findings into tasks | `kujo-backlog-normalizer` |
 | Public DocGen docs refresh | `kujo-docgen-public-docs-refresh` |

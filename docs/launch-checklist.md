@@ -4,7 +4,7 @@ The synchronized WebOps tool boundary is pinned in
 `docs/webops-toolchain-contract.json`: SiteProbe, SearchBridge, and ContentGraph
 `0.1.0`, their v1 schemas, explicit budgets, and effect authorization.
 
-Current source scope: MIT-licensed `0.3.0` support/distribution technical preview. The portable repository gate covers the 94-skill inventory including WebOps and Publishing House; the historical 0.1.0 Workcell proof remains evidence for its original 53-skill baseline. Marketplace actions remain outside the completed evidence.
+Current source scope: MIT-licensed `0.4.0` support/distribution technical preview. The portable repository gate covers the 95-skill inventory including the ecosystem launch coordinator, WebOps, and Publishing House; the historical 0.1.0 Workcell proof remains evidence for its original 53-skill baseline. Marketplace actions remain outside the completed evidence.
 
 ## Local Gates
 

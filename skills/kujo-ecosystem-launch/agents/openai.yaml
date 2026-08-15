@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Ecosystem Launch"
+  short_description: "Release Kujo projects and sync their web presence"
+  default_prompt: "Use $kujo-ecosystem-launch to release this Kujo project and publish its verified ecosystem presence end to end."

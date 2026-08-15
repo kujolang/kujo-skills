@@ -850,6 +850,20 @@
       "build SSG output"
     ]
   },
+  "kujo-ecosystem-launch": {
+    "should_trigger": [
+      "release these new Kujo tools, tag them, and add their pages, dither heroes, Howl cards, SEO metadata, and live deployment to Kujolang.ai",
+      "ship the new Kujo workflows to GitHub and synchronize the workflow catalog, counts, social cards, sitemap, RSS, and llms.txt",
+      "launch this new Kujo agent team with a repository release, team pages, portraits, navigation, browser QA, and production verification",
+      "run the complete Kujo release-to-site pipeline with clean-install proof, ShipCheck, GitHub release, web audit, and launch receipt"
+    ],
+    "should_not_trigger": [
+      "run ShipCheck without publishing anything",
+      "generate one standalone dither image",
+      "audit an existing website without a Kujo release",
+      "fix one failing unit test and stop"
+    ]
+  },
   "kujo-cross-repo-dogfood-runner": {
     "should_trigger": [
       "run the weekly cross-repo Kujo dogfood pass",

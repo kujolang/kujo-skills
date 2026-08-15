@@ -53,6 +53,7 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-readiness-auditor` | Recurring readiness posture, release preparedness, and evidence gaps. | Repo docs/tests/scripts/tool reports |
 | `kujo-docs-drift-auditor` | README/reference/generated-doc staleness and docs/source mismatch. | Repo docs, examples, generated docs, CLI help |
 | `kujo-release-gate-runner` | Pre-tag gates, release blockers, ShipCheck/Eval/Fence/DocGen evidence. | Release docs, CI config, gate artifacts |
+| `kujo-ecosystem-launch` | Stage-gated Kujo tool, workflow, skill-pack, or agent-team releases plus verified public site synchronization. | Source release artifacts, target site repositories, specialist skills, release and deployment evidence |
 | `kujo-cross-repo-dogfood-runner` | Cross-repo Kujo dogfood and recurring ecosystem evidence collection. | Selected repos and generated reports |
 | `kujo-backlog-normalizer` | Convert audit/drift/security/readiness findings into fix-ready tasks. | Tool reports, issues/backlogs, manifests |
 | `kujo-docgen-public-docs-refresh` | Refresh public DocGen docs, generated docs, gap outputs, and coverage gates. | Kujo DocGen docs and generated docs |
