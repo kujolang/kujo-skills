@@ -15,6 +15,8 @@ Use ReaderSignal to preserve measured response and bounded learning without clai
 4. Use `compare` only across compatible definitions and windows; preserve uncertainty and small-sample limitations.
 5. Create `learn` and `followup` records as recommendations, not automatic commissions. Validate and inspect with `report`, `history`, and `show` before export.
 
-ReaderSignal does not prove causality, commission work, alter editorial history, or authorize publication. Record unavailable measurement as unavailable, never zero. Preserve policy-versioned retention/deletion receipts and reject secrets or unnecessary personal data.
+ReaderSignal `0.2.0` is local-first and has no required hosted service, database server, model key, or sibling-tool dependency. It provides immutable records, append-only audit events, atomic writes, per-record locks, privacy-preserving adapter fixtures, policy-versioned deletion receipts, sample-size and uncertainty-aware comparisons, optional signed PressWire verification, and 100,000-snapshot compaction benchmarks. JSON output uses the stable `ok/data/error/error_code/tool_version/contract_version` envelope; exit codes are `0` success, `1` operational failure, and `2` usage error.
+
+ReaderSignal does not prove causality, commission work, alter editorial history, or authorize publication. Record unavailable measurement as unavailable, never zero. Preserve policy-versioned retention/deletion receipts and reject secret-shaped fields, malformed JSON, incompatible schemas, duplicate IDs, checksum drift, and unnecessary personal data.
 
 For repository changes, read `README.md`, `AGENTS.md`, `docs/contracts.md`, `docs/security.md`, `readersignal.kujo`, `src/`, schemas, fixtures, benchmarks, and tests. Run `bash scripts/validate.sh` and `git diff --check`.
