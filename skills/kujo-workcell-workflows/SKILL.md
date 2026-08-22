@@ -35,6 +35,7 @@ docker build --tag kujolang/workcell-base:local docker/
 - The default `contained-standard` profile uses no network, non-root host-mapped UID/GID, read-only root, bounded CPU/memory/PIDs/time/output, no new privileges, dropped capabilities, no devices, no host namespaces, no Docker socket, explicit env, and one disposable workspace mount.
 - Podman is supported through the same OCI policy boundary. Rootless engine posture, runtime class selection, egress declarations, load evidence, and ecosystem integrations are explicit validation surfaces rather than implicit safety guarantees.
 - Artifact policy rejects malformed definitions and unsafe paths before runtime execution; secret redaction and binary-artifact inspection failures must remain fail-closed.
+- Declared secret values and common base64 encodings are redacted from stdout/stderr, verification output, receipts, artifacts, and the generated Git patch; `artifacts.secret_action: reject` also rejects a run whose patch contained a declared secret and avoids persisting that patch.
 - Workcell is a release-gated local Docker MVP. It is not a hardened microVM, hosted service, or universally isolated enterprise sandbox.
 
 When reporting results, state the command, backend, run directory, exit code, receipt/manifest paths, cleanup outcome, and any host-boundary assumptions.

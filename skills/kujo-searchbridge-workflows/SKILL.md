@@ -11,13 +11,14 @@ Use this skill for running SearchBridge doctor, capability preflight, fixture pr
 
 ## Workflow
 
-1. Run `./searchbridge doctor`, `capabilities --deterministic`, and `providers` without credentials.
-2. Use `--fixture --offline --deterministic` for deterministic GSC, GA4, PageSpeed, CrUX, Bing, Ahrefs, IndexNow, and batch coverage.
-3. For live reads, supply short-lived environment credentials and explicit `--page-size`, `--max-pages`, `--max-total-rows`, timeout, retry, and output budgets; use `--format jsonl` for large GSC/GA4 exports.
-4. Use `batch --commands pagespeed,crux` only for read operations; mutation commands cannot enter batch.
-5. Use `evidence-query --evidence-path <jsonl>` for bounded JSONL filters and joins without loading full evidence into memory.
-6. For external adapters, require detached signatures plus exact capability, endpoint, and credential allowlists.
-7. For submission require the operator's `index.submission` capability and ACT authority plus `submit --capability index.submission --act --yes`; retain the receipt.
+1. For SearchBridge `0.3.0`, use the prepared Kujo `v1.0.2` runtime at commit `3bc5b4f1634d9883a789a0c2a0e6a266f72b77b2` until the release is published and checksum-verified.
+2. Run `./searchbridge doctor`, `capabilities --deterministic`, and `providers` without credentials.
+3. Use `--fixture --offline --deterministic` for deterministic GSC, GA4, PageSpeed, CrUX, Bing, Ahrefs, IndexNow, and batch coverage.
+4. For live reads, supply short-lived environment credentials and explicit `--page-size`, `--max-pages`, `--max-total-rows`, timeout, retry, and output budgets; use `--format jsonl` for large GSC/GA4 exports.
+5. Use `batch --commands pagespeed,crux` only for read operations; mutation commands cannot enter batch.
+6. Use `evidence-query --evidence-path <jsonl>` for bounded JSONL filters and joins without loading full evidence into memory.
+7. For external adapters, require detached signatures plus exact capability, endpoint, and credential allowlists.
+8. For submission require the operator's `index.submission` capability and ACT authority plus `submit --capability index.submission --act --yes`; retain the receipt.
 
 ## Required Output
 
