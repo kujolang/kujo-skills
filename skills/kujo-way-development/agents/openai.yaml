@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Way Development"
+  short_description: "Build Kujo projects with less slop"
+  default_prompt: "Use $kujo-way-development to build or review this Kujo project with deterministic, AI-native, evidence-backed practices."

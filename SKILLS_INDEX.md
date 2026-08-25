@@ -4,6 +4,7 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 
 | Skill | Use when | Primary sources |
 |---|---|---|
+| `kujo-way-development` | Cross-cutting Kujo project builds or substantial reviews needing ecosystem routing, compact agent-readable code, deterministic AI/offline behavior, anti-slop constraints, and evidence-backed completion. | Kujo/Agents SDK/Kujo Agents contracts plus focused installed skills |
 | `kujo-core-language` | Kujo syntax, imports, mutability, control flow, truthiness, and examples. | Kujo `README.md`, `docs/LANGUAGE_SPEC.md`, examples, docs tests |
 | `kujo-tool-building` | Building practical Kujo CLI tools, JSON gates, repo scanners, and deterministic reports. | Kujo tool cookbook, standard library reference, CLI contracts |
 | `kujo-security-hardening` | Reviewing untrusted Kujo, host effects, capability flags, AI/network egress, shell/process/db/archive risk. | Kujo native API security, secure AI scripting, runtime security tests |

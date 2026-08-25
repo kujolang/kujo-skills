@@ -4,6 +4,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 
 | Query theme | Expected skill(s) |
 |---|---|
+| Cross-cutting Kujo project development, ecosystem routing, compact AI-native design, anti-slop review, and evidence-backed completion | `kujo-way-development`, plus the narrowest focused skill when needed |
 | General `.kujo` syntax, functions, loops, imports, truthiness | `kujo-core-language` |
 | Building Kujo JSON policy checkers, repo scanners, deterministic CLI tools | `kujo-tool-building`, optionally `kujo-enterprise-automation` |
 | Untrusted Kujo scripts, capability flags, shell/network/files/db/archive/HTML/AI egress risk | `kujo-security-hardening` |

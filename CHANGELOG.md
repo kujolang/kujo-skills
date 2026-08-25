@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Add `kujo-way-development`, an installable cross-cutting skill for compact,
+  deterministic, AI-native Kujo project development and evidence-backed review.
+- Extend the complete routing fixture and skill index from 95 to 96 skills.
+
 ## 0.4.1 - 2026-08-15
 
 - Fix the Kujo tool-artifact guard so a one-commit or shallow release checkout

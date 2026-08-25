@@ -1,4 +1,26 @@
 {
+  "kujo-way-development": {
+    "should_trigger": [
+      "build a complete Kujo agent project the Kujo way with deterministic offline tests",
+      "review this generated Kujo project for slop wrong ecosystem boundaries and missing proof",
+      "design a cross-repo Kujo feature that uses AI SDK and Agents SDK correctly",
+      "turn this rough AI-generated Kujo app into compact human and agent readable code",
+      "apply token-efficient Kujo development practices and an evidence-backed definition of done",
+      "start a Kujo-related project with explicit contracts security boundaries and validation",
+      "which Kujo ecosystem repository should own each part of this new agent workflow",
+      "build an AI-native Kujo workflow with bounded context approvals budgets and replay fixtures"
+    ],
+    "should_not_trigger": [
+      "explain only how let mut and const work in Kujo",
+      "build one small Kujo JSON policy CLI",
+      "add a bytecode opcode to the Kujo VM",
+      "audit only the shell capability flags in this Kujo script",
+      "run and inspect an existing Dispatch workflow",
+      "change one Agents SDK memory-store primitive",
+      "write a Python web scraper",
+      "draft marketing copy for the Kujo homepage"
+    ]
+  },
   "kujo-core-language": {
     "should_trigger": [
       "write a kujo script with functions arrays and a dictionary",
