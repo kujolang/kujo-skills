@@ -5,8 +5,15 @@ description: Use when building or substantially reviewing a Kujo-related project
 
 # Kujo Way Development
 
-Build the smallest complete Kujo-native solution whose behavior is explicit,
-deterministic, capability-aware, and verifiable by humans and agents.
+The Kujo Way: build the smallest complete Kujo-native solution whose behavior is
+explicit, deterministic, capability-aware, and verifiable by humans and agents.
+When a claim, contract, or behavior is in doubt, verify it on the runtime rather
+than asserting it.
+
+For the fuller philosophy (conventions, "what agents commonly get wrong", and a
+review checklist), read `guide/kujo-way.md` in the kujo-skills repo. For a
+runnable minimal example done the Kujo Way, see
+[references/example-policy-gate.kujo](references/example-policy-gate.kujo).
 
 ## Route Before Editing
 
@@ -83,6 +90,59 @@ instructions, schemas over prose parsing, direct examples, and stable payloads.
 - Preserve public JSON fields, ordering, exit behavior, fixtures, and lockfiles.
 - Fail closed when input, schema, capability, approval, dependency, or required
   evidence is unavailable.
+
+## Worked Example (The Kujo Way In Code)
+
+A minimal deterministic JSON policy gate. It is the canonical first Kujo tool:
+local, offline, explicit contract, clean JSON on stdout, diagnostics on stderr,
+and non-zero exits that mean something.
+
+```kujo
+# policy_gate.kujo - minimal deterministic JSON policy gate
+# Usage: kujo run policy_gate.kujo -- '{"min": 3}' '{"value": 5}'
+
+func main() {
+    let argv := args()
+    if len(argv) < 2 {
+        eprint("usage: policy_gate.kujo -- <rule-json> <input-json>")
+        exit(2)  # usage/argument error
+    }
+
+    # parse_json errors on invalid input -> fail closed, no silent fallback.
+    let rules := parse_json(argv[0])
+    let input := parse_json(argv[1])
+
+    let value := input["value"]
+    if has_key(rules, "min") == 1 && value < rules["min"] {
+        print(to_json({"ok": false, "reason": "value below min"}))
+        exit(1)  # gate/policy failure
+    }
+
+    print(to_json({"ok": true}))
+    exit(0)
+}
+
+main()
+```
+
+Why this is the Kujo Way (not just valid syntax):
+
+- `kujo run` (VM path) is the default; no `--interpreter` shortcut.
+- Inputs are validated up front and bad input fails closed at `parse_json`.
+- Strings are quoted; dictionary access uses real keys; `has_key(...) == 1`
+  compares the predicate explicitly instead of trusting truthiness.
+- Successful stdout is clean JSON; human diagnostics use `eprint` to stderr.
+- Exit codes follow the CLI contract: `2` usage, `1` policy failure, `0` success
+  (runtime/parse failure returns `4`, also non-zero and authoritative).
+- No frameworks, no speculative abstraction — just the contract the task needs.
+
+Run it:
+
+```bash
+kujo check references/example-policy-gate.kujo --quiet
+kujo run  references/example-policy-gate.kujo -- '{"min": 3}' '{"value": 5}'   # -> {"ok":true}, exit 0
+kujo run  references/example-policy-gate.kujo -- '{"min": 3}' '{"value": 2}'   # -> {"ok":false,...}, exit 1
+```
 
 ## Conditional References
 

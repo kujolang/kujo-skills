@@ -1,0 +1,27 @@
+# policy_gate.kujo - minimal deterministic JSON policy gate (the Kujo Way)
+# Usage: kujo run policy_gate.kujo -- '{"min": 3}' '{"value": 5}'
+
+func main() {
+    let argv := args()
+    if len(argv) < 2 {
+        # Machine-readable tools exit 2 on usage error per the CLI contract.
+        eprint("usage: policy_gate.kujo -- <rule-json> <input-json>")
+        exit(2)
+    }
+
+    # parse_json errors on invalid input -> fail closed, no silent fallback.
+    let rules := parse_json(argv[0])
+    let input := parse_json(argv[1])
+
+    let value := input["value"]
+    if has_key(rules, "min") == 1 && value < rules["min"] {
+        # JSON on stdout stays clean; diagnostics go to stderr.
+        print(to_json({"ok": false, "reason": "value below min"}))
+        exit(1)  # gate/policy failure
+    }
+
+    print(to_json({"ok": true}))
+    exit(0)
+}
+
+main()
