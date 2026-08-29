@@ -24,7 +24,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | CMS runtime, content models, delivery routes, auth, migrations | `kujo-cms-workflows` |
 | Concord artifact/docs/schema drift | `kujo-concord-workflows` |
 | CRUD API showcase and Next.js playground checks | `kujo-crud-api-workflows` |
-| Dispatch workflows, resume/inspect/cleanup, plugins, event sinks | `kujo-dispatch-workflows` |
+| Dispatch workflows, validate/explain-route, resume/inspect/cleanup, plugins, event sinks | `kujo-dispatch-workflows` |
 | Eval suites, snapshots, reports, artifact manifests, policy gates | `kujo-eval-workflows` |
 | Fence architecture boundary checks | `kujo-fence-workflows` |
 | Howl showcase cards, branded social cards, and galleries | `kujo-howl-workflows` |

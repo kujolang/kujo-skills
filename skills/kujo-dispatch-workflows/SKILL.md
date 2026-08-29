@@ -1,6 +1,6 @@
 ---
 name: kujo-dispatch-workflows
-description: "Use this skill when running, inspecting, extending, or maintaining Dispatch reliable AI workflow orchestration: `dispatch.kujo`, `kujo run dispatch.kujo`, `demo`, `resume`, `templates`, `runs`, `show`, `inspect`, `doctor`, `cleanup`, `export-run`, `import-run`, workflow templates, declarative workflow files, plugins, approval gates, trace/report/state artifacts, tool policy profiles, bundle signing, offline fixture runs, SDK bridge integration, or Dispatch CLI/tests/source changes."
+description: "Use this skill when running, inspecting, extending, or maintaining Dispatch reliable AI workflow orchestration: `dispatch.kujo`, `kujo run dispatch.kujo`, `demo`, `validate`, `explain-route`, `resume`, `templates`, `runs`, `show`, `inspect`, `doctor`, `cleanup`, `export-run`, `import-run`, workflow templates, declarative workflow files, plugins, approval gates, trace/report/state artifacts, tool policy profiles, bundle signing, offline fixture runs, SDK bridge integration, or Dispatch CLI/tests/source changes."
 ---
 
 # Kujo Dispatch Workflows
@@ -10,7 +10,7 @@ Use Dispatch as a control-layer workflow engine for repeatable AI orchestration:
 ## Agent Workflow
 
 - Read `README.md` first, then `AGENTS.md`. For release, deployment, extension, or backlog work, read the specific doc named in the request.
-- Prefer safe local fixture runs first. Dispatch defaults to `DISPATCH_OFFLINE_FIXTURE=true`, so normal demo/test paths do not need provider credentials.
+- Prefer safe local fixture runs first by setting `DISPATCH_OFFLINE_FIXTURE=true`; live model execution is fail-closed by default and requires AI SDK plus provider credentials.
 - Run commands from the Dispatch repo root so relative paths, output roots, fixtures, and bridge scripts resolve consistently.
 - Use the VM path `kujo run dispatch.kujo ...` for Dispatch CLI commands unless a task explicitly targets interpreter fallback or parity.
 - Treat `outputs/`, `tests/tmp/`, `target/`, and `.ci/` as generated or bulk output unless the task explicitly targets them.
@@ -24,6 +24,8 @@ cd /path/to/dispatch
 kujo run dispatch.kujo demo "How do AI workflows improve reliability?" --yes --non-interactive
 kujo run dispatch.kujo demo "Repo review" --workflow-file examples/workflows/custom-review.json --input-json '{"repo":"kujo"}' --plugin sample --yes --non-interactive
 kujo run dispatch.kujo templates --json
+kujo run dispatch.kujo validate --workflow-file examples/workflows/custom-review.json --json
+kujo run dispatch.kujo explain-route --workflow-file examples/workflows/routed-workflow.json --step-id draft --json
 kujo run dispatch.kujo runs --json --diagnostics
 kujo run dispatch.kujo inspect <run-id> --json
 kujo run dispatch.kujo resume <run-id> --yes --non-interactive
@@ -34,6 +36,8 @@ Use `--output-root tests/tmp/<purpose>` for local validation that should not pol
 ## Command Surface
 
 - `demo "topic"` starts a template-backed workflow. Use `--workflow research-report` or `--workflow crud-reliability` to select a built-in template, or `--workflow-file <json>` plus `--input-json '{...}'` for a declarative workflow spec and structured run input.
+- `validate --workflow-file <json> [--live] [--json]` validates workflow, routing, provider, catalog, credential, path, and policy requirements before running.
+- `explain-route --workflow-file <json> --step-id <id> [--json]` explains the selected agent/provider/model route, fallback posture, and rejection reasons without executing the workflow.
 - `--plugin sample` exercises the built-in plugin injection path; use `src/core/plugins.kujo` and `src/plugins/builtin_plugins.kujo` for extension work.
 - `resume <run-id>` continues a persisted run, commonly after an approval pause.
 - `templates [--json]` lists available workflow templates and summary metadata.
@@ -41,7 +45,7 @@ Use `--output-root tests/tmp/<purpose>` for local validation that should not pol
 - `show <run-id>` prints a compact run summary; `inspect <run-id>` prints artifacts and contract metadata.
 - `doctor [--json]` diagnoses run state/catalog health; `doctor --write` persists repairs.
 - `cleanup` defaults to dry-run. Add `--apply` only when deletion is requested and the scope is clear.
-- `export-run` and `import-run` move run bundles. Use `--sign-bundle`/`--verify-bundle-signature` with `DISPATCH_BUNDLE_SIGNING_KEY` or `--signing-key`.
+- `export-run` and `import-run` move run bundles. Imports verify signatures by default; use `--sign-bundle` with `DISPATCH_BUNDLE_SIGNING_KEY` and reserve `--allow-unsigned-bundle` for explicitly trusted local transfers.
 - `--webhook-sink <path.jsonl>` writes lifecycle events to a guarded local JSONL sink, `--webhook-url <https-url>` best-effort posts events, and `--cancel-after-step <step-id>` requests cooperative cancellation.
 
 When strict mutation mode is enabled, `doctor --write`, `cleanup --apply`, and `import-run` require `--confirm-mutation` or `DISPATCH_MUTATION_CONFIRM=true`.
@@ -64,6 +68,8 @@ Machine-readable state, trace, and report artifacts include contract metadata su
 
 - Policy sources resolve through profile, config, environment, then explicit CLI allow/deny controls; CLI flags have final precedence.
 - Built-in profiles: `development`/`dev` is open, `staging` denies `flaky_reliability_tool`, and `production`/`prod` allows the known safe fixture/report tools while denying the flaky reliability tool.
+- Bounded concurrent execution applies only to dependency-ready tool steps marked `parallel_safe` with an `idempotency_key`; agent and human-decision steps stay serialized.
+- Workflow budgets, provider health circuits, run locks, atomic artifact writes, and state size diagnostics are v1.2 operational contracts. Preserve their JSON evidence and mutation audit records.
 - Use `--allow-tools` and `--deny-tools` for focused policy tests, especially when changing `src/core/tool_policy.kujo`.
 - Default `--sources-dir`, `--output-root`, and `--config` handling is intentionally constrained. Only set `DISPATCH_ALLOW_ANY_SOURCES_DIR`, `DISPATCH_ALLOW_ANY_OUTPUT_ROOT`, or `DISPATCH_ALLOW_ANY_CONFIG_PATH` for explicit local validation.
 - Use `DISPATCH_SDK_DEBUG_OUTPUT=true` only for local bridge debugging because it exposes raw bridge stdout/stderr in parse-error details.
@@ -112,6 +118,7 @@ For repo test coverage:
 kujo test-run tests/sdk_adapter_tests.kujo -v
 kujo test-run tests/policy_precedence_tests.kujo -v
 kujo test-run tests/dispatch_tests.kujo -v
+DISPATCH_OFFLINE_FIXTURE=true bash scripts/run_release_gate.sh
 ```
 
 When using a locally built Kujo binary:
@@ -132,5 +139,5 @@ $KUJO_BIN test-run tests/dispatch_tests.kujo -v
 
 ## Sources Consulted
 
-- Status: repo-backed: `README.md`, `AGENTS.md`.
-- Status: repo-backed: `dispatch.kujo`, `src/cli/cli_args.kujo`, `src/workflows/workflow.kujo`, `src/workflows/loader.kujo`, `src/plugins/builtin_plugins.kujo`, `tests/dispatch_tests.kujo`, `docs/benchmarks.md`.
+- Status: repo-backed: `README.md`, `CHANGELOG.md`, `AGENTS.md`.
+- Status: repo-backed: `dispatch.kujo`, `src/cli/cli_args.kujo`, `src/workflows/workflow.kujo`, `src/workflows/loader.kujo`, `src/plugins/builtin_plugins.kujo`, `tests/dispatch_tests.kujo`, `docs/benchmarks.md`, `docs/production-operations.md`, `docs/UPGRADING_TO_1_2.md`.

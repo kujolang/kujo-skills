@@ -25,7 +25,7 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-cms-workflows` | CMS runtime, content models, delivery routes, auth, migrations, backup/restore, release proof. | `../cms` README/backend/tests/docs |
 | `kujo-concord-workflows` | Concord artifact drift scans, CLI/docs drift, Spec/Eval alignment, and fix-task reports. | `../concord` README/src/tests |
 | `kujo-crud-api-workflows` | CRUD API showcase, SQLite item/project APIs, Next.js playground, smoke/perf/DR checks. | `../crud-api` README/src/frontend/tests |
-| `kujo-dispatch-workflows` | Dispatch workflow orchestration, resume/inspect/cleanup, plugins, event sinks, policy profiles. | `../dispatch` README/src/tests/docs |
+| `kujo-dispatch-workflows` | Dispatch workflow orchestration, validate/explain-route, resume/inspect/cleanup, plugins, event sinks, policy profiles. | `../dispatch` README/src/tests/docs |
 | `kujo-eval-workflows` | Eval suites, snapshots, reports, policy-explain, artifact manifests, and CI gates. | `../eval` README/docs/main/tests |
 | `kujo-fence-workflows` | Fence architecture boundaries, baselines, graph/explain, Markdown/JSON/SARIF reports. | `../fence` README/docs/src/tests |
 | `kujo-howl-workflows` | Howl showcase manifests, validation, SVG/Markdown/HTML cards, branded social cards, galleries, captions. | `../howl` README/src/tests |

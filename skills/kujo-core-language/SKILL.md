@@ -40,7 +40,7 @@ Truthy: all other values, including `"false"`.
 - Predicate helpers such as `has_key`, `contains`, `starts_with`, and `ends_with` return `1`/`0`; compare explicitly.
 - Collection helpers such as `push`, `insert`, `remove_at`, `concat`, `map`, and `filter` return new values; reassign the result.
 - Imported functions must be exported from the source module.
-- Kujo `v1.0.1` is the current published stable release; the source tree may be preparing a later Cargo version without a published tag. Use `docs/V1_SCOPE.md`, `docs/RELEASE_PROCESS.md`, and the official release checklist for compatibility boundaries and explicit deferrals instead of relying on version strings alone.
+- Kujo `v1.0.2` is the current published stable release with prebuilt platform binaries and checksums. Use `docs/V1_SCOPE.md`, `docs/RELEASE_PROCESS.md`, and the official release checklist for compatibility boundaries and explicit deferrals instead of relying on version strings alone.
 
 ## Validation
 

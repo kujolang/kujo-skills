@@ -5,7 +5,7 @@ description: "Use this skill when initializing, validating, inspecting, running,
 
 # Kujo Workcell Workflows
 
-Use Workcell as a Kujo-native local OCI execution sandbox for AI agents and workflows. It creates disposable Git worktrees, runs declared commands in bounded Docker or Podman containers, exports declared artifacts, records receipts, and cleans up. Treat Docker/Podman as the physical boundary and Kujo as the policy/evidence boundary.
+Use Workcell as a stable Kujo-native local and CI OCI execution harness for AI agents and workflows. It creates disposable Git worktrees, runs declared commands in bounded Docker or Podman containers, exports declared artifacts, records receipts, and cleans up. Treat Docker/Podman as the physical boundary and Kujo as the policy/evidence boundary.
 
 ## Quick Start
 
@@ -36,7 +36,7 @@ docker build --tag kujolang/workcell-base:local docker/
 - Podman is supported through the same OCI policy boundary. Rootless engine posture, runtime class selection, egress declarations, load evidence, and ecosystem integrations are explicit validation surfaces rather than implicit safety guarantees.
 - Artifact policy rejects malformed definitions and unsafe paths before runtime execution; secret redaction and binary-artifact inspection failures must remain fail-closed.
 - Declared secret values and common base64 encodings are redacted from stdout/stderr, verification output, receipts, artifacts, and the generated Git patch; `artifacts.secret_action: reject` also rejects a run whose patch contained a declared secret and avoids persisting that patch.
-- Workcell is a release-gated local Docker MVP. It is not a hardened microVM, hosted service, or universally isolated enterprise sandbox.
+- Workcell 1.x is stable for the documented local and CI Docker/Podman contract. It is not a hardened microVM, hosted service, multi-tenant runner, or universal enterprise sandbox.
 
 When reporting results, state the command, backend, run directory, exit code, receipt/manifest paths, cleanup outcome, and any host-boundary assumptions.
 

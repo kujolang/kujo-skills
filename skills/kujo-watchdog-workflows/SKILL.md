@@ -25,6 +25,7 @@ curl -s http://localhost:7700/api/proxy-config
 - Root `dashboard_server.kujo`, `dashboard.html`, `watchdog.kujo`, and `watchdog_shared.kujo` are compatibility mirrors of `src/` surfaces.
 - Proxy smoke may intentionally produce upstream `401` without an API key while still recording telemetry.
 - Named upstream profiles live in `watchdog_proxy_config.json` and are selected with `X-Watchdog-Upstream-Profile`; unknown profile names fail before upstream egress.
+- A single Watchdog server can proxy several provider accounts through named upstream profiles, including AI Chat's shared OpenRouter and Ollama lanes; per-request profile metadata is preserved for filtering and telemetry.
 - Keep `WDG_API_AUTH_TOKEN`, `WDG_PROXY_AUTHZ_TOKEN`, and upstream provider keys as separate credentials. Production profile startup requires token-protected API and proxy posture.
 - `WDG_RATE_LIMIT_MODE=basic` uses SQLite-backed buckets for both `/api/*` and `/proxy/*`; redaction defaults to basic before persistence/export.
 - Cost fields are estimated direct-provider equivalents, not invoices. Pricing provenance comes from the checked-in provider and OpenRouter catalogs; refresh and bounded repricing are script-driven.
@@ -89,3 +90,4 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and output
 - Status: repo-backed: `src/dashboard_server.kujo`.
 - Status: repo-backed: `src/watchdog.kujo`.
 - Status: repo-backed: `demo.kujo`.
+- Status: repo-backed: `docs/PRICING_ESTIMATES.md`, `tests/proxy_integration_stub_suite.js`, `tests/watchdog_api_route_suite.js`.

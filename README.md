@@ -77,7 +77,7 @@ See [examples](examples/README.md) for installation bundles and routing prompts.
 
 ## Release and support status
 
-This repository is the MIT-licensed `0.4.1` technical preview of the Kujo skills pack. Kujo `v1.0.1` is the current stable language/runtime baseline for the Publishing House toolchain; individual skills preserve explicit preview or experimental boundaries for narrower APIs.
+This repository is the MIT-licensed `0.4.1` technical preview of the Kujo skills pack. Kujo `v1.0.2` is the current stable language/runtime baseline for the Publishing House toolchain; individual skills preserve explicit preview or experimental boundaries for narrower APIs.
 
 The pack provides guidance, not runtime enforcement. An agent or host must load a skill and enforce its own permissions. Kujo itself is not a sandbox: use `--untrusted`, least-privilege `--allow-*` flags, and external isolation for high-risk scripts.
 
