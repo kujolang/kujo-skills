@@ -110,3 +110,43 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `webops-analytics-analysis` | Analyzing real website behavior from normalized analytics evidence. | SearchBridge analytics result/v1, property identity settings, dimensions, metrics, and prior window |
 | `webops-distribution` | Creating source-grounded distribution assets and optionally publishing with ACT authority. | Approved published content, Howl, distribution integration, permission receipt, and brand constraints |
 | `webops-reporting` | Synthesizing validated specialist evidence into quiet WebOps reports. | Validated current/prior WebOps artifacts, finding history, actions, outcomes, and availability receipts |
+
+## VideoOps skills
+
+| Skill | Use when | Primary sources |
+|---|---|---|
+| `videoops-video-brief-synthesis` | turning validated VideoOps intake into a concise creative brief without inventing claims. | PackWrite intake artifacts and VideoOps production standards |
+| `videoops-transcript-and-onscreen-copy` | writing duration-aware VideoOps voiceover and onscreen copy. | creative brief, messaging, audience, platform duration, and editorial standard |
+| `videoops-shot-planning` | creating frame/time-bound VideoOps shot plans. | creative brief, transcript, platform JSON, motion standard, and shot-list schema |
+| `videoops-visual-reference-decomposition` | extracting reusable production principles from video references. | supplied references and VideoOps motion/brand standards |
+| `videoops-asset-requirement-specification` | translating approved shots into precise asset requirements. | shot list, transcript, creative brief, asset and license policy |
+| `videoops-platform-duration-planning` | enforcing project video dimensions, FPS, and duration. | intake/platform.json and current project requirements |
+| `videoops-first-party-asset-discovery` | searching project and Kujo sources before external video research. | asset requirements, repository, docs, product outputs, and asset policy |
+| `videoops-lens-product-capture` | capturing first-party terminal, UI, site, or product evidence for a planned shot. | approved capture requirement, Lens contract, and capture environment |
+| `videoops-licensed-media-research` | researching external media with documented reuse rights. | asset requirement and licensing policy |
+| `videoops-asset-rights-triage` | classifying media as approved, reference-only, blocked, or pending. | license evidence, intended use, source metadata, and VideoOps policy |
+| `videoops-media-normalization` | inspecting, trimming, and transcoding approved source media while preserving originals. | approved asset, FFmpeg/ffprobe, target shot, and manifest |
+| `videoops-asset-manifest-maintenance` | maintaining schema-valid asset records and shot mappings. | asset requirements, filesystem evidence, and asset-manifest schema |
+| `videoops-generation-handoff` | writing exact generation requests for unresolved custom media. | GENERATE requirement, shot context, style plan, brand, and adjacent shots |
+| `videoops-generated-still-production` | creating a project-specific still for an explicit GENERATE item. | generation handoff, brand/style plan, target crop, and approved provider |
+| `videoops-generated-motion-production` | creating a short purpose-built motion asset or loop. | generation handoff, shot duration, adjacent motion, and approved provider |
+| `videoops-brand-style-translation` | turning Kujo brand and motion principles into media-generation direction. | VideoOps brand, typography, editorial, and motion standards |
+| `videoops-shot-context-generation` | generating media that fits its actual edit neighbors and timing. | shot list, style plan, adjacent shots, and generation requirement |
+| `videoops-generation-variant-selection` | selecting among materially different generated media variants. | inspected variants, shot acceptance criteria, and brand rules |
+| `videoops-generated-asset-manifesting` | registering generated assets with complete provenance and shot mapping. | generated files, provider receipt, generation purpose, and asset schema |
+| `videoops-hyperframes-project-bootstrap` | creating a composition with current HyperFrames conventions. | approved planning package, platform JSON, manifest, and installed HyperFrames CLI |
+| `videoops-shot-list-to-timeline` | mapping schema-valid shots into frame-accurate HyperFrames scenes. | shot list, FPS, transcript, asset manifest, and current HyperFrames API |
+| `videoops-kinetic-typography` | implementing readable motion typography in HyperFrames. | typography standard, shot list, platform size, and approved font references |
+| `videoops-media-compositing` | placing and trimming approved image, video, GIF-derived, and audio assets. | manifest-approved assets, shot timings, HyperFrames, and FFmpeg |
+| `videoops-shader-and-transition-selection` | using effects selectively at meaningful video beats. | style plan, motion standard, shot semantics, and current HyperFrames effects |
+| `videoops-audio-sync` | synchronizing voice, SFX, music, and silence to planned beats. | transcript, shot list, audio assets, platform contract, and FFmpeg |
+| `videoops-render-validation` | rendering and deterministically inspecting a HyperFrames output. | composition, platform JSON, HyperFrames check/render, FFmpeg/ffprobe, and Eval |
+| `videoops-fix-list-application` | applying Critic issues with one outcome per item. | schema-valid fix list, exact reviewed draft, composition, and acceptance criteria |
+| `videoops-video-spec-comparison` | comparing a rendered draft with approved planning artifacts. | draft, brief, transcript, shot list, style plan, and render log |
+| `videoops-pacing-analysis` | finding dead space, unreadable micro-cuts, uniform rhythm, and weak semantic timing. | render, shot boundaries, transcript beats, and motion standard |
+| `videoops-visual-hierarchy-review` | reviewing legibility, crop, clutter, focus, and text priority. | rendered frames, target dimensions, typography and brand standards |
+| `videoops-motion-quality-review` | reviewing transitions, easing, distortion, compositing, and effect use. | render, motion standard, style plan, and sampled/key frames |
+| `videoops-audio-visual-review` | checking speech clarity, synchronization, impact timing, music, and silence. | rendered audio/video streams, transcript, planned beats, and audio standard |
+| `videoops-technical-render-review` | checking render integrity, media, fonts, frames, dimensions, FPS, duration, and audio. | rendered file, platform JSON, render log, FFmpeg/ffprobe, and HyperFrames checks |
+| `videoops-actionable-fix-writing` | writing schema-valid timestamped repairs from validated defects. | critic evidence, fix-list schema, reviewed draft lineage, and role boundaries |
+| `videoops-approval-decision` | producing deterministic VideoOps PASS or FAIL from defect evidence. | technical gates, review dimensions, thresholds, confidence, and revision count |

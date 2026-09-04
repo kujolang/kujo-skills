@@ -1,6 +1,6 @@
 # Kujo Agent Skills
 
-[![Version](https://img.shields.io/badge/version-0.4.1-black)](https://github.com/kujolang/kujo-skills)
+[![Version](https://img.shields.io/badge/version-0.5.0-black)](https://github.com/kujolang/kujo-skills)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 [![built with Kujo](https://img.shields.io/badge/built%20with-Kujo-white.svg)](https://github.com/kujolang/kujo)
 
@@ -10,7 +10,7 @@ The catalog gives coding agents exact Kujo commands, safety boundaries, validati
 
 ## Why use this pack?
 
-- Route work to 96 focused skills, including the cross-cutting `kujo-way-development` baseline, release-to-site `kujo-ecosystem-launch` coordinator, 30 WebOps skills, and 11 Publishing House tool, profile, quality, and lifecycle skills.
+- Route work to 131 focused skills, including the cross-cutting `kujo-way-development` baseline, 30 WebOps skills, 35 VideoOps production skills, and 11 Publishing House tool, profile, quality, and lifecycle skills.
 - Keep VM-first execution, capability boundaries, and CLI contracts explicit.
 - Ground recommendations in Kujo repositories, tests, and operational docs.
 - Validate the complete catalog offline with one command.
@@ -77,7 +77,7 @@ See [examples](examples/README.md) for installation bundles and routing prompts.
 
 ## Release and support status
 
-This repository is the MIT-licensed `0.4.1` technical preview of the Kujo skills pack. Kujo `v1.0.2` is the current stable language/runtime baseline for the Publishing House toolchain; individual skills preserve explicit preview or experimental boundaries for narrower APIs.
+This repository is the MIT-licensed `0.5.0` technical preview of the Kujo skills pack. Kujo `v1.0.2` is the current stable language/runtime baseline for the Publishing House toolchain; individual skills preserve explicit preview or experimental boundaries for narrower APIs.
 
 The pack provides guidance, not runtime enforcement. An agent or host must load a skill and enforce its own permissions. Kujo itself is not a sandbox: use `--untrusted`, least-privilege `--allow-*` flags, and external isolation for high-risk scripts.
 

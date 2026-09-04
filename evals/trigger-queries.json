@@ -1,37 +1,205 @@
 {
-  "kujo-way-development": {
-    "should_trigger": [
-      "build a complete Kujo agent project the Kujo way with deterministic offline tests",
-      "review this generated Kujo project for slop wrong ecosystem boundaries and missing proof",
-      "design a cross-repo Kujo feature that uses AI SDK and Agents SDK correctly",
-      "turn this rough AI-generated Kujo app into compact human and agent readable code",
-      "apply token-efficient Kujo development practices and an evidence-backed definition of done",
-      "start a Kujo-related project with explicit contracts security boundaries and validation",
-      "which Kujo ecosystem repository should own each part of this new agent workflow",
-      "build an AI-native Kujo workflow with bounded context approvals budgets and replay fixtures"
-    ],
+  "kujo-agents-sdk-workflows": {
     "should_not_trigger": [
-      "explain only how let mut and const work in Kujo",
-      "build one small Kujo JSON policy CLI",
-      "add a bytecode opcode to the Kujo VM",
-      "audit only the shell capability flags in this Kujo script",
-      "run and inspect an existing Dispatch workflow",
-      "change one Agents SDK memory-store primitive",
-      "write a Python web scraper",
-      "draft marketing copy for the Kujo homepage"
+      "run Dispatch workflow templates",
+      "configure AI Chat provider profiles",
+      "scan browser visual regressions with Lens",
+      "write generic Kujo syntax examples"
+    ],
+    "should_trigger": [
+      "update Agents SDK approval tool execution contracts",
+      "run examples_smoke_runner for agents-sdk offline fixtures",
+      "fix agent handoff tracing tests",
+      "maintain artifact store contract tests",
+      "add MCP 2026 request helpers to Agents SDK integration adapters"
+    ]
+  },
+  "kujo-ai-chat-workflows": {
+    "should_not_trigger": [
+      "maintain AI SDK provider retries only",
+      "run Watchdog proxy dashboard",
+      "create a static site with SSG",
+      "write a Spec task contract"
+    ],
+    "should_trigger": [
+      "start AI Chat locally and run smoke tests",
+      "fix SSE thinking events in ai-chat",
+      "update bridge_chat.kujo provider fixture behavior",
+      "backup and vacuum the AI Chat SQLite database",
+      "preserve AI Chat streaming usage detail payloads",
+      "run the AI Chat benchmark runner for a saved pane profile",
+      "enable AI Chat browser_open and browser_snapshot tools with Playwright",
+      "configure AI Chat scheduled automations and local Codex profile",
+      "debug AI Chat context compaction for long conversations",
+      "verify AI Chat tool activity SSE events and weekly tool audit output"
+    ]
+  },
+  "kujo-ai-sdk-workflows": {
+    "should_not_trigger": [
+      "open the AI Chat web UI",
+      "record an agent run with RunLedger",
+      "measure diff footprint with ChangeBucket",
+      "scan architecture boundaries with Fence"
+    ],
+    "should_trigger": [
+      "fix AI SDK streaming callback contract",
+      "run ai-sdk security redaction tests",
+      "update provider presets and fixture mode",
+      "run live provider smoke with skip handling",
+      "use resolve_model_preference for provider-neutral model routing",
+      "preserve streaming usage telemetry in AI SDK include_usage responses",
+      "run AI SDK embeddings contract tests"
+    ]
+  },
+  "kujo-assetworks-workflows": {
+    "should_not_trigger": [
+      "grant image rights automatically",
+      "approve the final publication"
+    ],
+    "should_trigger": [
+      "Use AssetWorks to plan and validate a media asset with captions and provenance",
+      "Create a checksum-backed accessibility-aware AssetWorks manifest"
+    ]
+  },
+  "kujo-backlog-normalizer": {
+    "should_not_trigger": [
+      "run the initial release gate",
+      "refresh generated docs",
+      "run Fence architecture check",
+      "write a new standard library builtin"
+    ],
+    "should_trigger": [
+      "normalize these Kujo audit findings into fix-ready tasks",
+      "turn DocGen gaps and release blockers into backlog items",
+      "deduplicate security triage findings into tasks",
+      "create owner-ready backlog from readiness evidence"
+    ]
+  },
+  "kujo-benchmarks-capsule-workflows": {
+    "should_not_trigger": [
+      "create a Scent context pack",
+      "run Scout repo intelligence",
+      "record a RunLedger receipt",
+      "benchmark Kujo runtime performance generally"
+    ],
+    "should_trigger": [
+      "make a stable Capsule for this fixture project",
+      "validate capsule.json and inspect capsule.md",
+      "compare Capsule benchmark evidence after a model run",
+      "fix benchmarks-capsule stable output determinism"
+    ]
+  },
+  "kujo-bluepencil-workflows": {
+    "should_not_trigger": [
+      "schedule a live publication",
+      "record a new editorial idea"
+    ],
+    "should_trigger": [
+      "Run a BluePencil eight-dimension editorial review",
+      "Use BluePencil to preserve reviewer disagreement and calibration evidence"
+    ]
+  },
+  "kujo-casefile-workflows": {
+    "should_not_trigger": [
+      "run Muzzle quiet workflows",
+      "render a Howl showcase card",
+      "debug VM interpreter parity",
+      "make docgen output more agent readable"
+    ],
+    "should_trigger": [
+      "capture this failing test with Casefile and show me the handoff",
+      "use casefile.kujo to package a local failure into .casefile evidence",
+      "how do I run casefile capture --from-log for a CI log",
+      "clean old .casefile bundles but dry-run it first"
+    ]
+  },
+  "kujo-changebucket-workflows": {
+    "should_not_trigger": [
+      "record this agent run in RunLedger",
+      "summarize what the diff means semantically",
+      "set up Muzzle workflows for noisy logs",
+      "write a generic Kujo CLI tool from scratch",
+      "debug VM interpreter parity",
+      "review native API security boundaries",
+      "make a spreadsheet from cost data",
+      "generate a browser dashboard"
+    ],
+    "should_trigger": [
+      "run changebucket to measure this agent change footprint",
+      "enforce a ChangeBucket budget with max files and churn",
+      "generate a CHANGE_BUCKET markdown report for this repo",
+      "what does changebucket --json output look like",
+      "did this PR touch dependency manifests lockfiles or generated files",
+      "compare my branch against main with changebucket --base main --head HEAD",
+      "update ChangeBucket CLI behavior without breaking exit codes",
+      "explain the ChangeBucket risk level for this worktree"
+    ]
+  },
+  "kujo-cli-contracts": {
+    "should_not_trigger": [
+      "write a Kujo array example",
+      "run an untrusted network script safely",
+      "add a new crypto builtin",
+      "why are VM and interpreter different",
+      "create a release tag",
+      "explain CSS grid",
+      "generate docs for a Python project using Sphinx",
+      "review a security policy unrelated to Kujo"
+    ],
+    "should_trigger": [
+      "make the cli json output easier for agents to parse",
+      "change kujo run --json-runtime-diagnostics output",
+      "what exit code should a parser failure return",
+      "preserve stdout stderr behavior for --json",
+      "add a field to kujo docgen --json",
+      "update lsp-rename --json failure payload",
+      "is changing this CLI JSON field breaking",
+      "fix cli_json_contracts after output drift"
+    ]
+  },
+  "kujo-cms-workflows": {
+    "should_not_trigger": [
+      "run CRUD API smoke tests",
+      "build SSG output",
+      "configure AI Chat panes",
+      "generate a PackWrite agent pack"
+    ],
+    "should_trigger": [
+      "start the Kujo CMS backend runtime",
+      "run cms_contract_tests.kujo",
+      "process CMS webhook outbox jobs",
+      "extend CMS content model routes",
+      "review CMS release gate evidence and branch protection gap",
+      "verify anonymous CMS reads only expose published entries",
+      "test CMS entry lock ownership and release behavior"
+    ]
+  },
+  "kujo-concord-workflows": {
+    "should_not_trigger": [
+      "capture a failing command with Casefile",
+      "run ShipCheck release gate",
+      "write a generic Kujo JSON policy checker",
+      "debug browser screenshots with Lens"
+    ],
+    "should_trigger": [
+      "run Concord scan and report artifact drift in this repo",
+      "check cli-docs drift with concord check cli-docs",
+      "turn Concord findings into task cards",
+      "fix Concord examples drift after changing CLI help",
+      "verify Concord detects package.json manifest drift for a Node repo"
+    ]
+  },
+  "kujo-contentgraph-workflows": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use kujo-contentgraph-workflows for building, inspecting, comparing, explaining, analyzing, exporting, or consuming deterministic ContentGraph artifacts",
+      "I need help building an incremental ContentGraph run and exporting GraphML or SARIF"
     ]
   },
   "kujo-core-language": {
-    "should_trigger": [
-      "write a kujo script with functions arrays and a dictionary",
-      "how do let mut const and := work in Kujo",
-      "fix this .kujo import that uses from src.util import value",
-      "why is has_key not acting like a boolean in my kujo if",
-      "show me idiomatic kujo for a loop and match statement",
-      "what is truthy and falsey in Kujo",
-      "my Kujo dictionary missing key crashes, what should I use",
-      "convert this old kujo example to current syntax"
-    ],
     "should_not_trigger": [
       "write a Python script with dictionaries",
       "explain JavaScript truthiness",
@@ -41,31 +209,585 @@
       "generate a logo for a language",
       "summarize this PDF",
       "debug my React component"
+    ],
+    "should_trigger": [
+      "write a kujo script with functions arrays and a dictionary",
+      "how do let mut const and := work in Kujo",
+      "fix this .kujo import that uses from src.util import value",
+      "why is has_key not acting like a boolean in my kujo if",
+      "show me idiomatic kujo for a loop and match statement",
+      "what is truthy and falsey in Kujo",
+      "my Kujo dictionary missing key crashes, what should I use",
+      "convert this old kujo example to current syntax"
     ]
   },
-  "kujo-tool-building": {
-    "should_trigger": [
-      "build me a kujo script that reads a json policy and exits nonzero if it fails",
-      "make a Kujo repo scanner that outputs a machine readable report",
-      "how do I pass --help to my kujo script instead of the kujo CLI",
-      "write a quality gate in kujo using args()",
-      "create a small kujo tool with deterministic pass fail output",
-      "my kujo CLI script should validate a config file and return exit 1 on policy failure",
-      "make a kujo automation script that prints JSON for CI",
-      "kujo script arg parsing pls, I keep colliding with flags"
-    ],
+  "kujo-cross-repo-dogfood-runner": {
     "should_not_trigger": [
-      "change the Rust parser internals",
-      "audit native API shell permissions",
-      "make docgen JSON shape stable",
-      "why is the interpreter different from VM",
-      "install Kujo from source",
-      "write a one-off JavaScript CLI",
-      "review this PR like a maintainer",
-      "generate a PowerPoint deck"
+      "audit one repo's docs drift only",
+      "triage Dependabot alerts only",
+      "create a local AI Chat provider profile",
+      "debug VM interpreter parity"
+    ],
+    "should_trigger": [
+      "run the weekly cross-repo Kujo dogfood pass",
+      "collect multi-repo dogfood evidence across Kujo tools",
+      "run recurring ecosystem checks with Concord Fence Scout",
+      "summarize cross-repo dogfood failures and handoffs"
+    ]
+  },
+  "kujo-crud-api-workflows": {
+    "should_not_trigger": [
+      "extend CMS tenant workspaces",
+      "run AI Chat SSE smoke",
+      "build SSG pages",
+      "record agent costs in RunLedger"
+    ],
+    "should_trigger": [
+      "run CRUD API smoke tests",
+      "start main.kujo and verify health endpoint",
+      "build the CRUD API frontend playground",
+      "update item and project API handlers"
+    ]
+  },
+  "kujo-dependabot-alert-triage": {
+    "should_not_trigger": [
+      "refresh DocGen public docs",
+      "run release gates before tagging",
+      "audit skill trigger routing",
+      "build CRUD API frontend"
+    ],
+    "should_trigger": [
+      "do the weekly Dependabot alert triage for Kujo repos",
+      "summarize GitHub security alerts and patched versions",
+      "turn dependency vulnerability alerts into fix-ready tasks",
+      "review Dependabot PR state across in-scope Kujo repos"
+    ]
+  },
+  "kujo-dispatch-workflows": {
+    "should_not_trigger": [
+      "run Muzzle quiet workflows for this repo",
+      "create a Howl showcase card",
+      "write a generic Kujo loop example",
+      "scan browser visual regressions with Lens"
+    ],
+    "should_trigger": [
+      "run a Dispatch demo workflow and inspect the trace artifacts",
+      "use dispatch.kujo templates --json to see workflow templates",
+      "resume a paused Dispatch run after the approval gate",
+      "debug Dispatch policy profile precedence for allow-tools and deny-tools",
+      "run a Dispatch workflow-file with input-json and the sample plugin",
+      "test Dispatch webhook sink events and throughput benchmark"
+    ]
+  },
+  "kujo-docgen-agent-readable": {
+    "should_not_trigger": [
+      "write a Kujo for loop",
+      "run untrusted shell commands",
+      "debug VM interpreter parity",
+      "add a database builtin",
+      "review a PR generally",
+      "make a slide deck",
+      "explain cargo install",
+      "fix a React routing bug"
+    ],
+    "should_trigger": [
+      "make kujo docgen output more agent readable",
+      "work with DocsGen in the Kujo programming language",
+      "add a field to docgen --json summary",
+      "fix docgen gaps JSON for AI tasks",
+      "how does kujo docgen scan without executing code",
+      "update public-only documentation gates",
+      "keep README and generated docs aligned",
+      "docgen should validate external links safely",
+      "emit ai tasks from kujo docgen",
+      "update Kujo DocsGen adapter extraction rules"
+    ]
+  },
+  "kujo-docgen-public-docs-refresh": {
+    "should_not_trigger": [
+      "audit readiness across all repos",
+      "triage Dependabot security alerts",
+      "run cross-repo dogfood only",
+      "create a PowerPoint deck"
+    ],
+    "should_trigger": [
+      "refresh Kujo public docs with docgen",
+      "regenerate DocGen public docs and gap outputs",
+      "update agent-readable DocGen JSON after docs drift",
+      "validate README reference alignment after kujo docgen"
+    ]
+  },
+  "kujo-docs-drift-auditor": {
+    "should_not_trigger": [
+      "run the release gate before tagging",
+      "triage security dependency alerts",
+      "write a generic Kujo script",
+      "record model token usage"
+    ],
+    "should_trigger": [
+      "audit Kujo docs drift after CLI changes",
+      "find README and reference mismatches against source",
+      "check generated docs and DocGen gaps for staleness",
+      "turn Concord docs drift into precise fixes"
+    ]
+  },
+  "kujo-dossier-workflows": {
+    "should_not_trigger": [
+      "freeze an exact artifact package",
+      "write a generic press release"
+    ],
+    "should_trigger": [
+      "Use Dossier to attach captured evidence and classify a material claim",
+      "Build an evidence packet with conflicts, consent, rights, and freshness"
+    ]
+  },
+  "kujo-ecosystem-launch": {
+    "should_not_trigger": [
+      "run ShipCheck without publishing anything",
+      "generate one standalone dither image",
+      "audit an existing website without a Kujo release",
+      "fix one failing unit test and stop"
+    ],
+    "should_trigger": [
+      "release these new Kujo tools, tag them, and add their pages, dither heroes, Howl cards, SEO metadata, and live deployment to Kujolang.ai",
+      "ship the new Kujo workflows to GitHub and synchronize the workflow catalog, counts, social cards, sitemap, RSS, and llms.txt",
+      "launch this new Kujo agent team with a repository release, team pages, portraits, navigation, browser QA, and production verification",
+      "run the complete Kujo release-to-site pipeline with clean-install proof, ShipCheck, GitHub release, web audit, and launch receipt"
+    ]
+  },
+  "kujo-enterprise-automation": {
+    "should_not_trigger": [
+      "what is Kujo truthiness",
+      "add a VM opcode",
+      "generate doc comments with docgen",
+      "review this as maintainer",
+      "write a Bash cron job",
+      "make a React dashboard",
+      "explain Homebrew install",
+      "debug a tree-sitter query"
+    ],
+    "should_trigger": [
+      "design an enterprise-safe Kujo automation workflow",
+      "write a kujo script that scans a repo and outputs a machine readable report",
+      "how should we run Kujo policy checks in CI",
+      "make a capability-minimal Kujo workflow with audit logs",
+      "can Kujo be used for operational quality gates",
+      "build a deterministic Kujo report for compliance",
+      "what external sandboxing should wrap untrusted Kujo jobs",
+      "create a policy-file workflow with stable JSON output",
+      "set up strict AI replay evidence for an enterprise Kujo automation lane",
+      "run enterprise_verify full for AI-native release evidence"
+    ]
+  },
+  "kujo-eval-workflows": {
+    "should_not_trigger": [
+      "record model token usage and cost for this attempt",
+      "set up Muzzle quiet workflows for noisy test logs",
+      "write a generic Kujo policy scanner from scratch",
+      "debug VM interpreter parity in the core runtime",
+      "review native API capability boundaries",
+      "make kujo docgen output more agent readable",
+      "create a PowerPoint release status deck",
+      "explain JavaScript snapshot testing"
+    ],
+    "should_trigger": [
+      "run this eval.json suite and inspect the generated artifacts",
+      "create a Kujo Eval release gate for this CLI output",
+      "why did kujo run main.kujo run fail this snapshot check",
+      "add a new Eval check type without breaking schema docs",
+      "generate an Eval HTML report and verify artifact-manifest checksums",
+      "use policy-explain to debug my Eval strict-ci policy",
+      "compare two Eval last_run.json files for regressions",
+      "update Eval command inventory after changing report flags"
+    ]
+  },
+  "kujo-fence-workflows": {
+    "should_not_trigger": [
+      "run Lens against localhost",
+      "capture a failing CLI command with Casefile",
+      "run ShipCheck release gate",
+      "debug VM interpreter parity"
+    ],
+    "should_trigger": [
+      "set up Fence in this repo with a starter fence.toml",
+      "run fence check and explain architecture-boundary violations",
+      "use fence.kujo graph --format mermaid",
+      "create a fence baseline for this legacy repo"
+    ]
+  },
+  "kujo-galleypack-workflows": {
+    "should_not_trigger": [
+      "grant human approval",
+      "measure post-publication audience response"
+    ],
+    "should_trigger": [
+      "Use GalleyPack to build and freeze a checksum-bound editorial package",
+      "Compare two GalleyPack versions and detect artifact drift"
+    ]
+  },
+  "kujo-howl-workflows": {
+    "should_not_trigger": [
+      "generate a random social media image",
+      "run Muzzle workflows for tests",
+      "make docgen output more agent readable",
+      "summarize a PowerPoint deck"
+    ],
+    "should_trigger": [
+      "create a Howl showcase card for this Kujo example",
+      "validate howl.json and render the SVG markdown html gallery",
+      "add a branded Howl social card with a local background image",
+      "use howl caption --platform x for this card",
+      "fix howl validate errors for referenced example files"
+    ]
+  },
+  "kujo-kennel-workflows": {
+    "should_not_trigger": [
+      "scan security findings with Scout",
+      "create a Spec contract",
+      "run AI SDK live smoke",
+      "capture Casefile evidence"
+    ],
+    "should_trigger": [
+      "validate Kennel package lockfile behavior",
+      "add a local package dependency with kennel",
+      "review Kennel trust policy enforcement",
+      "configure Kennel static index mirrors and local hosted registry",
+      "run Kennel release verification scripts"
+    ]
+  },
+  "kujo-language-implementation": {
+    "should_not_trigger": [
+      "write a small Kujo user script",
+      "run this tool with --untrusted",
+      "make a policy JSON output",
+      "review as strict maintainer",
+      "create a spreadsheet",
+      "explain TypeScript decorators",
+      "use kujo docgen from CLI",
+      "draft publication notes"
+    ],
+    "should_trigger": [
+      "add a new native filesystem helper",
+      "fix parser diagnostics for malformed imports",
+      "change VM bytecode handling for dictionary indexing",
+      "update lexer limits for string literals",
+      "modify the module loader path security",
+      "centralize CLI output rendering in Rust",
+      "move JIT unsafe function pointer invocation",
+      "contribute to Kujo compiler semantics without breaking runtime"
+    ]
+  },
+  "kujo-lens-workflows": {
+    "should_not_trigger": [
+      "write a generic Playwright test suite",
+      "run Lighthouse performance audits only",
+      "capture a failing CLI log with Casefile",
+      "render a Howl showcase card"
+    ],
+    "should_trigger": [
+      "run Lens against my localhost app and read the agent repair brief",
+      "use lens check http://localhost:3000 with screenshots and json output",
+      "run lens check --quick for a fast agent repair profile",
+      "create a .lens.toml with accessibility and link checks enabled",
+      "write and validate a lens flow for the account modal"
+    ]
+  },
+  "kujo-loop-engineering-workflows": {
+    "should_not_trigger": [
+      "write a simple one-file Kujo script",
+      "run a release gate before tagging",
+      "create a visual-regression baseline",
+      "summarize a Git diff without executing a workflow"
+    ],
+    "should_trigger": [
+      "initialize a bounded loop-engineering task in this repository",
+      "run a loop-engineering checklist and capture structured blockers",
+      "use run-workflow.sh --config for this local engineering task",
+      "classify this markdown checklist into local and external work"
+    ]
+  },
+  "kujo-maintainer-review": {
+    "should_not_trigger": [
+      "write new Kujo code from scratch",
+      "explain how args() works",
+      "run release gate commands only",
+      "create a JSON policy tool",
+      "make docgen output",
+      "generate an image",
+      "summarize standard library functions",
+      "debug a CSS layout"
+    ],
+    "should_trigger": [
+      "review this change like a strict kujo maintainer",
+      "give me a Kujo maintainer review for this PR",
+      "is this patch safe to ship in Kujo",
+      "review for CLI contract and runtime parity risks",
+      "find missing tests and docs in this Kujo change",
+      "blocker review: native API security boundary change",
+      "strict review of this VM implementation diff",
+      "does this release-readiness update overclaim"
+    ]
+  },
+  "kujo-mcp-workflows": {
+    "should_not_trigger": [
+      "write a generic Kujo for loop",
+      "run Muzzle quiet workflows",
+      "change VM bytecode dispatch",
+      "make a PowerPoint deck"
+    ],
+    "should_trigger": [
+      "generate a repo-specific MCP server with mcp make",
+      "run kujo run mcp.kujo --interpreter make ./repo --validate",
+      "review generated .mcp artifacts and mcp.manifest.json safety tiers",
+      "harden mcp-server.json auth host and rate limit settings"
+    ]
+  },
+  "kujo-muzzle-workflows": {
+    "should_not_trigger": [
+      "capture a failing command with Casefile",
+      "record agent costs in RunLedger",
+      "scan architecture boundaries with Fence",
+      "build SSG pages"
+    ],
+    "should_trigger": [
+      "set up Muzzle quiet workflows for noisy test logs",
+      "run muzzle run project-verify --json",
+      "preview a dangerous workflow with muzzle --dry-run",
+      "inspect Muzzle logs and reports after a failed workflow"
+    ]
+  },
+  "kujo-packwrite-workflows": {
+    "should_not_trigger": [
+      "record token usage and cost for this attempt in RunLedger",
+      "set up Muzzle quiet workflow logs",
+      "measure this PR footprint with ChangeBucket",
+      "create a .spec.yml task contract",
+      "run this eval.json snapshot suite",
+      "debug VM interpreter parity in Kujo",
+      "make kujo docgen output public docs JSON",
+      "create a browser dashboard"
+    ],
+    "should_trigger": [
+      "generate an agent pack from MEGA_PROMPT.md with PackWrite",
+      "run packwrite doctor before spending a model call",
+      "validate the generated agent/ pack and print the codex review prompt",
+      "configure packwrite.toml for deepseek-v4-pro with a custom output dir",
+      "use PACKWRITE_FAKE_RESPONSE_FILE to test packwrite init offline",
+      "why did PackWrite reject this model JSON manifest path",
+      "update PackWrite CLI behavior without breaking prompt output",
+      "compare two PackWrite outputs by generating separate agent directories"
+    ]
+  },
+  "kujo-patchbrief-workflows": {
+    "should_not_trigger": [
+      "build a generic git diff summarizer from scratch",
+      "run Muzzle quiet workflows for build logs",
+      "capture a failing command with Casefile",
+      "create a Scent context pack"
+    ],
+    "should_trigger": [
+      "run PatchBrief summarize on my current git diff",
+      "generate a PatchBrief handoff note for the next agent",
+      "use patchbrief.kujo suggest-tests before I open this PR",
+      "update PatchBrief JSON handoff fields and tests",
+      "validate the patchbrief summary JSON schema contract"
+    ]
+  },
+  "kujo-presswire-workflows": {
+    "should_not_trigger": [
+      "approve this package on my behalf",
+      "infer audience impact from a provider response"
+    ],
+    "should_trigger": [
+      "Preflight and publish an exact VersionSeal-approved package with PressWire",
+      "Use PressWire to record a bounded correction and publication receipt"
+    ]
+  },
+  "kujo-publishing-house-workflows": {
+    "should_not_trigger": [
+      "review one paragraph for grammar",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Install and run the complete Publishing House workflow suite",
+      "Use kujo-publishing-house-workflows to resume an approval and publication run"
+    ]
+  },
+  "kujo-rag-workflows": {
+    "should_not_trigger": [
+      "write a generic Kujo JSON policy checker",
+      "run Scout and summarize llms.txt",
+      "create a Scent context pack",
+      "render a Howl showcase card"
+    ],
+    "should_trigger": [
+      "use Kujo RAG to ingest this docs folder and answer with citations",
+      "run kujo run main.kujo --interpreter ingest then query the local index",
+      "start the Kujo RAG API server and smoke test health query",
+      "debug weak retrieval ranking in src/retrieval.kujo"
+    ]
+  },
+  "kujo-readersignal-workflows": {
+    "should_not_trigger": [
+      "claim the article caused revenue growth",
+      "schedule a newsletter send"
+    ],
+    "should_trigger": [
+      "Use ReaderSignal to compare privacy-bounded publication measurements",
+      "Create an evidence-linked learning and follow-up recommendation"
+    ]
+  },
+  "kujo-readiness-auditor": {
+    "should_not_trigger": [
+      "refresh generated public docs only",
+      "triage Dependabot alerts",
+      "write a new Kujo parser feature",
+      "start Watchdog dashboard"
+    ],
+    "should_trigger": [
+      "run the monthly Kujo readiness audit",
+      "audit readiness posture across the Kujo tool repos",
+      "summarize stale release evidence and production gaps",
+      "check ShipCheck Fence Eval Concord evidence for readiness"
+    ]
+  },
+  "kujo-redact-workflows": {
+    "should_not_trigger": [
+      "review Scent redactions.json from a context pack",
+      "debug Watchdog telemetry redaction",
+      "scan browser secrets with Lens",
+      "write a generic regex sanitizer in Python"
+    ],
+    "should_trigger": [
+      "sanitize this markdown with Redact and verify leakage",
+      "run redact.kujo pack with the external-safe policy",
+      "review .redact/runs audit artifacts without storing originals",
+      "update Redact policy YAML handling and tests"
+    ]
+  },
+  "kujo-relay-workflows": {
+    "should_not_trigger": [
+      "run Dispatch approval workflow files",
+      "start Watchdog dashboard only",
+      "build an Agents SDK example directly",
+      "make a Scent context pack"
+    ],
+    "should_trigger": [
+      "run Relay doctor and agents validate in fixture mode",
+      "execute a Relay mission with PackWrite RunLedger ChangeBucket Eval evidence",
+      "inspect Relay runs events with cursor metadata",
+      "repair a failed Relay mission within bounded attempts",
+      "run a Relay mission with provider-generated tool planning",
+      "verify Relay tool-result bundles and mission token budgets"
+    ]
+  },
+  "kujo-release-gate-runner": {
+    "should_not_trigger": [
+      "audit docs drift only",
+      "normalize backlog tasks from existing findings",
+      "run weekly cross-repo dogfood",
+      "build SSG output"
+    ],
+    "should_trigger": [
+      "run Kujo release gates before tagging",
+      "collect pre-release blocker evidence without publishing",
+      "run ShipCheck Eval Fence ChangeBucket and DocGen gates",
+      "summarize release gate blockers and artifacts"
+    ]
+  },
+  "kujo-runledger-workflows": {
+    "should_not_trigger": [
+      "write a generic Kujo CLI tool from scratch",
+      "set up Muzzle workflows for noisy logs",
+      "debug VM interpreter parity",
+      "explain Kujo dictionary truthiness",
+      "run cargo test for the main Kujo repo",
+      "create a browser dashboard",
+      "review native API security boundaries",
+      "make a spreadsheet from cost data"
+    ],
+    "should_trigger": [
+      "record this Codex run in RunLedger before we start",
+      "compare Claude Codex and DeepSeek attempts with runledger report",
+      "what runledger commands should I use to capture token usage and cost",
+      "finish this runledger receipt as partial with a verdict",
+      "show me the .runledger JSON for this agent build attempt",
+      "update RunLedger CLI behavior without breaking exit codes",
+      "generate a RunLedger markdown report for this task",
+      "add a followup note to a runledger run id"
+    ]
+  },
+  "kujo-runtime-parity": {
+    "should_not_trigger": [
+      "what --allow flag gates network",
+      "make JSON output stable",
+      "write a CI policy report",
+      "create a new image",
+      "explain Go interfaces",
+      "install Rust",
+      "review docs typos only",
+      "parse a CSV in Python"
+    ],
+    "should_trigger": [
+      "why is vm and interpreter giving different results",
+      "add parity tests for this new match behavior",
+      "should this use kujo test --runtime dual or vm",
+      "stop docs from recommending --interpreter by default",
+      "debug a runtime path divergence in Kujo",
+      "update the VM interpreter parity matrix",
+      "is interpreter fallback appropriate here",
+      "VM passes but interpreter fails for closures"
+    ]
+  },
+  "kujo-scent-workflows": {
+    "should_not_trigger": [
+      "set up muzzle workflows for quiet build logs",
+      "write a generic Kujo for loop",
+      "debug VM interpreter parity",
+      "create a PowerPoint deck"
+    ],
+    "should_trigger": [
+      "use scent to package this repo for a downstream codex review",
+      "run scent pack dry-run json before handing this task off",
+      "review redactions.json from a generated scent pack",
+      "focus a Scent pack on staged and unstaged changes"
+    ]
+  },
+  "kujo-scout-workflows": {
+    "should_not_trigger": [
+      "build a generic repo scanner from scratch in Kujo",
+      "run Muzzle workflow logs",
+      "create a Casefile evidence bundle",
+      "debug VM interpreter parity"
+    ],
+    "should_trigger": [
+      "run Scout on this repo and summarize the generated context pack",
+      "use kujo run scout.kujo to create llms.txt and AGENTS.md",
+      "fix scout security export sarif schema validation",
+      "refresh Scout golden snapshots after output changes"
+    ]
+  },
+  "kujo-searchbridge-workflows": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use kujo-searchbridge-workflows for running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, batch reads, evidence-query, signed adapters, replay/cache, telemetry, or explicit ACT submission",
+      "I need help running SearchBridge evidence-query over JSONL and batch fixture provider reads"
     ]
   },
   "kujo-security-hardening": {
+    "should_not_trigger": [
+      "write a pure arithmetic Kujo function",
+      "format a markdown table",
+      "explain Rust ownership",
+      "make CLI JSON easier to parse",
+      "add a parser test for match syntax",
+      "why does VM differ from interpreter",
+      "create an image",
+      "summarize the changelog"
+    ],
     "should_trigger": [
       "review this kujo tool before I run it on untrusted files",
       "can I run this kujo script safely in CI with network access",
@@ -79,65 +801,127 @@
       "lock Kujo AI helpers to approved provider endpoints with KUJO_AI_ALLOWED_ENDPOINTS",
       "force trusted Kujo network calls to deny private destinations with --deny-private-net",
       "write a private key with restrictive permissions using io_write_private_file"
-    ],
-    "should_not_trigger": [
-      "write a pure arithmetic Kujo function",
-      "format a markdown table",
-      "explain Rust ownership",
-      "make CLI JSON easier to parse",
-      "add a parser test for match syntax",
-      "why does VM differ from interpreter",
-      "create an image",
-      "summarize the changelog"
     ]
   },
-  "kujo-enterprise-automation": {
-    "should_trigger": [
-      "design an enterprise-safe Kujo automation workflow",
-      "write a kujo script that scans a repo and outputs a machine readable report",
-      "how should we run Kujo policy checks in CI",
-      "make a capability-minimal Kujo workflow with audit logs",
-      "can Kujo be used for operational quality gates",
-      "build a deterministic Kujo report for compliance",
-      "what external sandboxing should wrap untrusted Kujo jobs",
-      "create a policy-file workflow with stable JSON output",
-      "set up strict AI replay evidence for an enterprise Kujo automation lane",
-      "run enterprise_verify full for AI-native release evidence"
-    ],
+  "kujo-shipcheck-workflows": {
     "should_not_trigger": [
-      "what is Kujo truthiness",
-      "add a VM opcode",
-      "generate doc comments with docgen",
-      "review this as maintainer",
-      "write a Bash cron job",
-      "make a React dashboard",
-      "explain Homebrew install",
-      "debug a tree-sitter query"
+      "run the generic Kujo release gate for the compiler",
+      "create a Muzzle quiet workflow",
+      "capture a failing test with Casefile",
+      "render a Howl showcase card"
+    ],
+    "should_trigger": [
+      "run ShipCheck on this repo and tell me whether the release gate passes",
+      "use shipcheck.kujo scan --format json for this local checkout",
+      "generate a ShipCheck checklist before tagging this Kujo release",
+      "wire ShipCheck gate into CI and explain its exit code behavior",
+      "check whether shipcheck-report.schema.json matches gate --format json"
     ]
   },
-  "kujo-cli-contracts": {
-    "should_trigger": [
-      "make the cli json output easier for agents to parse",
-      "change kujo run --json-runtime-diagnostics output",
-      "what exit code should a parser failure return",
-      "preserve stdout stderr behavior for --json",
-      "add a field to kujo docgen --json",
-      "update lsp-rename --json failure payload",
-      "is changing this CLI JSON field breaking",
-      "fix cli_json_contracts after output drift"
-    ],
+  "kujo-site-kit-workflows": {
     "should_not_trigger": [
-      "write a Kujo array example",
-      "run an untrusted network script safely",
-      "add a new crypto builtin",
-      "why are VM and interpreter different",
-      "create a release tag",
-      "explain CSS grid",
-      "generate docs for a Python project using Sphinx",
-      "review a security policy unrelated to Kujo"
+      "build an SSG content site",
+      "run Lens visual QA only",
+      "create a random landing page design",
+      "debug CMS content routes"
+    ],
+    "should_trigger": [
+      "run canonical SiteKit launch proof with Workcell no-pull",
+      "build SiteKit dist and run component validation",
+      "add a SiteKit component schema template and CSS",
+      "update SiteKit tokens without raw hex colors",
+      "smoke test SiteKit consumer dashboard behavior"
+    ]
+  },
+  "kujo-sitekit-workflows": {
+    "should_not_trigger": [
+      "build an SSG content site",
+      "run Lens visual QA only",
+      "create a random landing page design",
+      "debug CMS content routes"
+    ],
+    "should_trigger": [
+      "build SiteKit dist and run component validation",
+      "add a SiteKit component schema template and CSS",
+      "update SiteKit tokens without raw hex colors",
+      "smoke test SiteKit consumer dashboard behavior",
+      "use the older SiteKit skill alias for compatibility"
+    ]
+  },
+  "kujo-siteprobe-workflows": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use kujo-siteprobe-workflows for running, validating, verifying, comparing, reporting, or integrating SiteProbe website-intelligence crawls and signed `.siteprobe` artifacts",
+      "I need help running a deterministic SiteProbe crawl with verify validate compare and fail-on warning"
+    ]
+  },
+  "kujo-skill-auditor": {
+    "should_not_trigger": [
+      "write a new Kujo CLI tool",
+      "run Watchdog dashboard server",
+      "debug VM interpreter parity",
+      "create a Spec task contract"
+    ],
+    "should_trigger": [
+      "do my weekly Kujo skills audit",
+      "update stale SKILL.md files for the Kujo tools",
+      "review the Kujo skills pack against current tool repo behavior",
+      "refresh SKILLS_INDEX and trigger fixtures after tool changes"
+    ]
+  },
+  "kujo-spec-workflows": {
+    "should_not_trigger": [
+      "run this eval.json suite and inspect snapshots",
+      "record this agent attempt in RunLedger",
+      "set up Muzzle quiet workflow logs",
+      "debug VM interpreter parity in Kujo",
+      "write a generic Kujo policy scanner",
+      "make kujo docgen output public docs JSON",
+      "review native API security boundaries",
+      "create a browser dashboard"
+    ],
+    "should_trigger": [
+      "create a .spec.yml contract for this feature before implementation",
+      "validate all Spec files in this repo with spec ci --format json",
+      "export this spec as agent context for a coding agent",
+      "generate an eval suite from spec eval_requirements",
+      "update the Spec schema without breaking export envelope metadata",
+      "why is spec init --from template loading a home template in CI",
+      "render the dark-mode.spec.yml to markdown",
+      "add tests for SPEC_SAFE_WRITE path restrictions in the Spec CLI"
+    ]
+  },
+  "kujo-ssg-workflows": {
+    "should_not_trigger": [
+      "run CMS webhooks",
+      "test CRUD API frontend",
+      "open AI Chat local app",
+      "scan route security with Scout"
+    ],
+    "should_trigger": [
+      "build the Kujo SSG starter site",
+      "validate generated SSG output",
+      "update templates and content in ssg",
+      "run the SSG parallel shard build for a large site",
+      "preserve the SSG native render fast path",
+      "build SSG custom collections with posts-at-root and llms output",
+      "run the SSG DocGen bridge and package the reusable docs starter"
     ]
   },
   "kujo-standard-library": {
+    "should_not_trigger": [
+      "change CLI stdout stderr rules",
+      "write release notes",
+      "fix a React hook",
+      "debug VM bytecode dispatch only",
+      "make a logo",
+      "explain Python json.loads",
+      "run cargo fmt",
+      "summarize a spreadsheet"
+    ],
     "should_trigger": [
       "what does parse_json return on bad input in Kujo",
       "which --allow flag gates http_get",
@@ -154,19 +938,29 @@
       "what does hmac_sha256 return for string payloads",
       "use jsonl_query to filter a large Kujo evidence JSONL file",
       "encode a URL query component with encode_uri_component"
-    ],
+    ]
+  },
+  "kujo-storydesk-workflows": {
     "should_not_trigger": [
-      "change CLI stdout stderr rules",
-      "write release notes",
-      "fix a React hook",
-      "debug VM bytecode dispatch only",
-      "make a logo",
-      "explain Python json.loads",
-      "run cargo fmt",
-      "summarize a spreadsheet"
+      "verify factual claims in Dossier",
+      "publish an approved package"
+    ],
+    "should_trigger": [
+      "Use StoryDesk to create a commission and assignment handoff",
+      "Inspect the StoryDesk review queue and generate a resumable packet"
     ]
   },
   "kujo-testing-release-gates": {
+    "should_not_trigger": [
+      "write a simple Kujo hello world",
+      "harden execute against shell injection",
+      "add a new builtin arity row",
+      "design a website",
+      "make docgen emit AI tasks",
+      "why is has_key returning 1",
+      "install a plugin",
+      "explain SQL joins"
+    ],
     "should_trigger": [
       "what tests should I run after changing Kujo runtime behavior",
       "run the release gate for Kujo",
@@ -178,523 +972,61 @@
       "run cargo test and kujo dual runtime tests",
       "what should I run after changing Kujo AI replay behavior",
       "run scripts/enterprise_verify.sh --full before AI-native release"
-    ],
-    "should_not_trigger": [
-      "write a simple Kujo hello world",
-      "harden execute against shell injection",
-      "add a new builtin arity row",
-      "design a website",
-      "make docgen emit AI tasks",
-      "why is has_key returning 1",
-      "install a plugin",
-      "explain SQL joins"
     ]
   },
-  "kujo-runtime-parity": {
-    "should_trigger": [
-      "why is vm and interpreter giving different results",
-      "add parity tests for this new match behavior",
-      "should this use kujo test --runtime dual or vm",
-      "stop docs from recommending --interpreter by default",
-      "debug a runtime path divergence in Kujo",
-      "update the VM interpreter parity matrix",
-      "is interpreter fallback appropriate here",
-      "VM passes but interpreter fails for closures"
-    ],
+  "kujo-tool-building": {
     "should_not_trigger": [
-      "what --allow flag gates network",
-      "make JSON output stable",
-      "write a CI policy report",
-      "create a new image",
-      "explain Go interfaces",
-      "install Rust",
-      "review docs typos only",
-      "parse a CSV in Python"
+      "change the Rust parser internals",
+      "audit native API shell permissions",
+      "make docgen JSON shape stable",
+      "why is the interpreter different from VM",
+      "install Kujo from source",
+      "write a one-off JavaScript CLI",
+      "review this PR like a maintainer",
+      "generate a PowerPoint deck"
+    ],
+    "should_trigger": [
+      "build me a kujo script that reads a json policy and exits nonzero if it fails",
+      "make a Kujo repo scanner that outputs a machine readable report",
+      "how do I pass --help to my kujo script instead of the kujo CLI",
+      "write a quality gate in kujo using args()",
+      "create a small kujo tool with deterministic pass fail output",
+      "my kujo CLI script should validate a config file and return exit 1 on policy failure",
+      "make a kujo automation script that prints JSON for CI",
+      "kujo script arg parsing pls, I keep colliding with flags"
     ]
   },
-  "kujo-runledger-workflows": {
-    "should_trigger": [
-      "record this Codex run in RunLedger before we start",
-      "compare Claude Codex and DeepSeek attempts with runledger report",
-      "what runledger commands should I use to capture token usage and cost",
-      "finish this runledger receipt as partial with a verdict",
-      "show me the .runledger JSON for this agent build attempt",
-      "update RunLedger CLI behavior without breaking exit codes",
-      "generate a RunLedger markdown report for this task",
-      "add a followup note to a runledger run id"
-    ],
-    "should_not_trigger": [
-      "write a generic Kujo CLI tool from scratch",
-      "set up Muzzle workflows for noisy logs",
-      "debug VM interpreter parity",
-      "explain Kujo dictionary truthiness",
-      "run cargo test for the main Kujo repo",
-      "create a browser dashboard",
-      "review native API security boundaries",
-      "make a spreadsheet from cost data"
-    ]
-  },
-  "kujo-changebucket-workflows": {
-    "should_trigger": [
-      "run changebucket to measure this agent change footprint",
-      "enforce a ChangeBucket budget with max files and churn",
-      "generate a CHANGE_BUCKET markdown report for this repo",
-      "what does changebucket --json output look like",
-      "did this PR touch dependency manifests lockfiles or generated files",
-      "compare my branch against main with changebucket --base main --head HEAD",
-      "update ChangeBucket CLI behavior without breaking exit codes",
-      "explain the ChangeBucket risk level for this worktree"
-    ],
-    "should_not_trigger": [
-      "record this agent run in RunLedger",
-      "summarize what the diff means semantically",
-      "set up Muzzle workflows for noisy logs",
-      "write a generic Kujo CLI tool from scratch",
-      "debug VM interpreter parity",
-      "review native API security boundaries",
-      "make a spreadsheet from cost data",
-      "generate a browser dashboard"
-    ]
-  },
-  "kujo-eval-workflows": {
-    "should_trigger": [
-      "run this eval.json suite and inspect the generated artifacts",
-      "create a Kujo Eval release gate for this CLI output",
-      "why did kujo run main.kujo run fail this snapshot check",
-      "add a new Eval check type without breaking schema docs",
-      "generate an Eval HTML report and verify artifact-manifest checksums",
-      "use policy-explain to debug my Eval strict-ci policy",
-      "compare two Eval last_run.json files for regressions",
-      "update Eval command inventory after changing report flags"
-    ],
-    "should_not_trigger": [
-      "record model token usage and cost for this attempt",
-      "set up Muzzle quiet workflows for noisy test logs",
-      "write a generic Kujo policy scanner from scratch",
-      "debug VM interpreter parity in the core runtime",
-      "review native API capability boundaries",
-      "make kujo docgen output more agent readable",
-      "create a PowerPoint release status deck",
-      "explain JavaScript snapshot testing"
-    ]
-  },
-  "kujo-spec-workflows": {
-    "should_trigger": [
-      "create a .spec.yml contract for this feature before implementation",
-      "validate all Spec files in this repo with spec ci --format json",
-      "export this spec as agent context for a coding agent",
-      "generate an eval suite from spec eval_requirements",
-      "update the Spec schema without breaking export envelope metadata",
-      "why is spec init --from template loading a home template in CI",
-      "render the dark-mode.spec.yml to markdown",
-      "add tests for SPEC_SAFE_WRITE path restrictions in the Spec CLI"
-    ],
-    "should_not_trigger": [
-      "run this eval.json suite and inspect snapshots",
-      "record this agent attempt in RunLedger",
-      "set up Muzzle quiet workflow logs",
-      "debug VM interpreter parity in Kujo",
-      "write a generic Kujo policy scanner",
-      "make kujo docgen output public docs JSON",
-      "review native API security boundaries",
-      "create a browser dashboard"
-    ]
-  },
-  "kujo-packwrite-workflows": {
-    "should_trigger": [
-      "generate an agent pack from MEGA_PROMPT.md with PackWrite",
-      "run packwrite doctor before spending a model call",
-      "validate the generated agent/ pack and print the codex review prompt",
-      "configure packwrite.toml for deepseek-v4-pro with a custom output dir",
-      "use PACKWRITE_FAKE_RESPONSE_FILE to test packwrite init offline",
-      "why did PackWrite reject this model JSON manifest path",
-      "update PackWrite CLI behavior without breaking prompt output",
-      "compare two PackWrite outputs by generating separate agent directories"
-    ],
-    "should_not_trigger": [
-      "record token usage and cost for this attempt in RunLedger",
-      "set up Muzzle quiet workflow logs",
-      "measure this PR footprint with ChangeBucket",
-      "create a .spec.yml task contract",
-      "run this eval.json snapshot suite",
-      "debug VM interpreter parity in Kujo",
-      "make kujo docgen output public docs JSON",
-      "create a browser dashboard"
-    ]
-  },
-  "kujo-language-implementation": {
-    "should_trigger": [
-      "add a new native filesystem helper",
-      "fix parser diagnostics for malformed imports",
-      "change VM bytecode handling for dictionary indexing",
-      "update lexer limits for string literals",
-      "modify the module loader path security",
-      "centralize CLI output rendering in Rust",
-      "move JIT unsafe function pointer invocation",
-      "contribute to Kujo compiler semantics without breaking runtime"
-    ],
-    "should_not_trigger": [
-      "write a small Kujo user script",
-      "run this tool with --untrusted",
-      "make a policy JSON output",
-      "review as strict maintainer",
-      "create a spreadsheet",
-      "explain TypeScript decorators",
-      "use kujo docgen from CLI",
-      "draft publication notes"
-    ]
-  },
-  "kujo-docgen-agent-readable": {
-    "should_trigger": [
-      "make kujo docgen output more agent readable",
-      "work with DocsGen in the Kujo programming language",
-      "add a field to docgen --json summary",
-      "fix docgen gaps JSON for AI tasks",
-      "how does kujo docgen scan without executing code",
-      "update public-only documentation gates",
-      "keep README and generated docs aligned",
-      "docgen should validate external links safely",
-      "emit ai tasks from kujo docgen",
-      "update Kujo DocsGen adapter extraction rules"
-    ],
-    "should_not_trigger": [
-      "write a Kujo for loop",
-      "run untrusted shell commands",
-      "debug VM interpreter parity",
-      "add a database builtin",
-      "review a PR generally",
-      "make a slide deck",
-      "explain cargo install",
-      "fix a React routing bug"
-    ]
-  },
-  "kujo-muzzle-workflows": {
-    "should_trigger": [
-      "set up Muzzle quiet workflows for noisy test logs",
-      "run muzzle run project-verify --json",
-      "preview a dangerous workflow with muzzle --dry-run",
-      "inspect Muzzle logs and reports after a failed workflow"
-    ],
-    "should_not_trigger": [
-      "capture a failing command with Casefile",
-      "record agent costs in RunLedger",
-      "scan architecture boundaries with Fence",
-      "build SSG pages"
-    ]
-  },
-  "kujo-casefile-workflows": {
-    "should_trigger": [
-      "capture this failing test with Casefile and show me the handoff",
-      "use casefile.kujo to package a local failure into .casefile evidence",
-      "how do I run casefile capture --from-log for a CI log",
-      "clean old .casefile bundles but dry-run it first"
-    ],
-    "should_not_trigger": [
-      "run Muzzle quiet workflows",
-      "render a Howl showcase card",
-      "debug VM interpreter parity",
-      "make docgen output more agent readable"
-    ]
-  },
-  "kujo-concord-workflows": {
-    "should_trigger": [
-      "run Concord scan and report artifact drift in this repo",
-      "check cli-docs drift with concord check cli-docs",
-      "turn Concord findings into task cards",
-      "fix Concord examples drift after changing CLI help",
-      "verify Concord detects package.json manifest drift for a Node repo"
-    ],
-    "should_not_trigger": [
-      "capture a failing command with Casefile",
-      "run ShipCheck release gate",
-      "write a generic Kujo JSON policy checker",
-      "debug browser screenshots with Lens"
-    ]
-  },
-  "kujo-dispatch-workflows": {
-    "should_trigger": [
-      "run a Dispatch demo workflow and inspect the trace artifacts",
-      "use dispatch.kujo templates --json to see workflow templates",
-      "resume a paused Dispatch run after the approval gate",
-      "debug Dispatch policy profile precedence for allow-tools and deny-tools",
-      "run a Dispatch workflow-file with input-json and the sample plugin",
-      "test Dispatch webhook sink events and throughput benchmark"
-    ],
-    "should_not_trigger": [
-      "run Muzzle quiet workflows for this repo",
-      "create a Howl showcase card",
-      "write a generic Kujo loop example",
-      "scan browser visual regressions with Lens"
-    ]
-  },
-  "kujo-fence-workflows": {
-    "should_trigger": [
-      "set up Fence in this repo with a starter fence.toml",
-      "run fence check and explain architecture-boundary violations",
-      "use fence.kujo graph --format mermaid",
-      "create a fence baseline for this legacy repo"
-    ],
-    "should_not_trigger": [
-      "run Lens against localhost",
-      "capture a failing CLI command with Casefile",
-      "run ShipCheck release gate",
-      "debug VM interpreter parity"
-    ]
-  },
-  "kujo-howl-workflows": {
-    "should_trigger": [
-      "create a Howl showcase card for this Kujo example",
-      "validate howl.json and render the SVG markdown html gallery",
-      "add a branded Howl social card with a local background image",
-      "use howl caption --platform x for this card",
-      "fix howl validate errors for referenced example files"
-    ],
-    "should_not_trigger": [
-      "generate a random social media image",
-      "run Muzzle workflows for tests",
-      "make docgen output more agent readable",
-      "summarize a PowerPoint deck"
-    ]
-  },
-  "kujo-lens-workflows": {
-    "should_trigger": [
-      "run Lens against my localhost app and read the agent repair brief",
-      "use lens check http://localhost:3000 with screenshots and json output",
-      "run lens check --quick for a fast agent repair profile",
-      "create a .lens.toml with accessibility and link checks enabled",
-      "write and validate a lens flow for the account modal"
-    ],
-    "should_not_trigger": [
-      "write a generic Playwright test suite",
-      "run Lighthouse performance audits only",
-      "capture a failing CLI log with Casefile",
-      "render a Howl showcase card"
-    ]
-  },
-  "kujo-mcp-workflows": {
-    "should_trigger": [
-      "generate a repo-specific MCP server with mcp make",
-      "run kujo run mcp.kujo --interpreter make ./repo --validate",
-      "review generated .mcp artifacts and mcp.manifest.json safety tiers",
-      "harden mcp-server.json auth host and rate limit settings"
-    ],
-    "should_not_trigger": [
-      "write a generic Kujo for loop",
-      "run Muzzle quiet workflows",
-      "change VM bytecode dispatch",
-      "make a PowerPoint deck"
-    ]
-  },
-  "kujo-patchbrief-workflows": {
-    "should_trigger": [
-      "run PatchBrief summarize on my current git diff",
-      "generate a PatchBrief handoff note for the next agent",
-      "use patchbrief.kujo suggest-tests before I open this PR",
-      "update PatchBrief JSON handoff fields and tests",
-      "validate the patchbrief summary JSON schema contract"
-    ],
-    "should_not_trigger": [
-      "build a generic git diff summarizer from scratch",
-      "run Muzzle quiet workflows for build logs",
-      "capture a failing command with Casefile",
-      "create a Scent context pack"
-    ]
-  },
-  "kujo-rag-workflows": {
-    "should_trigger": [
-      "use Kujo RAG to ingest this docs folder and answer with citations",
-      "run kujo run main.kujo --interpreter ingest then query the local index",
-      "start the Kujo RAG API server and smoke test health query",
-      "debug weak retrieval ranking in src/retrieval.kujo"
-    ],
-    "should_not_trigger": [
-      "write a generic Kujo JSON policy checker",
-      "run Scout and summarize llms.txt",
-      "create a Scent context pack",
-      "render a Howl showcase card"
-    ]
-  },
-  "kujo-scent-workflows": {
-    "should_trigger": [
-      "use scent to package this repo for a downstream codex review",
-      "run scent pack dry-run json before handing this task off",
-      "review redactions.json from a generated scent pack",
-      "focus a Scent pack on staged and unstaged changes"
-    ],
-    "should_not_trigger": [
-      "set up muzzle workflows for quiet build logs",
-      "write a generic Kujo for loop",
-      "debug VM interpreter parity",
-      "create a PowerPoint deck"
-    ]
-  },
-  "kujo-scout-workflows": {
-    "should_trigger": [
-      "run Scout on this repo and summarize the generated context pack",
-      "use kujo run scout.kujo to create llms.txt and AGENTS.md",
-      "fix scout security export sarif schema validation",
-      "refresh Scout golden snapshots after output changes"
-    ],
-    "should_not_trigger": [
-      "build a generic repo scanner from scratch in Kujo",
-      "run Muzzle workflow logs",
-      "create a Casefile evidence bundle",
-      "debug VM interpreter parity"
-    ]
-  },
-  "kujo-shipcheck-workflows": {
-    "should_trigger": [
-      "run ShipCheck on this repo and tell me whether the release gate passes",
-      "use shipcheck.kujo scan --format json for this local checkout",
-      "generate a ShipCheck checklist before tagging this Kujo release",
-      "wire ShipCheck gate into CI and explain its exit code behavior",
-      "check whether shipcheck-report.schema.json matches gate --format json"
-    ],
-    "should_not_trigger": [
-      "run the generic Kujo release gate for the compiler",
-      "create a Muzzle quiet workflow",
-      "capture a failing test with Casefile",
-      "render a Howl showcase card"
-    ]
-  },
-  "kujo-maintainer-review": {
-    "should_trigger": [
-      "review this change like a strict kujo maintainer",
-      "give me a Kujo maintainer review for this PR",
-      "is this patch safe to ship in Kujo",
-      "review for CLI contract and runtime parity risks",
-      "find missing tests and docs in this Kujo change",
-      "blocker review: native API security boundary change",
-      "strict review of this VM implementation diff",
-      "does this release-readiness update overclaim"
-    ],
-    "should_not_trigger": [
-      "write new Kujo code from scratch",
-      "explain how args() works",
-      "run release gate commands only",
-      "create a JSON policy tool",
-      "make docgen output",
-      "generate an image",
-      "summarize standard library functions",
-      "debug a CSS layout"
-    ]
-  },
-  "kujo-agents-sdk-workflows": {
-    "should_trigger": [
-      "update Agents SDK approval tool execution contracts",
-      "run examples_smoke_runner for agents-sdk offline fixtures",
-      "fix agent handoff tracing tests",
-      "maintain artifact store contract tests",
-      "add MCP 2026 request helpers to Agents SDK integration adapters"
-    ],
+  "kujo-tribunal-workflows": {
     "should_not_trigger": [
       "run Dispatch workflow templates",
-      "configure AI Chat provider profiles",
-      "scan browser visual regressions with Lens",
-      "write generic Kujo syntax examples"
+      "record a RunLedger receipt only",
+      "create a Spec task contract",
+      "summarize a normal chat transcript"
+    ],
+    "should_trigger": [
+      "run a Tribunal review with the fast-two-model panel",
+      "verify a signed Tribunal run with a trust policy",
+      "export a Tribunal decision bundle for handoff",
+      "update Tribunal schemas and release gates"
     ]
   },
-  "kujo-ai-chat-workflows": {
-    "should_trigger": [
-      "start AI Chat locally and run smoke tests",
-      "fix SSE thinking events in ai-chat",
-      "update bridge_chat.kujo provider fixture behavior",
-      "backup and vacuum the AI Chat SQLite database",
-      "preserve AI Chat streaming usage detail payloads",
-      "run the AI Chat benchmark runner for a saved pane profile",
-      "enable AI Chat browser_open and browser_snapshot tools with Playwright",
-      "configure AI Chat scheduled automations and local Codex profile",
-      "debug AI Chat context compaction for long conversations",
-      "verify AI Chat tool activity SSE events and weekly tool audit output"
-    ],
+  "kujo-versionseal-workflows": {
     "should_not_trigger": [
-      "maintain AI SDK provider retries only",
-      "run Watchdog proxy dashboard",
-      "create a static site with SSG",
-      "write a Spec task contract"
-    ]
-  },
-  "kujo-ai-sdk-workflows": {
-    "should_trigger": [
-      "fix AI SDK streaming callback contract",
-      "run ai-sdk security redaction tests",
-      "update provider presets and fixture mode",
-      "run live provider smoke with skip handling",
-      "use resolve_model_preference for provider-neutral model routing",
-      "preserve streaming usage telemetry in AI SDK include_usage responses",
-      "run AI SDK embeddings contract tests"
+      "rewrite the approved article",
+      "publish without a human decision"
     ],
-    "should_not_trigger": [
-      "open the AI Chat web UI",
-      "record an agent run with RunLedger",
-      "measure diff footprint with ChangeBucket",
-      "scan architecture boundaries with Fence"
-    ]
-  },
-  "kujo-cms-workflows": {
     "should_trigger": [
-      "start the Kujo CMS backend runtime",
-      "run cms_contract_tests.kujo",
-      "process CMS webhook outbox jobs",
-      "extend CMS content model routes",
-      "review CMS release gate evidence and branch protection gap",
-      "verify anonymous CMS reads only expose published entries",
-      "test CMS entry lock ownership and release behavior"
-    ],
-    "should_not_trigger": [
-      "run CRUD API smoke tests",
-      "build SSG output",
-      "configure AI Chat panes",
-      "generate a PackWrite agent pack"
-    ]
-  },
-  "kujo-crud-api-workflows": {
-    "should_trigger": [
-      "run CRUD API smoke tests",
-      "start main.kujo and verify health endpoint",
-      "build the CRUD API frontend playground",
-      "update item and project API handlers"
-    ],
-    "should_not_trigger": [
-      "extend CMS tenant workspaces",
-      "run AI Chat SSE smoke",
-      "build SSG pages",
-      "record agent costs in RunLedger"
-    ]
-  },
-  "kujo-kennel-workflows": {
-    "should_trigger": [
-      "validate Kennel package lockfile behavior",
-      "add a local package dependency with kennel",
-      "review Kennel trust policy enforcement",
-      "configure Kennel static index mirrors and local hosted registry",
-      "run Kennel release verification scripts"
-    ],
-    "should_not_trigger": [
-      "scan security findings with Scout",
-      "create a Spec contract",
-      "run AI SDK live smoke",
-      "capture Casefile evidence"
-    ]
-  },
-  "kujo-ssg-workflows": {
-    "should_trigger": [
-      "build the Kujo SSG starter site",
-      "validate generated SSG output",
-      "update templates and content in ssg",
-      "run the SSG parallel shard build for a large site",
-      "preserve the SSG native render fast path",
-      "build SSG custom collections with posts-at-root and llms output",
-      "run the SSG DocGen bridge and package the reusable docs starter"
-    ],
-    "should_not_trigger": [
-      "run CMS webhooks",
-      "test CRUD API frontend",
-      "open AI Chat local app",
-      "scan route security with Scout"
+      "Request and verify human approval for an exact package checksum",
+      "Use VersionSeal to revoke an expired publication approval"
     ]
   },
   "kujo-watchdog-workflows": {
+    "should_not_trigger": [
+      "run AI SDK provider contract tests",
+      "open CRUD API playground",
+      "create Eval suite reports",
+      "generate SSG feeds"
+    ],
     "should_trigger": [
       "start Watchdog dashboard server",
       "verify Watchdog proxy config endpoint",
@@ -704,43 +1036,37 @@
       "test Watchdog SQLite-backed rate limits and production token auth",
       "inspect Watchdog backup archive history and active backup files",
       "refresh Watchdog pricing catalog provenance for direct API estimates"
-    ],
-    "should_not_trigger": [
-      "run AI SDK provider contract tests",
-      "open CRUD API playground",
-      "create Eval suite reports",
-      "generate SSG feeds"
     ]
   },
-  "kujo-redact-workflows": {
-    "should_trigger": [
-      "sanitize this markdown with Redact and verify leakage",
-      "run redact.kujo pack with the external-safe policy",
-      "review .redact/runs audit artifacts without storing originals",
-      "update Redact policy YAML handling and tests"
-    ],
+  "kujo-way-development": {
     "should_not_trigger": [
-      "review Scent redactions.json from a context pack",
-      "debug Watchdog telemetry redaction",
-      "scan browser secrets with Lens",
-      "write a generic regex sanitizer in Python"
-    ]
-  },
-  "kujo-tribunal-workflows": {
-    "should_trigger": [
-      "run a Tribunal review with the fast-two-model panel",
-      "verify a signed Tribunal run with a trust policy",
-      "export a Tribunal decision bundle for handoff",
-      "update Tribunal schemas and release gates"
+      "explain only how let mut and const work in Kujo",
+      "build one small Kujo JSON policy CLI",
+      "add a bytecode opcode to the Kujo VM",
+      "audit only the shell capability flags in this Kujo script",
+      "run and inspect an existing Dispatch workflow",
+      "change one Agents SDK memory-store primitive",
+      "write a Python web scraper",
+      "draft marketing copy for the Kujo homepage"
     ],
-    "should_not_trigger": [
-      "run Dispatch workflow templates",
-      "record a RunLedger receipt only",
-      "create a Spec task contract",
-      "summarize a normal chat transcript"
+    "should_trigger": [
+      "build a complete Kujo agent project the Kujo way with deterministic offline tests",
+      "review this generated Kujo project for slop wrong ecosystem boundaries and missing proof",
+      "design a cross-repo Kujo feature that uses AI SDK and Agents SDK correctly",
+      "turn this rough AI-generated Kujo app into compact human and agent readable code",
+      "apply token-efficient Kujo development practices and an evidence-backed definition of done",
+      "start a Kujo-related project with explicit contracts security boundaries and validation",
+      "which Kujo ecosystem repository should own each part of this new agent workflow",
+      "build an AI-native Kujo workflow with bounded context approvals budgets and replay fixtures"
     ]
   },
   "kujo-workcell-workflows": {
+    "should_not_trigger": [
+      "run a generic Docker container manually",
+      "execute Relay bounded missions",
+      "capture a failed command with Casefile",
+      "scan architecture boundaries with Fence"
+    ],
     "should_trigger": [
       "initialize and validate a Workcell workcell.json",
       "run Workcell in Docker and inspect receipt.json",
@@ -748,622 +1074,646 @@
       "harden Workcell output path containment tests",
       "run Workcell Podman load evidence and egress deployment contracts",
       "verify Workcell untracked file patch generation"
-    ],
-    "should_not_trigger": [
-      "run a generic Docker container manually",
-      "execute Relay bounded missions",
-      "capture a failed command with Casefile",
-      "scan architecture boundaries with Fence"
-    ]
-  },
-  "kujo-relay-workflows": {
-    "should_trigger": [
-      "run Relay doctor and agents validate in fixture mode",
-      "execute a Relay mission with PackWrite RunLedger ChangeBucket Eval evidence",
-      "inspect Relay runs events with cursor metadata",
-      "repair a failed Relay mission within bounded attempts",
-      "run a Relay mission with provider-generated tool planning",
-      "verify Relay tool-result bundles and mission token budgets"
-    ],
-    "should_not_trigger": [
-      "run Dispatch approval workflow files",
-      "start Watchdog dashboard only",
-      "build an Agents SDK example directly",
-      "make a Scent context pack"
-    ]
-  },
-  "kujo-site-kit-workflows": {
-    "should_trigger": [
-      "run canonical SiteKit launch proof with Workcell no-pull",
-      "build SiteKit dist and run component validation",
-      "add a SiteKit component schema template and CSS",
-      "update SiteKit tokens without raw hex colors",
-      "smoke test SiteKit consumer dashboard behavior"
-    ],
-    "should_not_trigger": [
-      "build an SSG content site",
-      "run Lens visual QA only",
-      "create a random landing page design",
-      "debug CMS content routes"
-    ]
-  },
-  "kujo-sitekit-workflows": {
-    "should_trigger": [
-      "build SiteKit dist and run component validation",
-      "add a SiteKit component schema template and CSS",
-      "update SiteKit tokens without raw hex colors",
-      "smoke test SiteKit consumer dashboard behavior",
-      "use the older SiteKit skill alias for compatibility"
-    ],
-    "should_not_trigger": [
-      "build an SSG content site",
-      "run Lens visual QA only",
-      "create a random landing page design",
-      "debug CMS content routes"
-    ]
-  },
-  "kujo-benchmarks-capsule-workflows": {
-    "should_trigger": [
-      "make a stable Capsule for this fixture project",
-      "validate capsule.json and inspect capsule.md",
-      "compare Capsule benchmark evidence after a model run",
-      "fix benchmarks-capsule stable output determinism"
-    ],
-    "should_not_trigger": [
-      "create a Scent context pack",
-      "run Scout repo intelligence",
-      "record a RunLedger receipt",
-      "benchmark Kujo runtime performance generally"
-    ]
-  },
-  "kujo-skill-auditor": {
-    "should_trigger": [
-      "do my weekly Kujo skills audit",
-      "update stale SKILL.md files for the Kujo tools",
-      "review the Kujo skills pack against current tool repo behavior",
-      "refresh SKILLS_INDEX and trigger fixtures after tool changes"
-    ],
-    "should_not_trigger": [
-      "write a new Kujo CLI tool",
-      "run Watchdog dashboard server",
-      "debug VM interpreter parity",
-      "create a Spec task contract"
-    ]
-  },
-  "kujo-readiness-auditor": {
-    "should_trigger": [
-      "run the monthly Kujo readiness audit",
-      "audit readiness posture across the Kujo tool repos",
-      "summarize stale release evidence and production gaps",
-      "check ShipCheck Fence Eval Concord evidence for readiness"
-    ],
-    "should_not_trigger": [
-      "refresh generated public docs only",
-      "triage Dependabot alerts",
-      "write a new Kujo parser feature",
-      "start Watchdog dashboard"
-    ]
-  },
-  "kujo-docs-drift-auditor": {
-    "should_trigger": [
-      "audit Kujo docs drift after CLI changes",
-      "find README and reference mismatches against source",
-      "check generated docs and DocGen gaps for staleness",
-      "turn Concord docs drift into precise fixes"
-    ],
-    "should_not_trigger": [
-      "run the release gate before tagging",
-      "triage security dependency alerts",
-      "write a generic Kujo script",
-      "record model token usage"
-    ]
-  },
-  "kujo-release-gate-runner": {
-    "should_trigger": [
-      "run Kujo release gates before tagging",
-      "collect pre-release blocker evidence without publishing",
-      "run ShipCheck Eval Fence ChangeBucket and DocGen gates",
-      "summarize release gate blockers and artifacts"
-    ],
-    "should_not_trigger": [
-      "audit docs drift only",
-      "normalize backlog tasks from existing findings",
-      "run weekly cross-repo dogfood",
-      "build SSG output"
-    ]
-  },
-  "kujo-ecosystem-launch": {
-    "should_trigger": [
-      "release these new Kujo tools, tag them, and add their pages, dither heroes, Howl cards, SEO metadata, and live deployment to Kujolang.ai",
-      "ship the new Kujo workflows to GitHub and synchronize the workflow catalog, counts, social cards, sitemap, RSS, and llms.txt",
-      "launch this new Kujo agent team with a repository release, team pages, portraits, navigation, browser QA, and production verification",
-      "run the complete Kujo release-to-site pipeline with clean-install proof, ShipCheck, GitHub release, web audit, and launch receipt"
-    ],
-    "should_not_trigger": [
-      "run ShipCheck without publishing anything",
-      "generate one standalone dither image",
-      "audit an existing website without a Kujo release",
-      "fix one failing unit test and stop"
-    ]
-  },
-  "kujo-cross-repo-dogfood-runner": {
-    "should_trigger": [
-      "run the weekly cross-repo Kujo dogfood pass",
-      "collect multi-repo dogfood evidence across Kujo tools",
-      "run recurring ecosystem checks with Concord Fence Scout",
-      "summarize cross-repo dogfood failures and handoffs"
-    ],
-    "should_not_trigger": [
-      "audit one repo's docs drift only",
-      "triage Dependabot alerts only",
-      "create a local AI Chat provider profile",
-      "debug VM interpreter parity"
-    ]
-  },
-  "kujo-backlog-normalizer": {
-    "should_trigger": [
-      "normalize these Kujo audit findings into fix-ready tasks",
-      "turn DocGen gaps and release blockers into backlog items",
-      "deduplicate security triage findings into tasks",
-      "create owner-ready backlog from readiness evidence"
-    ],
-    "should_not_trigger": [
-      "run the initial release gate",
-      "refresh generated docs",
-      "run Fence architecture check",
-      "write a new standard library builtin"
-    ]
-  },
-  "kujo-docgen-public-docs-refresh": {
-    "should_trigger": [
-      "refresh Kujo public docs with docgen",
-      "regenerate DocGen public docs and gap outputs",
-      "update agent-readable DocGen JSON after docs drift",
-      "validate README reference alignment after kujo docgen"
-    ],
-    "should_not_trigger": [
-      "audit readiness across all repos",
-      "triage Dependabot security alerts",
-      "run cross-repo dogfood only",
-      "create a PowerPoint deck"
-    ]
-  },
-  "kujo-loop-engineering-workflows": {
-    "should_trigger": [
-      "initialize a bounded loop-engineering task in this repository",
-      "run a loop-engineering checklist and capture structured blockers",
-      "use run-workflow.sh --config for this local engineering task",
-      "classify this markdown checklist into local and external work"
-    ],
-    "should_not_trigger": [
-      "write a simple one-file Kujo script",
-      "run a release gate before tagging",
-      "create a visual-regression baseline",
-      "summarize a Git diff without executing a workflow"
-    ]
-  },
-  "kujo-dependabot-alert-triage": {
-    "should_trigger": [
-      "do the weekly Dependabot alert triage for Kujo repos",
-      "summarize GitHub security alerts and patched versions",
-      "turn dependency vulnerability alerts into fix-ready tasks",
-      "review Dependabot PR state across in-scope Kujo repos"
-    ],
-    "should_not_trigger": [
-      "refresh DocGen public docs",
-      "run release gates before tagging",
-      "audit skill trigger routing",
-      "build CRUD API frontend"
-    ]
-  },
-  "webops-site-profile": {
-    "should_trigger": [
-      "Use webops-site-profile for configuring or validating a portable WebOps site profile, repository binding, integration references, permission default, or site identity",
-      "I need help configuring or validating a portable WebOps site profile, repository binding, integration references, permission default, or site identity"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-capability-preflight": {
-    "should_trigger": [
-      "Use webops-capability-preflight for checking which WebOps website, repository, browser, search, analytics, performance, backlink, keyword, publishing, distribution, or submission capabilities are available",
-      "I need help checking which WebOps website, repository, browser, search, analytics, performance, backlink, keyword, publishing, distribution, or submission capabilities are available"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-longitudinal-findings": {
-    "should_trigger": [
-      "Use webops-longitudinal-findings for creating, comparing, or updating stable WebOps findings, recommendations, actions, outcomes, and recurring-run history",
-      "I need help creating, comparing, or updating stable WebOps findings, recommendations, actions, outcomes, and recurring-run history"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "kujo-siteprobe-workflows": {
-    "should_trigger": [
-      "Use kujo-siteprobe-workflows for running, validating, verifying, comparing, reporting, or integrating SiteProbe website-intelligence crawls and signed `.siteprobe` artifacts",
-      "I need help running a deterministic SiteProbe crawl with verify validate compare and fail-on warning"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "kujo-searchbridge-workflows": {
-    "should_trigger": [
-      "Use kujo-searchbridge-workflows for running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, batch reads, evidence-query, signed adapters, replay/cache, telemetry, or explicit ACT submission",
-      "I need help running SearchBridge evidence-query over JSONL and batch fixture provider reads"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "kujo-contentgraph-workflows": {
-    "should_trigger": [
-      "Use kujo-contentgraph-workflows for building, inspecting, comparing, explaining, analyzing, exporting, or consuming deterministic ContentGraph artifacts",
-      "I need help building an incremental ContentGraph run and exporting GraphML or SARIF"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-technical-seo": {
-    "should_trigger": [
-      "Use webops-technical-seo for performing a deterministic technical SEO audit from crawl evidence",
-      "I need help performing a deterministic technical SEO audit from crawl evidence"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-search-performance": {
-    "should_trigger": [
-      "Use webops-search-performance for analyzing longitudinal measured search performance",
-      "I need help analyzing longitudinal measured search performance"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-indexation": {
-    "should_trigger": [
-      "Use webops-indexation for auditing crawlability, local indexability, and confirmed provider index state",
-      "I need help auditing crawlability, local indexability, and confirmed provider index state"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-keyword-opportunity": {
-    "should_trigger": [
-      "Use webops-keyword-opportunity for finding query opportunities while separating measurement, estimates, and public research",
-      "I need help finding query opportunities while separating measurement, estimates, and public research"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-ai-search-visibility": {
-    "should_trigger": [
-      "Use webops-ai-search-visibility for running repeatable AI/search visibility benchmark suites",
-      "I need help running repeatable AI/search visibility benchmark suites"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-content-gap": {
-    "should_trigger": [
-      "Use webops-content-gap for classifying site coverage against audience/search needs",
-      "I need help classifying site coverage against audience/search needs"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-content-decay": {
-    "should_trigger": [
-      "Use webops-content-decay for identifying content deterioration or staleness without conflating age and decline",
-      "I need help identifying content deterioration or staleness without conflating age and decline"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-internal-linking": {
-    "should_trigger": [
-      "Use webops-internal-linking for analyzing, proposing, or explicitly applying contextual internal links",
-      "I need help analyzing, proposing, or explicitly applying contextual internal links"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-content-accuracy": {
-    "should_trigger": [
-      "Use webops-content-accuracy for reviewing website claims for outdated or invalid guidance",
-      "I need help reviewing website claims for outdated or invalid guidance"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-cannibalization": {
-    "should_trigger": [
-      "Use webops-cannibalization for identifying likely intent competition while separating normal overlap",
-      "I need help identifying likely intent competition while separating normal overlap"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-content-portfolio": {
-    "should_trigger": [
-      "Use webops-content-portfolio for assigning longitudinal content portfolio states",
-      "I need help assigning longitudinal content portfolio states"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-content-pruning": {
-    "should_trigger": [
-      "Use webops-content-pruning for reviewing obsolete or redundant content for keep, refresh, merge, redirect, or retire proposals",
-      "I need help reviewing obsolete or redundant content for keep, refresh, merge, redirect, or retire proposals"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-information-architecture": {
-    "should_trigger": [
-      "Use webops-information-architecture for auditing site navigation, hierarchy, taxonomy, URLs, depth, clusters, and discoverability",
-      "I need help auditing site navigation, hierarchy, taxonomy, URLs, depth, clusters, and discoverability"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-schema-and-metadata": {
-    "should_trigger": [
-      "Use webops-schema-and-metadata for auditing structured data and page/social metadata",
-      "I need help auditing structured data and page/social metadata"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-web-performance": {
-    "should_trigger": [
-      "Use webops-web-performance for analyzing lab and field website performance as distinct evidence classes",
-      "I need help analyzing lab and field website performance as distinct evidence classes"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-accessibility-review": {
-    "should_trigger": [
-      "Use webops-accessibility-review for running repeatable automated accessibility review with explicit manual gaps",
-      "I need help running repeatable automated accessibility review with explicit manual gaps"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-link-health": {
-    "should_trigger": [
-      "Use webops-link-health for auditing broken, redirected, malformed, or unexpected links",
-      "I need help auditing broken, redirected, malformed, or unexpected links"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-competitor-intelligence": {
-    "should_trigger": [
-      "Use webops-competitor-intelligence for monitoring selected public competitors or peers for meaningful change",
-      "I need help monitoring selected public competitors or peers for meaningful change"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-backlink-and-mention-analysis": {
-    "should_trigger": [
-      "Use webops-backlink-and-mention-analysis for analyzing new/lost backlinks, linked and unlinked mentions, and evidence-backed link concerns",
-      "I need help analyzing new/lost backlinks, linked and unlinked mentions, and evidence-backed link concerns"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-search-standards-watch": {
-    "should_trigger": [
-      "Use webops-search-standards-watch for monitoring authoritative search, indexing, structured-data, analytics, browser, AI-search, and web-standard changes",
-      "I need help monitoring authoritative search, indexing, structured-data, analytics, browser, AI-search, and web-standard changes"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-search-submission": {
-    "should_trigger": [
-      "Use webops-search-submission for preflighting or performing explicit ACT search submission through supported providers",
-      "I need help preflighting or performing explicit ACT search submission through supported providers"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-analytics-analysis": {
-    "should_trigger": [
-      "Use webops-analytics-analysis for analyzing real website behavior from normalized analytics evidence",
-      "I need help analyzing real website behavior from normalized analytics evidence"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "webops-distribution": {
-    "should_trigger": [
-      "Use webops-distribution for creating source-grounded distribution assets and optionally publishing with ACT authority",
-      "I need help creating source-grounded distribution assets and optionally publishing with ACT authority"
-    ],
-    "should_not_trigger": [
-      "write a generic Python hello world",
-      "summarize an unrelated PDF"
-    ]
-  },
-  "kujo-publishing-house-workflows": {
-    "should_trigger": [
-      "Install and run the complete Publishing House workflow suite",
-      "Use kujo-publishing-house-workflows to resume an approval and publication run"
-    ],
-    "should_not_trigger": [
-      "review one paragraph for grammar",
-      "summarize an unrelated PDF"
     ]
   },
   "publishing-house-profile-setup": {
-    "should_trigger": [
-      "Create portable House, Brand, and Audience profiles for Publishing House",
-      "Use publishing-house-profile-setup to validate our approval roles and permission defaults"
-    ],
     "should_not_trigger": [
       "publish this already approved article",
       "run a generic Python formatter"
+    ],
+    "should_trigger": [
+      "Create portable House, Brand, and Audience profiles for Publishing House",
+      "Use publishing-house-profile-setup to validate our approval roles and permission defaults"
     ]
   },
   "publishing-house-quality-calibration": {
-    "should_trigger": [
-      "Run the blind Publishing House premium quality calibration corpus",
-      "Use publishing-house-quality-calibration to review a new A/B fixture"
-    ],
     "should_not_trigger": [
       "approve this package for publication",
       "calculate an arithmetic average"
+    ],
+    "should_trigger": [
+      "Run the blind Publishing House premium quality calibration corpus",
+      "Use publishing-house-quality-calibration to review a new A/B fixture"
     ]
   },
-  "kujo-storydesk-workflows": {
-    "should_trigger": [
-      "Use StoryDesk to create a commission and assignment handoff",
-      "Inspect the StoryDesk review queue and generate a resumable packet"
-    ],
-    "should_not_trigger": [
-      "verify factual claims in Dossier",
-      "publish an approved package"
-    ]
-  },
-  "kujo-dossier-workflows": {
-    "should_trigger": [
-      "Use Dossier to attach captured evidence and classify a material claim",
-      "Build an evidence packet with conflicts, consent, rights, and freshness"
-    ],
-    "should_not_trigger": [
-      "freeze an exact artifact package",
-      "write a generic press release"
-    ]
-  },
-  "kujo-galleypack-workflows": {
-    "should_trigger": [
-      "Use GalleyPack to build and freeze a checksum-bound editorial package",
-      "Compare two GalleyPack versions and detect artifact drift"
-    ],
-    "should_not_trigger": [
-      "grant human approval",
-      "measure post-publication audience response"
-    ]
-  },
-  "kujo-bluepencil-workflows": {
-    "should_trigger": [
-      "Run a BluePencil eight-dimension editorial review",
-      "Use BluePencil to preserve reviewer disagreement and calibration evidence"
-    ],
-    "should_not_trigger": [
-      "schedule a live publication",
-      "record a new editorial idea"
-    ]
-  },
-  "kujo-versionseal-workflows": {
-    "should_trigger": [
-      "Request and verify human approval for an exact package checksum",
-      "Use VersionSeal to revoke an expired publication approval"
-    ],
-    "should_not_trigger": [
-      "rewrite the approved article",
-      "publish without a human decision"
-    ]
-  },
-  "kujo-presswire-workflows": {
-    "should_trigger": [
-      "Preflight and publish an exact VersionSeal-approved package with PressWire",
-      "Use PressWire to record a bounded correction and publication receipt"
-    ],
-    "should_not_trigger": [
-      "approve this package on my behalf",
-      "infer audience impact from a provider response"
-    ]
-  },
-  "kujo-readersignal-workflows": {
-    "should_trigger": [
-      "Use ReaderSignal to compare privacy-bounded publication measurements",
-      "Create an evidence-linked learning and follow-up recommendation"
-    ],
-    "should_not_trigger": [
-      "claim the article caused revenue growth",
-      "schedule a newsletter send"
-    ]
-  },
-  "kujo-assetworks-workflows": {
-    "should_trigger": [
-      "Use AssetWorks to plan and validate a media asset with captions and provenance",
-      "Create a checksum-backed accessibility-aware AssetWorks manifest"
-    ],
-    "should_not_trigger": [
-      "grant image rights automatically",
-      "approve the final publication"
-    ]
-  },
-  "webops-reporting": {
-    "should_trigger": [
-      "Use webops-reporting for synthesizing validated specialist evidence into quiet WebOps reports",
-      "I need help synthesizing validated specialist evidence into quiet WebOps reports"
-    ],
+  "videoops-actionable-fix-writing": {
     "should_not_trigger": [
       "write a generic Python hello world",
       "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-actionable-fix-writing for writing schema-valid timestamped repairs from validated defects",
+      "I need help writing schema-valid timestamped repairs from validated defects"
+    ]
+  },
+  "videoops-approval-decision": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-approval-decision for producing deterministic VideoOps PASS or FAIL from defect evidence",
+      "I need help producing deterministic VideoOps PASS or FAIL from defect evidence"
+    ]
+  },
+  "videoops-asset-manifest-maintenance": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-asset-manifest-maintenance for maintaining schema-valid asset records and shot mappings",
+      "I need help maintaining schema-valid asset records and shot mappings"
+    ]
+  },
+  "videoops-asset-requirement-specification": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-asset-requirement-specification for translating approved shots into precise asset requirements",
+      "I need help translating approved shots into precise asset requirements"
+    ]
+  },
+  "videoops-asset-rights-triage": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-asset-rights-triage for classifying media as approved, reference-only, blocked, or pending",
+      "I need help classifying media as approved, reference-only, blocked, or pending"
+    ]
+  },
+  "videoops-audio-sync": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-audio-sync for synchronizing voice, SFX, music, and silence to planned beats",
+      "I need help synchronizing voice, SFX, music, and silence to planned beats"
+    ]
+  },
+  "videoops-audio-visual-review": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-audio-visual-review for checking speech clarity, synchronization, impact timing, music, and silence",
+      "I need help checking speech clarity, synchronization, impact timing, music, and silence"
+    ]
+  },
+  "videoops-brand-style-translation": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-brand-style-translation for turning Kujo brand and motion principles into media-generation direction",
+      "I need help turning Kujo brand and motion principles into media-generation direction"
+    ]
+  },
+  "videoops-first-party-asset-discovery": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-first-party-asset-discovery for searching project and Kujo sources before external video research",
+      "I need help searching project and Kujo sources before external video research"
+    ]
+  },
+  "videoops-fix-list-application": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-fix-list-application for applying Critic issues with one outcome per item",
+      "I need help applying Critic issues with one outcome per item"
+    ]
+  },
+  "videoops-generated-asset-manifesting": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-generated-asset-manifesting for registering generated assets with complete provenance and shot mapping",
+      "I need help registering generated assets with complete provenance and shot mapping"
+    ]
+  },
+  "videoops-generated-motion-production": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-generated-motion-production for creating a short purpose-built motion asset or loop",
+      "I need help creating a short purpose-built motion asset or loop"
+    ]
+  },
+  "videoops-generated-still-production": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-generated-still-production for creating a project-specific still for an explicit GENERATE item",
+      "I need help creating a project-specific still for an explicit GENERATE item"
+    ]
+  },
+  "videoops-generation-handoff": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-generation-handoff for writing exact generation requests for unresolved custom media",
+      "I need help writing exact generation requests for unresolved custom media"
+    ]
+  },
+  "videoops-generation-variant-selection": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-generation-variant-selection for selecting among materially different generated media variants",
+      "I need help selecting among materially different generated media variants"
+    ]
+  },
+  "videoops-hyperframes-project-bootstrap": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-hyperframes-project-bootstrap for creating a composition with current HyperFrames conventions",
+      "I need help creating a composition with current HyperFrames conventions"
+    ]
+  },
+  "videoops-kinetic-typography": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-kinetic-typography for implementing readable motion typography in HyperFrames",
+      "I need help implementing readable motion typography in HyperFrames"
+    ]
+  },
+  "videoops-lens-product-capture": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-lens-product-capture for capturing first-party terminal, UI, site, or product evidence for a planned shot",
+      "I need help capturing first-party terminal, UI, site, or product evidence for a planned shot"
+    ]
+  },
+  "videoops-licensed-media-research": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-licensed-media-research for researching external media with documented reuse rights",
+      "I need help researching external media with documented reuse rights"
+    ]
+  },
+  "videoops-media-compositing": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-media-compositing for placing and trimming approved image, video, GIF-derived, and audio assets",
+      "I need help placing and trimming approved image, video, GIF-derived, and audio assets"
+    ]
+  },
+  "videoops-media-normalization": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-media-normalization for inspecting, trimming, and transcoding approved source media while preserving originals",
+      "I need help inspecting, trimming, and transcoding approved source media while preserving originals"
+    ]
+  },
+  "videoops-motion-quality-review": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-motion-quality-review for reviewing transitions, easing, distortion, compositing, and effect use",
+      "I need help reviewing transitions, easing, distortion, compositing, and effect use"
+    ]
+  },
+  "videoops-pacing-analysis": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-pacing-analysis for finding dead space, unreadable micro-cuts, uniform rhythm, and weak semantic timing",
+      "I need help finding dead space, unreadable micro-cuts, uniform rhythm, and weak semantic timing"
+    ]
+  },
+  "videoops-platform-duration-planning": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-platform-duration-planning for enforcing project video dimensions, FPS, and duration",
+      "I need help enforcing project video dimensions, FPS, and duration"
+    ]
+  },
+  "videoops-render-validation": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-render-validation for rendering and deterministically inspecting a HyperFrames output",
+      "I need help rendering and deterministically inspecting a HyperFrames output"
+    ]
+  },
+  "videoops-shader-and-transition-selection": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-shader-and-transition-selection for using effects selectively at meaningful video beats",
+      "I need help using effects selectively at meaningful video beats"
+    ]
+  },
+  "videoops-shot-context-generation": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-shot-context-generation for generating media that fits its actual edit neighbors and timing",
+      "I need help generating media that fits its actual edit neighbors and timing"
+    ]
+  },
+  "videoops-shot-list-to-timeline": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-shot-list-to-timeline for mapping schema-valid shots into frame-accurate HyperFrames scenes",
+      "I need help mapping schema-valid shots into frame-accurate HyperFrames scenes"
+    ]
+  },
+  "videoops-shot-planning": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-shot-planning for creating frame/time-bound VideoOps shot plans",
+      "I need help creating frame/time-bound VideoOps shot plans"
+    ]
+  },
+  "videoops-technical-render-review": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-technical-render-review for checking render integrity, media, fonts, frames, dimensions, FPS, duration, and audio",
+      "I need help checking render integrity, media, fonts, frames, dimensions, FPS, duration, and audio"
+    ]
+  },
+  "videoops-transcript-and-onscreen-copy": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-transcript-and-onscreen-copy for writing duration-aware VideoOps voiceover and onscreen copy",
+      "I need help writing duration-aware VideoOps voiceover and onscreen copy"
+    ]
+  },
+  "videoops-video-brief-synthesis": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-video-brief-synthesis for turning validated VideoOps intake into a concise creative brief without inventing claims",
+      "I need help turning validated VideoOps intake into a concise creative brief without inventing claims"
+    ]
+  },
+  "videoops-video-spec-comparison": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-video-spec-comparison for comparing a rendered draft with approved planning artifacts",
+      "I need help comparing a rendered draft with approved planning artifacts"
+    ]
+  },
+  "videoops-visual-hierarchy-review": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-visual-hierarchy-review for reviewing legibility, crop, clutter, focus, and text priority",
+      "I need help reviewing legibility, crop, clutter, focus, and text priority"
+    ]
+  },
+  "videoops-visual-reference-decomposition": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-visual-reference-decomposition for extracting reusable production principles from video references",
+      "I need help extracting reusable production principles from video references"
+    ]
+  },
+  "webops-accessibility-review": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-accessibility-review for running repeatable automated accessibility review with explicit manual gaps",
+      "I need help running repeatable automated accessibility review with explicit manual gaps"
+    ]
+  },
+  "webops-ai-search-visibility": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-ai-search-visibility for running repeatable AI/search visibility benchmark suites",
+      "I need help running repeatable AI/search visibility benchmark suites"
+    ]
+  },
+  "webops-analytics-analysis": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-analytics-analysis for analyzing real website behavior from normalized analytics evidence",
+      "I need help analyzing real website behavior from normalized analytics evidence"
+    ]
+  },
+  "webops-backlink-and-mention-analysis": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-backlink-and-mention-analysis for analyzing new/lost backlinks, linked and unlinked mentions, and evidence-backed link concerns",
+      "I need help analyzing new/lost backlinks, linked and unlinked mentions, and evidence-backed link concerns"
+    ]
+  },
+  "webops-cannibalization": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-cannibalization for identifying likely intent competition while separating normal overlap",
+      "I need help identifying likely intent competition while separating normal overlap"
+    ]
+  },
+  "webops-capability-preflight": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-capability-preflight for checking which WebOps website, repository, browser, search, analytics, performance, backlink, keyword, publishing, distribution, or submission capabilities are available",
+      "I need help checking which WebOps website, repository, browser, search, analytics, performance, backlink, keyword, publishing, distribution, or submission capabilities are available"
+    ]
+  },
+  "webops-competitor-intelligence": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-competitor-intelligence for monitoring selected public competitors or peers for meaningful change",
+      "I need help monitoring selected public competitors or peers for meaningful change"
+    ]
+  },
+  "webops-content-accuracy": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-content-accuracy for reviewing website claims for outdated or invalid guidance",
+      "I need help reviewing website claims for outdated or invalid guidance"
+    ]
+  },
+  "webops-content-decay": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-content-decay for identifying content deterioration or staleness without conflating age and decline",
+      "I need help identifying content deterioration or staleness without conflating age and decline"
+    ]
+  },
+  "webops-content-gap": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-content-gap for classifying site coverage against audience/search needs",
+      "I need help classifying site coverage against audience/search needs"
+    ]
+  },
+  "webops-content-portfolio": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-content-portfolio for assigning longitudinal content portfolio states",
+      "I need help assigning longitudinal content portfolio states"
+    ]
+  },
+  "webops-content-pruning": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-content-pruning for reviewing obsolete or redundant content for keep, refresh, merge, redirect, or retire proposals",
+      "I need help reviewing obsolete or redundant content for keep, refresh, merge, redirect, or retire proposals"
+    ]
+  },
+  "webops-distribution": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-distribution for creating source-grounded distribution assets and optionally publishing with ACT authority",
+      "I need help creating source-grounded distribution assets and optionally publishing with ACT authority"
+    ]
+  },
+  "webops-indexation": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-indexation for auditing crawlability, local indexability, and confirmed provider index state",
+      "I need help auditing crawlability, local indexability, and confirmed provider index state"
+    ]
+  },
+  "webops-information-architecture": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-information-architecture for auditing site navigation, hierarchy, taxonomy, URLs, depth, clusters, and discoverability",
+      "I need help auditing site navigation, hierarchy, taxonomy, URLs, depth, clusters, and discoverability"
+    ]
+  },
+  "webops-internal-linking": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-internal-linking for analyzing, proposing, or explicitly applying contextual internal links",
+      "I need help analyzing, proposing, or explicitly applying contextual internal links"
+    ]
+  },
+  "webops-keyword-opportunity": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-keyword-opportunity for finding query opportunities while separating measurement, estimates, and public research",
+      "I need help finding query opportunities while separating measurement, estimates, and public research"
+    ]
+  },
+  "webops-link-health": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-link-health for auditing broken, redirected, malformed, or unexpected links",
+      "I need help auditing broken, redirected, malformed, or unexpected links"
+    ]
+  },
+  "webops-longitudinal-findings": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-longitudinal-findings for creating, comparing, or updating stable WebOps findings, recommendations, actions, outcomes, and recurring-run history",
+      "I need help creating, comparing, or updating stable WebOps findings, recommendations, actions, outcomes, and recurring-run history"
+    ]
+  },
+  "webops-reporting": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-reporting for synthesizing validated specialist evidence into quiet WebOps reports",
+      "I need help synthesizing validated specialist evidence into quiet WebOps reports"
+    ]
+  },
+  "webops-schema-and-metadata": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-schema-and-metadata for auditing structured data and page/social metadata",
+      "I need help auditing structured data and page/social metadata"
+    ]
+  },
+  "webops-search-performance": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-search-performance for analyzing longitudinal measured search performance",
+      "I need help analyzing longitudinal measured search performance"
+    ]
+  },
+  "webops-search-standards-watch": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-search-standards-watch for monitoring authoritative search, indexing, structured-data, analytics, browser, AI-search, and web-standard changes",
+      "I need help monitoring authoritative search, indexing, structured-data, analytics, browser, AI-search, and web-standard changes"
+    ]
+  },
+  "webops-search-submission": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-search-submission for preflighting or performing explicit ACT search submission through supported providers",
+      "I need help preflighting or performing explicit ACT search submission through supported providers"
+    ]
+  },
+  "webops-site-profile": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-site-profile for configuring or validating a portable WebOps site profile, repository binding, integration references, permission default, or site identity",
+      "I need help configuring or validating a portable WebOps site profile, repository binding, integration references, permission default, or site identity"
+    ]
+  },
+  "webops-technical-seo": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-technical-seo for performing a deterministic technical SEO audit from crawl evidence",
+      "I need help performing a deterministic technical SEO audit from crawl evidence"
+    ]
+  },
+  "webops-web-performance": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use webops-web-performance for analyzing lab and field website performance as distinct evidence classes",
+      "I need help analyzing lab and field website performance as distinct evidence classes"
     ]
   }
 }

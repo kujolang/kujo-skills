@@ -6,6 +6,14 @@
   deterministic, AI-native Kujo project development and evidence-backed review.
 - Extend the complete routing fixture and skill index from 95 to 96 skills.
 
+## 0.5.0 - 2026-09-04
+
+- Add 35 narrow VideoOps skills covering creative planning, rights-aware asset
+  resolution, generated media, HyperFrames editing, deterministic render QA,
+  independent criticism, and fix-list revision.
+- Add Kujo-native skill generation and complete trigger/index coverage for the
+  131-skill distribution.
+
 ## 0.4.1 - 2026-08-15
 
 - Fix the Kujo tool-artifact guard so a one-commit or shallow release checkout

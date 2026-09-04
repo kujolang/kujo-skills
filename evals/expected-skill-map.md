@@ -108,3 +108,43 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Analyzing real website behavior from normalized analytics evidence | `webops-analytics-analysis` |
 | Creating source-grounded distribution assets and optionally publishing with ACT authority | `webops-distribution` |
 | Synthesizing validated specialist evidence into quiet WebOps reports | `webops-reporting` |
+
+## VideoOps routing
+
+| Query theme | Expected skill(s) |
+|---|---|
+| VideoOps video brief synthesis | `videoops-video-brief-synthesis` |
+| VideoOps transcript and onscreen copy | `videoops-transcript-and-onscreen-copy` |
+| VideoOps shot planning | `videoops-shot-planning` |
+| VideoOps visual reference decomposition | `videoops-visual-reference-decomposition` |
+| VideoOps asset requirement specification | `videoops-asset-requirement-specification` |
+| VideoOps platform duration planning | `videoops-platform-duration-planning` |
+| VideoOps first party asset discovery | `videoops-first-party-asset-discovery` |
+| VideoOps lens product capture | `videoops-lens-product-capture` |
+| VideoOps licensed media research | `videoops-licensed-media-research` |
+| VideoOps asset rights triage | `videoops-asset-rights-triage` |
+| VideoOps media normalization | `videoops-media-normalization` |
+| VideoOps asset manifest maintenance | `videoops-asset-manifest-maintenance` |
+| VideoOps generation handoff | `videoops-generation-handoff` |
+| VideoOps generated still production | `videoops-generated-still-production` |
+| VideoOps generated motion production | `videoops-generated-motion-production` |
+| VideoOps brand style translation | `videoops-brand-style-translation` |
+| VideoOps shot context generation | `videoops-shot-context-generation` |
+| VideoOps generation variant selection | `videoops-generation-variant-selection` |
+| VideoOps generated asset manifesting | `videoops-generated-asset-manifesting` |
+| VideoOps hyperframes project bootstrap | `videoops-hyperframes-project-bootstrap` |
+| VideoOps shot list to timeline | `videoops-shot-list-to-timeline` |
+| VideoOps kinetic typography | `videoops-kinetic-typography` |
+| VideoOps media compositing | `videoops-media-compositing` |
+| VideoOps shader and transition selection | `videoops-shader-and-transition-selection` |
+| VideoOps audio sync | `videoops-audio-sync` |
+| VideoOps render validation | `videoops-render-validation` |
+| VideoOps fix list application | `videoops-fix-list-application` |
+| VideoOps video spec comparison | `videoops-video-spec-comparison` |
+| VideoOps pacing analysis | `videoops-pacing-analysis` |
+| VideoOps visual hierarchy review | `videoops-visual-hierarchy-review` |
+| VideoOps motion quality review | `videoops-motion-quality-review` |
+| VideoOps audio visual review | `videoops-audio-visual-review` |
+| VideoOps technical render review | `videoops-technical-render-review` |
+| VideoOps actionable fix writing | `videoops-actionable-fix-writing` |
+| VideoOps approval decision | `videoops-approval-decision` |

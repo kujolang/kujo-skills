@@ -1,0 +1,92 @@
+func ensure_dir(path) {
+    if !path_is_dir(path) {
+        result := spawn_process(["mkdir", "-p", path], {"timeout_ms":5000})
+        if result.exitcode != 0 { panic("cannot create directory: " + path) }
+    }
+}
+
+func rows() {
+    return [
+        ["videoops-video-brief-synthesis","turning validated VideoOps intake into a concise creative brief without inventing claims","PackWrite intake artifacts and VideoOps production standards","Validate all intake; extract thesis, audience, promise, evidence, constraints, CTA, and non-goals; flag unsupported claims; write the creative brief.","Do not source media or decide implementation details owned by later roles."],
+        ["videoops-transcript-and-onscreen-copy","writing duration-aware VideoOps voiceover and onscreen copy","creative brief, messaging, audience, platform duration, and editorial standard","Budget words and silence against duration; separate voiceover, dialogue, onscreen text, and silent beats; verify required messaging and CTA; write the transcript.","Do not silently expand duration or use generic hype as filler."],
+        ["videoops-shot-planning","creating frame/time-bound VideoOps shot plans","creative brief, transcript, platform JSON, motion standard, and shot-list schema","Calculate the complete timeline; define every shot's start, end, duration, purpose, visual, copy/audio, assets, motion, transitions, and priority; validate continuity and schema.","Do not leave timeline gaps or delegate core creative decisions downstream."],
+        ["videoops-visual-reference-decomposition","extracting reusable production principles from video references","supplied references and VideoOps motion/brand standards","Record pacing, density, typography, framing, media mix, transition classes, and sound rhythm; separate general principles from distinctive expression; map only compatible principles to the style plan.","Do not reproduce a reference shot-for-shot or imitate a creator's distinctive work."],
+        ["videoops-asset-requirement-specification","translating approved shots into precise asset requirements","shot list, transcript, creative brief, asset and license policy","Assign stable requirement IDs; describe source priority, crop, duration, resolution, alpha/audio needs, authenticity, shot mapping, and acceptance; mark required versus optional.","Do not source, capture, or generate the asset."],
+        ["videoops-platform-duration-planning","enforcing project video dimensions, FPS, and duration","intake/platform.json and current project requirements","Validate dimensions, aspect ratio, FPS, target/max duration, caption and audio intent; calculate frame totals; reject incompatible timing; record platform assumptions that require current verification.","Do not hard-code mutable social-platform limits outside the project contract."],
+        ["videoops-first-party-asset-discovery","searching project and Kujo sources before external video research","asset requirements, repository, docs, product outputs, and asset policy","Search bounded first-party roots; inspect candidates; match them to requirements and shots; preserve originals; record FOUND or an honest unresolved status.","Do not broaden to arbitrary user files or substitute weak generic media."],
+        ["videoops-lens-product-capture","capturing first-party terminal, UI, site, or product evidence for a planned shot","approved capture requirement, Lens contract, and capture environment","Validate target/state/viewport and sensitive-data boundary; capture only the required evidence; inspect readability; save under assets/captured; register CAPTURED provenance.","Do not authenticate, expose secrets, or capture unrelated private content."],
+        ["videoops-licensed-media-research","researching external media with documented reuse rights","asset requirement and licensing policy","Search lawful public sources; retain source/creator/license/terms/retrieval evidence; distinguish discovery from production approval; download only an explicitly reusable candidate.","Public visibility or downloadability is never proof of reuse permission."],
+        ["videoops-asset-rights-triage","classifying media as approved, reference-only, blocked, or pending","license evidence, intended use, source metadata, and VideoOps policy","Verify the actual license or permission basis; evaluate attribution and intended-use compatibility; record the decision and evidence; default uncertainty to reference-only or blocked.","Never guess, launder, or overstate a license."],
+        ["videoops-media-normalization","inspecting, trimming, and transcoding approved source media while preserving originals","approved asset, FFmpeg/ffprobe, target shot, and manifest","Probe streams and properties; preserve source; create deterministic normalized copy; trim only irrelevant head/tail; verify output checksum, codec, dimensions, FPS/duration, and audio.","Do not creatively edit, overwrite originals, or normalize unapproved media."],
+        ["videoops-asset-manifest-maintenance","maintaining schema-valid asset records and shot mappings","asset requirements, filesystem evidence, and asset-manifest schema","Reconcile one record per requirement; validate status, origin, usage, rights, path, and used_by mappings; reject missing files and contradictory states; write deterministic ordering.","Do not mark an absent or rights-unclear asset approved."],
+        ["videoops-generation-handoff","writing exact generation requests for unresolved custom media","GENERATE requirement, shot context, style plan, brand, and adjacent shots","Specify purpose, aspect/crop, duration, motion direction, negative space, palette, prohibited motifs, delivery format, variants, and acceptance; preserve requirement/shot IDs.","Do not generate the media or request unrelated filler."],
+        ["videoops-generated-still-production","creating a project-specific still for an explicit GENERATE item","generation handoff, brand/style plan, target crop, and approved provider","Generate the smallest useful still set; inspect composition, legibility, crop, artifacts, and prohibited motifs; select one default and register it.","Do not generate without a GENERATE status or claim fixture art proves provider quality."],
+        ["videoops-generated-motion-production","creating a short purpose-built motion asset or loop","generation handoff, shot duration, adjacent motion, and approved provider","Match exact edit duration and direction; generate minimal variants; inspect looping, artifacts, frame rate, crop, and codec; normalize and register the selected result.","Do not create long expensive generations for micro-inserts or unrelated filler."],
+        ["videoops-brand-style-translation","turning Kujo brand and motion principles into media-generation direction","VideoOps brand, typography, editorial, and motion standards","Translate character, composition, texture, typography exclusion, color, and anti-cliche rules into concrete generation instructions; retain the project's own visual identity.","Do not imitate named creators or fall back to generic AI imagery."],
+        ["videoops-shot-context-generation","generating media that fits its actual edit neighbors and timing","shot list, style plan, adjacent shots, and generation requirement","Inspect entry/exit frames, visual intensity, motion direction, crop, overlays, and duration; formulate context-aware generation; validate transition compatibility.","Do not evaluate assets in isolation from the intended timeline."],
+        ["videoops-generation-variant-selection","selecting among materially different generated media variants","inspected variants, shot acceptance criteria, and brand rules","Reject defective variants; compare only meaningful differences; choose the strongest compliant default; retain one fallback only when it changes a useful production choice; record rationale.","Do not create or retain near-duplicate variant spam."],
+        ["videoops-generated-asset-manifesting","registering generated assets with complete provenance and shot mapping","generated files, provider receipt, generation purpose, and asset schema","Record origin, provider/tool class, prompt artifact reference, generated time, path, metadata, selected variant, usage status, requirement, and shots; verify file existence and schema.","Never invent cost, token usage, provider identity, or approval."],
+        ["videoops-hyperframes-project-bootstrap","creating a composition with current HyperFrames conventions","approved planning package, platform JSON, manifest, and installed HyperFrames CLI","Run version/doctor; scaffold or create the bounded project; set deterministic composition metadata; wire only approved assets; record CLI version and commands; run initial lint/check.","Do not assume deprecated HyperFrames APIs or hide missing assets."],
+        ["videoops-shot-list-to-timeline","mapping schema-valid shots into frame-accurate HyperFrames scenes","shot list, FPS, transcript, asset manifest, and current HyperFrames API","Convert seconds to frames deterministically; map each shot and asset; preserve semantic timing; document frame-level adjustments; validate full duration and transition seams.","Do not materially restructure the concept or silently alter copy."],
+        ["videoops-kinetic-typography","implementing readable motion typography in HyperFrames","typography standard, shot list, platform size, and approved font references","Build clear hierarchy; animate scale, crop, position, appearance, and removal by meaning; sample critical frames; verify contrast, safe bounds, dwell time, and target-size readability.","Do not copy font binaries without rights or treat a webpage layout as video design."],
+        ["videoops-media-compositing","placing and trimming approved image, video, GIF-derived, and audio assets","manifest-approved assets, shot timings, HyperFrames, and FFmpeg","Verify manifest/path match; normalize browser-hostile media; compose crop/scale/mask/layering; trim to frame contract; inspect transition frames and missing media; record substitutions.","Do not introduce undocumented or reference-only media."],
+        ["videoops-shader-and-transition-selection","using effects selectively at meaningful video beats","style plan, motion standard, shot semantics, and current HyperFrames effects","Choose hard cuts by default; apply shader/glitch/flash effects only to interruption, contradiction, impact, or major transition; inspect legibility and performance; document deviations.","Glitch is punctuation, not wallpaper; effects cannot conceal weak structure."],
+        ["videoops-audio-sync","synchronizing voice, SFX, music, and silence to planned beats","transcript, shot list, audio assets, platform contract, and FFmpeg","Align speech and visual events to frames; protect intelligibility; use silence deliberately; inspect clipping, streams, start/end, and loudness evidence; record audio substitutions.","Do not use unlicensed audio or let music compete with speech."],
+        ["videoops-render-validation","rendering and deterministically inspecting a HyperFrames output","composition, platform JSON, HyperFrames check/render, FFmpeg/ffprobe, and Eval","Run lint/check before render; record render exit and version; probe integrity, dimensions, FPS, duration, audio, checksum, and placeholder/debug markers; fail closed on required mismatch.","Do not ask a model to determine facts available from tools or declare a placeholder final."],
+        ["videoops-fix-list-application","applying Critic issues with one outcome per item","schema-valid fix list, exact reviewed draft, composition, and acceptance criteria","Verify draft/checksum lineage; apply each issue narrowly; mark APPLIED, PARTIAL, REJECTED, or BLOCKED with evidence; rerun affected gates; render a new version.","Do not ignore issues, rewrite unrelated scenes, or exceed three review cycles."],
+        ["videoops-video-spec-comparison","comparing a rendered draft with approved planning artifacts","draft, brief, transcript, shot list, style plan, and render log","Verify artifact lineage; compare required message, shots, copy, CTA, timing, and documented deviations; separate defects from acceptable implementation choices; cite timestamps.","Do not edit the composition or invent new requirements."],
+        ["videoops-pacing-analysis","finding dead space, unreadable micro-cuts, uniform rhythm, and weak semantic timing","render, shot boundaries, transcript beats, and motion standard","Sample complete video and transitions; compare visual change to semantic/audio beats; identify stalls or overload with timestamps; propose measurable timing acceptance.","Do not fail solely because pacing differs from personal taste."],
+        ["videoops-visual-hierarchy-review","reviewing legibility, crop, clutter, focus, and text priority","rendered frames, target dimensions, typography and brand standards","Inspect representative and transition frames; verify critical copy, focal priority, safe crop, contrast, and density; cite exact frames and affected claims; distinguish defect from preference.","Do not infer offscreen behavior without inspected evidence."],
+        ["videoops-motion-quality-review","reviewing transitions, easing, distortion, compositing, and effect use","render, motion standard, style plan, and sampled/key frames","Inspect continuity, easing, jitter, unintended flashes, effect purpose, seam artifacts, and motion consistency; identify timestamped repairs with acceptance criteria.","Do not demand decorative motion or penalize intentional hard cuts."],
+        ["videoops-audio-visual-review","checking speech clarity, synchronization, impact timing, music, and silence","rendered audio/video streams, transcript, planned beats, and audio standard","Probe streams; listen/inspect complete output; check sync, clipping, dropouts, speech masking, transitions, and intended silence; cite timestamped evidence.","Do not claim loudness or sync facts without tool/listening evidence."],
+        ["videoops-technical-render-review","checking render integrity, media, fonts, frames, dimensions, FPS, duration, and audio","rendered file, platform JSON, render log, FFmpeg/ffprobe, and HyperFrames checks","Run deterministic integrity and metadata checks first; inspect errors, gaps, missing assets/fonts, placeholders, black frames, and stream mismatch; preserve commands and results.","Technical pass is necessary but cannot substitute for creative review."],
+        ["videoops-actionable-fix-writing","writing schema-valid timestamped repairs from validated defects","critic evidence, fix-list schema, reviewed draft lineage, and role boundaries","Assign stable IDs/severity; cite timestamp or frame range; state problem, impact, exact required change, and testable acceptance; initialize PENDING; order blockers first.","Do not write vague feedback such as make it cooler or silently implement fixes."],
+        ["videoops-approval-decision","producing deterministic VideoOps PASS or FAIL from defect evidence","technical gates, review dimensions, thresholds, confidence, and revision count","Fail on unresolved BLOCKER/HIGH or configured threshold breach; pass only when required dimensions and technical gates meet policy; write approval and fix list consistently; escalate after three failed cycles.","Do not approve because rendering succeeded or downgrade quality to meet budget." ]
+    ]
+}
+
+func render(row) {
+    return "---\nname: " + row[0] + "\ndescription: \"Use when " + row[1] + ".\"\n---\n\n# " + replace(replace(row[0], "videoops-", "VideoOps "), "-", " ") + "\n\n## Purpose\n\nUse this skill for " + row[1] + ". Primary sources are " + row[2] + ".\n\n## Workflow\n\n" + row[3] + "\n\n## Required Output\n\nWrite only the role-owned, workspace-relative artifacts named by the current VideoOps agent contract. Include evidence, unavailable capabilities, attempt number, model profile, validation outcome, and an explicit handoff or blocker.\n\n## Boundaries\n\n" + row[4] + " Preserve role ownership, rights, credentials, provider-cost approval, and the distinction between deterministic facts and model judgment.\n\n## Verification\n\nValidate required inputs before work and outputs afterward. Run deterministic checks before semantic evaluation. Use at most two economical attempts, record stage-local escalation, and never accept a failed artifact because of cost pressure.\n"
+}
+
+func title(value) { return replace(replace(value, "videoops-", "VideoOps "), "-", " ") }
+
+func update_catalogs(root, items) {
+    mut index_text := read_file(path_join(root, "SKILLS_INDEX.md"))
+    marker := "\n## VideoOps skills\n"
+    marker_pos := index_of(index_text, marker)
+    if marker_pos >= 0 { index_text = substring(index_text, 0, marker_pos) }
+    mut section := marker + "\n| Skill | Use when | Primary sources |\n|---|---|---|\n"
+    for row in items { section = section + "| `" + row[0] + "` | " + row[1] + ". | " + row[2] + " |\n" }
+    write_file_atomic(path_join(root, "SKILLS_INDEX.md"), trim(index_text) + "\n" + section, true)
+
+    expected_path := path_join(root, "evals/expected-skill-map.md")
+    mut expected := read_file(expected_path)
+    expected_marker := "\n## VideoOps routing\n"
+    expected_pos := index_of(expected, expected_marker)
+    if expected_pos >= 0 { expected = substring(expected, 0, expected_pos) }
+    mut expected_section := expected_marker + "\n| Query theme | Expected skill(s) |\n|---|---|\n"
+    for row in items { expected_section = expected_section + "| " + title(row[0]) + " | `" + row[0] + "` |\n" }
+    write_file_atomic(expected_path, trim(expected) + "\n" + expected_section, true)
+
+    trigger_path := path_join(root, "evals/trigger-queries.json")
+    triggers := parse_json(read_file(trigger_path))
+    for row in items {
+        triggers[row[0]] = {"should_trigger":["Use " + row[0] + " for " + row[1],"I need help " + row[1]],"should_not_trigger":["write a generic Python hello world","summarize an unrelated PDF"]}
+    }
+    write_file_atomic(trigger_path, to_json_pretty(triggers) + "\n", true)
+}
+
+func main() {
+    root := path_absolute(".")
+    items := rows()
+    for row in items {
+        folder := path_join(root, "skills/" + row[0])
+        ensure_dir(folder)
+        write_file_atomic(path_join(folder, "SKILL.md"), render(row), true)
+    }
+    update_catalogs(root, items)
+    print("generated " + to_string(len(items)) + " VideoOps skills")
+}
+
+main()

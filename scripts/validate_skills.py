@@ -81,11 +81,11 @@ def validate_skill(skill_dir: Path) -> str:
 
 
 def markdown_skill_refs(path: Path) -> set[str]:
-    return set(re.findall(r"`((?:kujo|webops|publishing-house)-[a-z0-9-]+)`", path.read_text(encoding="utf-8")))
+    return set(re.findall(r"`((?:kujo|webops|videoops|publishing-house)-[a-z0-9-]+)`", path.read_text(encoding="utf-8")))
 
 
 def validate_package(skill_names: set[str]) -> None:
-    index_names = set(re.findall(r"^\| `((?:kujo|webops|publishing-house)-[a-z0-9-]+)` \|", (REPO_ROOT / "SKILLS_INDEX.md").read_text(encoding="utf-8"), re.MULTILINE))
+    index_names = set(re.findall(r"^\| `((?:kujo|webops|videoops|publishing-house)-[a-z0-9-]+)` \|", (REPO_ROOT / "SKILLS_INDEX.md").read_text(encoding="utf-8"), re.MULTILINE))
     expected_names = markdown_skill_refs(REPO_ROOT / "evals" / "expected-skill-map.md")
     trigger_data = json.loads((REPO_ROOT / "evals" / "trigger-queries.json").read_text(encoding="utf-8"))
     eval_suite = json.loads((REPO_ROOT / "tests" / "eval.json").read_text(encoding="utf-8"))
