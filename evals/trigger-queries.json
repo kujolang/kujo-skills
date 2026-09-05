@@ -11,7 +11,9 @@
       "run examples_smoke_runner for agents-sdk offline fixtures",
       "fix agent handoff tracing tests",
       "maintain artifact store contract tests",
-      "add MCP 2026 request helpers to Agents SDK integration adapters"
+      "add MCP 2026 request helpers to Agents SDK integration adapters",
+      "validate Agents SDK portable Ability gateway tool receipts",
+      "update Agents SDK Watchdog telemetry lifecycle mapping"
     ]
   },
   "kujo-ai-chat-workflows": {
@@ -48,7 +50,10 @@
       "run live provider smoke with skip handling",
       "use resolve_model_preference for provider-neutral model routing",
       "preserve streaming usage telemetry in AI SDK include_usage responses",
-      "run AI SDK embeddings contract tests"
+      "run AI SDK embeddings contract tests",
+      "validate an AI SDK native provider driver package",
+      "generate and hash an AI SDK model catalog",
+      "check AI SDK Watchdog telemetry contract output"
     ]
   },
   "kujo-assetworks-workflows": {
@@ -171,7 +176,10 @@
       "extend CMS content model routes",
       "review CMS release gate evidence and branch protection gap",
       "verify anonymous CMS reads only expose published entries",
-      "test CMS entry lock ownership and release behavior"
+      "test CMS entry lock ownership and release behavior",
+      "inspect CMS WebMCP public content tools",
+      "validate CMS Ability approvals and MCP descriptors",
+      "install a CMS extension package through bounded ZIP upload"
     ]
   },
   "kujo-concord-workflows": {
@@ -539,7 +547,9 @@
       "generate a repo-specific MCP server with mcp make",
       "run kujo run mcp.kujo --interpreter make ./repo --validate",
       "review generated .mcp artifacts and mcp.manifest.json safety tiers",
-      "harden mcp-server.json auth host and rate limit settings"
+      "harden mcp-server.json auth host and rate limit settings",
+      "package the Kujo Ability MCP host bridge",
+      "update MCP Watchdog lifecycle telemetry helper"
     ]
   },
   "kujo-muzzle-workflows": {
@@ -714,7 +724,8 @@
       "show me the .runledger JSON for this agent build attempt",
       "update RunLedger CLI behavior without breaking exit codes",
       "generate a RunLedger markdown report for this task",
-      "add a followup note to a runledger run id"
+      "add a followup note to a runledger run id",
+      "link this RunLedger receipt to Watchdog and Dispatch run identifiers"
     ]
   },
   "kujo-runtime-parity": {
@@ -773,8 +784,9 @@
       "summarize an unrelated PDF"
     ],
     "should_trigger": [
-      "Use kujo-searchbridge-workflows for running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, batch reads, evidence-query, signed adapters, replay/cache, telemetry, or explicit ACT submission",
-      "I need help running SearchBridge evidence-query over JSONL and batch fixture provider reads"
+      "Use kujo-searchbridge-workflows for running SearchBridge 1.x doctor, capability preflight, provider tiers, normalized evidence reads, batch reads, evidence-query, signed adapters, replay/cache, SDK bundles, telemetry, MCP surfaces, or explicit ACT submission",
+      "I need help running SearchBridge evidence-query over JSONL and batch fixture provider reads",
+      "verify SearchBridge stable-live and fixture-only provider tiers before live routing"
     ]
   },
   "kujo-security-hardening": {
@@ -908,7 +920,9 @@
       "run the SSG parallel shard build for a large site",
       "preserve the SSG native render fast path",
       "build SSG custom collections with posts-at-root and llms output",
-      "run the SSG DocGen bridge and package the reusable docs starter"
+      "run the SSG DocGen bridge and package the reusable docs starter",
+      "enable experimental static WebMCP in the SSG build",
+      "run the local SSG Ability pack integration tests"
     ]
   },
   "kujo-standard-library": {
@@ -1045,7 +1059,10 @@
       "configure Watchdog named upstream profiles for OpenRouter",
       "test Watchdog SQLite-backed rate limits and production token auth",
       "inspect Watchdog backup archive history and active backup files",
-      "refresh Watchdog pricing catalog provenance for direct API estimates"
+      "refresh Watchdog pricing catalog provenance for direct API estimates",
+      "manage Watchdog connected sources without contacting providers",
+      "verify Watchdog OTLP v2 ingestion privacy controls",
+      "test Watchdog proxy stream timing and disconnect handling"
     ]
   },
   "kujo-way-development": {

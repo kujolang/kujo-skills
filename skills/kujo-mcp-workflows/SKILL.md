@@ -1,18 +1,21 @@
 ---
 name: kujo-mcp-workflows
-description: "Use this skill when generating, running, validating, deploying, or maintaining Kujo MCP servers and repo-specific MCP scaffolds: `mcp make`, `kujo run mcp.kujo --interpreter make`, `mcp-server.json`, MCP tool/resource registries, generated `.mcp/` outputs, `mcp.manifest.json`, repo profiles, MCP safety tiers, auth/host/request guardrails, endpoint tests, or MCP source/test changes."
+description: "Use this skill when generating, running, validating, deploying, packaging, or maintaining Kujo MCP servers and repo-specific MCP/Ability scaffolds: `mcp make`, `kujo run mcp.kujo --interpreter make`, `mcp-server.json`, MCP tool/resource registries, generated `.mcp/` outputs, `mcp.manifest.json`, repo profiles, MCP safety tiers, Ability projection/gateway/host packages, Watchdog lifecycle metadata, auth/host/request guardrails, endpoint tests, or MCP source/test changes."
 ---
 
 # Kujo MCP Workflows
 
-Use the MCP framework to build guarded Model Context Protocol servers in Kujo, or to generate a repo-specific MCP server and review packet with `mcp make`.
+Use the MCP framework to build guarded Model Context Protocol servers in Kujo, generate repo-specific MCP server review packets with `mcp make`, or maintain MCP's opt-in projection of portable `kujo.ability/v1` contracts into host-specific tools.
 
 ## Agent Workflow
 
-- Classify the request first: local demo server, generated repo server, framework/source change, generated artifact review, or deployment hardening.
+- Classify the request first: local demo server, generated repo server, framework/source change, Ability projection/gateway/host package work, Watchdog metadata integration, generated artifact review, or deployment hardening.
 - Prefer the current reliable invocation for generation: `kujo run mcp.kujo --interpreter make <repo-path>`. The intended future `kujo mcp make <repo-path>` shape is not the dependable path yet.
 - Treat generated `.mcp/` outputs as reviewable scaffolds, not magic truth. Inspect `repo-profile.json`, `mcp.manifest.json`, and `artifacts/safety-review.md` before recommending exposure.
 - Keep MCP server capabilities least-privilege: read-only tools and allowlisted safe commands by default; review-required and blocked capabilities stay disabled unless explicitly justified.
+- Ability projection is additive and opt-in. The canonical Ability contract owns identity, schemas, effects, idempotency, and receipt semantics; applications own principal/tenant resolution, authorization, approval consumption, handler execution, and durable audit storage.
+- The packaged `integrations/kujo-ability` bridge connects hosts to an authenticated application Ability gateway. Do not present the public `mcp.kujolang.ai` catalog as a privileged execution service.
+- Watchdog helpers emit metadata-only lifecycle correlation. Raw tool inputs, raw outputs, authorization, privacy, retention, tenant, and exporter policy remain outside the helper.
 - Run focused tests after narrow edits and `bash tests/run_all_tests.sh` after security, config, endpoint, generation, or registry changes.
 
 ## Repo Orientation
@@ -23,8 +26,9 @@ When working in the MCP repo, read in this order:
 2. `docs/mcp-reference.md`
 3. `docs/mcp-make.md`
 4. `docs/security-model.md`
-5. The task-specific source files under `src/`
-6. The matching `tests/*.sh` or `tests/*.kujo`
+5. `docs/ability-host-deployment.md`, `docs/ability-host-conformance.md`, and `docs/ability-pack-launch-catalog.md` when Ability host or pack behavior changes
+6. The task-specific source files under `src/`
+7. The matching `tests/*.sh`, `tests/*.kujo`, or `tests/*.mjs`
 
 For framework source changes, important entry points are:
 
@@ -35,6 +39,9 @@ For framework source changes, important entry points are:
 - `src/resources/registry.kujo`: resource metadata and readers.
 - `src/commands/make.kujo`: `mcp make` CLI argument parsing and orchestration.
 - `src/make/*.kujo`: repo analysis, generated server writing, manifest schemas, validation, artifacts, enrichment.
+- `src/abilities/projection.kujo`: opt-in Ability-to-MCP descriptor projection.
+- `src/abilities/gateway.kujo`: executable bridge to application-owned Ability gateways.
+- `src/telemetry/watchdog.kujo`: metadata-only MCP lifecycle mapping for Watchdog.
 
 Use search exclusions for generated outputs unless the task targets them:
 
@@ -59,7 +66,7 @@ http://127.0.0.1:8931/mcp/v1
 Expected health shape:
 
 ```json
-{"status":"ok","server":"mcp-demo","version":"0.1.0"}
+{"status":"ok","server":"mcp-demo","version":"1.1.1"}
 ```
 
 Endpoint contracts:
@@ -74,6 +81,13 @@ Endpoint contracts:
 Demo tools live in `src/tools/registry.kujo`: `read_project_docs`, `search_files`, `generate_summary`, `write_safe_patch`, `read_text_range`, `write_text_safe`, `list_tree_recursive`, and `grep_text`.
 
 Demo resources live in `src/resources/registry.kujo`: `project://docs`, `files://tree`, `log://calls`, `prompt://onboarding`, and `workflow://checklist-loop`.
+
+## Ability And Host Packaging
+
+- Project portable Ability definitions only through explicit exposure policy and the canonical `ability` package revision pinned by Kennel.
+- Keep write, delete, and external effects disabled unless an application-owned gateway supplies explicit policy, approval, idempotency, and auditing.
+- For host package work, validate Codex, Cursor, VS Code/Copilot, generic STDIO/Streamable HTTP, Agents SDK, and Kujo Pi compatibility only to the tier proven by the current certification artifact.
+- The repository-local `kujo.mcp.core@1.0.0` Ability Pack is bounded to redacted repository-profile summary and contained generated-manifest validation. It must not execute discovered commands or return sensitive path names.
 
 ## Generate Repo-Specific Servers
 
@@ -199,8 +213,18 @@ If `kujo` is not on `PATH`, resolve the runtime from the MCP repo:
 bash scripts/find_kujo_runtime.sh
 ```
 
+For Ability host/package changes, run the relevant focused tests plus the full suite:
+
+```bash
+node tests/portable_ability_plugin_test.mjs
+node tests/ability_connector_cli_test.mjs
+node tests/ability_package_release_test.mjs
+node tests/ability_compatibility_matrix_test.mjs
+bash tests/run_all_tests.sh
+```
+
 ## Sources Consulted
 
 - Status: repo-backed: MCP `README.md`, `docs/mcp-reference.md`, `docs/mcp-make.md`.
-- Status: repo-backed: `docs/security-model.md`, `docs/production-deployment.md`.
-- Status: repo-backed: `mcp.kujo`, `src/commands/make.kujo`, `src/tools/registry.kujo`, `src/resources/registry.kujo`, `tests/run_all_tests.sh`.
+- Status: repo-backed: `docs/security-model.md`, `docs/production-deployment.md`, `docs/ability-host-deployment.md`, `docs/ability-host-conformance.md`, `docs/ability-pack-launch-catalog.md`.
+- Status: repo-backed: `mcp.kujo`, `src/commands/make.kujo`, `src/tools/registry.kujo`, `src/resources/registry.kujo`, `src/abilities/projection.kujo`, `src/abilities/gateway.kujo`, `src/telemetry/watchdog.kujo`, `tests/run_all_tests.sh`.

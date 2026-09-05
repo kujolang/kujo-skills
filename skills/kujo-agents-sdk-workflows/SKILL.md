@@ -1,6 +1,6 @@
 ---
 name: kujo-agents-sdk-workflows
-description: "Use this skill when working on Kujo Agents SDK runtime primitives, examples, offline fixtures, agent runners, tools, approvals, handoffs, tracing, artifact/session/memory stores, retrieval providers, integration adapters, MCP 2026 helpers, budget limits, no-network harnesses, or `agents-sdk` source/test changes."
+description: "Use this skill when working on Kujo Agents SDK runtime primitives, examples, offline fixtures, agent runners, tools, portable Ability projection/gateway tools, approvals, handoffs, tracing, Watchdog telemetry, artifact/session/memory stores, retrieval providers, integration adapters, MCP 2026 helpers, budget limits, no-network harnesses, or `agents-sdk` source/test changes."
 ---
 
 # Agents SDK Workflows
@@ -24,6 +24,9 @@ export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
 - `examples/*_agent.kujo` are canonical runnable examples; `examples/examples_smoke_runner.kujo` is the offline aggregate smoke path.
 - Offline fixture behavior and no-network boundaries are part of the public contract.
 - Integration adapters live behind `src/agents/integrations/adapters.kujo`; MCP `2026-07-28` support is limited to stateless JSON-RPC request helpers, required per-request `_meta`, Streamable HTTP routing headers, tool-list cache metadata, input-required result normalization, unsupported-version errors, and lossless tool schema/display metadata mapping into registry contracts.
+- Portable Ability projection lives in `src/agents/abilities/contract.kujo`. The SDK validates canonical `kujo.ability/v1` definitions from the commit-pinned Ability package, maps exposed abilities into Tool contracts, and preserves canonical identity/digest metadata without owning application bindings, permissions, approvals, or handler policy.
+- Server-owned Ability execution uses `register_ability_gateway_tool` with a narrow transport callback. The gateway remains responsible for authentication and principal/tenant resolution; returned canonical receipts are validated and kept as tool execution evidence.
+- Canonical Watchdog v2 lifecycle mapping lives in `src/agents/tracing/watchdog.kujo` and `docs/WATCHDOG_TELEMETRY.md`. It emits metadata-only batches, W3C context helpers, provider usage provenance, and fail-open delivery composition without copying prompts, tool inputs, or tool outputs.
 - Agent configs may declare `handler_id`, versioned `execution_contract`, `model_candidates`, and routing metadata. Dispatch conversion helpers (`convert_agent_to_dispatch`, `validate_dispatch_agent_conversion`) map validated configs into Dispatch's declarative `model` agent contract without moving provider/model selection into the SDK.
 - Expected-output fixtures under `tests/*.out` are behavior contracts, not prose examples.
 
@@ -41,6 +44,7 @@ When modifying this repository, read in this order:
 6. `examples/`
 7. `tests/`
 8. `docs/INTEGRATION_BOUNDARIES.md` when adapter behavior changes
+9. `docs/WATCHDOG_TELEMETRY.md` when Watchdog mapping changes
 
 Preserve documented command names, output contracts, and fixture behavior unless the user explicitly asks to change them.
 
@@ -53,6 +57,8 @@ export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
 "$KUJO_BIN" test-run tests/run_basic_runner_tests.kujo -v
 "$KUJO_BIN" test-run tests/arch_core_types_tests.kujo -v
 "$KUJO_BIN" test-run tests/integration_adapters_contract_tests.kujo -v
+"$KUJO_BIN" test-run tests/ability_contract_tests.kujo -v
+"$KUJO_BIN" test-run tests/watchdog_telemetry_contract_tests.kujo -v
 bash scripts/ci_no_network_enforcement.sh
 ```
 
@@ -60,6 +66,8 @@ bash scripts/ci_no_network_enforcement.sh
 
 - Preserve public result shapes and deterministic offline behavior.
 - Do not refresh expected-output fixtures unless the matching behavior intentionally changed.
+- Keep Ability definitions portable and policy-free; runtime authorization belongs to local handlers or application gateways.
+- Keep Watchdog delivery fail-open and metadata-only.
 - Prefer targeted contract tests before the whole suite for narrow source changes.
 
 Use `rg` for broad searches and exclude generated, dependency, cache, and output directories unless the task explicitly targets them.
@@ -69,5 +77,6 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and output
 - Status: repo-backed: `README.md`.
 - Status: repo-backed: `AGENTS.md`.
 - Status: repo-backed: `docs/INTEGRATION_BOUNDARIES.md`, `src/agents/integrations/adapters.kujo`.
+- Status: repo-backed: `docs/WATCHDOG_TELEMETRY.md`, `src/agents/tracing/watchdog.kujo`, `src/agents/abilities/contract.kujo`.
 - Status: repo-backed: `examples/examples_smoke_runner.kujo`.
 - Status: repo-backed: `docs/DEVELOPER_GUIDE.md`, `tests/arch_core_types_tests.kujo`, `tests/run_basic_runner_tests.kujo`, `tests/integration_adapters_contract_tests.kujo`.

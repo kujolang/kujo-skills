@@ -15,13 +15,13 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Rust implementation changes | `kujo-language-implementation` |
 | `kujo docgen`, generated docs, docs JSON, adapter extraction | `kujo-docgen-agent-readable` |
 | Strict maintainer review | `kujo-maintainer-review` |
-| Agents SDK runtime primitives, MCP 2026 helpers, adapter boundaries, offline fixtures | `kujo-agents-sdk-workflows` |
+| Agents SDK runtime primitives, Ability projection, Watchdog telemetry, MCP 2026 helpers, adapter boundaries, offline fixtures | `kujo-agents-sdk-workflows` |
 | AI Chat provider profiles, SSE streaming, tools, browser tools, Codex/Watchdog profiles, benchmarks | `kujo-ai-chat-workflows`, optionally `kujo-ai-sdk-workflows` or `kujo-watchdog-workflows` |
-| AI SDK provider contracts, fixture mode, streaming, retries, redaction, live smoke | `kujo-ai-sdk-workflows` |
+| AI SDK provider contracts, native drivers, model catalogs, fixture mode, streaming, retries, redaction, Watchdog telemetry, provider package contracts, live smoke | `kujo-ai-sdk-workflows` |
 | Capsule benchmark handoff artifacts | `kujo-benchmarks-capsule-workflows` |
 | Casefile evidence bundles and redaction | `kujo-casefile-workflows` |
 | Change footprint budgets and risk reports | `kujo-changebucket-workflows` |
-| CMS runtime, content models, delivery routes, auth, migrations | `kujo-cms-workflows` |
+| CMS runtime, content models, WebMCP, Abilities/connectors, extension packages, delivery routes, auth/admin/session boundaries, migrations | `kujo-cms-workflows` |
 | Concord artifact/docs/schema drift | `kujo-concord-workflows` |
 | CRUD API showcase and Next.js playground checks | `kujo-crud-api-workflows` |
 | Dispatch workflows, validate/explain-route, resume/inspect/cleanup, plugins, event sinks | `kujo-dispatch-workflows` |
@@ -31,22 +31,22 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Kennel package manager, lockfiles, hosted registry, trust/source policy | `kujo-kennel-workflows` |
 | Lens browser QA, quick checks, flows, screenshots, visual/accessibility checks | `kujo-lens-workflows` |
 | Loop engineering harness | `kujo-loop-engineering-workflows` |
-| Kujo MCP server generation and registries | `kujo-mcp-workflows` |
+| Kujo MCP server generation, registries, Ability host packages, and Watchdog lifecycle metadata | `kujo-mcp-workflows` |
 | Muzzle quiet workflows | `kujo-muzzle-workflows` |
 | PackWrite execution packs | `kujo-packwrite-workflows` |
 | PatchBrief summaries, suggested tests, handoffs | `kujo-patchbrief-workflows` |
 | RAG ingest/query/serve/demo and release evals | `kujo-rag-workflows` |
 | Redact scan/sanitize/verify/pack | `kujo-redact-workflows` |
 | Relay missions, agents/models/runs, evidence bundles | `kujo-relay-workflows` |
-| RunLedger receipts, usage/cost, verdicts, reports | `kujo-runledger-workflows` |
+| RunLedger receipts, usage/cost, verdicts, correlation links, reports | `kujo-runledger-workflows` |
 | Scent context packs | `kujo-scent-workflows` |
 | Scout codebase intelligence scans | `kujo-scout-workflows` |
 | ShipCheck release readiness | `kujo-shipcheck-workflows` |
 | SiteKit design-system tokens/components/dist smoke/Workcell proof | `kujo-site-kit-workflows`, compatibility `kujo-sitekit-workflows` |
-| SSG builds, docs bridge, docs starter, parallel builds, release gates | `kujo-ssg-workflows` |
+| SSG builds, docs bridge, docs starter, parallel builds, WebMCP, Ability pack, release gates | `kujo-ssg-workflows` |
 | Spec task contracts | `kujo-spec-workflows` |
 | Tribunal decision evidence | `kujo-tribunal-workflows` |
-| Watchdog telemetry/proxy/dashboard/pricing/backups | `kujo-watchdog-workflows` |
+| Watchdog telemetry/proxy/dashboard/pricing/backups, connected sources, OTLP/export, streaming | `kujo-watchdog-workflows` |
 | Workcell local container sandboxes | `kujo-workcell-workflows` |
 | Weekly skill maintenance and stale skill/index/fixture drift | `kujo-skill-auditor` |
 | Readiness posture/evidence audit | `kujo-readiness-auditor` |
@@ -82,7 +82,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Checking which WebOps website, repository, browser, search, analytics, performance, backlink, keyword, publishing, distribution, or submission capabilities are available | `webops-capability-preflight` |
 | Creating, comparing, or updating stable WebOps findings, recommendations, actions, outcomes, and recurring-run history | `webops-longitudinal-findings` |
 | Running, validating, verifying, comparing, reporting, or integrating SiteProbe website-intelligence crawls and signed `.siteprobe` artifacts | `kujo-siteprobe-workflows` |
-| Running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, batch reads, evidence-query, signed adapters, replay/cache, telemetry, or explicit ACT submission | `kujo-searchbridge-workflows` |
+| Running SearchBridge 1.x doctor, capability preflight, provider tiers, fixture/live evidence reads, batch reads, evidence-query, signed adapters, replay/cache, SDK bundles, telemetry, MCP surfaces, or explicit ACT submission | `kujo-searchbridge-workflows` |
 | Building, inspecting, comparing, explaining, analyzing, exporting, or consuming deterministic ContentGraph artifacts | `kujo-contentgraph-workflows` |
 | Performing a deterministic technical SEO audit from crawl evidence | `webops-technical-seo` |
 | Analyzing longitudinal measured search performance | `webops-search-performance` |

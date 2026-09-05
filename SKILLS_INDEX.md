@@ -16,13 +16,13 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-language-implementation` | Rust implementation changes in lexer/parser/compiler/VM/interpreter/native APIs. | Kujo architecture docs, `src/`, tests |
 | `kujo-docgen-agent-readable` | `kujo docgen`, generated docs, docs JSON, adapter extraction, link validation, and AI task output. | Kujo DocGen docs, `src/docgen/`, DocGen tests |
 | `kujo-maintainer-review` | Strict Kujo code review for correctness, contracts, security, parity, missing tests/docs, and readiness risk. | Kujo roadmap, spec, security, CLI contracts, tests |
-| `kujo-agents-sdk-workflows` | Agents SDK runners, tools, approvals, handoffs, tracing, stores, retrieval, MCP 2026 helpers, and offline fixtures. | `../agents-sdk` README/docs/src/tests |
+| `kujo-agents-sdk-workflows` | Agents SDK runners, tools, Ability projection/gateway tools, approvals, handoffs, tracing, Watchdog telemetry, stores, retrieval, MCP 2026 helpers, and offline fixtures. | `../agents-sdk` README/docs/src/tests |
 | `kujo-ai-chat-workflows` | AI Chat provider profiles, SQLite state, tools, browser tools, Codex/Watchdog profiles, SSE, benchmarks, smoke tests. | `../ai-chat` README, API contract, server, tests, scripts |
-| `kujo-ai-sdk-workflows` | AI SDK provider contracts, fixture mode, streaming, retries, redaction, model preferences, live smoke. | `../ai-sdk` README/src/tests/scripts |
+| `kujo-ai-sdk-workflows` | AI SDK provider contracts, native drivers, model catalogs, fixture mode, streaming, retries, redaction, Watchdog telemetry, provider package contracts, live smoke. | `../ai-sdk` README/src/tests/scripts |
 | `kujo-benchmarks-capsule-workflows` | Capsule benchmark handoff capsules and stable capsule artifacts. | `../benchmarks-capsule` README/spec/tests |
 | `kujo-casefile-workflows` | Casefile evidence bundles, captures, handoffs, redaction, cleanup, and `.casefile/` artifacts. | `../casefile` README/docs/tests |
 | `kujo-changebucket-workflows` | Change footprint, churn budgets, risk reports, dependency/generated file checks. | `../changebucket` README/src/tests |
-| `kujo-cms-workflows` | CMS runtime, content models, delivery routes, auth, migrations, backup/restore, release proof. | `../cms` README/backend/tests/docs |
+| `kujo-cms-workflows` | CMS runtime, content models, delivery/discovery routes, auth/admin/session boundaries, WebMCP, Abilities/connectors, extension packages, SEO/content/media workflows, migrations, backup/restore, release proof. | `../cms` README/backend/tests/docs |
 | `kujo-concord-workflows` | Concord artifact drift scans, CLI/docs drift, Spec/Eval alignment, and fix-task reports. | `../concord` README/src/tests |
 | `kujo-crud-api-workflows` | CRUD API showcase, SQLite item/project APIs, Next.js playground, smoke/perf/DR checks. | `../crud-api` README/src/frontend/tests |
 | `kujo-dispatch-workflows` | Dispatch workflow orchestration, validate/explain-route, resume/inspect/cleanup, plugins, event sinks, policy profiles. | `../dispatch` README/src/tests/docs |
@@ -32,23 +32,23 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-kennel-workflows` | Kennel package/project manager, lockfiles, static indexes, local hosted registry, trust/source policy. | `../kennel` README/src/tests/scripts |
 | `kujo-lens-workflows` | Lens deterministic browser QA, quick checks, flows, screenshots, accessibility/link/visual checks, repair briefs. | `../lens` README/docs/src/tests |
 | `kujo-loop-engineering-workflows` | Bounded engineering harness workflows, checklists, blockers, evidence logs, opt-in commits. | `../kujo-workflows/loop-engineering` docs/scripts |
-| `kujo-mcp-workflows` | Kujo MCP server generation, manifests, tool/resource registries, endpoint/security tests. | `../mcp` README/docs/src/tests |
+| `kujo-mcp-workflows` | Kujo MCP server generation, manifests, tool/resource registries, endpoint/security tests, Ability projection/gateway/host packages, and Watchdog lifecycle metadata. | `../mcp` README/docs/src/tests |
 | `kujo-muzzle-workflows` | Muzzle quiet workflows, manifests, logs/reports, loop mode, and redaction. | `../muzzle` README/docs/src/tests |
 | `kujo-packwrite-workflows` | PackWrite execution packs, prompts, validation, doctor, and generated agent packs. | `../packwrite` README/docs |
 | `kujo-patchbrief-workflows` | PatchBrief diff summaries, suggested tests, handoffs, schemas, and JSON contracts. | `../patchbrief` README/src/tests/schemas |
 | `kujo-rag-workflows` | RAG ingest/query/serve/demo, indexes, namespaces, embeddings, retrieval, OpenAPI, release evals. | `../rag` README/docs/src/tests |
 | `kujo-redact-workflows` | Redact scan/sanitize/verify/pack, policy YAML, leakage checks, and anonymization artifacts. | `../redact` README/docs/src/tests |
 | `kujo-relay-workflows` | Relay bounded missions, agents/models/runs, evidence bundles, Watchdog posture, acceptance tests. | `../relay` README/docs/src/tests |
-| `kujo-runledger-workflows` | RunLedger receipts, usage/cost, verdicts, notes/followups, compare/report output. | `../runledger` README/src/tests |
+| `kujo-runledger-workflows` | RunLedger receipts, usage/cost, verdicts, correlation links, notes/followups, compare/report output. | `../runledger` README/src/tests |
 | `kujo-scent-workflows` | Scent packs, dry-run budgets, include/exclude filters, pack artifacts, and redaction audits. | `../scent` README/docs/scent.kujo |
 | `kujo-scout-workflows` | Scout scans, context packs, `llms.txt`, `AGENTS.md`, manifests, exports, baselines, snapshots. | `../scout` README/docs/tests |
 | `kujo-shipcheck-workflows` | ShipCheck scans, checklists, gates, release notes, report schema, release readiness checks. | `../shipcheck` README/docs/src/tests |
 | `kujo-site-kit-workflows` | Canonical SiteKit skill for `site-kit`: tokens, components, schemas, generated dist, smoke, Workcell proof. | `../site-kit` README/docs/tests/scripts |
 | `kujo-sitekit-workflows` | Compatibility alias for older SiteKit references; prefer `kujo-site-kit-workflows` for new work. | `../site-kit` README/docs/tests/scripts |
-| `kujo-ssg-workflows` | SSG builds, templates, feeds, `llms.txt`, docs bridge, docs starter, parallel builds, release gates. | `../ssg` README/build/scripts/docs |
+| `kujo-ssg-workflows` | SSG builds, templates, feeds, `llms.txt`, docs bridge, docs starter, parallel builds, experimental static WebMCP, local Ability pack, and release gates. | `../ssg` README/build/scripts/docs |
 | `kujo-spec-workflows` | Spec contracts, validate/render/export-agent-context/export-eval/status/schema/policy work. | `../spec` README/docs/tests |
 | `kujo-tribunal-workflows` | Tribunal decision evidence, reviews, signed bundles, trust policies, audit/verify gates. | `../tribunal` README/docs/src/tests |
-| `kujo-watchdog-workflows` | Watchdog telemetry/proxy, dashboard/API, traces, auth/redaction/rate limits, pricing, backups, AI Chat integration. | `../watchdog` README/src/tests/scripts |
+| `kujo-watchdog-workflows` | Watchdog telemetry/proxy, dashboard/API, traces, connected sources, OTLP/export, streaming, auth/redaction/rate limits, pricing, backups, AI Chat/Agents SDK integration. | `../watchdog` README/src/tests/scripts |
 | `kujo-workcell-workflows` | Workcell container sandboxes, definitions, run/verify receipts, Docker/Podman boundaries. | `../workcell` README/docs/src/tests |
 | `kujo-skill-auditor` | Weekly skills-pack drift audits and trigger/index refreshes. | `skills/*/SKILL.md`, this index, `evals/`, sibling repos |
 | `kujo-readiness-auditor` | Recurring readiness posture, release preparedness, and evidence gaps. | Repo docs/tests/scripts/tool reports |
@@ -84,7 +84,7 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `webops-capability-preflight` | Checking which WebOps website, repository, browser, search, analytics, performance, backlink, keyword, publishing, distribution, or submission capabilities are available. | WebOps capability schema plus tool doctor/capabilities outputs |
 | `webops-longitudinal-findings` | Creating, comparing, or updating stable WebOps findings, recommendations, actions, outcomes, and recurring-run history. | WebOps finding/history schemas and prior run artifacts |
 | `kujo-siteprobe-workflows` | Running, validating, verifying, comparing, reporting, or integrating SiteProbe website-intelligence crawls and signed `.siteprobe` artifacts. | `../siteprobe` README, CLI, schemas, tests, and security contract |
-| `kujo-searchbridge-workflows` | Running SearchBridge doctor, capability preflight, fixture providers, normalized evidence reads, batch reads, evidence-query, signed adapters, replay/cache, telemetry, or explicit ACT submission. | `../searchbridge` README, provider research, schemas, tests, and security contract |
+| `kujo-searchbridge-workflows` | Running SearchBridge 1.x doctor, capability preflight, provider tiers, fixture/live evidence reads, batch reads, evidence-query, signed adapters, replay/cache, SDK bundles, telemetry, MCP surfaces, or explicit ACT submission. | `../searchbridge` README, provider research, schemas, tests, and security contract |
 | `kujo-contentgraph-workflows` | Building, inspecting, comparing, explaining, analyzing, exporting, or consuming deterministic ContentGraph artifacts. | `../contentgraph` README, methodology, schemas, tests, and security contract |
 | `webops-technical-seo` | Performing a deterministic technical SEO audit from crawl evidence. | SiteProbe artifacts, WebOps history, and optional Lens/inspection evidence |
 | `webops-search-performance` | Analyzing longitudinal measured search performance. | SearchBridge search.performance result/v1 and prior comparable windows |

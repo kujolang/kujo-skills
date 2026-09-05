@@ -1,13 +1,12 @@
 ---
 name: kujo-runledger-workflows
-description: "Use this skill when recording, comparing, reporting, or maintaining RunLedger receipts for AI-agent build runs: `runledger start`, `finish`, `usage`, `cost`, `note`, `followup`, `list`, `show`, `compare`, `report`, `.runledger/` JSON files, run verdicts, token/cost capture, read-only git metadata receipts, RunLedger reports, or RunLedger CLI/tests/source changes."
+description: "Use this skill when recording, comparing, reporting, correlating, or maintaining RunLedger receipts for AI-agent build runs: `runledger start`, `finish`, `usage`, `cost`, `correlate`, `note`, `followup`, `list`, `show`, `compare`, `report`, `.runledger/` JSON files, run verdicts, token/cost capture, Watchdog/Dispatch/Relay/Eval links, read-only git metadata receipts, RunLedger reports, or RunLedger CLI/tests/source changes."
 ---
 
 # Kujo RunLedger Workflows
 
 Use RunLedger as a local receipt system for agent attempts, not as an automated
-judge. It records facts, manual usage/cost data, human verdicts, follow-ups, and
-read-only git metadata in plain JSON.
+judge. It records facts, manual usage/cost data, cross-system correlation links, human verdicts, follow-ups, and read-only git metadata in plain JSON.
 
 Canonical local source is usually
 `/Users/robertdevore/2026/Kujolang/kujo-repos/runledger`. Do not confuse
@@ -48,11 +47,12 @@ Capture the returned run id. Use the same `--task` across comparable attempts.
 ```bash
 runledger usage <run-id> --input 190000 --output 26000 --cache-read 0 --cache-write 0
 runledger cost <run-id> --total 0.92 --currency USD
+runledger correlate <run-id> --watchdog-trace <trace-id> --dispatch-run <dispatch-id>
 runledger note <run-id> "Tests passed after one fix"
 runledger followup <run-id> "Add JSON-output tests"
 ```
 
-Usage and cost are manual; do not invent token counts, provider pricing, or totals.
+Usage and cost are manual; do not invent token counts, provider pricing, or totals. Correlation links point to external evidence; do not copy telemetry payloads into RunLedger.
 
 4. Finish with a terminal status and concise verdict:
 
@@ -102,6 +102,7 @@ If `--repo` is not a git repo, git fields should be `null` or empty and commands
 - `list --json`, `show --json`, and `compare --json` print raw JSON.
 - `report` prints markdown unless `--output <file>` is provided.
 - Report output surfaces facts and human verdicts; it does not declare a best or worst run automatically.
+- `correlate` accepts bounded Watchdog trace/run, Dispatch run, Relay run, and Eval run identifiers.
 - Stored `commands` and `tests` arrays are reserved by the schema; the current CLI does not populate them.
 
 ## Maintaining RunLedger
@@ -122,6 +123,7 @@ Preserve exact CLI/report output unless intentionally updating integration
 expectations and examples. Keep examples in `README.md` and
 `examples/build-tool-x.md` copyable; use
 `examples/RUNLEDGER_REPORT.example.md` for report shape, not source-code style.
+Keep per-record ownership locks, concurrent start retry, and correlation-field allowlists intact when touching storage or CLI mutation paths.
 
 Broad searches should exclude generated or bulky receipt output unless the task
 targets it: `.runledger/`, temporary ledgers, and generated report outputs.
