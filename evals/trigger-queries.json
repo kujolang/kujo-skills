@@ -1020,6 +1020,16 @@
       "Use VersionSeal to revoke an expired publication approval"
     ]
   },
+  "kujo-videoops-workflows": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use kujo-videoops-workflows for operating the complete VideoOps team on a new content release, product demo, launch video, or other arbitrary production request",
+      "I need help operating the complete VideoOps team on a new content release, product demo, launch video, or other arbitrary production request"
+    ]
+  },
   "kujo-watchdog-workflows": {
     "should_not_trigger": [
       "run AI SDK provider contract tests",

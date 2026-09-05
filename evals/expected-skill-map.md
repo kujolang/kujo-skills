@@ -113,6 +113,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 
 | Query theme | Expected skill(s) |
 |---|---|
+| kujo VideoOps workflows | `kujo-videoops-workflows` |
 | VideoOps video brief synthesis | `videoops-video-brief-synthesis` |
 | VideoOps transcript and onscreen copy | `videoops-transcript-and-onscreen-copy` |
 | VideoOps shot planning | `videoops-shot-planning` |

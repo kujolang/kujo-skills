@@ -115,6 +115,7 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 
 | Skill | Use when | Primary sources |
 |---|---|---|
+| `kujo-videoops-workflows` | operating the complete VideoOps team on a new content release, product demo, launch video, or other arbitrary production request. | ../kujo-agents/videoops producer and specialist contracts, HyperFrames, PackWrite, and the five VideoOps workflow contracts |
 | `videoops-video-brief-synthesis` | turning validated VideoOps intake into a concise creative brief without inventing claims. | PackWrite intake artifacts and VideoOps production standards |
 | `videoops-transcript-and-onscreen-copy` | writing duration-aware VideoOps voiceover and onscreen copy. | creative brief, messaging, audience, platform duration, and editorial standard |
 | `videoops-shot-planning` | creating frame/time-bound VideoOps shot plans. | creative brief, transcript, platform JSON, motion standard, and shot-list schema |

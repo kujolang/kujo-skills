@@ -10,7 +10,7 @@ The catalog gives coding agents exact Kujo commands, safety boundaries, validati
 
 ## Why use this pack?
 
-- Route work to 131 focused skills, including the cross-cutting `kujo-way-development` baseline, 30 WebOps skills, 35 VideoOps production skills, and 11 Publishing House tool, profile, quality, and lifecycle skills.
+- Route work to 132 focused skills, including the cross-cutting `kujo-way-development` baseline, 30 WebOps skills, the VideoOps team operator plus 35 production skills, and 11 Publishing House tool, profile, quality, and lifecycle skills.
 - Keep VM-first execution, capability boundaries, and CLI contracts explicit.
 - Ground recommendations in Kujo repositories, tests, and operational docs.
 - Validate the complete catalog offline with one command.
@@ -59,6 +59,7 @@ Start with the [skill catalog](SKILLS_INDEX.md). Common entry points include:
 | Crawl and compare a website | `kujo-siteprobe-workflows` |
 | Normalize search/analytics/provider evidence | `kujo-searchbridge-workflows` |
 | Build deterministic content relationships | `kujo-contentgraph-workflows` |
+| Produce a complete video through the VideoOps team | `kujo-videoops-workflows` |
 | Run a WebOps methodology | the narrowest `webops-*` skill |
 | Run the Publishing House lifecycle | `kujo-publishing-house-workflows` |
 | Operate a Publishing House tool | the narrowest tool-specific workflow skill |

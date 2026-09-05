@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Add `kujo-videoops-workflows` as the harness-neutral entry point for invoking
+  the VideoOps Producer and five specialist roles on arbitrary productions.
+
 - Add `kujo-way-development`, an installable cross-cutting skill for compact,
   deterministic, AI-native Kujo project development and evidence-backed review.
 - Extend the complete routing fixture and skill index from 95 to 96 skills.
