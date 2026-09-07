@@ -52,7 +52,7 @@ bash tests/videoops-install.sh
 # cp -R skills/kujo-videoops-workflows skills/videoops-* "$PROFILE_SKILLS/"
 ```
 
-The bundle references the shared kujo-videoops runtime and kujo-agents toolchain
+The bundle references the shared kujo-agents/videoops/tools runtime and kujo-agents toolchain
 contract. It does not embed provider credentials, private voice selections or a
 second mixer. Read the runtime's operator setup docs for environment/OS-secret
 references and scoped authority; skill installation grants no account authority.

@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Correct VideoOps provider execution references to the canonical
+  `kujo-agents/videoops/tools` package; the retired standalone repository is not
+  a production dependency. Regenerate the skills and source catalog together.
+
 ## 0.6.0 - 2026-09-06
 
 - Add `videoops-media-provider-execution`, bringing the catalog to 133 skills
