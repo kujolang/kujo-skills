@@ -2,12 +2,18 @@
 
 ## Unreleased
 
-- Add `kujo-videoops-workflows` as the harness-neutral entry point for invoking
-  the VideoOps Producer and five specialist roles on arbitrary productions.
+## 0.6.0 - 2026-09-06
 
-- Add `kujo-way-development`, an installable cross-cutting skill for compact,
-  deterministic, AI-native Kujo project development and evidence-backed review.
-- Extend the complete routing fixture and skill index from 95 to 96 skills.
+- Add `videoops-media-provider-execution`, bringing the catalog to 133 skills
+  with the VideoOps team operator and 36 focused production skills.
+- Route speech, sound effects, music and local import through shared executable
+  adapters, versioned requests/receipts, scoped authority and preserved originals.
+- Add source-aware audio QA guidance, exact-candidate approval and incomplete
+  review handoffs without treating missing listening as an editor defect.
+- Include the harness-neutral `kujo-videoops-workflows` entry point and
+  cross-cutting `kujo-way-development` baseline from the prior unreleased work.
+- Preserve provider, account, rights and live-verification boundaries; skills
+  remain guidance rather than runtime enforcement or automatic profile installs.
 
 ## 0.5.0 - 2026-09-04
 
