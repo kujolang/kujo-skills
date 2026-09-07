@@ -22,7 +22,7 @@ Use current HyperFrames skills and CLI behavior for composition work. Use browse
 
 ## Shared Media Runtime
 
-Use `videoops-media-provider-execution` and the versioned VideoOps toolchain contract. Speech, SFX and music use executable capability-specific adapters in kujo-videoops; local import uses the same receipt pipeline without network. Preserve scoped authorization across resumes, originals and rights evidence. Do not copy project-local provider scripts. HyperFrames media-use consumes approved local derivatives and receipts; it retains mixing ownership.
+Use `videoops-media-provider-execution` and the versioned VideoOps toolchain contract. Speech, SFX and music use executable capability-specific adapters in kujo-agents/videoops/tools; local import uses the same receipt pipeline without network. Preserve scoped authorization across resumes, originals and rights evidence. Do not copy project-local provider scripts. HyperFrames media-use consumes approved local derivatives and receipts; it retains mixing ownership.
 
 ## Review And Completion
 

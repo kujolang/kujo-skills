@@ -89,7 +89,7 @@ listening; incomplete review preserves the exact candidate for a capable human
 or agent. HyperFrames retains composition and mixing ownership.
 
 Use [`videoops-media-provider-execution`](skills/videoops-media-provider-execution/SKILL.md)
-with the existing runtime rather than copying a production-specific provider
+with `kujo-agents/videoops/tools/bin/videoops` rather than copying a production-specific provider
 script. Implementation and mocked coverage do not imply account entitlement or
 live verification of every capability; actual live outcomes and usage belong
 in the runtime's per-request receipts. Voice, brand and glitch choices remain

@@ -7,7 +7,7 @@ description: "Use when generating authorized voiceover, sound effects or music a
 
 ## Purpose
 
-Use this skill for generating authorized voiceover, sound effects or music and importing local media through shared VideoOps adapters. Primary sources are kujo-videoops media CLI, versioned request/result/authorization contracts, GENERATE manifest and scoped authority.
+Use this skill for generating authorized voiceover, sound effects or music and importing local media through shared VideoOps adapters. Primary sources are kujo-agents/videoops/tools/bin/videoops media CLI, versioned request/result/authorization contracts, GENERATE manifest and scoped authority.
 
 ## Workflow
 
