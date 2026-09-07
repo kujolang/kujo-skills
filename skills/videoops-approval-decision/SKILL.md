@@ -11,7 +11,7 @@ Use this skill for producing deterministic VideoOps PASS or FAIL from defect evi
 
 ## Workflow
 
-Fail on unresolved BLOCKER/HIGH or configured threshold breach; pass only when required dimensions and technical gates meet policy; write approval and fix list consistently; escalate after three failed cycles.
+Record REVIEW_INCOMPLETE when required listening/playback capabilities were unavailable, without consuming repair cycles; bind decisions to candidate SHA-256. Fail on unresolved BLOCKER/HIGH or configured threshold breach; pass only when required dimensions and technical gates meet policy; write approval and fix list consistently; escalate after three failed cycles.
 
 ## Required Output
 

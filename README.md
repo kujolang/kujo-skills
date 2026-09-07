@@ -1,6 +1,6 @@
 # Kujo Agent Skills
 
-[![Version](https://img.shields.io/badge/version-0.5.0-black)](https://github.com/kujolang/kujo-skills)
+[![Version](https://img.shields.io/badge/version-0.6.0-black)](https://github.com/kujolang/kujo-skills)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 [![built with Kujo](https://img.shields.io/badge/built%20with-Kujo-white.svg)](https://github.com/kujolang/kujo)
 
@@ -10,7 +10,7 @@ The catalog gives coding agents exact Kujo commands, safety boundaries, validati
 
 ## Why use this pack?
 
-- Route work to 132 focused skills, including the cross-cutting `kujo-way-development` baseline, 30 WebOps skills, the VideoOps team operator plus 35 production skills, and 11 Publishing House tool, profile, quality, and lifecycle skills.
+- Route work to 133 focused skills, including the cross-cutting `kujo-way-development` baseline, 30 WebOps skills, the VideoOps team operator plus 36 production skills, and 11 Publishing House tool, profile, quality, and lifecycle skills.
 - Keep VM-first execution, capability boundaries, and CLI contracts explicit.
 - Ground recommendations in Kujo repositories, tests, and operational docs.
 - Validate the complete catalog offline with one command.
@@ -60,6 +60,7 @@ Start with the [skill catalog](SKILLS_INDEX.md). Common entry points include:
 | Normalize search/analytics/provider evidence | `kujo-searchbridge-workflows` |
 | Build deterministic content relationships | `kujo-contentgraph-workflows` |
 | Produce a complete video through the VideoOps team | `kujo-videoops-workflows` |
+| Execute authorized speech, sound effects, music or local import | `videoops-media-provider-execution` |
 | Run a WebOps methodology | the narrowest `webops-*` skill |
 | Run the Publishing House lifecycle | `kujo-publishing-house-workflows` |
 | Operate a Publishing House tool | the narrowest tool-specific workflow skill |
@@ -78,7 +79,21 @@ See [examples](examples/README.md) for installation bundles and routing prompts.
 
 ## Release and support status
 
-This repository is the MIT-licensed `0.5.0` technical preview of the Kujo skills pack. Kujo `v1.0.2` is the current stable language/runtime baseline for the Publishing House toolchain; individual skills preserve explicit preview or experimental boundaries for narrower APIs.
+This repository is the MIT-licensed `0.6.0` technical preview of the Kujo skills pack. Kujo `v1.0.2` is the current stable language/runtime baseline for the Publishing House toolchain; individual skills preserve explicit preview or experimental boundaries for narrower APIs.
+
+The `0.6.0` release adds shared media-provider execution guidance for the
+VideoOps team: capability-specific ElevenLabs speech, sound effects and music,
+provider-neutral local import, scoped authority, preserved originals and
+provenance receipts. Audio QA distinguishes deterministic measurements from
+listening; incomplete review preserves the exact candidate for a capable human
+or agent. HyperFrames retains composition and mixing ownership.
+
+Use [`videoops-media-provider-execution`](skills/videoops-media-provider-execution/SKILL.md)
+with the existing runtime rather than copying a production-specific provider
+script. Implementation and mocked coverage do not imply account entitlement or
+live verification of every capability; actual live outcomes and usage belong
+in the runtime's per-request receipts. Voice, brand and glitch choices remain
+production presets. No live-profile installation is needed to validate this pack.
 
 The pack provides guidance, not runtime enforcement. An agent or host must load a skill and enforce its own permissions. Kujo itself is not a sandbox: use `--untrusted`, least-privilege `--allow-*` flags, and external isolation for high-risk scripts.
 

@@ -11,7 +11,7 @@ Use this skill for inspecting, trimming, and transcoding approved source media w
 
 ## Workflow
 
-Probe streams and properties; preserve source; create deterministic normalized copy; trim only irrelevant head/tail; verify output checksum, codec, dimensions, FPS/duration, and audio.
+Probe streams and properties; preserve source; create deterministic normalized copy; declare edit ranges and preserve source; flag suspicious unaligned tails for review rather than automatic trimming; verify output checksum, codec, dimensions, FPS/duration, and audio.
 
 ## Required Output
 

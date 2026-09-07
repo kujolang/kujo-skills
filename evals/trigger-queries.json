@@ -1333,6 +1333,16 @@
       "I need help inspecting, trimming, and transcoding approved source media while preserving originals"
     ]
   },
+  "videoops-media-provider-execution": {
+    "should_not_trigger": [
+      "write a generic Python hello world",
+      "summarize an unrelated PDF"
+    ],
+    "should_trigger": [
+      "Use videoops-media-provider-execution for generating authorized voiceover, sound effects or music and importing local media through shared VideoOps adapters",
+      "I need help generating authorized voiceover, sound effects or music and importing local media through shared VideoOps adapters"
+    ]
+  },
   "videoops-motion-quality-review": {
     "should_not_trigger": [
       "write a generic Python hello world",

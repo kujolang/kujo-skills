@@ -20,7 +20,13 @@ Run the roles in this order: Creative Director, Asset Scout, Media Generator onl
 
 Use current HyperFrames skills and CLI behavior for composition work. Use browser capture, repository assets, local media tools, and generation providers only when available and authorized. Never pretend an unavailable integration ran. Ask before paid media generation, authenticated capture, publication, or another external effect.
 
+## Shared Media Runtime
+
+Use `videoops-media-provider-execution` and the versioned VideoOps toolchain contract. Speech, SFX and music use executable capability-specific adapters in kujo-videoops; local import uses the same receipt pipeline without network. Preserve scoped authorization across resumes, originals and rights evidence. Do not copy project-local provider scripts. HyperFrames media-use consumes approved local derivatives and receipts; it retains mixing ownership.
+
 ## Review And Completion
+
+REVIEW_INCOMPLETE routes the unchanged exact candidate to capable or human review, never to an empty editor fix loop. Keep user revisions, render attempts, technical repairs, critic failures and review attempts separate.
 
 Run deterministic render checks before semantic review. The Editor may not approve its own output. A Critic FAIL must contain a bounded fix list; send only that list and exact reviewed-render lineage back to the Editor. Repeat review for the revised candidate and stop after three failed cycles. Finalize only the exact candidate the Critic passed. Report the final path, checksum, render metadata, approval, revisions, external effects, cost/token evidence when available, and remaining blockers.
 
