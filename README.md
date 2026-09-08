@@ -1,6 +1,6 @@
 # Kujo Agent Skills
 
-[![Version](https://img.shields.io/badge/version-0.6.0-black)](https://github.com/kujolang/kujo-skills)
+[![Version](https://img.shields.io/badge/version-0.7.0-black)](https://github.com/kujolang/kujo-skills)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 [![built with Kujo](https://img.shields.io/badge/built%20with-Kujo-white.svg)](https://github.com/kujolang/kujo)
 
@@ -81,14 +81,14 @@ See [examples](examples/README.md) for installation bundles and routing prompts.
 
 ## Release and support status
 
-This repository is the MIT-licensed `0.6.0` technical preview of the Kujo skills pack. Kujo `v1.0.2` is the current stable language/runtime baseline for the Publishing House toolchain; individual skills preserve explicit preview or experimental boundaries for narrower APIs.
+This repository is the MIT-licensed `0.7.0` technical preview of the Kujo skills pack. Kujo `v1.0.2` is the current stable language/runtime baseline for the Publishing House toolchain; individual skills preserve explicit preview or experimental boundaries for narrower APIs.
 
-The `0.6.0` release adds shared media-provider execution guidance for the
-VideoOps team: capability-specific ElevenLabs speech, sound effects and music,
-provider-neutral local import, scoped authority, preserved originals and
-provenance receipts. Audio QA distinguishes deterministic measurements from
-listening; incomplete review preserves the exact candidate for a capable human
-or agent. HyperFrames retains composition and mixing ownership.
+The `0.7.0` release adds two reusable video skills: the fixed trust-at-speed
+release preset and ten launch/video styles with per-style ElevenLabs narrator
+defaults and caller overrides. The 135-skill catalog includes isolated installation
+and compiler regression checks. VideoOps media guidance points to the canonical
+`kujo-agents/videoops/tools` runtime; HyperFrames retains composition and mixing
+ownership.
 
 Use [`videoops-media-provider-execution`](skills/videoops-media-provider-execution/SKILL.md)
 with `kujo-agents/videoops/tools/bin/videoops` rather than copying a production-specific provider

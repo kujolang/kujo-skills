@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.7.0 - 2026-09-08
+
 - Migrate `kujo-release-video` and `kujo-video-styles` from `kujo-hyperframes`,
   bringing the catalog to 135 skills. Preserve the fixed preset, ten style
   grammars, per-style ElevenLabs defaults, caller overrides and licensed assets.
