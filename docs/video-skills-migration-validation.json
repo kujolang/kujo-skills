@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-08",
+  "implementation_commit": "a91ba3450b5d6f97a72646b42a7ad5054d99c747",
+  "offline_validation": {
+    "release_readiness": "passed",
+    "clean_checkout": "passed",
+    "skill_count": 135,
+    "python_video_tests": 35,
+    "shared_motion_tests": "passed",
+    "isolated_two_skill_install": "passed",
+    "unchanged_non_markdown_import_hashes": 43
+  },
+  "workcell": {
+    "command": "workcell run --file docs/video-skills-workcell.json --repo . --no-pull --json",
+    "run_id": "wc-af3929f203b64797a13bd42f939e0164",
+    "exit_code": 4,
+    "execution_succeeded": false,
+    "cleanup_status": "complete",
+    "blocker": "Docker daemon does not report AppArmor; rootful Docker requires both seccomp and AppArmor profiles",
+    "receipt_sha256": "90fd3998111c8765c0d93ee5e5cd0d1704b843b81e4652c414b42e4b8d9d8dcf",
+    "receipt_and_manifest_integrity": "workcell verify passed",
+    "closest_equivalent_proof": "Host release-readiness and clean-checkout gates, including temporary-profile installation of both complete skills without HyperFrames checkout; this is not container execution proof.",
+    "next_step": "Rerun the committed Workcell definition on a compliant Docker host. No security policy bypass was used."
+  }
+}

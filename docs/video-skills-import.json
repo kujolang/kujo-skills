@@ -1,0 +1,263 @@
+{
+  "source_repository": "kujolang/kujo-hyperframes",
+  "source_commit": "89785161a585a25dd57ce4f346f33fdddf312b68",
+  "meaning": "Hashes identify the imported source snapshot; migration edits to documentation are intentional. Executable source and assets remain unchanged.",
+  "files": [
+    {
+      "path": "skills/kujo-release-video/.gitignore",
+      "source_sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793"
+    },
+    {
+      "path": "skills/kujo-release-video/SKILL.md",
+      "source_sha256": "f507b8ec9b5ea9490dfc50cbe6bc9566d09f348c718c74623aad9357f6037b91"
+    },
+    {
+      "path": "skills/kujo-release-video/agents/openai.yaml",
+      "source_sha256": "f6d7a1123cb5c96db1b349571869956001ac5c6e145c4eaba08dd10feecd1e43"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/.gitignore",
+      "source_sha256": "ea29d6d8b13e53940ae2e7ddd22614d0ba32c8f58520e2460753ca2808aa260a"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/VISUAL-LICENSES.md",
+      "source_sha256": "99dd865349cfd9dfe8fcb665bca03a9aa0988e73157e66224d3b160f9d8202db"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/assets-manifest.json",
+      "source_sha256": "710ad5637b6574e76d44aa26c762d9e9c8321f81f64c8db9bb843844cc7cd928"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/assets/fonts/DepartureMono-LICENSE.txt",
+      "source_sha256": "b65e42750f3cb65437a97f4dfd781c58f199259949db2341012be60e32500e83"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/assets/fonts/DepartureMono-Regular.woff2",
+      "source_sha256": "5b4fed1daa90708aa9c6ee1190abca9dc22164a1c1def0020386e46b61038cfb"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/assets/gsap.min.js",
+      "source_sha256": "a992e24e9726b97cf7320b0a88d2262459c9a11cb919e6d9765dd6eb88bbeead"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/assets/kujo-logomark.svg",
+      "source_sha256": "cecb66eae65116fadf29a93ce3adae28956b17cfaf1e8d9e0910c280935ef412"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/film.js",
+      "source_sha256": "877d7cfc588f90c2f9c995e2df3aebec73a4a38048d088b90d76aa0f3cd1f44d"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/hyperframes.json",
+      "source_sha256": "ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/index.html",
+      "source_sha256": "b6ad6642c836993088aaf7650cc5ebbe7d54cfc4902f04ed0973ee48d216fc1d"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/package-lock.json",
+      "source_sha256": "89cf68b2d755579b16381de4e34216cd98f0ce43203019a91bba22230c54ccff"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/package.json",
+      "source_sha256": "1167d1276f1d9dd157102de97aea757a0a600c28510455401c650c54c11d815a"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/scripts/assets.mjs",
+      "source_sha256": "ea95558c52342fd013da7640901280f436bf30bf9516789523e6447653ce51fd"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/scripts/check.mjs",
+      "source_sha256": "4ab34e9962d1c059e917771481c78d61c0f7813aa2976054a05283cf372054c4"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/scripts/common.mjs",
+      "source_sha256": "b0512097c2a276028845c8e605e068ebb4eed20234b2c5caa6847df7093acc81"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/scripts/mix-audio.py",
+      "source_sha256": "680c973c99c3ab2d4f8b4d370afb00edadfee76b3187826b41f701e957fdfcaf"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/scripts/qa.mjs",
+      "source_sha256": "d7905664c840df0a7130ab71f9e5e1e000ec7a5611a4529752111b0462dd3698"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/scripts/render.mjs",
+      "source_sha256": "b1f623436472fedc5a5859eb9fa81be45b45674982076787433ab8ba78186c43"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/scripts/sound-design.py",
+      "source_sha256": "9f636b7f808b64220f0131fb876339d29f73ea5e547efe5c2b174555b7c7fa89"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/scripts/verify-audio-browser.mjs",
+      "source_sha256": "d8e7285b88957adedc98640138789677329a09a7e28144a5a319c39e0f19a572"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/scripts/verify-audio.py",
+      "source_sha256": "55cbf1d5959ee5a275bc36dcedc60beff8921e113f7a12c537e0a2071f138987"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/scripts/verify.mjs",
+      "source_sha256": "eb550e53c32229e2e43a04470017a4f46d5e0dd2c4c84fdfe823842c7d82ff60"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/style.css",
+      "source_sha256": "31813a4cfff7278b6468ebb0a792edf44bf7ce379a1dc1ea4121ae2f49a4b7df"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/project/timing.js",
+      "source_sha256": "a0e2269a880c6bc84eb4d97ae7411ab710942a2ec2327f13048c02ece2e22b38"
+    },
+    {
+      "path": "skills/kujo-release-video/assets/style-contact-sheet.jpg",
+      "source_sha256": "3d1a7a3232e4f3f0c081f943c39c03ffffb153297ce86e721711ab21782f262a"
+    },
+    {
+      "path": "skills/kujo-release-video/examples/plan.example.json",
+      "source_sha256": "9d43331885b86c611ce386d5ef6a92861447c413a30fca46ae4ae3dd515a547a"
+    },
+    {
+      "path": "skills/kujo-release-video/examples/release.example.json",
+      "source_sha256": "13ff69cc62433b53e9b5d79e80f8c5322b9dd2a2c02114270cce1e5f098d1119"
+    },
+    {
+      "path": "skills/kujo-release-video/references/input-contract.md",
+      "source_sha256": "ae364eeec541baff02f6b0275407b2f4ec4ef0649f9ffd4f775af9120749b72d"
+    },
+    {
+      "path": "skills/kujo-release-video/references/pipeline.md",
+      "source_sha256": "ed05afd12f946bbb97425a27009f8805964afec80c8caa15ecb85c04a7d2e36a"
+    },
+    {
+      "path": "skills/kujo-release-video/references/style.md",
+      "source_sha256": "88c007dc26e4db98a377ec5a056f63212e6de01d4e42281095916f35924238b1"
+    },
+    {
+      "path": "skills/kujo-release-video/references/validation.json",
+      "source_sha256": "19d3424fe59bc7c5d9a31a4e0a90c898c8ea93e42a2d61d107133fb54081ce35"
+    },
+    {
+      "path": "skills/kujo-release-video/scripts/release_video.py",
+      "source_sha256": "6635d52c2638b034e01571c1c80fe905a1565ec745be0ccef1020ccf6f99c80d"
+    },
+    {
+      "path": "skills/kujo-release-video/scripts/test_pipeline.py",
+      "source_sha256": "32cffa22bb95d4381c55888e2f077671264b8016d162a0535ec10008bcaa1db3"
+    },
+    {
+      "path": "skills/kujo-video-styles/SKILL.md",
+      "source_sha256": "c8f5e5abb16a4ad2510adf369bba807711bad7ad6b3c923660606911659e0a1a"
+    },
+    {
+      "path": "skills/kujo-video-styles/agents/openai.yaml",
+      "source_sha256": "718ef61b941798d876b02ba01b459416db58093bf304d394d2245ddf9e9ccb80"
+    },
+    {
+      "path": "skills/kujo-video-styles/assets/film.js",
+      "source_sha256": "3d0e47947bb04f7ac96a53f4b6a4cffbe8043c28318b350a19ac845a3bdec985"
+    },
+    {
+      "path": "skills/kujo-video-styles/assets/motion.js",
+      "source_sha256": "58b5279fcf70cf988913865e4fc257d8dfca6189fa0259dc42779a5bdb419684"
+    },
+    {
+      "path": "skills/kujo-video-styles/assets/style.css",
+      "source_sha256": "3542871852062eeff495c6db4c66afc2d930b3de06700a5b8fa043ea8a8c0a37"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/00-shared-contract.md",
+      "source_sha256": "7cb999241a44bb056e4713383e38c99d0f99a391066ec3de149aea746c8a64f2"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/01-cinematic-hero-launch.md",
+      "source_sha256": "040e7d3ebbf05ab15bf2b6a25c260a99f760d6165d1eb5899a0523a659356ce4"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/02-apple-style-micro-launch.md",
+      "source_sha256": "79b8adbff30a035044e8c7aa27e8a28cdcae93a12d83f22883d6bbeb775c92ab"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/03-release-notes-changelog.md",
+      "source_sha256": "eb08e567b90eedccde63da8522ac79493ac6f2325fe9925fd19a9e2e5db0f79c"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/04-real-product-proof-reel.md",
+      "source_sha256": "efa18a89c7be81576b7e9ac22c54fd98734f0e5f7cbdd9d0b2444af8a23d4f4b"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/05-editorial-thesis-launch.md",
+      "source_sha256": "53a8f0e31b4e4a580de64d1d54e04369ab6dd7d001290fd5011b18fc082a02e6"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/06-feature-reveal.md",
+      "source_sha256": "825113e9a4634f3b392f6d5c9ffd76a26c75d72c42cebdd58dfa1338d435b1f0"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/07-integration-partnership-launch.md",
+      "source_sha256": "c73f9e58b9281a26939e40b1cfb7a1cfe1274e3fa024909fc2447ef28edb4faa"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/08-engineering-pr-to-video.md",
+      "source_sha256": "54a54a58c441bf46f642d6abb205d7959701a3db62e482d975f58be0ae858290"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/09-short-product-launch.md",
+      "source_sha256": "39c9c9e214f327b6fb2530d6ff6bddede34a1345b67c70c360048e6ebbd1e787"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/10-kinetic-release-drop.md",
+      "source_sha256": "697ce354dc11458437fb6b3cdfc97bd676a217779e5b76f20a0045ba444c0ea1"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/components.md",
+      "source_sha256": "c4478c57cbe7680ead428fde50a19a5a9c90f1c7790374944412d9e080e1358d"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/pipeline.md",
+      "source_sha256": "a871e6e8599af5a23481ac74e1e47a6775a324768655826306cb292ec1175a43"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/provenance.md",
+      "source_sha256": "16c3de1e79de96abc8a74c6eb1c75f73c9e364ae0934b46bc246d4c2bb7ec5ec"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/source-manifest.json",
+      "source_sha256": "8edbc2255491f765f9d8f1784c2246551cdebd5e2e875d922e90af00bbfb3879"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/validation.json",
+      "source_sha256": "7a3d5dd2d6b32671d746644bf941ec5cb1803fde932a1937aadfc2d8553fb3cb"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/voices.json",
+      "source_sha256": "b44f347aa5d09ac86e21a2d776323f2de9242f3051cd925a55562c0534465c35"
+    },
+    {
+      "path": "skills/kujo-video-styles/references/voices.md",
+      "source_sha256": "384ff35972d76e47391eb06e539886e346c80e24682b73d58b1fda92d59aedf6"
+    },
+    {
+      "path": "skills/kujo-video-styles/scripts/.gitignore",
+      "source_sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793"
+    },
+    {
+      "path": "skills/kujo-video-styles/scripts/test_browser.mjs",
+      "source_sha256": "752b53f6b091a025ebf77e9cf4ac5552edb44109e064675e6c8b72341b3ccdc8"
+    },
+    {
+      "path": "skills/kujo-video-styles/scripts/test_motion.cjs",
+      "source_sha256": "e51adb398c6c3b7f60fe69c8a101cef7fe10a4e496d37094875dcae525f27af7"
+    },
+    {
+      "path": "skills/kujo-video-styles/scripts/test_video_styles.py",
+      "source_sha256": "14894db27e721ffd1a2daaaf8be1dc17e7586709fd4d4e32602acff12bc2149e"
+    },
+    {
+      "path": "skills/kujo-video-styles/scripts/video_styles.py",
+      "source_sha256": "6b989199375d2fe2c2b25078f497093a73ae794e65e513381189b0d557db8957"
+    }
+  ]
+}

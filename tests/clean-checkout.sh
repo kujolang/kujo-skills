@@ -21,4 +21,6 @@ test -f "$profile_skills/kujo-way-development/references/security-and-validation
 python3 scripts/validate_skills.py "$profile_skills/kujo-way-development"
 grep -Fq 'name: kujo-way-development' "$profile_skills/kujo-way-development/SKILL.md"
 
+bash tests/video-skills-install.sh
+
 echo "clean install/use validation passed"

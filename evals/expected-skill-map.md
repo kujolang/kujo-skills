@@ -109,6 +109,13 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Creating source-grounded distribution assets and optionally publishing with ACT authority | `webops-distribution` |
 | Synthesizing validated specialist evidence into quiet WebOps reports | `webops-reporting` |
 
+## Kujo video production presets
+
+| Query theme | Expected skill(s) |
+|---|---|
+| Fixed 15-second monochrome trust-at-speed release film | `kujo-release-video` |
+| Ten video styles, automatic style selection, or per-style narrator overrides | `kujo-video-styles` |
+
 ## VideoOps routing
 
 | Query theme | Expected skill(s) |
