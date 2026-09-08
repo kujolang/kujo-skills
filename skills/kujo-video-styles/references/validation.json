@@ -1,0 +1,106 @@
+{
+  "date": "2026-09-08",
+  "scope": "Skill/compiler integration fixtures, not creative approval of production films",
+  "source_pack_sha256": "da8856fcb41bd65d655c4f56a77d119b0471a317c3edfedd79e43ceba41f2f90",
+  "python_tests": {
+    "new": 23,
+    "existing_release_pipeline": 12,
+    "passed": true
+  },
+  "shared_motion_test": "passed",
+  "skill_frontmatter_and_local_links": "passed",
+  "hyperframes_version": "0.8.31",
+  "native_checks": [
+    {
+      "type": "apple-style-micro-launch",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "type": "cinematic-hero-launch",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "type": "editorial-thesis-launch",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "type": "engineering-pr-to-video",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "type": "feature-reveal",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "type": "integration-partnership-launch",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "type": "kinetic-release-drop",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "type": "real-product-proof-reel",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "type": "release-notes-changelog",
+      "ok": true,
+      "exit": 0
+    },
+    {
+      "type": "short-product-launch",
+      "ok": true,
+      "exit": 0
+    }
+  ],
+  "browser": {
+    "fixtures": 30,
+    "shapes": [
+      "16:9",
+      "9:16",
+      "1:1"
+    ],
+    "settled_beat_bounds": "passed",
+    "runtime_errors": 0,
+    "reverse_random_seek_pixels": "identical"
+  },
+  "silent_render": {
+    "style": "kinetic-release-drop",
+    "seconds": 8,
+    "frames": 192,
+    "passed": true
+  },
+  "visual_inspection": [
+    "cinematic hero landscape fixture",
+    "micro launch portrait fixture"
+  ],
+  "limitations": [
+    "Test assets are explicitly synthetic and are never production claims.",
+    "No paid voice generation, publishing, or real release film was requested or performed.",
+    "Each future production still requires source inspection, native audio/media workflow and complete qualitative QA."
+  ],
+  "native_video_and_audio_master_check": {
+    "passed": true,
+    "errors": 0,
+    "warnings": 0,
+    "asset": "real MP4 from the silent fixture render plus original test-tone WAV"
+  },
+  "voice_selection": {
+    "style_defaults": 10,
+    "distinct_stock_voice_ids": 10,
+    "api_availability_checked": "2026-09-08",
+    "api_method": "GET /v2/voices (read-only)",
+    "behavioral_tests": 7,
+    "speech_generation_calls": 0,
+    "audition": "not performed; creative starting defaults"
+  }
+}

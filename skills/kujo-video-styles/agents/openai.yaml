@@ -1,0 +1,6 @@
+interface:
+  display_name: "Kujo Video Styles"
+  short_description: "Ten source-grounded HyperFrames launch video styles"
+  default_prompt: "Use $kujo-video-styles to choose and produce a source-grounded Kujo video from the supplied release or product information."
+policy:
+  allow_implicit_invocation: true

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Migrate `kujo-release-video` and `kujo-video-styles` from `kujo-hyperframes`,
+  bringing the catalog to 135 skills. Preserve the fixed preset, ten style
+  grammars, per-style ElevenLabs defaults, caller overrides and licensed assets.
+- Add isolated video-skill installation/compiler regression gates and document
+  routing into the existing shared VideoOps media workflow.
+
 - Correct VideoOps provider execution references to the canonical
   `kujo-agents/videoops/tools` package; the retired standalone repository is not
   a production dependency. Regenerate the skills and source catalog together.

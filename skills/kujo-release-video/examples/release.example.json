@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "product": "Kujo",
+  "version": "Style demo",
+  "url": "kujolang.ai",
+  "usage": "noncommercial",
+  "facts": [
+    {
+      "id": "brand",
+      "text": "Kujo brand line: Trust at the speed of AI.",
+      "source": "Reference film: trust-at-speed/README.md; this example is a style fixture, not a new release announcement."
+    },
+    {
+      "id": "loop",
+      "text": "The reference film illustrates Goal, Context, Agent, Evaluation and Stop using a theme-toggle task.",
+      "source": "trust-at-speed/content.js and STORYBOARD.md"
+    },
+    {
+      "id": "proof",
+      "text": "Criteria checked, Eval passed and Evidence recorded are illustrative receipt labels, not actual test results.",
+      "source": "trust-at-speed/content.js and README.md"
+    }
+  ]
+}

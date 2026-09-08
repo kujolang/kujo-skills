@@ -1,0 +1,6 @@
+interface:
+  display_name: "Kujo Release Video"
+  short_description: "Monochrome release films with voice and sound design"
+  default_prompt: "Use $kujo-release-video to turn the supplied release information into a Kujo-style film with ElevenLabs narration, original ambient music, and synchronized sound effects."
+policy:
+  allow_implicit_invocation: true

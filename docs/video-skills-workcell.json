@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "name": "kujo-video-skills-migration",
+  "runtime": {
+    "backend": "docker",
+    "image": "kujolang/workcell-base:local",
+    "build_context": ""
+  },
+  "workspace": {
+    "strategy": "git-worktree",
+    "mount_path": "/workspace"
+  },
+  "command": [
+    "sh",
+    "-lc",
+    "bash tests/release-readiness.sh && bash tests/clean-checkout.sh && printf 'catalog=135\\nvideo-tests=35\\nisolated-install=passed\\n' > video-skills-proof.txt"
+  ],
+  "environment": {
+    "allow": [],
+    "set": {}
+  },
+  "secrets": [],
+  "resources": {
+    "cpus": 1,
+    "memory": "512m",
+    "pids": 128,
+    "timeout_ms": 120000
+  },
+  "network": {
+    "mode": "none"
+  },
+  "filesystem": {
+    "read_only_root": true,
+    "tmpfs": [
+      "/tmp"
+    ]
+  },
+  "artifacts": {
+    "export": [
+      "video-skills-proof.txt"
+    ]
+  },
+  "cleanup": {
+    "keep_failed": false
+  },
+  "trust_profile": "contained-standard",
+  "receipt": {
+    "path": ".workcell/runs"
+  }
+}

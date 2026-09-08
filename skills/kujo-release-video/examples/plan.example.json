@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "duration": 15,
+  "screen_mode": "illustration",
+  "music_seed": 20260906,
+  "task": "Add a theme toggle.",
+  "stages": [
+    "GOAL",
+    "CONTEXT",
+    "AGENT",
+    "EVALUATION",
+    "STOP"
+  ],
+  "evidence": [
+    "Criteria checked",
+    "Eval passed",
+    "Evidence recorded"
+  ],
+  "fact_refs": {
+    "brand": [
+      "brand"
+    ],
+    "hook": [
+      "brand"
+    ],
+    "task": [
+      "loop"
+    ],
+    "loop": [
+      "loop"
+    ],
+    "proof": [
+      "proof"
+    ]
+  },
+  "copy": {
+    "tagline": "Trust at the speed of AI.",
+    "hook_label": "THE OPPORTUNITY",
+    "hook_1": "AI moves",
+    "hook_2": "fast.",
+    "task_label": "GIVE IT A GOAL.",
+    "task_header": "KUJO / TASK CONTRACT",
+    "scope": "Theme control + saved preference",
+    "stop": "Acceptance checks pass",
+    "task_footer": "BOUND THE WORK.",
+    "button": "RUN LOOP",
+    "loop_label": "LOOP ENGINEERING",
+    "loop_title": [
+      "Speed,",
+      "given",
+      "structure."
+    ],
+    "loop_caption": "Clarity. Context. Control.",
+    "proof_label": "CHECK THE WORK. KEEP THE EVIDENCE.",
+    "proof_title": [
+      "Make it",
+      "verifiable."
+    ],
+    "stamp": "\u25a0 LOOP COMPLETE",
+    "footer_left": "AI-NATIVE DEVELOPMENT",
+    "footer_right": "CLARITY / CONTEXT / CONTROL"
+  },
+  "voice": {
+    "voice_id": "nPczCjzI2devNBz1zQrb",
+    "name": "Brian",
+    "model_id": "eleven_multilingual_v2",
+    "settings": {
+      "stability": 0.6,
+      "similarity_boost": 0.75,
+      "style": 0.12,
+      "use_speaker_boost": true,
+      "speed": 1.05
+    },
+    "lines": {
+      "speed": {
+        "text": "AI moves fast."
+      },
+      "goal": {
+        "text": "Give it a clear goal."
+      },
+      "loop": {
+        "text": "Put structure around the speed."
+      },
+      "proof": {
+        "text": "Check the work. Keep the evidence."
+      },
+      "brand": {
+        "text": "Kujo. Trust at the speed of AI.",
+        "spoken_text": "Koo-joh. Trust at the speed of AI."
+      }
+    }
+  }
+}

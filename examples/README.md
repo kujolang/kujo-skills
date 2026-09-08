@@ -58,3 +58,18 @@ second mixer. Read the runtime's operator setup docs for environment/OS-secret
 references and scoped authority; skill installation grants no account authority.
 Do not patch a cached third-party HyperFrames skill. Approved local media paths,
 alignment and normalized receipts are the stable media-use/audio integration.
+
+## Kujo video style and release bundle
+
+Install both complete sibling folders after choosing the actual target profile:
+
+```bash
+cp -R skills/kujo-release-video skills/kujo-video-styles "$PROFILE_SKILLS/"
+```
+
+Use `$kujo-release-video` for the fixed 15-second preset, or `$kujo-video-styles`
+for the ten selectable styles and voice overrides. For full team productions,
+use the VideoOps bundle above and consume these presets at the creative stage;
+shared media adapters retain provider execution ownership. See the
+[migration notes](../docs/video-skills-migration.md) and run
+`bash tests/video-skills-install.sh` for an offline temporary-profile check.

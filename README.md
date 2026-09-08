@@ -10,7 +10,7 @@ The catalog gives coding agents exact Kujo commands, safety boundaries, validati
 
 ## Why use this pack?
 
-- Route work to 133 focused skills, including the cross-cutting `kujo-way-development` baseline, 30 WebOps skills, the VideoOps team operator plus 36 production skills, and 11 Publishing House tool, profile, quality, and lifecycle skills.
+- Route work to 135 focused skills, including the cross-cutting `kujo-way-development` baseline, 30 WebOps skills, the VideoOps team operator plus 36 production skills, two reusable video production presets, and 11 Publishing House tool, profile, quality, and lifecycle skills.
 - Keep VM-first execution, capability boundaries, and CLI contracts explicit.
 - Ground recommendations in Kujo repositories, tests, and operational docs.
 - Validate the complete catalog offline with one command.
@@ -59,6 +59,8 @@ Start with the [skill catalog](SKILLS_INDEX.md). Common entry points include:
 | Crawl and compare a website | `kujo-siteprobe-workflows` |
 | Normalize search/analytics/provider evidence | `kujo-searchbridge-workflows` |
 | Build deterministic content relationships | `kujo-contentgraph-workflows` |
+| Make the fixed trust-at-speed release film | `kujo-release-video` |
+| Choose one of ten video styles and its narrator | `kujo-video-styles` |
 | Produce a complete video through the VideoOps team | `kujo-videoops-workflows` |
 | Execute authorized speech, sound effects, music or local import | `videoops-media-provider-execution` |
 | Run a WebOps methodology | the narrowest `webops-*` skill |
@@ -93,7 +95,10 @@ with `kujo-agents/videoops/tools/bin/videoops` rather than copying a production-
 script. Implementation and mocked coverage do not imply account entitlement or
 live verification of every capability; actual live outcomes and usage belong
 in the runtime's per-request receipts. Voice, brand and glitch choices remain
-production presets. No live-profile installation is needed to validate this pack.
+production presets. The migrated `kujo-release-video` and `kujo-video-styles` folders own
+those reusable presets; finished productions remain in `kujo-hyperframes`. Install
+both video skill folders together to include their shared assets. See the
+[video migration and integration notes](docs/video-skills-migration.md). No live-profile installation is needed to validate this pack.
 
 The pack provides guidance, not runtime enforcement. An agent or host must load a skill and enforce its own permissions. Kujo itself is not a sandbox: use `--untrusted`, least-privilege `--allow-*` flags, and external isolation for high-risk scripts.
 
@@ -103,4 +108,5 @@ For contribution, support, and vulnerability-reporting guidance, see [CONTRIBUTI
 
 ## License
 
-Released under the [MIT License](LICENSE).
+Released under the [MIT License](LICENSE). Bundled video starter assets retain their
+[third-party license and Kujo brand notices](skills/kujo-release-video/assets/project/VISUAL-LICENSES.md).

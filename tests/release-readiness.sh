@@ -20,4 +20,6 @@ test -f skills/kujo-redact-workflows/SKILL.md
 bash .github/scripts/check-kujo-tool-artifacts.sh
 git diff --check
 
+bash tests/video-skills-install.sh
+
 echo "release-readiness validation passed"

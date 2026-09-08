@@ -111,6 +111,13 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `webops-distribution` | Creating source-grounded distribution assets and optionally publishing with ACT authority. | Approved published content, Howl, distribution integration, permission receipt, and brand constraints |
 | `webops-reporting` | Synthesizing validated specialist evidence into quiet WebOps reports. | Validated current/prior WebOps artifacts, finding history, actions, outcomes, and availability receipts |
 
+## Kujo video production presets
+
+| Skill | Use when | Primary sources |
+|---|---|---|
+| `kujo-release-video` | Produce the fixed 15-second trust-at-speed release film with cached narration and original sound. | Bundled input contract, pipeline, editable starter and tests |
+| `kujo-video-styles` | Select and author ten launch/release styles with per-style ElevenLabs defaults and caller overrides. | Bundled type contracts, voice catalog, motion library and JSON CLI |
+
 ## VideoOps skills
 
 | Skill | Use when | Primary sources |

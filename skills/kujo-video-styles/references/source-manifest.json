@@ -1,0 +1,47 @@
+{
+  "name": "kujo-hyperframes-video-types",
+  "version": 1,
+  "shared_contract": "00-shared-contract.md",
+  "types": [
+    {
+      "id": "cinematic-hero-launch",
+      "file": "01-cinematic-hero-launch.md"
+    },
+    {
+      "id": "apple-style-micro-launch",
+      "file": "02-apple-style-micro-launch.md"
+    },
+    {
+      "id": "release-notes-changelog",
+      "file": "03-release-notes-changelog.md"
+    },
+    {
+      "id": "real-product-proof-reel",
+      "file": "04-real-product-proof-reel.md"
+    },
+    {
+      "id": "editorial-thesis-launch",
+      "file": "05-editorial-thesis-launch.md"
+    },
+    {
+      "id": "feature-reveal",
+      "file": "06-feature-reveal.md"
+    },
+    {
+      "id": "integration-partnership-launch",
+      "file": "07-integration-partnership-launch.md"
+    },
+    {
+      "id": "engineering-pr-to-video",
+      "file": "08-engineering-pr-to-video.md"
+    },
+    {
+      "id": "short-product-launch",
+      "file": "09-short-product-launch.md"
+    },
+    {
+      "id": "kinetic-release-drop",
+      "file": "10-kinetic-release-drop.md"
+    }
+  ]
+}

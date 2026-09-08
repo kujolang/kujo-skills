@@ -1752,5 +1752,28 @@
       "Use webops-web-performance for analyzing lab and field website performance as distinct evidence classes",
       "I need help analyzing lab and field website performance as distinct evidence classes"
     ]
+  },
+  "kujo-release-video": {
+    "should_trigger": [
+      "Use kujo-release-video to make the 15-second trust-at-speed film for this release",
+      "Build the fixed Kujo release preset with cached ElevenLabs narration"
+    ],
+    "should_not_trigger": [
+      "Make a 50-second cinematic hero launch",
+      "Operate the full VideoOps production team",
+      "Generate a standalone sound effect"
+    ]
+  },
+  "kujo-video-styles": {
+    "should_trigger": [
+      "Use kujo-video-styles for a cinematic hero launch",
+      "Choose a Kujo video style for this changelog",
+      "Create a vertical feature-reveal with George instead of the default narrator"
+    ],
+    "should_not_trigger": [
+      "Build the fixed trust-at-speed release preset",
+      "Run a raw ElevenLabs speech request without a video",
+      "Edit Kujo runtime syntax"
+    ]
   }
 }
