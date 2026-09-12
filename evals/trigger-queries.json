@@ -842,7 +842,9 @@
       "build SiteKit dist and run component validation",
       "add a SiteKit component schema template and CSS",
       "update SiteKit tokens without raw hex colors",
-      "smoke test SiteKit consumer dashboard behavior"
+      "smoke test SiteKit consumer dashboard behavior",
+      "verify SiteKit 1.0 generated drift and release archive checks",
+      "keep bundled Tabler icons and mobile menu behavior aligned with SiteKit dist"
     ]
   },
   "kujo-sitekit-workflows": {
@@ -857,7 +859,8 @@
       "add a SiteKit component schema template and CSS",
       "update SiteKit tokens without raw hex colors",
       "smoke test SiteKit consumer dashboard behavior",
-      "use the older SiteKit skill alias for compatibility"
+      "use the older SiteKit skill alias for compatibility",
+      "verify SiteKit 1.0 generated drift and release archive checks"
     ]
   },
   "kujo-siteprobe-workflows": {
@@ -1100,7 +1103,9 @@
       "verify a .workcell run manifest after tampering",
       "harden Workcell output path containment tests",
       "run Workcell Podman load evidence and egress deployment contracts",
-      "verify Workcell untracked file patch generation"
+      "verify Workcell untracked file patch generation",
+      "use Workcell inspect --summary and run --summary for compact agent evidence",
+      "review Workcell alpha backend adapter profiles for E2B Vercel Sandbox and Daytona"
     ]
   },
   "publishing-house-profile-setup": {

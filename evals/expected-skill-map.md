@@ -42,12 +42,12 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Scent context packs | `kujo-scent-workflows` |
 | Scout codebase intelligence scans | `kujo-scout-workflows` |
 | ShipCheck release readiness | `kujo-shipcheck-workflows` |
-| SiteKit design-system tokens/components/dist smoke/Workcell proof | `kujo-site-kit-workflows`, compatibility `kujo-sitekit-workflows` |
+| SiteKit 1.0 design-system tokens/components/dist/behavior/icons smoke/release checks/Workcell proof | `kujo-site-kit-workflows`, compatibility `kujo-sitekit-workflows` |
 | SSG builds, docs bridge, docs starter, parallel builds, WebMCP, Ability pack, release gates | `kujo-ssg-workflows` |
 | Spec task contracts | `kujo-spec-workflows` |
 | Tribunal decision evidence | `kujo-tribunal-workflows` |
 | Watchdog telemetry/proxy/dashboard/pricing/backups, connected sources, OTLP/export, streaming | `kujo-watchdog-workflows` |
-| Workcell local container sandboxes | `kujo-workcell-workflows` |
+| Workcell 1.1 local container sandboxes, summaries, receipts, and alpha backend adapters | `kujo-workcell-workflows` |
 | Weekly skill maintenance and stale skill/index/fixture drift | `kujo-skill-auditor` |
 | Readiness posture/evidence audit | `kujo-readiness-auditor` |
 | Docs/generated-artifact drift | `kujo-docs-drift-auditor` |

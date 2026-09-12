@@ -1,11 +1,11 @@
 ---
 name: kujo-sitekit-workflows
-description: "Use this skill when building, validating, consuming, or maintaining SiteKit design-system artifacts: tokens, component schemas/templates/CSS, layout recipes, generated `dist/sitekit.css`, optional `dist/sitekit.js`, `DESIGN.md`, accessibility/semantic standards, examples, snapshots, smoke tests, or SiteKit source/docs changes."
+description: "Use this skill when building, validating, consuming, or maintaining SiteKit 1.0 design-system artifacts: tokens, component schemas/templates/CSS, layout recipes, generated `dist/sitekit.css`, `dist/sitekit.js`, `DESIGN.md`, accessibility/semantic standards, examples, snapshots, smoke tests, release checks, or SiteKit source/docs changes."
 ---
 
 # Kujo SiteKit Workflows
 
-Use SiteKit as the source-driven, AI-readable design system for accessible, semantic, token-driven websites and interfaces. Treat tokens, schemas, templates, component CSS, recipes, and standards as source of truth; generated outputs are distribution artifacts.
+Use SiteKit 1.0 as the source-driven, AI-readable design system for accessible, semantic, token-driven websites and interfaces. Treat tokens, schemas, templates, component CSS, recipes, behavior hooks, and standards as source of truth; generated outputs are distribution artifacts. The canonical skill is `kujo-site-kit-workflows`; keep this compatibility alias accurate but prefer the hyphenated name for new routing.
 
 ## Quick Start
 
@@ -32,11 +32,11 @@ dist/fonts/*
 
 ## Workflow Notes
 
-- The package is private/internal at `0.1.0`; consumers copy or vendor `dist/`, or use the repo as a local dependency. Do not imply npm publication.
+- The package is stable at `1.0.0` but remains `private: true`; consumers copy or vendor `dist/`, or use the repo as a local dependency. Do not imply npm publication.
 - `npm run build` regenerates reset, primitive and semantic tokens, theme overrides, base styles, components, utilities, `dist/sitekit.css`, optional behavior JS, and font assets.
-- `dist/sitekit.js` is optional progressive behavior for documented hooks: dropdowns, popovers, drawers, dialogs, tooltips, theme controls, and focus behavior.
+- `dist/sitekit.js` is optional progressive behavior for documented hooks: dropdowns, popovers, drawers, dialogs, tooltips, theme controls, mobile navigation, native scrollbar theming, and focus behavior.
 - `css/generated/*` is useful for source inspection; consumers should not manually assemble generated CSS.
-- Browser/accessibility testing is a separate pre-launch requirement for representative consuming layouts; package release checks alone are not proof for every site.
+- Browser/accessibility testing is representative unless the current Playwright Chromium, Firefox, and WebKit desktop/tablet/mobile release matrix is actually run; package release checks are not proof for every site.
 - Prefer existing components and tokens before adding page-specific styles or new primitives.
 
 When reporting results, state the command, generated artifacts, changed source surfaces, validation output, and whether browser/accessibility review remains.
@@ -65,6 +65,8 @@ npm run lint
 npm run validate
 npm run snapshot
 npm run smoke
+npm run generated:check
+npm run release:check
 ```
 
 ## Search And Safety

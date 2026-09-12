@@ -43,13 +43,13 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-scent-workflows` | Scent packs, dry-run budgets, include/exclude filters, pack artifacts, and redaction audits. | `../scent` README/docs/scent.kujo |
 | `kujo-scout-workflows` | Scout scans, context packs, `llms.txt`, `AGENTS.md`, manifests, exports, baselines, snapshots. | `../scout` README/docs/tests |
 | `kujo-shipcheck-workflows` | ShipCheck scans, checklists, gates, release notes, report schema, release readiness checks. | `../shipcheck` README/docs/src/tests |
-| `kujo-site-kit-workflows` | Canonical SiteKit skill for `site-kit`: tokens, components, schemas, generated dist, smoke, Workcell proof. | `../site-kit` README/docs/tests/scripts |
+| `kujo-site-kit-workflows` | Canonical SiteKit skill for `site-kit`: stable 1.0 source-vendored tokens, components, schemas, generated dist, behavior JS, icons, smoke/release checks, and Workcell proof. | `../site-kit` README/docs/tests/scripts |
 | `kujo-sitekit-workflows` | Compatibility alias for older SiteKit references; prefer `kujo-site-kit-workflows` for new work. | `../site-kit` README/docs/tests/scripts |
 | `kujo-ssg-workflows` | SSG builds, templates, feeds, `llms.txt`, docs bridge, docs starter, parallel builds, experimental static WebMCP, local Ability pack, and release gates. | `../ssg` README/build/scripts/docs |
 | `kujo-spec-workflows` | Spec contracts, validate/render/export-agent-context/export-eval/status/schema/policy work. | `../spec` README/docs/tests |
 | `kujo-tribunal-workflows` | Tribunal decision evidence, reviews, signed bundles, trust policies, audit/verify gates. | `../tribunal` README/docs/src/tests |
 | `kujo-watchdog-workflows` | Watchdog telemetry/proxy, dashboard/API, traces, connected sources, OTLP/export, streaming, auth/redaction/rate limits, pricing, backups, AI Chat/Agents SDK integration. | `../watchdog` README/src/tests/scripts |
-| `kujo-workcell-workflows` | Workcell container sandboxes, definitions, run/verify receipts, Docker/Podman boundaries. | `../workcell` README/docs/src/tests |
+| `kujo-workcell-workflows` | Workcell 1.1 execution harnesses, summaries, receipts, Docker/Podman boundaries, and alpha provider-neutral backend adapters. | `../workcell` README/docs/src/tests/adapters |
 | `kujo-skill-auditor` | Weekly skills-pack drift audits and trigger/index refreshes. | `skills/*/SKILL.md`, this index, `evals/`, sibling repos |
 | `kujo-readiness-auditor` | Recurring readiness posture, release preparedness, and evidence gaps. | Repo docs/tests/scripts/tool reports |
 | `kujo-docs-drift-auditor` | README/reference/generated-doc staleness and docs/source mismatch. | Repo docs, examples, generated docs, CLI help |
