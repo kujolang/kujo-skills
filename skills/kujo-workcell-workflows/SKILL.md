@@ -36,6 +36,7 @@ docker build --tag kujolang/workcell-base:local docker/
 - `workcell run` writes `.workcell/runs/<run-id>/` with `receipt.json`, logs, integrations, patch/change records including untracked files, integrity manifest, and artifacts.
 - `workcell verify --run <run-directory> --json` verifies immutable evidence hashes without exposing secret values.
 - The default `contained-standard` profile uses no network, non-root host-mapped UID/GID, read-only root, bounded CPU/memory/PIDs/time/output, no new privileges, dropped capabilities, no devices, no host namespaces, no Docker socket, explicit env, and one disposable workspace mount.
+- Docker launch preserves trusted host-client selectors such as `DOCKER_HOST`, `DOCKER_CONTEXT`, `DOCKER_CONFIG`, `DOCKER_CERT_PATH`, `DOCKER_TLS_VERIFY`, and `DOCKER_API_VERSION` for engine control only. They are not passed as container environment. Docker launch uses `--pull=never` after image preparation and clears implicit Docker-config proxy injection unless the workload explicitly declared those proxy variables.
 - Podman is supported through the same OCI policy boundary. Rootless engine posture, runtime class selection, egress declarations, load evidence, and ecosystem integrations are explicit validation surfaces rather than implicit safety guarantees.
 - `backends` lists built-ins and explicitly supplied external adapter manifests; `recover` reconciles owned external-backend journals without deleting resources whose ownership does not match.
 - Portable `workcell-definition/v2alpha1`, `workcell-backend/v1alpha1`, and `workcell-receipt/v2alpha1` keep workload definitions provider-neutral. Docker and Podman resolve through the built-in OCI lifecycle; E2B, Vercel Sandbox, Daytona, and Cloudflare Sandbox require exact adapter/profile evidence and credential-gated certification before live claims.
@@ -68,6 +69,7 @@ Run validation after source, docs, definition, runtime, or contract changes:
 
 ```bash
 ./tests/run.sh
+python3 tests/docker_endpoint_contract.py
 ./tests/run.sh --check-only
 ./tests/quality.sh
 ./tests/release_report.sh
@@ -99,4 +101,4 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and run-ou
 ## Sources Consulted
 
 - Status: repo-backed: `README.md`, `docs/security-model.md`, `docs/enterprise-deployment.md`, `docs/workcell-definition.md`, `docs/runtime-lifecycle.md`, `docs/api-compatibility.md`, `docs/backend-adapters.md`, `docs/adapter-authoring.md`, `docs/provider-operations.md`, `docs/known-limitations.md`.
-- Status: repo-backed: `main.kujo`, `src/`, `workcell.json`, `bin/workcell`, `tests/`, `docker/`.
+- Status: repo-backed: `main.kujo`, `src/`, `workcell.json`, `bin/workcell`, `tests/`, `docker/`, `docs/runtime-lifecycle.md`, `docs/email-endpoint-hardening.md`.

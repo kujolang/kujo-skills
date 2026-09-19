@@ -812,7 +812,10 @@
       "should this untrusted AI script use --allow-ai or --allow-net-client",
       "lock Kujo AI helpers to approved provider endpoints with KUJO_AI_ALLOWED_ENDPOINTS",
       "force trusted Kujo network calls to deny private destinations with --deny-private-net",
-      "write a private key with restrictive permissions using io_write_private_file"
+      "write a private key with restrictive permissions using io_write_private_file",
+      "generate a Kujo secure_random_token for reset links",
+      "review a pdf_render_html business document for unsafe HTML",
+      "harden a production db_pool_postgres_tls workflow"
     ]
   },
   "kujo-shipcheck-workflows": {
@@ -954,7 +957,10 @@
       "read and set a single pixel on a Kujo image value",
       "what does hmac_sha256 return for string payloads",
       "use jsonl_query to filter a large Kujo evidence JSONL file",
-      "encode a URL query component with encode_uri_component"
+      "encode a URL query component with encode_uri_component",
+      "decode a provider callback parameter with decode_uri_component",
+      "format a timestamp with format_date_tz and parse_datetime",
+      "render a strict PDF business document with pdf_render_html"
     ]
   },
   "kujo-storydesk-workflows": {
@@ -1105,7 +1111,8 @@
       "run Workcell Podman load evidence and egress deployment contracts",
       "verify Workcell untracked file patch generation",
       "use Workcell inspect --summary and run --summary for compact agent evidence",
-      "review Workcell alpha backend adapter profiles for E2B Vercel Sandbox and Daytona"
+      "review Workcell alpha backend adapter profiles for E2B Vercel Sandbox and Daytona",
+      "verify Workcell preserves DOCKER_HOST while clearing implicit Docker proxy injection"
     ]
   },
   "publishing-house-profile-setup": {

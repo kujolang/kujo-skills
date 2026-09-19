@@ -7,9 +7,9 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Cross-cutting Kujo project development, ecosystem routing, compact AI-native design, anti-slop review, and evidence-backed completion | `kujo-way-development`, plus the narrowest focused skill when needed |
 | General `.kujo` syntax, functions, loops, imports, truthiness | `kujo-core-language` |
 | Building Kujo JSON policy checkers, repo scanners, deterministic CLI tools | `kujo-tool-building`, optionally `kujo-enterprise-automation` |
-| Untrusted Kujo scripts, capability flags, shell/network/files/db/archive/HTML/AI egress risk | `kujo-security-hardening` |
+| Untrusted Kujo scripts, capability flags, shell/network/files/db/archive/HTML/PDF/AI egress risk, secure tokens, and PostgreSQL TLS pooling | `kujo-security-hardening` |
 | CLI JSON, exit codes, stdout/stderr, diagnostics, LSP helper payloads | `kujo-cli-contracts` |
-| Builtin arity, return values, capability gates, JSON/JSONL/file/process/network/db/crypto/rendering/AI APIs | `kujo-standard-library` |
+| Builtin arity, return values, capability gates, JSON/JSONL/file/process/network/db/crypto/URI/date/PDF rendering/AI APIs | `kujo-standard-library` |
 | Test selection, release gates, enterprise verify, docs/example smoke tests | `kujo-testing-release-gates` |
 | VM/interpreter drift, `--interpreter`, dual runtime checks | `kujo-runtime-parity` |
 | Rust implementation changes | `kujo-language-implementation` |
@@ -47,7 +47,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Spec task contracts | `kujo-spec-workflows` |
 | Tribunal decision evidence | `kujo-tribunal-workflows` |
 | Watchdog telemetry/proxy/dashboard/pricing/backups, connected sources, OTLP/export, streaming | `kujo-watchdog-workflows` |
-| Workcell 1.1 local container sandboxes, summaries, receipts, and alpha backend adapters | `kujo-workcell-workflows` |
+| Workcell 1.1 local container sandboxes, summaries, receipts, Docker endpoint selectors, proxy handling, and alpha backend adapters | `kujo-workcell-workflows` |
 | Weekly skill maintenance and stale skill/index/fixture drift | `kujo-skill-auditor` |
 | Readiness posture/evidence audit | `kujo-readiness-auditor` |
 | Docs/generated-artifact drift | `kujo-docs-drift-auditor` |

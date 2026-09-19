@@ -7,10 +7,10 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-way-development` | Cross-cutting Kujo project builds or substantial reviews needing ecosystem routing, compact agent-readable code, deterministic AI/offline behavior, anti-slop constraints, and evidence-backed completion. | Kujo/Agents SDK/Kujo Agents contracts plus focused installed skills |
 | `kujo-core-language` | Kujo syntax, imports, mutability, control flow, truthiness, and examples. | Kujo `README.md`, `docs/LANGUAGE_SPEC.md`, examples, docs tests |
 | `kujo-tool-building` | Building practical Kujo CLI tools, JSON gates, repo scanners, and deterministic reports. | Kujo tool cookbook, standard library reference, CLI contracts |
-| `kujo-security-hardening` | Reviewing untrusted Kujo, host effects, capability flags, AI/network egress, shell/process/db/archive risk. | Kujo native API security, secure AI scripting, runtime security tests |
+| `kujo-security-hardening` | Reviewing untrusted Kujo, host effects, capability flags, AI/network egress, shell/process/db/archive/PDF risk, secure token generation, and production PostgreSQL TLS pooling. | Kujo native API security, secure AI scripting, runtime security tests |
 | `kujo-enterprise-automation` | Enterprise-style Kujo automation, audit logs, strict AI replay, CI quality gates, external isolation. | Kujo enterprise/release docs and `scripts/enterprise_verify.sh` |
 | `kujo-cli-contracts` | CLI JSON, stdout/stderr, exit codes, diagnostics, and machine-readable output compatibility. | Kujo CLI contract docs and CLI JSON tests |
-| `kujo-standard-library` | Builtin arity, return values, capability gates, JSON/JSONL/file/process/network/db/crypto/rendering/AI APIs. | Kujo standard library docs and stdlib contract tests |
+| `kujo-standard-library` | Builtin arity, return values, capability gates, JSON/JSONL/file/process/network/db/crypto/URI/date/PDF rendering/AI APIs. | Kujo standard library docs and stdlib contract tests |
 | `kujo-testing-release-gates` | Test selection, broad validation, release gates, enterprise verification, and docs/example smoke tests. | Kujo release docs, scripts, and test suites |
 | `kujo-runtime-parity` | VM/interpreter drift, `--interpreter`, `kujo test --runtime dual`, and parity matrix work. | Kujo parity docs and runtime path tests |
 | `kujo-language-implementation` | Rust implementation changes in lexer/parser/compiler/VM/interpreter/native APIs. | Kujo architecture docs, `src/`, tests |
@@ -49,7 +49,7 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-spec-workflows` | Spec contracts, validate/render/export-agent-context/export-eval/status/schema/policy work. | `../spec` README/docs/tests |
 | `kujo-tribunal-workflows` | Tribunal decision evidence, reviews, signed bundles, trust policies, audit/verify gates. | `../tribunal` README/docs/src/tests |
 | `kujo-watchdog-workflows` | Watchdog telemetry/proxy, dashboard/API, traces, connected sources, OTLP/export, streaming, auth/redaction/rate limits, pricing, backups, AI Chat/Agents SDK integration. | `../watchdog` README/src/tests/scripts |
-| `kujo-workcell-workflows` | Workcell 1.1 execution harnesses, summaries, receipts, Docker/Podman boundaries, and alpha provider-neutral backend adapters. | `../workcell` README/docs/src/tests/adapters |
+| `kujo-workcell-workflows` | Workcell 1.1 execution harnesses, summaries, receipts, Docker/Podman launch boundaries, endpoint selectors, proxy handling, and alpha provider-neutral backend adapters. | `../workcell` README/docs/src/tests/adapters |
 | `kujo-skill-auditor` | Weekly skills-pack drift audits and trigger/index refreshes. | `skills/*/SKILL.md`, this index, `evals/`, sibling repos |
 | `kujo-readiness-auditor` | Recurring readiness posture, release preparedness, and evidence gaps. | Repo docs/tests/scripts/tool reports |
 | `kujo-docs-drift-auditor` | README/reference/generated-doc staleness and docs/source mismatch. | Repo docs, examples, generated docs, CLI help |

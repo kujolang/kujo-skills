@@ -54,6 +54,9 @@ kujo run --deny-private-net --allow-ai ./agent.kujo
 - `unzip` is hardened against traversal/symlinks and size limits, but archive extraction remains a high-risk write surface.
 - `kujo serve` is local preview/testing, not a hardened internet edge.
 - Database access should use least-privileged accounts and network restrictions.
+- Use `secure_random_token(16..128)` for session identifiers, CSRF values, invitations, reset links, bearer grants, API keys, or signing/encryption key material; `random_id`, UUID helpers, and seeded random functions are not security credential generators.
+- Use `db_pool_postgres_tls` for production PostgreSQL pooling; it requires a caller-supplied public CA bundle and explicit TCP hostname, rolls back and resets sessions before reuse, and exposes pool health counters.
+- Use `pdf_render_html` only for the strict in-process business-document profile. It rejects active HTML, external URLs, unknown CSS, malformed nesting, and implicit closing; file output uses private atomic publication and refuses replacement.
 - Crypto helpers are not a substitute for secret management or key rotation.
 
 ## Review Checklist
@@ -73,9 +76,11 @@ cargo test --test runtime_security
 cargo test --test serve_command_integration
 cargo test --test ai_replay_hermeticity_contract
 cargo test --test docs_policy_consistency_contract
+cargo test --test secure_random_token
+cargo test --test pdf_render_html
 ```
 
 ## Sources Consulted
 
 - Status: repo-backed: `docs/NATIVE_API_SECURITY_POSTURE.md`, `docs/SECURE_AI_SCRIPTING.md`, `docs/AI_RUNTIME.md`, `src/interpreter/capabilities.rs`.
-- Status: repo-backed: `tests/native_api_security_boundaries.rs`, `tests/runtime_security.rs`, `tests/serve_command_integration.rs`.
+- Status: repo-backed: `tests/native_api_security_boundaries.rs`, `tests/runtime_security.rs`, `tests/serve_command_integration.rs`, `tests/secure_random_token.rs`, `tests/pdf_render_html.rs`, `tests/postgres_tls.sh`.
