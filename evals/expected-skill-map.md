@@ -5,7 +5,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Query theme | Expected skill(s) |
 |---|---|
 | Cross-cutting Kujo project development, ecosystem routing, compact AI-native design, anti-slop review, and evidence-backed completion | `kujo-way-development`, plus the narrowest focused skill when needed |
-| General `.kujo` syntax, functions, loops, imports, truthiness | `kujo-core-language` |
+| General `.kujo` syntax, functions, loops, imports, async/await, detached spawn, generators, truthiness | `kujo-core-language` |
 | Building Kujo JSON policy checkers, repo scanners, deterministic CLI tools | `kujo-tool-building`, optionally `kujo-enterprise-automation` |
 | Untrusted Kujo scripts, capability flags, shell/network/files/db/archive/HTML/PDF/AI egress risk, secure tokens, and PostgreSQL TLS pooling | `kujo-security-hardening` |
 | CLI JSON, exit codes, stdout/stderr, diagnostics, LSP helper payloads | `kujo-cli-contracts` |
@@ -36,7 +36,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | PackWrite execution packs | `kujo-packwrite-workflows` |
 | PatchBrief summaries, suggested tests, handoffs | `kujo-patchbrief-workflows` |
 | RAG ingest/query/serve/demo and release evals | `kujo-rag-workflows` |
-| Redact scan/sanitize/verify/pack | `kujo-redact-workflows` |
+| Redact 1.1 scan/sanitize/verify/pack, stdin rejection, release verification | `kujo-redact-workflows` |
 | Relay missions, agents/models/runs, evidence bundles | `kujo-relay-workflows` |
 | RunLedger receipts, usage/cost, verdicts, correlation links, reports | `kujo-runledger-workflows` |
 | Scent context packs | `kujo-scent-workflows` |
@@ -71,8 +71,8 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Editorial reviews, blockers, disagreements, and calibration records | `kujo-bluepencil-workflows` |
 | Exact-version human approval, rejection, revocation, expiry, and verification | `kujo-versionseal-workflows` |
 | Approval-gated scheduling, publication, correction, unpublish, and receipts | `kujo-presswire-workflows` |
-| Privacy-bounded audience measurement, feedback, learning, and follow-up | `kujo-readersignal-workflows` |
-| Media planning, transforms, accessibility artifacts, provenance, and manifests | `kujo-assetworks-workflows` |
+| Privacy-bounded audience measurement, feedback, learning, recovery/backup, and follow-up | `kujo-readersignal-workflows` |
+| Media planning, transforms, accessibility artifacts, provenance, signed manifests, bounded adapters, recovery/backup, and state migration | `kujo-assetworks-workflows` |
 
 ## WebOps routing
 

@@ -5,7 +5,7 @@ description: "Use this skill when scanning, sanitizing, verifying, packing, or m
 
 # Kujo Redact Workflows
 
-Use Redact for local-first deterministic anonymization of text and Markdown into model-ready context with a local audit trail. Treat it as a review aid, not a guarantee that no sensitive data remains.
+Use Redact 1.1 for local-first deterministic anonymization of `.txt` and `.md` files into model-ready context with a local audit trail. Treat it as a review aid, not a guarantee that no sensitive data remains.
 
 ## Quick Start
 
@@ -22,7 +22,7 @@ kujo run redact.kujo pack ./notes --policy external-safe --out redacted-pack
 
 ## Workflow Notes
 
-- Supported inputs are `.txt`, `.md`, and the `-` stdin contract; current Kujo VM builds return an unsupported-runtime error for stdin rather than reading it silently.
+- Supported inputs are local `.txt` and `.md` file paths. Redact 1.1 explicitly rejects `-` stdin because it has no implemented bounded multiline stdin contract.
 - Supported policies are the documented flat-YAML subset with category actions, term dictionaries, and optional role mappings.
 - Detection is deterministic: email, phone, URL/domain, credit card with Luhn, API key/token, money, date, configured names, and strategy phrases.
 - Transformations include `remove`, `placeholder`, `role-preserve`, `generalize`, `range`, and `date-generalize`.
@@ -43,14 +43,16 @@ When modifying this repository, read in this order:
 5. `src/cli.kujo`
 6. `src/policy.kujo`, `src/detect.kujo`, `src/transform.kujo`, `src/verify.kujo`, `src/audit.kujo`
 7. `tests/redact_tests.kujo`
-8. `tests/run.sh`
+8. `tests/` and `scripts/verify-all.sh`
 
 Preserve documented command names, policy behavior, audit schema intent, leakage checks, and safe-write behavior unless the user explicitly asks to change them.
 
 Run validation after source, docs, policy, or contract changes:
 
 ```bash
-bash tests/run.sh
+export KUJO_BIN=/absolute/path/to/kujo
+"$KUJO_BIN" --version
+bash scripts/verify-all.sh
 ```
 
 ## Search And Safety
@@ -65,4 +67,4 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and audit 
 ## Sources Consulted
 
 - Status: repo-backed: `README.md`, `docs/security.md`, `docs/architecture.md`.
-- Status: repo-backed: `redact.kujo`, `src/*.kujo`, `tests/redact_tests.kujo`, `tests/run.sh`.
+- Status: repo-backed: `CHANGELOG.md`, `SECURITY.md`, `docs/launch-checklist.md`, `docs/release-process.md`, `redact.kujo`, `src/*.kujo`, `tests/`, `scripts/verify-all.sh`.

@@ -21,7 +21,8 @@ Use this as the default baseline for general Kujo coding tasks.
 ## Syntax Surfaces To Use
 
 - Functions: `func name(args) { ... }`; fallthrough returns `null`.
-- Async functions: `async func name(args) { ... }` where runtime support applies.
+- Async functions: `async func name(args) { ... }`; await promises explicitly when later code depends on completion.
+- Detached work: `spawn { ... }` executes referenced transferable snapshots in both runtimes, has no join, and does not keep the process alive.
 - Control flow: `if`/`else`, `while`, `loop`, `for item in values`, `match`, `try`/`except`, `throw`.
 - Data: arrays (`[1, 2]`), dictionaries (`{"key": value}`), structs/enums where current examples/spec support them.
 - Imports: `import module`, `from module import symbol`, and dotted imports such as `from src.util import value`.
@@ -40,7 +41,9 @@ Truthy: all other values, including `"false"`.
 - Predicate helpers such as `has_key`, `contains`, `starts_with`, and `ends_with` return `1`/`0`; compare explicitly.
 - Collection helpers such as `push`, `insert`, `remove_at`, `concat`, `map`, and `filter` return new values; reassign the result.
 - Imported functions must be exported from the source module.
-- Kujo `v1.0.2` is the current published stable release with prebuilt platform binaries and checksums. Use `docs/V1_SCOPE.md`, `docs/RELEASE_PROCESS.md`, and the official release checklist for compatibility boundaries and explicit deferrals instead of relying on version strings alone.
+- Generator aliases share progress; iteration is lazy, and async generators plus struct generator methods remain explicitly unsupported.
+- Kujo `v1.5.0` is the current published stable release with prebuilt platform binaries and checksums. Use `docs/V1_SCOPE.md`, `docs/RELEASE_PROCESS.md`, and the official release checklist for compatibility boundaries and explicit deferrals instead of relying on version strings alone.
+- Kujo's built-in package workflow is `kujo init`, `kujo package-add`, `kujo package-install`, and `kujo package-install --frozen`; Kennel owns public registry install and distribution, and `kujo package-publish` remains metadata preview only.
 
 ## Validation
 
@@ -68,6 +71,6 @@ cargo run -- test --runtime dual
 
 ## Sources Consulted
 
-- Status: repo-backed: `README.md`, `CHANGELOG.md`, `docs/LANGUAGE_SPEC.md`, `docs/V1_SCOPE.md`, `docs/RELEASE_PROCESS.md`, `docs/V1_0_OFFICIAL_RELEASE_CHECKLIST.md`, `docs/VM_INTERPRETER_PARITY_MATRIX.md`, `docs/VM_INTERPRETER_MIGRATION_PLAYBOOK.md`.
+- Status: repo-backed: `README.md`, `AGENTS.md`, `CHANGELOG.md`, `docs/LANGUAGE_SPEC.md`, `docs/V1_SCOPE.md`, `docs/RELEASE_PROCESS.md`, `docs/RUNTIME_CONCURRENCY_COMPLETION.md`, `docs/V1_0_OFFICIAL_RELEASE_CHECKLIST.md`, `docs/VM_INTERPRETER_PARITY_MATRIX.md`, `docs/VM_INTERPRETER_MIGRATION_PLAYBOOK.md`.
 - Status: repo-backed: `examples/README_examples.md`, `tests/docs_examples.rs`, `tests/vm_interpreter_parity_surfaces.rs`.
 - Status: inferred; needs maintainer confirmation: prefer `let`/`mut`/`const` plus `:=` for new idiomatic code even though some examples still use legacy `=` style.

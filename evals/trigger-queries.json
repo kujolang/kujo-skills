@@ -63,7 +63,8 @@
     ],
     "should_trigger": [
       "Use AssetWorks to plan and validate a media asset with captions and provenance",
-      "Create a checksum-backed accessibility-aware AssetWorks manifest"
+      "Create a checksum-backed accessibility-aware AssetWorks manifest",
+      "verify AssetWorks backup restore and transaction journal recovery"
     ]
   },
   "kujo-backlog-normalizer": {
@@ -226,7 +227,8 @@
       "show me idiomatic kujo for a loop and match statement",
       "what is truthy and falsey in Kujo",
       "my Kujo dictionary missing key crashes, what should I use",
-      "convert this old kujo example to current syntax"
+      "convert this old kujo example to current syntax",
+      "explain async await detached spawn and generator progress in Kujo"
     ]
   },
   "kujo-cross-repo-dogfood-runner": {
@@ -644,7 +646,8 @@
     ],
     "should_trigger": [
       "Use ReaderSignal to compare privacy-bounded publication measurements",
-      "Create an evidence-linked learning and follow-up recommendation"
+      "Create an evidence-linked learning and follow-up recommendation",
+      "run ReaderSignal recovery-status and restore trusted evidence backup"
     ]
   },
   "kujo-readiness-auditor": {
@@ -672,7 +675,8 @@
       "sanitize this markdown with Redact and verify leakage",
       "run redact.kujo pack with the external-safe policy",
       "review .redact/runs audit artifacts without storing originals",
-      "update Redact policy YAML handling and tests"
+      "update Redact policy YAML handling and tests",
+      "why does Redact 1.1 reject stdin input"
     ]
   },
   "kujo-relay-workflows": {

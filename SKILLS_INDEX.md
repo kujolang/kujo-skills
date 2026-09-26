@@ -5,7 +5,7 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | Skill | Use when | Primary sources |
 |---|---|---|
 | `kujo-way-development` | Cross-cutting Kujo project builds or substantial reviews needing ecosystem routing, compact agent-readable code, deterministic AI/offline behavior, anti-slop constraints, and evidence-backed completion. | Kujo/Agents SDK/Kujo Agents contracts plus focused installed skills |
-| `kujo-core-language` | Kujo syntax, imports, mutability, control flow, truthiness, and examples. | Kujo `README.md`, `docs/LANGUAGE_SPEC.md`, examples, docs tests |
+| `kujo-core-language` | Kujo syntax, imports, mutability, control flow, async/await, detached spawn, generators, truthiness, and examples. | Kujo `README.md`, `docs/LANGUAGE_SPEC.md`, examples, docs tests |
 | `kujo-tool-building` | Building practical Kujo CLI tools, JSON gates, repo scanners, and deterministic reports. | Kujo tool cookbook, standard library reference, CLI contracts |
 | `kujo-security-hardening` | Reviewing untrusted Kujo, host effects, capability flags, AI/network egress, shell/process/db/archive/PDF risk, secure token generation, and production PostgreSQL TLS pooling. | Kujo native API security, secure AI scripting, runtime security tests |
 | `kujo-enterprise-automation` | Enterprise-style Kujo automation, audit logs, strict AI replay, CI quality gates, external isolation. | Kujo enterprise/release docs and `scripts/enterprise_verify.sh` |
@@ -37,7 +37,7 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-packwrite-workflows` | PackWrite execution packs, prompts, validation, doctor, and generated agent packs. | `../packwrite` README/docs |
 | `kujo-patchbrief-workflows` | PatchBrief diff summaries, suggested tests, handoffs, schemas, and JSON contracts. | `../patchbrief` README/src/tests/schemas |
 | `kujo-rag-workflows` | RAG ingest/query/serve/demo, indexes, namespaces, embeddings, retrieval, OpenAPI, release evals. | `../rag` README/docs/src/tests |
-| `kujo-redact-workflows` | Redact scan/sanitize/verify/pack, policy YAML, leakage checks, and anonymization artifacts. | `../redact` README/docs/src/tests |
+| `kujo-redact-workflows` | Redact 1.1 scan/sanitize/verify/pack, policy YAML, leakage checks, stdin rejection, audit artifacts, and release verification. | `../redact` README/docs/src/tests |
 | `kujo-relay-workflows` | Relay bounded missions, agents/models/runs, evidence bundles, Watchdog posture, acceptance tests. | `../relay` README/docs/src/tests |
 | `kujo-runledger-workflows` | RunLedger receipts, usage/cost, verdicts, correlation links, notes/followups, compare/report output. | `../runledger` README/src/tests |
 | `kujo-scent-workflows` | Scent packs, dry-run budgets, include/exclude filters, pack artifacts, and redaction audits. | `../scent` README/docs/scent.kujo |
@@ -73,8 +73,8 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-bluepencil-workflows` | Running structured editorial reviews, disagreements, focused checks, and blind calibration. | `../bluepencil` README, CLI, calibration corpus, contracts, tests |
 | `kujo-versionseal-workflows` | Requesting, recording, verifying, revoking, or expiring exact-version human approvals. | `../versionseal` README, CLI, policy/signature contracts, tests |
 | `kujo-presswire-workflows` | Preflighting and performing approval-gated publication, correction, or unpublish effects. | `../presswire` README, CLI, adapter contracts, security, tests |
-| `kujo-readersignal-workflows` | Capturing privacy-bounded measurements, feedback, comparisons, learning, and follow-up recommendations. | `../readersignal` README, CLI, privacy/retention contracts, tests |
-| `kujo-assetworks-workflows` | Planning and validating media transforms, accessibility artifacts, provenance, and manifests. | `../assetworks` README, CLI, adapter contracts, security, tests |
+| `kujo-readersignal-workflows` | Capturing privacy-bounded measurements, feedback, comparisons, learning, recovery/backup, and follow-up recommendations. | `../readersignal` README, CLI, privacy/retention contracts, tests |
+| `kujo-assetworks-workflows` | Planning and validating media transforms, accessibility artifacts, provenance, signed manifests, bounded adapters, recovery, backup, and state migration. | `../assetworks` README, CLI, adapter contracts, security, tests |
 
 ## WebOps skills
 
