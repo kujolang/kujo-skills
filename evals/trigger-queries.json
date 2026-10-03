@@ -1044,7 +1044,8 @@
     ],
     "should_trigger": [
       "Request and verify human approval for an exact package checksum",
-      "Use VersionSeal to revoke an expired publication approval"
+      "Use VersionSeal to revoke an expired publication approval",
+      "recover an interrupted VersionSeal 0.3 approval write before verifying"
     ]
   },
   "kujo-videoops-workflows": {
@@ -1116,7 +1117,8 @@
       "verify Workcell untracked file patch generation",
       "use Workcell inspect --summary and run --summary for compact agent evidence",
       "review Workcell alpha backend adapter profiles for E2B Vercel Sandbox and Daytona",
-      "verify Workcell preserves DOCKER_HOST while clearing implicit Docker proxy injection"
+      "verify Workcell preserves DOCKER_HOST while clearing implicit Docker proxy injection",
+      "inspect Workcell 1.2 preservation and recover ownership-scoped backend resources"
     ]
   },
   "publishing-house-profile-setup": {

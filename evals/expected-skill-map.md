@@ -47,7 +47,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Spec task contracts | `kujo-spec-workflows` |
 | Tribunal decision evidence | `kujo-tribunal-workflows` |
 | Watchdog telemetry/proxy/dashboard/pricing/backups, connected sources, OTLP/export, streaming | `kujo-watchdog-workflows` |
-| Workcell 1.1 local container sandboxes, summaries, receipts, Docker endpoint selectors, proxy handling, and alpha backend adapters | `kujo-workcell-workflows` |
+| Workcell 1.2 local container sandboxes, summaries, receipts, preservation, recovery, Docker endpoint selectors, proxy handling, and alpha backend adapters | `kujo-workcell-workflows` |
 | Weekly skill maintenance and stale skill/index/fixture drift | `kujo-skill-auditor` |
 | Readiness posture/evidence audit | `kujo-readiness-auditor` |
 | Docs/generated-artifact drift | `kujo-docs-drift-auditor` |

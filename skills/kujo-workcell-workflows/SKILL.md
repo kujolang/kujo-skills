@@ -1,11 +1,11 @@
 ---
 name: kujo-workcell-workflows
-description: "Use this skill when initializing, validating, inspecting, running, verifying, cleaning, or maintaining Workcell 1.1 execution harnesses: `workcell.json`, `bin/workcell`, `doctor`, `init`, `validate`, `inspect`, `run`, `verify`, `clean`, `backends`, `recover`, `.workcell/runs/`, summaries, receipts, manifests, artifacts, Docker/Podman boundaries, alpha backend adapters, release reports, or Workcell source/docs changes."
+description: "Use this skill when initializing, validating, inspecting, running, verifying, cleaning, recovering, or maintaining Workcell 1.2 execution harnesses: `workcell.json`, `bin/workcell`, `doctor`, `init`, `validate`, `inspect`, `run`, `verify`, `clean`, `backends`, `recover`, `.workcell/runs/`, summaries, receipts, manifests, artifacts, Docker/Podman boundaries, preservation, alpha backend adapters, release reports, or Workcell source/docs changes."
 ---
 
 # Kujo Workcell Workflows
 
-Use Workcell 1.1 as a stable Kujo-native local and CI OCI execution harness for AI agents and workflows. It creates disposable Git worktrees, runs declared commands in bounded Docker or Podman containers, exports declared artifacts, records receipts, and cleans up. Treat Docker/Podman as the stable physical boundary and Kujo as the policy/evidence boundary. The provider-neutral definition/backend/receipt surface and remote adapters are additive alpha contracts, not part of the stable isolation guarantee.
+Use Workcell 1.2 as a stable Kujo-native local and CI OCI execution harness for AI agents and workflows. It creates disposable Git worktrees, runs declared commands in bounded Docker or Podman containers, exports declared artifacts, records receipts, and performs ownership-scoped cleanup and recovery. Treat Docker/Podman as the stable physical boundary and Kujo as the policy/evidence boundary. The provider-neutral definition/backend/receipt surface and remote adapters are additive alpha contracts, not part of the stable isolation guarantee.
 
 ## Quick Start
 
@@ -26,6 +26,8 @@ docker build --tag kujolang/workcell-base:local docker/
 ./bin/workcell inspect --file workcell.json --summary
 ./bin/workcell run --file workcell.json --repo . --no-pull --summary
 ./bin/workcell verify --run .workcell/runs/<run-id> --json
+./bin/workcell clean --preservation <preservation.json> --dry-run --json
+./bin/workcell recover --journal <journal.json> --manifest <adapter-manifest.json> --dry-run --json
 ```
 
 ## Workflow Notes
@@ -33,13 +35,15 @@ docker build --tag kujolang/workcell-base:local docker/
 - Workcell rejects dirty source repos by default so user changes are not silently omitted from disposable worktrees.
 - `workcell validate --schema` emits `workcell-definition/v1`; `workcell help --json` emits the CLI/exit-code contract.
 - Agent-facing `inspect --summary` and `run --summary` emit compact `workcell-inspect-summary/v1` and `workcell-run-summary/v1` pointers. Read `receipt.json` only when detailed evidence is needed, and verify persisted evidence with `verify --json`.
+- Pass invocation correlation through a bounded `workcell-caller-context/v1` file with `run --context`; never put credentials or provider options in caller context.
 - `workcell run` writes `.workcell/runs/<run-id>/` with `receipt.json`, logs, integrations, patch/change records including untracked files, integrity manifest, and artifacts.
 - `workcell verify --run <run-directory> --json` verifies immutable evidence hashes without exposing secret values.
+- Failed-run preservation emits `kujo.preservation-outcome/v1`; `--preservation-mode handoff_bundle` writes a clean-source-plus-patch handoff bundle when reconstructable. `workcell clean --preservation <preservation.json>` revalidates ownership before deleting expired local preserved workspaces.
 - The default `contained-standard` profile uses no network, non-root host-mapped UID/GID, read-only root, bounded CPU/memory/PIDs/time/output, no new privileges, dropped capabilities, no devices, no host namespaces, no Docker socket, explicit env, and one disposable workspace mount.
 - Docker launch preserves trusted host-client selectors such as `DOCKER_HOST`, `DOCKER_CONTEXT`, `DOCKER_CONFIG`, `DOCKER_CERT_PATH`, `DOCKER_TLS_VERIFY`, and `DOCKER_API_VERSION` for engine control only. They are not passed as container environment. Docker launch uses `--pull=never` after image preparation and clears implicit Docker-config proxy injection unless the workload explicitly declared those proxy variables.
 - Podman is supported through the same OCI policy boundary. Rootless engine posture, runtime class selection, egress declarations, load evidence, and ecosystem integrations are explicit validation surfaces rather than implicit safety guarantees.
 - `backends` lists built-ins and explicitly supplied external adapter manifests; `recover` reconciles owned external-backend journals without deleting resources whose ownership does not match.
-- Portable `workcell-definition/v2alpha1`, `workcell-backend/v1alpha1`, and `workcell-receipt/v2alpha1` keep workload definitions provider-neutral. Docker and Podman resolve through the built-in OCI lifecycle; E2B, Vercel Sandbox, Daytona, and Cloudflare Sandbox require exact adapter/profile evidence and credential-gated certification before live claims.
+- Portable `workcell-definition/v2alpha1`, `workcell-backend/v1alpha1`, and `workcell-receipt/v2alpha1` keep workload definitions provider-neutral. Docker and Podman resolve through the built-in OCI lifecycle; E2B, Vercel Sandbox, and Daytona use digest-pinned external adapters and require exact adapter/profile evidence plus credential-gated certification before live claims. gVisor and Kata are OCI runtime selections, not provider adapters.
 - Artifact policy rejects malformed definitions and unsafe paths before runtime execution; secret redaction and binary-artifact inspection failures must remain fail-closed.
 - Declared secret values and common base64 encodings are redacted from stdout/stderr, verification output, receipts, artifacts, and the generated Git patch; `artifacts.secret_action: reject` also rejects a run whose patch contained a declared secret and avoids persisting that patch.
 - Workcell 1.x is stable for the documented local and CI Docker/Podman contract. It is not a hardened microVM, hosted service, multi-tenant runner, universal enterprise sandbox, or live-provider certification.
@@ -100,5 +104,5 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and run-ou
 
 ## Sources Consulted
 
-- Status: repo-backed: `README.md`, `docs/security-model.md`, `docs/enterprise-deployment.md`, `docs/workcell-definition.md`, `docs/runtime-lifecycle.md`, `docs/api-compatibility.md`, `docs/backend-adapters.md`, `docs/adapter-authoring.md`, `docs/provider-operations.md`, `docs/known-limitations.md`.
+- Status: repo-backed: `README.md`, `docs/security-model.md`, `docs/enterprise-deployment.md`, `docs/workcell-definition.md`, `docs/runtime-lifecycle.md`, `docs/api-compatibility.md`, `docs/backend-adapters.md`, `docs/adapter-authoring.md`, `docs/provider-operations.md`, `docs/known-limitations.md`, `docs/PRESERVATION.md`, `docs/contracts/git-assurance-profile.md`, `docs/effect-assurance-prototype.md`.
 - Status: repo-backed: `main.kujo`, `src/`, `workcell.json`, `bin/workcell`, `tests/`, `docker/`, `docs/runtime-lifecycle.md`, `docs/email-endpoint-hardening.md`.

@@ -49,7 +49,7 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-spec-workflows` | Spec contracts, validate/render/export-agent-context/export-eval/status/schema/policy work. | `../spec` README/docs/tests |
 | `kujo-tribunal-workflows` | Tribunal decision evidence, reviews, signed bundles, trust policies, audit/verify gates. | `../tribunal` README/docs/src/tests |
 | `kujo-watchdog-workflows` | Watchdog telemetry/proxy, dashboard/API, traces, connected sources, OTLP/export, streaming, auth/redaction/rate limits, pricing, backups, AI Chat/Agents SDK integration. | `../watchdog` README/src/tests/scripts |
-| `kujo-workcell-workflows` | Workcell 1.1 execution harnesses, summaries, receipts, Docker/Podman launch boundaries, endpoint selectors, proxy handling, and alpha provider-neutral backend adapters. | `../workcell` README/docs/src/tests/adapters |
+| `kujo-workcell-workflows` | Workcell 1.2 execution harnesses, summaries, receipts, preservation, recovery, Docker/Podman launch boundaries, endpoint selectors, proxy handling, and alpha provider-neutral backend adapters. | `../workcell` README/docs/src/tests/adapters |
 | `kujo-skill-auditor` | Weekly skills-pack drift audits and trigger/index refreshes. | `skills/*/SKILL.md`, this index, `evals/`, sibling repos |
 | `kujo-readiness-auditor` | Recurring readiness posture, release preparedness, and evidence gaps. | Repo docs/tests/scripts/tool reports |
 | `kujo-docs-drift-auditor` | README/reference/generated-doc staleness and docs/source mismatch. | Repo docs, examples, generated docs, CLI help |
