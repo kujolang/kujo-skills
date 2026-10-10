@@ -32,7 +32,7 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-kennel-workflows` | Kennel package/project manager, lockfiles, static indexes, local hosted registry, trust/source policy. | `../kennel` README/src/tests/scripts |
 | `kujo-lens-workflows` | Lens deterministic browser QA, quick checks, flows, screenshots, accessibility/link/visual checks, repair briefs. | `../lens` README/docs/src/tests |
 | `kujo-loop-engineering-workflows` | Bounded engineering harness workflows, checklists, blockers, evidence logs, opt-in commits. | `../kujo-workflows/loop-engineering` docs/scripts |
-| `kujo-mcp-workflows` | Kujo MCP server generation, manifests, tool/resource registries, endpoint/security tests, Ability projection/gateway/host packages, and Watchdog lifecycle metadata. | `../mcp` README/docs/src/tests |
+| `kujo-mcp-workflows` | Kujo MCP server generation with `kujo mcp make`, manifests, tool/resource registries, endpoint/security tests, Ability projection/gateway/host packages, and Watchdog lifecycle metadata. | `../mcp` README/docs/src/tests |
 | `kujo-muzzle-workflows` | Muzzle quiet workflows, manifests, logs/reports, loop mode, and redaction. | `../muzzle` README/docs/src/tests |
 | `kujo-packwrite-workflows` | PackWrite execution packs, prompts, validation, doctor, and generated agent packs. | `../packwrite` README/docs |
 | `kujo-patchbrief-workflows` | PatchBrief diff summaries, suggested tests, handoffs, schemas, and JSON contracts. | `../patchbrief` README/src/tests/schemas |

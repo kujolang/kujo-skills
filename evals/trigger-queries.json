@@ -547,7 +547,8 @@
     ],
     "should_trigger": [
       "generate a repo-specific MCP server with mcp make",
-      "run kujo run mcp.kujo --interpreter make ./repo --validate",
+      "run kujo mcp make ./repo --validate",
+      "run kujo run mcp.kujo --interpreter make ./repo as a compatibility diagnostic",
       "review generated .mcp artifacts and mcp.manifest.json safety tiers",
       "harden mcp-server.json auth host and rate limit settings",
       "package the Kujo Ability MCP host bridge",

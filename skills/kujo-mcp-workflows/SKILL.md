@@ -1,6 +1,6 @@
 ---
 name: kujo-mcp-workflows
-description: "Use this skill when generating, running, validating, deploying, packaging, or maintaining Kujo MCP servers and repo-specific MCP/Ability scaffolds: `mcp make`, `kujo run mcp.kujo --interpreter make`, `mcp-server.json`, MCP tool/resource registries, generated `.mcp/` outputs, `mcp.manifest.json`, repo profiles, MCP safety tiers, Ability projection/gateway/host packages, Watchdog lifecycle metadata, auth/host/request guardrails, endpoint tests, or MCP source/test changes."
+description: "Use this skill when generating, running, validating, deploying, packaging, or maintaining Kujo MCP servers and repo-specific MCP/Ability scaffolds: `kujo mcp make`, `kujo run mcp.kujo --interpreter make`, `mcp-server.json`, MCP tool/resource registries, generated `.mcp/` outputs, `mcp.manifest.json`, repo profiles, MCP safety tiers, Ability projection/gateway/host packages, Watchdog lifecycle metadata, auth/host/request guardrails, endpoint tests, or MCP source/test changes."
 ---
 
 # Kujo MCP Workflows
@@ -10,7 +10,7 @@ Use the MCP framework to build guarded Model Context Protocol servers in Kujo, g
 ## Agent Workflow
 
 - Classify the request first: local demo server, generated repo server, framework/source change, Ability projection/gateway/host package work, Watchdog metadata integration, generated artifact review, or deployment hardening.
-- Prefer the current reliable invocation for generation: `kujo run mcp.kujo --interpreter make <repo-path>`. The intended future `kujo mcp make <repo-path>` shape is not the dependable path yet.
+- Prefer the current user-facing invocation for generation when the runtime includes the command group: `kujo mcp make <repo-path>`. Use `kujo run mcp.kujo --interpreter make <repo-path>` as the development/diagnostic primitive or compatibility path for older runtimes.
 - Treat generated `.mcp/` outputs as reviewable scaffolds, not magic truth. Inspect `repo-profile.json`, `mcp.manifest.json`, and `artifacts/safety-review.md` before recommending exposure.
 - Keep MCP server capabilities least-privilege: read-only tools and allowlisted safe commands by default; review-required and blocked capabilities stay disabled unless explicitly justified.
 - Ability projection is additive and opt-in. The canonical Ability contract owns identity, schemas, effects, idempotency, and receipt semantics; applications own principal/tenant resolution, authorization, approval consumption, handler execution, and durable audit storage.
@@ -66,7 +66,7 @@ http://127.0.0.1:8931/mcp/v1
 Expected health shape:
 
 ```json
-{"status":"ok","server":"mcp-demo","version":"1.1.1"}
+{"status":"ok","server":"mcp-demo","version":"1.2.0"}
 ```
 
 Endpoint contracts:
@@ -91,25 +91,34 @@ Demo resources live in `src/resources/registry.kujo`: `project://docs`, `files:/
 
 ## Generate Repo-Specific Servers
 
-Use `mcp make` to analyze a local repo and create a safe scaffold plus review artifacts:
+Use `kujo mcp make` to analyze a local repo and create a safe scaffold plus review artifacts:
 
 ```bash
-kujo run mcp.kujo --interpreter make <repo-path>
+kujo mcp make <repo-path>
 ```
 
 Common options:
 
 ```bash
-kujo run mcp.kujo --interpreter make <repo-path> --out <generated-server-dir>
-kujo run mcp.kujo --interpreter make <repo-path> --artifacts <artifacts-dir>
-kujo run mcp.kujo --interpreter make <repo-path> --profile-only
-kujo run mcp.kujo --interpreter make <repo-path> --artifacts-only
-kujo run mcp.kujo --interpreter make <repo-path> --no-ai
-kujo run mcp.kujo --interpreter make <repo-path> --validate
-kujo run mcp.kujo --interpreter make <repo-path> --dry-run
+kujo mcp make <repo-path> --out <generated-server-dir>
+kujo mcp make <repo-path> --artifacts <artifacts-dir>
+kujo mcp make <repo-path> --ai-sdk-path <ai-sdk-dir>
+kujo mcp make <repo-path> --profile-only
+kujo mcp make <repo-path> --artifacts-only
+kujo mcp make <repo-path> --no-ai
+kujo mcp make <repo-path> --validate
+kujo mcp make <repo-path> --dry-run
 ```
 
 Use `--dry-run` to preview paths and classification without writes. Use `--no-ai` when deterministic offline output is required or AI enrichment is unavailable. Use `--validate` when the generated server needs self-check coverage in the artifact report.
+
+`kujo mcp make` delegates to the canonical MCP package in this order: `KUJO_MCP_PATH`, walk-up `kennel.toml` identity, the analyzed repo's Kennel lockfile, then `$KUJO_INSTALL_ROOT/sources/mcp` or `~/.kujo/sources/mcp`. If none resolve, it fails with installation guidance.
+
+For compatibility and diagnostics, the direct primitive remains available:
+
+```bash
+kujo run mcp.kujo --interpreter make <repo-path>
+```
 
 Default output layout:
 
@@ -161,7 +170,7 @@ Generated manifests must keep tools, resources, prompts, `safe_command_map`, and
 - Keep path operations inside `permissions.allowed_directories`; reject traversal, absolute paths where inappropriate, sibling-prefix bypasses, read-only patterns, and oversized payloads.
 - Do not expose arbitrary shell input. Generated safe command tools must come from allowlisted, fixed commands.
 - Report sensitive files by path only; never copy secret values into generated artifacts.
-- Treat `mcp make --help` and `mcp make --version` as unsupported wrapper gaps unless source docs/tests have changed.
+- Treat `kujo mcp make --help` as the supported first-class help surface for runtimes that include the command group; keep direct `mcp.kujo` wrapper gaps scoped to compatibility diagnostics.
 
 ## Deployment Hardening
 
@@ -199,12 +208,14 @@ For `mcp make` changes:
 
 ```bash
 bash tests/feat_06_mcp_make.sh
+bash tests/feat_08_first_class_cli.sh
+bash scripts/preflight-first-class-cli-release.sh
 ```
 
 For generated server review, prefer:
 
 ```bash
-kujo run mcp.kujo --interpreter make <repo-path> --validate --no-ai
+kujo mcp make <repo-path> --validate --no-ai
 ```
 
 If `kujo` is not on `PATH`, resolve the runtime from the MCP repo:

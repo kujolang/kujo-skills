@@ -31,7 +31,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Kennel package manager, lockfiles, hosted registry, trust/source policy | `kujo-kennel-workflows` |
 | Lens browser QA, quick checks, flows, screenshots, visual/accessibility checks | `kujo-lens-workflows` |
 | Loop engineering harness | `kujo-loop-engineering-workflows` |
-| Kujo MCP server generation, registries, Ability host packages, and Watchdog lifecycle metadata | `kujo-mcp-workflows` |
+| Kujo MCP server generation with `kujo mcp make`, registries, Ability host packages, and Watchdog lifecycle metadata | `kujo-mcp-workflows` |
 | Muzzle quiet workflows | `kujo-muzzle-workflows` |
 | PackWrite execution packs | `kujo-packwrite-workflows` |
 | PatchBrief summaries, suggested tests, handoffs | `kujo-patchbrief-workflows` |
