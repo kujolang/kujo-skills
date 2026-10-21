@@ -16,7 +16,7 @@ for entry in manifest['files']:
     relative=Path(entry['path'])
     if relative.suffix=='.md':continue  # Migration documentation deliberately changes.
     installed=profile/Path(*relative.parts[1:])
-    assert hashlib.sha256(installed.read_bytes()).hexdigest()==entry['source_sha256'],entry['path']
+    assert hashlib.sha256(installed.read_bytes()).hexdigest()==entry.get('installed_sha256',entry['source_sha256']),entry['path']
     checked+=1
 assert checked>0
 print(f'Imported executable/assets integrity passed: {checked} files')

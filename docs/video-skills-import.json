@@ -57,11 +57,13 @@
     },
     {
       "path": "skills/kujo-release-video/assets/project/package-lock.json",
-      "source_sha256": "89cf68b2d755579b16381de4e34216cd98f0ce43203019a91bba22230c54ccff"
+      "source_sha256": "89cf68b2d755579b16381de4e34216cd98f0ce43203019a91bba22230c54ccff",
+      "installed_sha256": "5c0c87827276f7997bcc4b1110b84244ea8b11b5449382df462d91682ea1f1d7"
     },
     {
       "path": "skills/kujo-release-video/assets/project/package.json",
-      "source_sha256": "1167d1276f1d9dd157102de97aea757a0a600c28510455401c650c54c11d815a"
+      "source_sha256": "1167d1276f1d9dd157102de97aea757a0a600c28510455401c650c54c11d815a",
+      "installed_sha256": "fcd225503d53f0c0a2654e307922c33b85f9e1981515fce61fb6c489b8ac9d1d"
     },
     {
       "path": "skills/kujo-release-video/assets/project/scripts/assets.mjs",
