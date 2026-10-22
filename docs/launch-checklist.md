@@ -37,3 +37,9 @@ workcell verify --run .workcell/runs/<run-id> --json
 ## Forbidden Launch Actions
 
 Marketplace distribution, live profile installation, release tags, live credentials, branch-protection changes, force-pushes, and claims of runtime enforcement remain out of scope for this local proof.
+
+## 0.7.1 verification
+
+See [current release evidence](release-evidence-0.7.1.md) for passing portable
+gates and the explicit current-host Workcell blocker. Historical Workcell proof
+does not certify this release.
