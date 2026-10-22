@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.7.1 - 2026-10-22
+
+- Refresh runtime hardening, MCP, Workcell, VersionSeal and SiteKit guidance.
+- Require patched Node releases and align the current runtime baseline to 1.8.2.
+- Preserve the 135-skill inventory and isolated installation checks; refresh the
+  current release Workcell proof without changing the historical 0.1.0 receipt.
+
 ## 0.7.0 - 2026-09-08
 
 - Migrate `kujo-release-video` and `kujo-video-styles` from `kujo-hyperframes`,
