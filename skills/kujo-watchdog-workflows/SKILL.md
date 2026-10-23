@@ -15,7 +15,7 @@ Default to the local repo unless the user points to another checkout:
 WATCHDOG_REPO="${WATCHDOG_REPO:-/Users/robertdevore/2026/Kujolang/kujo-repos/watchdog}"
 cd "${WATCHDOG_REPO}"
 export KUJO_BIN="${KUJO_BIN:-kujo}"
-"$KUJO_BIN" run --interpreter dashboard_server.kujo
+"$KUJO_BIN" run dashboard_server.kujo
 # dashboard: http://localhost:7700
 curl -s http://localhost:7700/api/proxy-config
 ```
@@ -60,7 +60,7 @@ Run validation after source, docs, contract, or example changes:
 
 ```bash
 export KUJO_BIN="${KUJO_BIN:-kujo}"
-"$KUJO_BIN" run --interpreter dashboard_server.kujo
+"$KUJO_BIN" run dashboard_server.kujo
 # in another shell, run endpoint smoke checks from README or scripts when available
 node tests/benchmark_script_schema_check.js
 node scripts/benchmark_profiles.js --fixture --profiles=quick,soak --json-out=tmp/benchmark-fixture.json

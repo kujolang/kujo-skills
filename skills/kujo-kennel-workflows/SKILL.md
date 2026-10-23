@@ -14,11 +14,11 @@ Default to the local repo unless the user points to another checkout:
 ```bash
 KENNEL_REPO="${KENNEL_REPO:-/Users/robertdevore/2026/Kujolang/kujo-repos/kennel}"
 cd "${KENNEL_REPO}"
-kujo run kennel.kujo --interpreter -- help
-kujo run kennel.kujo --interpreter -- init --name kennel-demo
-kujo run kennel.kujo --interpreter -- add file:../some-local-package --alias some-local-package
-kujo run kennel.kujo --interpreter -- install
-kujo run kennel.kujo --interpreter -- validate
+kujo run kennel.kujo -- help
+kujo run kennel.kujo -- init --name kennel-demo
+kujo run kennel.kujo -- add file:../some-local-package --alias some-local-package
+kujo run kennel.kujo -- install
+kujo run kennel.kujo -- validate
 ```
 
 ## Workflow Notes

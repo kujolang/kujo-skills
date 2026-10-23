@@ -9,8 +9,8 @@ Use Casefile to turn local failures, existing logs, or manual incident notes int
 
 ## Agent Workflow
 
-- Prefer interpreter mode in the Casefile repo: `kujo run --interpreter casefile.kujo -- <command>`.
-- If `KUJO_BIN` is available, use `"$KUJO_BIN" run --interpreter casefile.kujo -- <command>`.
+- Use the default VM in the Casefile repo: `kujo run casefile.kujo -- <command>`.
+- If `KUJO_BIN` is available, use `"$KUJO_BIN" run casefile.kujo -- <command>`.
 - Start new repos with `init`, `validate`, and often `doctor`.
 - Use `capture --name <name> -- <argv...>` for failing commands; prefer argv after `--` over `--command` for complex commands.
 - Use `capture --from-log <path> --name <name>` when rerunning is expensive or impossible.
@@ -24,18 +24,18 @@ Use Casefile to turn local failures, existing logs, or manual incident notes int
 ```bash
 export KUJO_BIN="/path/to/kujo/target/debug/kujo"
 
-"$KUJO_BIN" run --interpreter casefile.kujo -- init
-"$KUJO_BIN" run --interpreter casefile.kujo -- validate
-"$KUJO_BIN" run --interpreter casefile.kujo -- doctor
+"$KUJO_BIN" run casefile.kujo -- init
+"$KUJO_BIN" run casefile.kujo -- validate
+"$KUJO_BIN" run casefile.kujo -- doctor
 
-"$KUJO_BIN" run --interpreter casefile.kujo -- capture --name failing-tests -- false
-"$KUJO_BIN" run --interpreter casefile.kujo -- capture --name api-test -- npm test -- --runInBand
-"$KUJO_BIN" run --interpreter casefile.kujo -- capture --from-log /tmp/failed-build.log --name ci-log
-"$KUJO_BIN" run --interpreter casefile.kujo -- capture --manual --name prod-note --notes "Observed elevated 500 rates after deploy window"
+"$KUJO_BIN" run casefile.kujo -- capture --name failing-tests -- false
+"$KUJO_BIN" run casefile.kujo -- capture --name api-test -- npm test -- --runInBand
+"$KUJO_BIN" run casefile.kujo -- capture --from-log /tmp/failed-build.log --name ci-log
+"$KUJO_BIN" run casefile.kujo -- capture --manual --name prod-note --notes "Observed elevated 500 rates after deploy window"
 
-"$KUJO_BIN" run --interpreter casefile.kujo -- list
-"$KUJO_BIN" run --interpreter casefile.kujo -- show latest --format markdown
-"$KUJO_BIN" run --interpreter casefile.kujo -- show latest --format json
+"$KUJO_BIN" run casefile.kujo -- list
+"$KUJO_BIN" run casefile.kujo -- show latest --format markdown
+"$KUJO_BIN" run casefile.kujo -- show latest --format json
 ```
 
 Help is available through `help`, `--help`, or `-h`. There is no standalone version command; `--version` is unsupported and should exit `2`.
@@ -99,9 +99,9 @@ rg --files -g '!target/**' -g '!.casefile/**' -g '!node_modules/**' -g '!vendor/
 
 ```bash
 export KUJO_BIN="/path/to/kujo/target/debug/kujo"
-"$KUJO_BIN" run --interpreter casefile.kujo -- help
-"$KUJO_BIN" run --interpreter casefile.kujo -- init
-"$KUJO_BIN" run --interpreter casefile.kujo -- validate
+"$KUJO_BIN" run casefile.kujo -- help
+"$KUJO_BIN" run casefile.kujo -- init
+"$KUJO_BIN" run casefile.kujo -- validate
 "$KUJO_BIN" test-run -v tests/casefile_cli_test_v2.kujo
 ```
 

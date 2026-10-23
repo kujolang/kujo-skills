@@ -1,6 +1,6 @@
 ---
 name: kujo-mcp-workflows
-description: "Use this skill when generating, running, validating, deploying, packaging, or maintaining Kujo MCP servers and repo-specific MCP/Ability scaffolds: `kujo mcp make`, `kujo run mcp.kujo --interpreter make`, `mcp-server.json`, MCP tool/resource registries, generated `.mcp/` outputs, `mcp.manifest.json`, repo profiles, MCP safety tiers, Ability projection/gateway/host packages, Watchdog lifecycle metadata, auth/host/request guardrails, endpoint tests, or MCP source/test changes."
+description: "Use this skill when generating, running, validating, deploying, packaging, or maintaining Kujo MCP servers and repo-specific MCP/Ability scaffolds: `kujo mcp make`, `kujo run mcp.kujo -- make`, `mcp-server.json`, MCP tool/resource registries, generated `.mcp/` outputs, `mcp.manifest.json`, repo profiles, MCP safety tiers, Ability projection/gateway/host packages, Watchdog lifecycle metadata, auth/host/request guardrails, endpoint tests, or MCP source/test changes."
 ---
 
 # Kujo MCP Workflows
@@ -117,7 +117,7 @@ Use `--dry-run` to preview paths and classification without writes. Use `--no-ai
 For compatibility and diagnostics, the direct primitive remains available:
 
 ```bash
-kujo run mcp.kujo --interpreter make <repo-path>
+kujo run mcp.kujo -- make <repo-path>
 ```
 
 Default output layout:

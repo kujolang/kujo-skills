@@ -15,7 +15,7 @@ Default to the local repo unless the user points to another checkout:
 CRUD_API_REPO="${CRUD_API_REPO:-/Users/robertdevore/2026/Kujolang/kujo-repos/crud-api}"
 cd "${CRUD_API_REPO}"
 KUJO_BIN=/path/to/kujo
-"$KUJO_BIN" run main.kujo --interpreter
+"$KUJO_BIN" run main.kujo
 # default API: http://127.0.0.1:4100
 curl -s http://127.0.0.1:4100/health
 ```

@@ -83,7 +83,7 @@ commands. Typical focused checks are:
 ```bash
 "$KUJO_BIN" test-run tests/relevant_tests.kujo -v
 "$KUJO_BIN" test-run tests/example_smoke_tests.kujo -v
-"$KUJO_BIN" run examples/examples_smoke_runner.kujo --interpreter
+"$KUJO_BIN" run examples/examples_smoke_runner.kujo
 ```
 
 The interpreter command is the current Agents SDK example contract; VM remains

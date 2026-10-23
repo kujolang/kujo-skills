@@ -1,6 +1,6 @@
 ---
 name: kujo-rag-workflows
-description: "Use this skill when setting up, running, extending, testing, or maintaining the Kujo RAG Starter Kit: `kujo run main.kujo --interpreter ingest|query|serve|demo|bootstrap`, local/offline RAG indexes, namespace isolation, parser/chunking/embedding/retrieval changes, API ingest/query endpoints, OpenAPI/SDK parity, release-evaluation gates, large-corpus benchmarks, index maintenance, bootstrap templates, or RAG security/operations docs."
+description: "Use this skill when setting up, running, extending, testing, or maintaining the Kujo RAG Starter Kit: `kujo run main.kujo -- ingest|query|serve|demo|bootstrap`, local/offline RAG indexes, namespace isolation, parser/chunking/embedding/retrieval changes, API ingest/query endpoints, OpenAPI/SDK parity, release-evaluation gates, large-corpus benchmarks, index maintenance, bootstrap templates, or RAG security/operations docs."
 ---
 
 # Kujo RAG Workflows
@@ -9,28 +9,28 @@ Use Kujo RAG for local-first retrieval-augmented generation over docs, source, a
 
 ## Running RAG
 
-Run from the RAG repo root. Stable CLI commands use interpreter mode:
+Run from the RAG repo root. Stable CLI commands use the default Kujo VM:
 
 ```bash
 cp .env.example .env
-kujo run main.kujo --interpreter ingest --path ./examples/kujo_docs --recursive true
-kujo run main.kujo --interpreter query --question "How does Kujo handle module imports?"
-kujo run main.kujo --interpreter serve --host 127.0.0.1 --port 8787
-kujo run main.kujo --interpreter demo
-kujo run main.kujo --interpreter bootstrap --target ./results/bootstrap_repo
+kujo run main.kujo -- ingest --path ./examples/kujo_docs --recursive true
+kujo run main.kujo -- query --question "How does Kujo handle module imports?"
+kujo run main.kujo -- serve --host 127.0.0.1 --port 8787
+kujo run main.kujo -- demo
+kujo run main.kujo -- bootstrap --target ./results/bootstrap_repo
 ```
 
 Use namespaces for tenant/project isolation:
 
 ```bash
-kujo run main.kujo --interpreter ingest --path ./docs --recursive true --namespace team_a
-kujo run main.kujo --interpreter query --question "What changed?" --namespace team_a
+kujo run main.kujo -- ingest --path ./docs --recursive true --namespace team_a
+kujo run main.kujo -- query --question "What changed?" --namespace team_a
 ```
 
 If multiple Kujo binaries may exist, set `KUJO_BIN=/absolute/path/to/kujo`. Use the execution bridge when the task specifically asks for non-interpreter preference with fallback:
 
 ```bash
-KUJO_BIN=/absolute/path/to/kujo kujo run scripts/run_main_auto.kujo --interpreter query --question "What is Kujo optimized for?"
+KUJO_BIN=/absolute/path/to/kujo kujo run scripts/run_main_auto.kujo -- query --question "What is Kujo optimized for?"
 ```
 
 `help`, `--help`, and `--version` render the same help text in this repo; do not expect a separate version banner.
@@ -42,7 +42,7 @@ For documentation corpora:
 ```bash
 export KUJO_RAG_INGEST_EXTENSIONS=md,markdown,txt
 export KUJO_RAG_CHUNK_STRATEGY=line
-kujo run main.kujo --interpreter ingest --path ./docs --recursive true
+kujo run main.kujo -- ingest --path ./docs --recursive true
 ```
 
 For code repositories:
@@ -52,7 +52,7 @@ export KUJO_RAG_INGEST_EXTENSIONS=kujo,md,txt
 export KUJO_RAG_CHUNK_STRATEGY=fixed
 export KUJO_RAG_CHUNK_SIZE=1100
 export KUJO_RAG_CHUNK_OVERLAP=180
-kujo run main.kujo --interpreter ingest --path ./src --recursive true
+kujo run main.kujo -- ingest --path ./src --recursive true
 ```
 
 For mixed workspaces:
@@ -61,13 +61,13 @@ For mixed workspaces:
 export KUJO_RAG_INGEST_EXTENSIONS=md,markdown,txt,kujo,pdf
 export KUJO_RAG_CHUNK_STRATEGY=line
 export KUJO_RAG_TOP_K=8
-kujo run main.kujo --interpreter ingest --path ./knowledge --recursive true
+kujo run main.kujo -- ingest --path ./knowledge --recursive true
 ```
 
 API smoke path:
 
 ```bash
-kujo run main.kujo --interpreter serve --host 127.0.0.1 --port 8787
+kujo run main.kujo -- serve --host 127.0.0.1 --port 8787
 curl -s http://127.0.0.1:8787/health
 curl -s -X POST http://127.0.0.1:8787/query -H "Content-Type: application/json" -d '{"query":"What is Kujo optimized for?","namespace":"default"}'
 ```
@@ -117,26 +117,26 @@ For retrieval changes in `src/retrieval.kujo`, keep deterministic tie ordering, 
 Use focused tests first, then wider gates:
 
 ```bash
-kujo run tests/test_unit.kujo --interpreter
-kujo run tests/test_integration.kujo --interpreter
-KUJO_BIN=/absolute/path/to/kujo kujo run scripts/run_tests.kujo --interpreter
+kujo run tests/test_unit.kujo
+kujo run tests/test_integration.kujo
+KUJO_BIN=/absolute/path/to/kujo kujo run scripts/run_tests.kujo
 ```
 
 Use targeted subsets through the wrapper:
 
 ```bash
-KUJO_RAG_TEST_FILES=tests/test_api_contract.kujo,tests/test_security.kujo kujo run scripts/run_tests.kujo --interpreter
+KUJO_RAG_TEST_FILES=tests/test_api_contract.kujo,tests/test_security.kujo kujo run scripts/run_tests.kujo
 ```
 
 Run specialized gates when the touched surface requires them:
 
 ```bash
-kujo run scripts/run_release_evaluation.kujo --interpreter
-kujo run scripts/run_openapi_contract_review.kujo --interpreter
-KUJO_RAG_OPENAPI_REGENERATE=true kujo run scripts/run_openapi_contract_review.kujo --interpreter
-kujo run scripts/run_chunking_preset_ab_evaluation.kujo --interpreter
-kujo run scripts/run_large_corpus_benchmarks.kujo --interpreter
-kujo run scripts/maintain_index.kujo --interpreter
+kujo run scripts/run_release_evaluation.kujo
+kujo run scripts/run_openapi_contract_review.kujo
+KUJO_RAG_OPENAPI_REGENERATE=true kujo run scripts/run_openapi_contract_review.kujo
+kujo run scripts/run_chunking_preset_ab_evaluation.kujo
+kujo run scripts/run_large_corpus_benchmarks.kujo
+kujo run scripts/maintain_index.kujo
 ```
 
 For release work, also run the relevant gates in `docs/release-process.md`, including release artifacts, supply-chain scan, canary replay, AI drift, multilingual eval, architecture fitness, config schema, chaos, performance/cost, and readiness scorecard checks as applicable.

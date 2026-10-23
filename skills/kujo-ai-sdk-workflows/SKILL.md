@@ -54,7 +54,7 @@ Run validation after source, docs, contract, or example changes:
 export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
 "$KUJO_BIN" test-run tests/sdk_contract_tests.kujo
 "$KUJO_BIN" run examples/model_preferences.kujo
-"$KUJO_BIN" run scripts/generate_model_catalog.kujo --interpreter -- examples/dispatch-model-catalog.config.json --output dispatch-model-catalog.json
+"$KUJO_BIN" run scripts/generate_model_catalog.kujo -- examples/dispatch-model-catalog.config.json --output dispatch-model-catalog.json
 "$KUJO_BIN" test-run tests/sdk_contract_resilience_tests.kujo
 "$KUJO_BIN" test-run tests/sdk_contract_embeddings_tests.kujo
 "$KUJO_BIN" test-run tests/security_redaction_tests.kujo
@@ -68,7 +68,7 @@ export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
 "$KUJO_BIN" test-run tests/bugfix_regression_tests.kujo
 "$KUJO_BIN" test-run tests/hardening_regression_tests.kujo
 python3 tests/wrapper_regression_tests.py
-./kujo run examples/telemetry_bridge.kujo --interpreter
+./kujo run examples/telemetry_bridge.kujo
 "$KUJO_BIN" run scripts/benchmark_quality_gate.kujo
 bash scripts/release_quality_gates.sh
 bash scripts/verify_docs.sh

@@ -15,7 +15,7 @@ Default to the local repo unless the user points to another checkout:
 AGENTS_SDK_REPO="${AGENTS_SDK_REPO:-/Users/robertdevore/2026/Kujolang/kujo-repos/agents-sdk}"
 cd "${AGENTS_SDK_REPO}"
 export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
-"$KUJO_BIN" run examples/examples_smoke_runner.kujo --interpreter
+"$KUJO_BIN" run examples/examples_smoke_runner.kujo
 "$KUJO_BIN" test
 ```
 
@@ -52,8 +52,8 @@ Run validation after source, docs, contract, or example changes:
 
 ```bash
 export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
-"$KUJO_BIN" run examples/module_exports_smoke.kujo --interpreter
-"$KUJO_BIN" run examples/examples_smoke_runner.kujo --interpreter
+"$KUJO_BIN" run examples/module_exports_smoke.kujo
+"$KUJO_BIN" run examples/examples_smoke_runner.kujo
 "$KUJO_BIN" test-run tests/run_basic_runner_tests.kujo -v
 "$KUJO_BIN" test-run tests/arch_core_types_tests.kujo -v
 "$KUJO_BIN" test-run tests/integration_adapters_contract_tests.kujo -v

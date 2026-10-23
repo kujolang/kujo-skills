@@ -25,7 +25,7 @@ kujo run scripts/docgen_ssg_bridge.kujo -- --target-repo /path/to/repo --content
 bash scripts/package-docs-template.sh
 bash scripts/validate-generated-output.sh output
 kennel validate
-kujo run tests/ability_pack_tests.kujo --interpreter
+kujo run tests/ability_pack_tests.kujo
 KUJO_BIN="$(command -v kujo)" bash scripts/test-ability-pack-integration.sh
 ```
 
@@ -81,7 +81,7 @@ bash scripts/test-docs-contract.sh
 bash scripts/test-docgen-ssg-bridge.sh
 bash scripts/test-docs-template.sh
 node scripts/test-webmcp-runtime.js
-kujo run tests/ability_pack_tests.kujo --interpreter
+kujo run tests/ability_pack_tests.kujo
 KUJO_BIN="$(command -v kujo)" bash scripts/test-ability-pack-integration.sh
 bash scripts/run_ci_checks.sh
 bash scripts/run_release_gate.sh
