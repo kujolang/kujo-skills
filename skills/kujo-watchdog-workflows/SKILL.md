@@ -26,6 +26,7 @@ curl -s http://localhost:7700/api/proxy-config
 - Proxy smoke may intentionally produce upstream `401` without an API key while still recording telemetry.
 - Named upstream profiles live in `watchdog_proxy_config.json` and are selected with `X-Watchdog-Upstream-Profile`; unknown profile names fail before upstream egress.
 - A single Watchdog server can proxy several provider accounts through named upstream profiles, including AI Chat's shared OpenRouter and Ollama lanes; per-request profile metadata is preserved for filtering and telemetry.
+- Hermes' authenticated Nous route uses the named `hermes` profile through the local OAuth proxy; keep the Watchdog proxy token separate from the provider bearer and verify an actual completion, not only listener health. Follow `docs/HERMES_INTEGRATION.md` for the loopback route and diagnosis boundaries.
 - Connected Sources live in private `watchdog_sources.json` metadata plus accepted telemetry evidence. `/api/sources` reports observed/registered native producers, guarded OTLP producers, and proxy profiles without contacting external providers.
 - `/telemetry/v2/batches` accepts canonical Watchdog producer batches; `/telemetry/v2/otlp/v1/traces` accepts guarded OTLP/HTTP JSON or Protobuf traces. Both remain subject to auth, size, rate, and privacy controls.
 - Proxy streaming should forward chunks incrementally while recording truthful first-output timing and terminal status; do not buffer a stream merely to simplify telemetry unless the task explicitly changes that contract.
@@ -51,8 +52,9 @@ When modifying this repository, read in this order:
 6. `dashboard.html`
 7. `demo.kujo`
 8. `docs/CONNECTED_SOURCES.md`, `docs/GRANULAR_TRACING.md`, and OTLP/export docs when source or telemetry surfaces change
-9. `scripts/`
-10. `tests/`
+9. `docs/HERMES_INTEGRATION.md` when Hermes or authenticated upstream routing changes
+10. `scripts/`
+11. `tests/`
 
 Preserve documented command names, output contracts, and fixture behavior unless the user explicitly asks to change them.
 
@@ -103,3 +105,4 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and output
 - Status: repo-backed: `src/watchdog.kujo`.
 - Status: repo-backed: `demo.kujo`.
 - Status: repo-backed: `docs/PRICING_ESTIMATES.md`, `docs/CONNECTED_SOURCES.md`, `docs/GRANULAR_TRACING.md`, `tests/proxy_integration_stub_suite.js`, `tests/watchdog_api_route_suite.js`, `tests/telemetry_v2_api_suite.js`, `tests/connected_sources_management_suite.js`, `tests/connected_sources_frontend_contract_check.js`.
+- Status: repo-backed: `docs/HERMES_INTEGRATION.md`.

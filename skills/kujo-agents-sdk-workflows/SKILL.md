@@ -22,6 +22,7 @@ export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
 ## Workflow Notes
 
 - `examples/*_agent.kujo` are canonical runnable examples; `examples/examples_smoke_runner.kujo` is the offline aggregate smoke path.
+- `examples/maintenance_agent.kujo` is the canonical offline maintenance example; its synthetic fixture records, approval boundary, redaction, stores, and budget behavior are documented in `docs/MAINTENANCE_AGENT.md` and covered by `tests/maintenance_agent_tests.kujo`.
 - Offline fixture behavior and no-network boundaries are part of the public contract.
 - Integration adapters live behind `src/agents/integrations/adapters.kujo`; MCP `2026-07-28` support is limited to stateless JSON-RPC request helpers, required per-request `_meta`, Streamable HTTP routing headers, tool-list cache metadata, input-required result normalization, unsupported-version errors, and lossless tool schema/display metadata mapping into registry contracts.
 - Portable Ability projection lives in `src/agents/abilities/contract.kujo`. The SDK validates canonical `kujo.ability/v1` definitions from the commit-pinned Ability package, maps exposed abilities into Tool contracts, and preserves canonical identity/digest metadata without owning application bindings, permissions, approvals, or handler policy.
@@ -54,6 +55,7 @@ Run validation after source, docs, contract, or example changes:
 export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
 "$KUJO_BIN" run examples/module_exports_smoke.kujo
 "$KUJO_BIN" run examples/examples_smoke_runner.kujo
+"$KUJO_BIN" test-run tests/maintenance_agent_tests.kujo -v
 "$KUJO_BIN" test-run tests/run_basic_runner_tests.kujo -v
 "$KUJO_BIN" test-run tests/arch_core_types_tests.kujo -v
 "$KUJO_BIN" test-run tests/integration_adapters_contract_tests.kujo -v
@@ -79,4 +81,5 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and output
 - Status: repo-backed: `docs/INTEGRATION_BOUNDARIES.md`, `src/agents/integrations/adapters.kujo`.
 - Status: repo-backed: `docs/WATCHDOG_TELEMETRY.md`, `src/agents/tracing/watchdog.kujo`, `src/agents/abilities/contract.kujo`.
 - Status: repo-backed: `examples/examples_smoke_runner.kujo`.
+- Status: repo-backed: `examples/maintenance_agent.kujo`, `docs/MAINTENANCE_AGENT.md`, `tests/maintenance_agent_tests.kujo`.
 - Status: repo-backed: `docs/DEVELOPER_GUIDE.md`, `tests/arch_core_types_tests.kujo`, `tests/run_basic_runner_tests.kujo`, `tests/integration_adapters_contract_tests.kujo`.
