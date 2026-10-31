@@ -66,7 +66,7 @@ http://127.0.0.1:8931/mcp/v1
 Expected health shape:
 
 ```json
-{"status":"ok","server":"mcp-demo","version":"1.2.0"}
+{"status":"ok","server":"mcp-demo","version":"1.3.3"}
 ```
 
 Endpoint contracts:

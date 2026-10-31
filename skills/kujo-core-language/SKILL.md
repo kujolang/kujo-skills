@@ -42,7 +42,7 @@ Truthy: all other values, including `"false"`.
 - Collection helpers such as `push`, `insert`, `remove_at`, `concat`, `map`, and `filter` return new values; reassign the result.
 - Imported functions must be exported from the source module.
 - Generator aliases share progress; iteration is lazy; struct generator methods snapshot their receiver at invocation. Async generators remain explicitly unsupported.
-- Kujo `v1.8.0` is the current published stable release with native and npm artifacts for Linux x64/arm64, macOS x64/arm64, and Windows x64. Use `docs/V1_SCOPE.md`, `docs/RELEASE_PROCESS.md`, and the release notes for compatibility boundaries and explicit deferrals instead of relying on version strings alone.
+- Kujo `v1.9.0` is the current published stable release with native and npm artifacts for Linux x64/arm64, macOS x64/arm64, and Windows x64. Use `docs/V1_SCOPE.md`, `docs/RELEASE_PROCESS.md`, and the release notes for compatibility boundaries and explicit deferrals instead of relying on version strings alone.
 - Kujo's built-in package workflow is `kujo init`, `kujo package-add`, `kujo package-install`, and `kujo package-install --frozen`; Kennel owns public registry install and distribution, and `kujo package-publish` remains metadata preview only.
 
 ## Validation

@@ -1,11 +1,11 @@
 ---
 name: kujo-workcell-workflows
-description: "Use this skill when initializing, validating, inspecting, running, verifying, cleaning, recovering, or maintaining Workcell 1.2 execution harnesses: `workcell.json`, `bin/workcell`, `doctor`, `init`, `validate`, `inspect`, `run`, `verify`, `clean`, `backends`, `recover`, `.workcell/runs/`, summaries, receipts, manifests, artifacts, Docker/Podman boundaries, preservation, alpha backend adapters, release reports, or Workcell source/docs changes."
+description: "Use this skill when initializing, validating, inspecting, running, verifying, cleaning, recovering, or maintaining Workcell 1.3 execution harnesses: `workcell.json`, `bin/workcell`, `doctor`, `init`, `validate`, `inspect`, `run`, `verify`, `clean`, `backends`, `recover`, `.workcell/runs/`, summaries, receipts, manifests, artifacts, Docker/Podman boundaries, preservation, alpha backend adapters, release reports, or Workcell source/docs changes."
 ---
 
 # Kujo Workcell Workflows
 
-Use Workcell 1.2 as a stable Kujo-native local and CI OCI execution harness for AI agents and workflows. It creates disposable Git worktrees, runs declared commands in bounded Docker or Podman containers, exports declared artifacts, records receipts, and performs ownership-scoped cleanup and recovery. Treat Docker/Podman as the stable physical boundary and Kujo as the policy/evidence boundary. The provider-neutral definition/backend/receipt surface and remote adapters are additive alpha contracts, not part of the stable isolation guarantee.
+Use Workcell 1.3 as a stable Kujo-native local and CI OCI execution harness for AI agents and workflows. It creates disposable Git worktrees, runs declared commands in bounded Docker or Podman containers, exports declared artifacts, records receipts, and performs ownership-scoped cleanup and recovery. Treat Docker/Podman as the stable physical boundary and Kujo as the policy/evidence boundary. The provider-neutral definition/backend/receipt surface and remote adapters are additive alpha contracts, not part of the stable isolation guarantee.
 
 ## Quick Start
 
