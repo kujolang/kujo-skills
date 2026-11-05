@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kujo Hardening"
+  short_description: "Audit and improve repository safety and efficiency"
+  default_prompt: "Use $kujo-hardening to harden this repository, implement justified improvements, and verify the results."

@@ -1794,5 +1794,17 @@
       "Run a raw ElevenLabs speech request without a video",
       "Edit Kujo runtime syntax"
     ]
+  },
+  "kujo-hardening": {
+    "should_trigger": [
+      "Use the Cujo hardening skill to review this repo without changing code",
+      "Use $kujo-hardening to fix and optimize this repository",
+      "Perform a deep repository hardening and token efficiency pass"
+    ],
+    "should_not_trigger": [
+      "Fix a typo in the README",
+      "Add one API endpoint",
+      "Explain Kujo --allow-net capability flags"
+    ]
   }
 }

@@ -7,6 +7,7 @@ Use this map to sanity-check routing fixtures and natural-language trigger behav
 | Cross-cutting Kujo project development, ecosystem routing, compact AI-native design, anti-slop review, and evidence-backed completion | `kujo-way-development`, plus the narrowest focused skill when needed |
 | General `.kujo` syntax, functions, loops, imports, async/await, detached spawn, generators, truthiness | `kujo-core-language` |
 | Building Kujo JSON policy checkers, repo scanners, deterministic CLI tools | `kujo-tool-building`, optionally `kujo-enterprise-automation` |
+| Deep repository hardening review or implementation, including performance, resource and token efficiency | `kujo-hardening` |
 | Untrusted Kujo scripts, capability flags, shell/network/files/db/archive/HTML/PDF/AI egress risk, secure tokens, and PostgreSQL TLS pooling | `kujo-security-hardening` |
 | CLI JSON, exit codes, stdout/stderr, diagnostics, LSP helper payloads | `kujo-cli-contracts` |
 | Builtin arity, return values, capability gates, JSON/JSONL/file/process/network/db/crypto/URI/date/PDF rendering/AI APIs | `kujo-standard-library` |
