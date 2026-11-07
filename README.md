@@ -82,15 +82,15 @@ See [examples](examples/README.md) for installation bundles and routing prompts.
 
 ## Release and support status
 
-This repository is the MIT-licensed `0.7.1` technical preview of the Kujo skills pack. Kujo `v1.8.2` is the current stable language/runtime baseline; individual skills preserve explicit preview or experimental boundaries for narrower APIs and toolchains.
+This repository is the MIT-licensed `0.7.1` technical preview of the Kujo skills pack. Kujo `v1.9.0` is the current stable language/runtime baseline; individual skills preserve explicit preview or experimental boundaries for narrower APIs and toolchains.
 
 The `0.7.1` maintenance release refreshes runtime, MCP, Workcell and SiteKit
-guidance and requires patched Node versions. It preserves the 135-skill inventory
+guidance and requires patched Node versions. It preserves the 136-skill inventory
 and the technical-preview boundary.
 
 The preceding `0.7.0` release added two reusable video skills: the fixed trust-at-speed
 release preset and ten launch/video styles with per-style ElevenLabs narrator
-defaults and caller overrides. The 135-skill catalog includes isolated installation
+defaults and caller overrides. The 136-skill catalog includes isolated installation
 and compiler regression checks. VideoOps media guidance points to the canonical
 `kujo-agents/videoops/tools` runtime; HyperFrames retains composition and mixing
 ownership.
