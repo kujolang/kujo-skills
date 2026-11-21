@@ -101,6 +101,7 @@ Parser and embedding selection are registry-based:
 
 - Parser registry: `get_parser_registry()` in `src/parsers.kujo`.
 - Embedding provider registry: `get_embedding_provider_registry()` in `src/embeddings.kujo`.
+- External embedding and reranking adapters can use the AI SDK provider registry; see `examples/provider_retrieval.kujo` for Voyage embeddings plus Jina reranking and `tests/test_provider_retrieval.kujo` for deterministic adapter-contract coverage.
 
 To add a parser or provider:
 
@@ -135,6 +136,7 @@ kujo run scripts/run_release_evaluation.kujo
 kujo run scripts/run_openapi_contract_review.kujo
 KUJO_RAG_OPENAPI_REGENERATE=true kujo run scripts/run_openapi_contract_review.kujo
 kujo run scripts/run_chunking_preset_ab_evaluation.kujo
+kujo run tests/test_provider_retrieval.kujo
 kujo run scripts/run_large_corpus_benchmarks.kujo
 kujo run scripts/maintain_index.kujo
 ```
@@ -170,3 +172,4 @@ Treat `tests/`, evaluation corpora, malformed parser corpora, `config/*.json`, `
 - Status: repo-backed: `README.md`, `main.kujo`, `.env.example`.
 - Status: repo-backed: `docs/adoption-playbook.md`, `docs/extension-guide.md`, `docs/agent-implementation-checklist.md`, `docs/release-process.md`.
 - Status: repo-backed: `scripts/run_tests.kujo`, `src/*`, `tests/*`, `config/*`, `openapi/kujo-rag-openapi.json`.
+- Status: repo-backed: `examples/provider_retrieval.kujo`, `tests/test_provider_retrieval.kujo`, and `docs/extension-guide.md`.

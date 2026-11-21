@@ -5,7 +5,7 @@ description: "Use this skill when building, testing, integrating, or maintaining
 
 # Kujo AI SDK Workflows
 
-Use AI SDK for provider-gated SDK primitives that normalize chat and embeddings behavior across offline fixtures, configured live OpenAI-compatible providers, and validated native provider drivers.
+Use AI SDK for provider-gated SDK primitives that normalize chat and embeddings behavior across offline fixtures, configured live OpenAI-compatible providers, validated native provider drivers, and the current provider registry/setup workflow.
 
 ## Quick Start
 
@@ -17,6 +17,8 @@ cd "${AI_SDK_REPO}"
 export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
 ./kujo run examples/main.kujo
 # fixture mode is used automatically when provider keys are absent
+./kujo run examples/provider_quickstart.kujo -- list
+./kujo run examples/provider_quickstart.kujo -- PROVIDER setup
 ```
 
 ## Workflow Notes
@@ -28,6 +30,7 @@ export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
 - `src/model_catalog.kujo` owns provider-owned model metadata for deterministic routing. Persist catalog ID, version, hash, provider, model, preference class, and source; do not fabricate prices, token limits, or measurements.
 - Keep endpoint allowlists, protected-header policy, structured-output schema validation, response-size limits, fallback providers, benchmark thresholds, and provider capability metadata aligned with README and tests.
 - Use SDK-owned `resolve_model_preference(provider, preference)` when callers need provider-neutral model intent. Provider presets own class-to-model mappings; downstream orchestration should persist the returned `provider`, `model`, `preference_class`, and `source` instead of duplicating routing tables.
+- Use `provider_registry` and `provider_setup` for registered package/native integrations; `configure_provider` returns the configured SDK provider or native client plus setup metadata. Check `require_provider_capabilities` before provider-specific operations, and consult `providers/certification.json` for capability evidence rather than treating registration as certification.
 - Watchdog telemetry mapping is metadata-only. Provider-reported cost stays provider-reported; do not convert estimates into billed cost.
 
 When reporting results, state the command, target path, exit code, important artifact paths, and whether the result is advisory, blocking, or a generated output that still needs review.
@@ -41,10 +44,11 @@ When modifying this repository, read in this order:
 3. `src/providers.kujo`
 4. `src/driver.kujo`, `src/openai_compatible_driver.kujo`, and provider-driver tests when native package behavior changes
 5. `src/model_catalog.kujo`, `examples/model_preferences.kujo`, and `scripts/generate_model_catalog.kujo` when model routing changes
-6. `docs/API_CONTRACT_POLICY.md`, `docs/KUJO_PROVIDER_PACKAGE_CONTRACT_V1.md`, `docs/PROVIDER_EXTENSION_GUIDE.md`, and `docs/TELEMETRY_INTEROPERABILITY.md`
-7. Other `examples/`
-8. `scripts/`
-9. `tests/`
+6. `src/provider_registry.kujo`, `src/provider_setup.kujo`, `src/provider_operations.kujo`, `examples/provider_quickstart.kujo`, and `docs/PROVIDER_SETUP.md` when provider discovery, setup, or provider operations change
+7. `docs/API_CONTRACT_POLICY.md`, `docs/KUJO_PROVIDER_PACKAGE_CONTRACT_V1.md`, `docs/PROVIDER_EXTENSION_GUIDE.md`, and `docs/TELEMETRY_INTEROPERABILITY.md`
+8. Other `examples/`
+9. `scripts/`
+10. `tests/`
 
 Preserve documented command names, output contracts, and fixture behavior unless the user explicitly asks to change them.
 
@@ -67,6 +71,9 @@ export KUJO_BIN="${KUJO_BIN:-/path/to/kujo/target/debug/kujo}"
 "$KUJO_BIN" test-run tests/feature_smoke_tests.kujo
 "$KUJO_BIN" test-run tests/bugfix_regression_tests.kujo
 "$KUJO_BIN" test-run tests/hardening_regression_tests.kujo
+"$KUJO_BIN" test-run tests/provider_ecosystem_tests.kujo
+"$KUJO_BIN" test-run tests/provider_package_registry_tests.kujo
+"$KUJO_BIN" test-run tests/provider_package_consumer.kujo
 python3 tests/wrapper_regression_tests.py
 ./kujo run examples/telemetry_bridge.kujo
 "$KUJO_BIN" run scripts/benchmark_quality_gate.kujo
@@ -90,6 +97,7 @@ Use `rg` for broad searches and exclude generated, dependency, cache, and output
 ## Sources Consulted
 
 - Status: repo-backed: `README.md`.
-- Status: repo-backed: `src/ai_sdk.kujo`, `src/providers.kujo`, `src/model_catalog.kujo`, `src/driver.kujo`, `src/openai_compatible_driver.kujo`, `src/watchdog_telemetry.kujo`.
+- Status: repo-backed: `src/ai_sdk.kujo`, `src/providers.kujo`, `src/model_catalog.kujo`, `src/provider_registry.kujo`, `src/provider_setup.kujo`, `src/provider_operations.kujo`, `src/driver.kujo`, `src/openai_compatible_driver.kujo`, `src/watchdog_telemetry.kujo`.
+- Status: repo-backed: `examples/provider_quickstart.kujo`, `docs/PROVIDER_SETUP.md`, and `providers/certification.json`.
 - Status: repo-backed: `docs/API_CONTRACT_POLICY.md`, `docs/KUJO_PROVIDER_PACKAGE_CONTRACT_V1.md`, `docs/PROVIDER_EXTENSION_GUIDE.md`, `docs/TELEMETRY_INTEROPERABILITY.md`, `docs/audits/repository-hardening.md`.
 - Status: repo-backed: `tests/sdk_contract_tests.kujo`, `tests/provider_driver_contract_tests.kujo`, `tests/provider_driver_security_tests.kujo`, `tests/model_catalog_tests.kujo`, `tests/watchdog_telemetry_contract_tests.kujo`, `scripts/release_quality_gates.sh`.
