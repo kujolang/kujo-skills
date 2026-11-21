@@ -44,8 +44,8 @@ Use this index to route Kujo work to the narrowest skill that matches the reposi
 | `kujo-scent-workflows` | Scent packs, dry-run budgets, include/exclude filters, pack artifacts, and redaction audits. | `../scent` README/docs/scent.kujo |
 | `kujo-scout-workflows` | Scout scans, context packs, `llms.txt`, `AGENTS.md`, manifests, exports, baselines, snapshots. | `../scout` README/docs/tests |
 | `kujo-shipcheck-workflows` | ShipCheck scans, checklists, gates, release notes, report schema, release readiness checks. | `../shipcheck` README/docs/src/tests |
-| `kujo-site-kit-workflows` | Canonical SiteKit skill for `site-kit`: stable 1.1 source-vendored tokens, components, schemas, generated dist, behavior JS, icons, smoke/release checks, and Workcell proof. | `../site-kit` README/docs/tests/scripts |
-| `kujo-sitekit-workflows` | Compatibility alias for older SiteKit references; prefer `kujo-site-kit-workflows` for new work; current package 1.1.1. | `../site-kit` README/docs/tests/scripts |
+| `kujo-site-kit-workflows` | Canonical SiteKit skill for `site-kit`: stable 1.2 source-vendored tokens, components, schemas, generated dist, opt-in documentation recipes, behavior JS, icons, smoke/release checks, and Workcell proof. | `../site-kit` README/docs/tests/scripts |
+| `kujo-sitekit-workflows` | Compatibility alias for older SiteKit references; prefer `kujo-site-kit-workflows` for new work; current package 1.2.0. | `../site-kit` README/docs/tests/scripts |
 | `kujo-ssg-workflows` | SSG builds, templates, feeds, `llms.txt`, docs bridge, docs starter, parallel builds, experimental static WebMCP, local Ability pack, and release gates. | `../ssg` README/build/scripts/docs |
 | `kujo-spec-workflows` | Spec contracts, validate/render/export-agent-context/export-eval/status/schema/policy work. | `../spec` README/docs/tests |
 | `kujo-tribunal-workflows` | Tribunal decision evidence, reviews, signed bundles, trust policies, audit/verify gates. | `../tribunal` README/docs/src/tests |
