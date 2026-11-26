@@ -1,7 +1,7 @@
 {
   "source_repository": "kujolang/kujo-hyperframes",
   "source_commit": "89785161a585a25dd57ce4f346f33fdddf312b68",
-  "meaning": "Hashes identify the imported source snapshot; migration edits to documentation are intentional. Executable source and assets remain unchanged.",
+  "meaning": "Source hashes identify the imported snapshot. Installed hashes identify deliberate changes to distribution bytes.",
   "files": [
     {
       "path": "skills/kujo-release-video/.gitignore",
@@ -58,12 +58,12 @@
     {
       "path": "skills/kujo-release-video/assets/project/package-lock.json",
       "source_sha256": "89cf68b2d755579b16381de4e34216cd98f0ce43203019a91bba22230c54ccff",
-      "installed_sha256": "5c0c87827276f7997bcc4b1110b84244ea8b11b5449382df462d91682ea1f1d7"
+      "installed_sha256": "32f037c0852f1e0626f5a2944aff5cce6f2571584c82b6ca9cef946bfe8ff149"
     },
     {
       "path": "skills/kujo-release-video/assets/project/package.json",
       "source_sha256": "1167d1276f1d9dd157102de97aea757a0a600c28510455401c650c54c11d815a",
-      "installed_sha256": "fcd225503d53f0c0a2654e307922c33b85f9e1981515fce61fb6c489b8ac9d1d"
+      "installed_sha256": "f2f460b7158eb4f42369b105198108494678bc1cf46186694d97c87eeb02c02d"
     },
     {
       "path": "skills/kujo-release-video/assets/project/scripts/assets.mjs",
@@ -143,11 +143,13 @@
     },
     {
       "path": "skills/kujo-release-video/scripts/release_video.py",
-      "source_sha256": "6635d52c2638b034e01571c1c80fe905a1565ec745be0ccef1020ccf6f99c80d"
+      "source_sha256": "6635d52c2638b034e01571c1c80fe905a1565ec745be0ccef1020ccf6f99c80d",
+      "installed_sha256": "e9f84b9a7b196efff63715c4d0c979560935cb5ae5f7f812d226b54d395cd3ad"
     },
     {
       "path": "skills/kujo-release-video/scripts/test_pipeline.py",
-      "source_sha256": "32cffa22bb95d4381c55888e2f077671264b8016d162a0535ec10008bcaa1db3"
+      "source_sha256": "32cffa22bb95d4381c55888e2f077671264b8016d162a0535ec10008bcaa1db3",
+      "installed_sha256": "b419b3267116815424c7d097338b148557a83306bb040c857c93a41772b5a4b5"
     },
     {
       "path": "skills/kujo-video-styles/SKILL.md",

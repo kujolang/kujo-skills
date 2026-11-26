@@ -51,11 +51,16 @@ class PipelineTests(unittest.TestCase):
   p.prepare(self.w);requests=[]
   def fake(request,timeout):
    requests.append(request.full_url)
-   result={'tier':'free'} if request.full_url.endswith('/subscription') else {'audio_base64':base64.b64encode(b'ID3-test-only').decode(),'alignment':{}}
+   result={'tier':'free'} if request.full_url.endswith('/subscription') else {
+    'audio_base64':base64.b64encode(b'ID3-test-only').decode(),'alignment':{},
+    'generation_tier':'creator','provider_diagnostic':'test-only-not-a-credential'}
    return io.BytesIO(json.dumps(result).encode())
-  with patch.dict(p.os.environ,{'ELEVENLABS_API_KEY':'test-only-not-a-credential'}),patch.object(p.urllib.request,'urlopen',side_effect=fake):
+  with patch.dict(p.os.environ,{'ELEVENLABS_API_KEY':'test-only-not-a-credential'}),patch.object(p,'open_elevenlabs',side_effect=fake):
    result=p.speech(self.w,True,750)
    self.assertEqual(result['requests'],5);self.assertEqual(len(requests),6)
+   receipt=p.read(self.w/'audio/takes/speed.json')
+   self.assertEqual(receipt['generation_tier'],'free')
+   self.assertNotIn('provider_diagnostic',receipt)
    self.assertEqual(p.speech(self.w,False,750)['requests'],0)
    release=p.read(self.w/'release.json');release['usage']='commercial';p.save(self.w/'release.json',release)
    with self.assertRaisesRegex(p.Stop,'generation-time provenance'):p.speech(self.w,True,750)
@@ -69,10 +74,19 @@ class PipelineTests(unittest.TestCase):
   def fake(request,timeout):
    if request.full_url.endswith('/subscription'):return io.BytesIO(b'{"tier":"free"}')
    raise TimeoutError('test timeout')
-  with patch.dict(p.os.environ,{'ELEVENLABS_API_KEY':'test-only-not-a-credential'}),patch.object(p.urllib.request,'urlopen',side_effect=fake):
+  with patch.dict(p.os.environ,{'ELEVENLABS_API_KEY':'test-only-not-a-credential'}),patch.object(p,'open_elevenlabs',side_effect=fake):
    with self.assertRaisesRegex(p.Stop,'no automatic retry'):p.speech(self.w,True,750)
    self.assertTrue((self.w/'audio/takes/speed.pending.json').exists())
    with self.assertRaisesRegex(p.Stop,'Uncertain prior'):p.speech(self.w,True,750)
+ def test_response_limit_is_applied_before_parsing(self):
+  with patch.object(p,'open_elevenlabs',return_value=io.BytesIO(b' '*33)):
+   with self.assertRaisesRegex(ValueError,'response too large'):
+    p.provider_json(None,20,32)
+ def test_local_stage_does_not_inherit_speech_key(self):
+  with patch.dict(p.os.environ,{'ELEVENLABS_API_KEY':'test-only-not-a-credential'}),patch.object(p.subprocess,'run') as run:
+   run.return_value.returncode=0
+   p.stage(self.w,'fixture',['fixture'])
+   self.assertNotIn('ELEVENLABS_API_KEY',run.call_args.kwargs['env'])
  def test_status_detects_changed_inputs_and_output(self):
   p.prepare(self.w);output=self.w/'output/release-complete.mp4';output.write_bytes(b'test-status-only')
   p.save(self.w/'run.json',{'status':'technical_pass','input_fingerprint':p.fingerprint(self.w),'output':str(output),'output_sha256':p.sha(output)})

@@ -2,18 +2,30 @@
 """Agent/harness boundary for the Kujo 15-second release-film preset.
 JSON on stdout; stage logs on disk. No shell execution of release content.
 """
-import argparse,base64,contextlib,hashlib,html,json,os,re,shutil,subprocess,sys,time,urllib.request
+import argparse,base64,contextlib,hashlib,html,http.client,json,os,re,shutil,subprocess,sys,tempfile,time,urllib.request
 from pathlib import Path
 SKILL=Path(__file__).resolve().parent.parent
 TEMPLATE=SKILL/'assets/project'
 CUES=[('speed',1.48,2.72),('goal',2.96,5.25),('loop',5.83,8.35),('proof',8.72,11.62),('brand',12.06,14.8)]
 LIMITS={'tagline':42,'hook_label':35,'hook_1':12,'hook_2':6,'task_label':38,'task_header':42,'scope':43,'stop':43,'task_footer':32,'button':10,'loop_label':30,'loop_caption':34,'proof_label':48,'stamp':32,'footer_left':42,'footer_right':42}
+PAID_TIERS={'starter','creator','pro','scale','business','enterprise','growing_business','professional'}
 class Stop(Exception):
  def __init__(self,message,code=2):self.code=code;super().__init__(message)
 def read(p):return json.loads(Path(p).read_text())
 def save(p,data):
- p=Path(p);p.parent.mkdir(parents=True,exist_ok=True);tmp=p.with_suffix(p.suffix+'.tmp');tmp.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n');tmp.replace(p)
-def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+ p=Path(p);p.parent.mkdir(parents=True,exist_ok=True)
+ fd,name=tempfile.mkstemp(dir=p.parent,prefix=f'.{p.name}-')
+ try:
+  with os.fdopen(fd,'w',encoding='utf-8') as output:
+   json.dump(data,output,indent=2,ensure_ascii=False,allow_nan=False)
+   output.write('\n')
+  os.replace(name,p)
+ finally:Path(name).unlink(missing_ok=True)
+def sha(p):
+ result=hashlib.sha256()
+ with Path(p).open('rb') as source:
+  for chunk in iter(lambda:source.read(1024*1024),b''):result.update(chunk)
+ return result.hexdigest()
 def digest(o):return hashlib.sha256(json.dumps(o,sort_keys=True).encode()).hexdigest()
 def text(v,label,limit=200):
  if not isinstance(v,str) or not v.strip() or len(v)>limit or any(ord(c)<32 for c in v):raise Stop(f'{label}: expected nonempty single-line text, at most {limit} characters')
@@ -77,7 +89,9 @@ def fingerprint(w):
 
 def stage(w,name,args):
  log=w/'logs'/f'{name}.log';log.parent.mkdir(exist_ok=True)
- with log.open('w') as f:r=subprocess.run(args,cwd=w,stdout=f,stderr=subprocess.STDOUT)
+ env=os.environ.copy()
+ env.pop('ELEVENLABS_API_KEY',None)
+ with log.open('w') as f:r=subprocess.run(args,cwd=w,stdout=f,stderr=subprocess.STDOUT,env=env)
  if r.returncode:raise Stop(f'{name} failed; inspect {log}',1)
 
 def init(w,source):
@@ -115,6 +129,43 @@ def prepare(w):
  save(w/'claims.json',{'facts':r['facts'],'scene_refs':p['fact_refs'],'screen_mode':p['screen_mode'],'verification_source':p.get('verification_source'),'semantic_review':'Agent must check that each citation actually supports the on-screen and spoken claim.'})
  return {'status':'prepared','workspace':str(w)}
 
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+ def redirect_request(self,request,fp,code,message,headers,new_url):
+  return None
+
+def open_elevenlabs(request,timeout):
+ opener=urllib.request.build_opener(urllib.request.ProxyHandler({}),NoRedirect())
+ return opener.open(request,timeout=timeout)
+
+def provider_json(request,timeout,limit):
+ with open_elevenlabs(request,timeout) as response:
+  data=response.read(limit+1)
+ if len(data)>limit:raise ValueError('provider response too large')
+ result=json.loads(data)
+ if not isinstance(result,dict):raise ValueError('expected provider JSON object')
+ return result
+
+def provider_alignment(result,api_key):
+ evidence={}
+ fields=('characters','character_start_times_seconds','character_end_times_seconds')
+ for field in ('alignment','normalized_alignment'):
+  if field not in result:continue
+  value=result[field]
+  if value is None:evidence[field]=None;continue
+  if not isinstance(value,dict):raise ValueError('invalid alignment')
+  alignment={key:value[key] for key in fields if key in value}
+  chars=alignment.get('characters',[])
+  if not isinstance(chars,list) or not all(isinstance(part,str) for part in chars):
+   raise ValueError('invalid alignment characters')
+  for key in fields[1:]:
+   times=alignment.get(key,[])
+   if not isinstance(times,list) or not all(type(t) in (int,float) and 0<=t<600 for t in times):
+    raise ValueError('invalid alignment times')
+  if api_key in ''.join(chars) or api_key in json.dumps(alignment,ensure_ascii=False):
+   raise ValueError('invalid alignment evidence')
+  evidence[field]=alignment
+ return evidence
+
 def speech(w,allow,budget):
  c=read(w/'audio/voiceover.json');takes=w/'audio/takes';takes.mkdir(exist_ok=True)
  jobs=[]
@@ -126,7 +177,7 @@ def speech(w,allow,budget):
   if receipt.exists() and mp3.exists():
    old=read(receipt)
    if old.get('input_sha256')==key and old.get('audio_sha256')==sha(mp3):
-    if read(w/'release.json')['usage']=='commercial' and old.get('generation_tier','unknown') in ['free','unknown']:raise Stop('Cached narration lacks paid generation-time provenance; replace these takes before a commercial build',4)
+    if read(w/'release.json')['usage']=='commercial' and old.get('generation_tier','unknown') not in PAID_TIERS:raise Stop('Cached narration lacks paid generation-time provenance; replace these takes before a commercial build',4)
     continue
   if pending.exists():raise Stop(f'Uncertain prior generation for {cue["id"]}; reconcile ElevenLabs history before removing {pending}',4)
   jobs.append((cue,payload,key,receipt,mp3,pending))
@@ -134,34 +185,40 @@ def speech(w,allow,budget):
  characters=sum(len(j[1]['text']) for j in jobs)
  if not allow:raise Stop(f'{len(jobs)} uncached ElevenLabs takes ({characters} characters); build/speech needs --allow-tts with existing user authorization',4)
  if characters>budget:raise Stop(f'Generation needs {characters} characters; exceeds --max-characters {budget}',4)
- key=os.environ.get('ELEVENLABS_API_KEY')
- if not key:
-  try:key=subprocess.check_output(['security','find-generic-password','-s','kujo-videoops-elevenlabs','-a','videoops','-w'],stderr=subprocess.DEVNULL,text=True).strip()
-  except (FileNotFoundError,subprocess.CalledProcessError):raise Stop('ElevenLabs credential unavailable; set ELEVENLABS_API_KEY or configure the documented macOS Keychain item',4)
+ api_key=os.environ.get('ELEVENLABS_API_KEY')
+ if not api_key:
+  try:api_key=subprocess.check_output(['security','find-generic-password','-s','kujo-videoops-elevenlabs','-a','videoops','-w'],stderr=subprocess.DEVNULL,text=True,timeout=15).strip()
+  except (OSError,subprocess.SubprocessError,UnicodeError):raise Stop('ElevenLabs credential unavailable; set ELEVENLABS_API_KEY or configure the documented macOS Keychain item',4) from None
+ if not api_key or not api_key.isascii() or any(ord(char)<33 or ord(char)>126 for char in api_key):
+  raise Stop('ElevenLabs credential unavailable',4)
+ if any(api_key in json.dumps(job[1],ensure_ascii=False) for job in jobs):
+  raise Stop('Narration payload contains configured credential',4)
  tier='unknown'
  try:
-  req=urllib.request.Request('https://api.elevenlabs.io/v1/user/subscription',headers={'xi-api-key':key})
-  with urllib.request.urlopen(req,timeout=20) as response:tier=json.load(response).get('tier','unknown')
- except Exception:pass
+  req=urllib.request.Request('https://api.elevenlabs.io/v1/user/subscription',headers={'xi-api-key':api_key})
+  reported=provider_json(req,20,65536).get('tier')
+  if isinstance(reported,str) and (reported=='free' or reported in PAID_TIERS):tier=reported
+ except (OSError,ValueError,http.client.HTTPException):pass
  usage=read(w/'release.json')['usage']
- if usage=='commercial' and tier in ['free','unknown']:raise Stop('Commercial release requires confirmed paid-plan narration; current generation tier is '+tier,4)
+ if usage=='commercial' and tier not in PAID_TIERS:raise Stop('Commercial release requires confirmed paid-plan narration; current generation tier is '+tier,4)
  for cue,payload,signature,receipt,mp3,pending in jobs:
   save(pending,{'input_sha256':signature,'state':'request_started','time':time.time()})
-  req=urllib.request.Request('https://api.elevenlabs.io/v1/text-to-speech/'+c['voice_id']+'/with-timestamps?output_format=mp3_44100_128',data=json.dumps(payload).encode(),headers={'xi-api-key':key,'Content-Type':'application/json'})
+  req=urllib.request.Request('https://api.elevenlabs.io/v1/text-to-speech/'+c['voice_id']+'/with-timestamps?output_format=mp3_44100_128',data=json.dumps(payload).encode(),headers={'xi-api-key':api_key,'Content-Type':'application/json'})
   try:
-   with urllib.request.urlopen(req,timeout=90) as response:result=json.load(response)
-  except Exception as e:raise Stop(f'ElevenLabs generation failed ({type(e).__name__}); no automatic retry. Reconcile pending receipt before retrying.',4)
-  raw=base64.b64decode(result.pop('audio_base64'),validate=True)
-  if not raw:raise Stop('ElevenLabs returned empty audio; pending request retained',4)
+   result=provider_json(req,90,16_000_000)
+   raw=base64.b64decode(result['audio_base64'],validate=True)
+   alignment=provider_alignment(result,api_key)
+   if not raw or api_key.encode() in raw:raise ValueError('invalid provider audio')
+  except (OSError,ValueError,KeyError,TypeError,http.client.HTTPException):raise Stop('ElevenLabs generation failed; no automatic retry. Reconcile pending receipt before retrying.',4) from None
   mp3.write_bytes(raw)
-  save(receipt,{'provider':'ElevenLabs','voice_id':c['voice_id'],'input_sha256':signature,'audio_sha256':sha(mp3),'generation_tier':tier,'generated_at':time.time(),'request':payload,**result});pending.unlink()
+  save(receipt,{'provider':'ElevenLabs','voice_id':c['voice_id'],'input_sha256':signature,'audio_sha256':sha(mp3),'generation_tier':tier,'generated_at':time.time(),'request':payload,**alignment});pending.unlink()
  return {'status':'speech_generated','requests':len(jobs),'characters':characters}
 
 def rights(w):
  receipts=[read(w/'audio/takes'/f'{key}.json') for key,_,_ in CUES]
  tiers=[r.get('generation_tier','unknown') for r in receipts]
  # Assess the generation-time receipt, never a later subscription upgrade.
- if read(w/'release.json')['usage']=='commercial' and any(t in ['free','unknown'] for t in tiers):raise Stop('Cached narration is free/unknown at generation; replace it with appropriately licensed takes for commercial use',4)
+ if read(w/'release.json')['usage']=='commercial' and any(t not in PAID_TIERS for t in tiers):raise Stop('Cached narration is free/unknown at generation; replace it with appropriately licensed takes for commercial use',4)
  (w/'RIGHTS.md').write_text('# Audio rights\n\nAI narration: elevenlabs.io. Generation-time tiers: '+', '.join(tiers)+'.\n\nFree or unknown-tier takes are not cleared for commercial use. Use attribution in the publication title. Paid-tier receipts record provider/account provenance, not a legal review. Original procedural music/SFX contain no third-party samples. See VISUAL-LICENSES.md for the Kujo mark, font, and runtime.\n')
 
 def build(w,args):
