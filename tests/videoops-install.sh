@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-profile="$(mktemp -d)"
+profile="$(mktemp -d "${TMPDIR:-/tmp}/kujo-skills-XXXXXX")"
 trap 'rm -rf "$profile"' EXIT
 cp -R "$root/skills/kujo-videoops-workflows" "$root"/skills/videoops-* "$profile/"
 for skill_dir in "$profile"/*; do
