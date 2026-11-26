@@ -5,22 +5,38 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import subprocess
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
 
 
 SEMVER = re.compile(r"^(?:v)?\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$")
 
 
 def run_git(repo: Path, *args: str) -> tuple[int, str]:
-    result = subprocess.run(
-        ["git", "-C", str(repo), *args],
-        check=False,
-        capture_output=True,
-        text=True,
-    )
+    env = {key: value for key, value in os.environ.items() if not key.startswith("GIT_")}
+    env["GIT_OPTIONAL_LOCKS"] = "0"
+    try:
+        result = subprocess.run(
+            ["git", "-c", "core.fsmonitor=false", "-C", str(repo), *args],
+            check=False, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
+            text=True, errors="replace", env=env, timeout=30,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return 1, ""
     return result.returncode, result.stdout.strip()
+
+
+def public_origin(origin: str) -> str:
+    if "://" not in origin:
+        return origin.split("?", 1)[0].split("#", 1)[0]
+    try:
+        parts = urlsplit(origin)
+    except ValueError:
+        return "[invalid remote URL]"
+    return urlunsplit((parts.scheme, parts.netloc.rsplit("@", 1)[-1], parts.path, "", ""))
 
 
 def inspect_repo(path_text: str, require_clean: bool, tag: str | None) -> tuple[dict[str, object], list[str]]:
@@ -31,22 +47,24 @@ def inspect_repo(path_text: str, require_clean: bool, tag: str | None) -> tuple[
         errors.append(f"repository path does not exist: {path}")
         return record, errors
 
-    code, inside = run_git(path, "rev-parse", "--is-inside-work-tree")
-    record["git_repository"] = code == 0 and inside == "true"
+    code, top = run_git(path, "rev-parse", "--show-toplevel")
+    record["git_repository"] = code == 0 and bool(top) and Path(top).resolve() == path
     if not record["git_repository"]:
-        errors.append(f"not a git repository: {path}")
+        errors.append(f"not a Git worktree root: {path}")
         return record, errors
 
     _, branch = run_git(path, "branch", "--show-current")
-    _, head = run_git(path, "rev-parse", "HEAD")
-    _, status = run_git(path, "status", "--porcelain=v1")
-    _, origin = run_git(path, "remote", "get-url", "origin")
+    head_code, head = run_git(path, "rev-parse", "--verify", "HEAD^{commit}")
+    status_code, status = run_git(path, "status", "--porcelain=v1")
+    _, origin = run_git(path, "config", "--local", "--get", "remote.origin.url")
+    if head_code or status_code:
+        errors.append(f"unable to determine committed HEAD or working-tree status: {path}")
     record.update(
         {
             "branch": branch or None,
             "head": head or None,
             "dirty": bool(status),
-            "origin": origin or None,
+            "origin": public_origin(origin) if origin else None,
             "readme": (path / "README.md").is_file(),
             "changelog": (path / "CHANGELOG.md").is_file(),
         }
@@ -61,12 +79,14 @@ def inspect_repo(path_text: str, require_clean: bool, tag: str | None) -> tuple[
         errors.append(f"origin remote is missing: {path}")
 
     if tag:
-        code, resolved = run_git(path, "rev-parse", "--verify", f"refs/tags/{tag}^{{}}")
+        code, resolved = run_git(path, "rev-parse", "--verify", f"refs/tags/{tag}^{{commit}}")
         record["required_tag"] = tag
         record["tag_exists"] = code == 0
         record["tag_commit"] = resolved or None
         if code != 0:
             errors.append(f"required tag is missing: {tag} in {path}")
+        elif resolved != head:
+            errors.append(f"required tag does not identify current HEAD: {tag} in {path}")
 
     return record, errors
 

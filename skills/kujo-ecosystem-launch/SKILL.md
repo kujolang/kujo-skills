@@ -67,7 +67,7 @@ Do not broaden release or deployment authority. A request to build is not author
 - Invoke `kujo-lens-workflows` or browser QA for representative desktop/mobile routes, interactions, accessibility, links, images, and social previews.
 - Deploy only with explicit authority and the repository-supported workflow.
 - Verify every affected production route, release link, asset, catalog count, metadata surface, deployment result, and final working tree.
-- Re-run `scripts/launch_preflight.py --require-clean --require-tag` for each released source repository when applicable.
+- Re-run `scripts/launch_preflight.py --require-clean --require-tag` for each released source repository when applicable. Use the release checkout so the tag resolves to its exact HEAD.
 
 ## Stop Gates
 
